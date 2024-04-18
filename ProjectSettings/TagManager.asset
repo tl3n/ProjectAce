@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - RoomBorders
+  - SpawnPoint
+  - Grid
   layers:
   - Default
   - TransparentFX
