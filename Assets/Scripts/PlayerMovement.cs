@@ -6,20 +6,27 @@ using UnityEngine.Diagnostics;
 using UnityEngine.Windows;
 using Input = UnityEngine.Input;
 
-public class Collisions : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D PlayerRigidbody;
-    private SpriteRenderer sprite;
-    private Animator anim;
+
+
 
     private bool canDodgeroll = true;
     private bool isDodgerolling;
+    private Vector2 moveDirection = Vector2.zero;
+    private Vector2 lastMoveDirection = Vector2.zero;
+    [SerializeField] private Rigidbody2D playerRigidbody;
+    [SerializeField] private PlayerAnimator playerAnimator;
     [SerializeField] private float dodgerollPower = 16f;
     [SerializeField] private float dodgerollTime = 0.2f;
     [SerializeField] private float dodgerollCooldown = 2f; //cooldown after which player is able to dash again
 
     [SerializeField] private float movementSpeed = 7f;
-    [SerializeField] private Rigidbody2D rb;
+
+    public enum MovementState {idle, running, dodgerolling } //very questionable public, probably should refactor to private
+    MovementState movementState = MovementState.idle;
+
+    [SerializeField] private GameInput gameInput;
 
     float dirX = 0f;
     float dirY = 0f;
@@ -28,11 +35,20 @@ public class Collisions : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+
+        gameInput.OnDodgerollAction += GameInput_OnDodgerollAction;
         //Rigid body initialization of the player sprite
         //for the movement realization convenience
-        PlayerRigidbody = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-        sprite = GetComponent<SpriteRenderer>();
+        playerRigidbody = GetComponent<Rigidbody2D>();
+        
+    }
+
+    private void GameInput_OnDodgerollAction(object sender, System.EventArgs e)
+    {
+        if(canDodgeroll) {
+            StartCoroutine(Dodgeroll());
+        }
+        
     }
 
     // Update is called once per frame
@@ -44,65 +60,76 @@ public class Collisions : MonoBehaviour
         }
 
         HandleMovement();
-        animationUpdate();
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && canDodgeroll)
-        {
-            StartCoroutine(Dodgeroll());
-        }
+       
     }
 
     private void HandleMovement()
     {
-        dirX = Input.GetAxisRaw("Horizontal");
-        dirY = Input.GetAxisRaw("Vertical");
+        Vector2 inputVector = gameInput.GetMovementVectorNormalized();
 
-        Vector2 movement = new Vector2(dirX, dirY).normalized * movementSpeed;
+        Vector2 movement = inputVector * movementSpeed;
 
-        PlayerRigidbody.velocity = movement;
-    }
+        if (movement != Vector2.zero)
+        {
+            lastMoveDirection = movement.normalized; // Save the last movement direction
+            if (inputVector.x <0f)
+            {
+                playerAnimator.sprite.flipX = true;
+                movementState = MovementState.running;
 
-    private void animationUpdate()
-    {
-        if (dirX > 0f || (dirX > 0f && dirY != 0f))
-        {
-            anim.SetBool("running", true);
-            sprite.flipX = false;
-        }
-        else if (dirX < 0f || (dirX < 0f && dirY != 0f))
-        {
-            anim.SetBool("running", true);
-            sprite.flipX = true;
-        }
-        else if (dirY != 0f)
-        {
-            anim.SetBool("running", true);
+            }
+            else
+            {
+                playerAnimator.sprite.flipX = false;
+                movementState = MovementState.running;
+            }
+            
         }
         else
         {
-            anim.SetBool("running", false);
+            movementState = MovementState.idle;
         }
+
+
+        playerRigidbody.velocity = movement;
     }
 
+
+
+ 
     private IEnumerator Dodgeroll()
     {
+        movementState = MovementState.dodgerolling;
         canDodgeroll = false;
         isDodgerolling = true;
-        anim.SetBool("dodgerolling", isDodgerolling); // Start the dodgerolling animation
-        float originalGravity = rb.gravityScale;
-        rb.gravityScale = 0f;
+        float originalGravity = playerRigidbody.gravityScale;
+        playerRigidbody.gravityScale = 0f;
 
-        // Determine the direction of the dash based on the player's facing direction
-        float dodgerollDirection = sprite.flipX ? -1f : 1f;
+        Vector2 dodgeDirection = new Vector2(dirX, dirY).normalized;
 
-        rb.velocity = new Vector2(dodgerollDirection * dodgerollPower, 0f);
+        // If player is not moving, check player's last running direction
+        if (dodgeDirection == Vector2.zero && lastMoveDirection != Vector2.zero)
+        {
+            dodgeDirection = lastMoveDirection;
+        }
+        else
+            dodgeDirection = new Vector2(playerAnimator.sprite.flipX ? -1 : 1, 0);
+
+        playerRigidbody.velocity = dodgeDirection * dodgerollPower;
+
         yield return new WaitForSeconds(dodgerollTime);
-
-        rb.gravityScale = originalGravity;
+        playerRigidbody.gravityScale = originalGravity;
         isDodgerolling = false;
-        anim.SetBool("dodgerolling", isDodgerolling); // Stop the dodgerolling animation
         yield return new WaitForSeconds(dodgerollCooldown);
         canDodgeroll = true;
+        movementState = MovementState.idle;
+    }
+
+
+    public MovementState returnMovementState()
+    {
+        return movementState;
     }
 
 }
