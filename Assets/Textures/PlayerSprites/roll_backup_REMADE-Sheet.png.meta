@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c5360280f6fe94a48aa942fb0f5ffa75
+guid: 3276152083b86e145b17cd87034bcb32
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: running_backup-Sheet_0
+      name: roll_backup_REMADE-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 61
+        width: 59
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83ebfe3b4feccc54c8f21e71434dced0
-      internalID: 1844193732
+      spriteID: 70fa4411f83a6aa489da4b7854a4ab1c
+      internalID: -231510935
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running_backup-Sheet_1
+      name: roll_backup_REMADE-Sheet_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 59
         y: 0
-        width: 64
-        height: 61
+        width: 59
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d10fea2485540f241b575f0106861e00
-      internalID: 2069336588
+      spriteID: 8414fff0cf4e87c4282ef2ddc18ff16f
+      internalID: -1405938926
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running_backup-Sheet_2
+      name: roll_backup_REMADE-Sheet_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 118
         y: 0
-        width: 64
-        height: 61
+        width: 59
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f696c211de9dcf459f7dafec0909c9d
-      internalID: -1353029262
+      spriteID: 06725d81b11d8424aaaae8fcb0586582
+      internalID: -1061498598
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running_backup-Sheet_3
+      name: roll_backup_REMADE-Sheet_3
       rect:
         serializedVersion: 2
-        x: 192
+        x: 177
         y: 0
-        width: 64
-        height: 61
+        width: 59
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d3f9d20273d68b4ba75d607dcd7c6de
-      internalID: 1840320102
+      spriteID: 432ff97d437dacc40b758a4588e8abb3
+      internalID: -549723928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running_backup-Sheet_4
+      name: roll_backup_REMADE-Sheet_4
       rect:
         serializedVersion: 2
-        x: 256
+        x: 236
         y: 0
-        width: 64
-        height: 61
+        width: 59
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea08837ed96daa4478e36c17b42f82d8
-      internalID: 84774243
+      spriteID: fc3bf799259ca1d48b52670b8c7689d6
+      internalID: 727632809
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: running_backup-Sheet_5
+      name: roll_backup_REMADE-Sheet_5
       rect:
         serializedVersion: 2
-        x: 320
+        x: 295
         y: 0
-        width: 64
-        height: 61
+        width: 59
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,8 +229,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c3acf88807f7f749a4e62290768e08e
-      internalID: 670269061
+      spriteID: cd34b87eaba44a145a21578486453b32
+      internalID: -97785065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roll_backup_REMADE-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 0
+        width: 59
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b4927e4aca49ad4590604ba9b190389
+      internalID: -1143958523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roll_backup_REMADE-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 0
+        width: 59
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 137d1e204218fac4790eed9ce4c20d6a
+      internalID: -546048348
       vertices: []
       indices: 
       edges: []
@@ -246,12 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      running_backup-Sheet_0: 1844193732
-      running_backup-Sheet_1: 2069336588
-      running_backup-Sheet_2: -1353029262
-      running_backup-Sheet_3: 1840320102
-      running_backup-Sheet_4: 84774243
-      running_backup-Sheet_5: 670269061
+      roll_backup_REMADE-Sheet_0: -231510935
+      roll_backup_REMADE-Sheet_1: -1405938926
+      roll_backup_REMADE-Sheet_2: -1061498598
+      roll_backup_REMADE-Sheet_3: -549723928
+      roll_backup_REMADE-Sheet_4: 727632809
+      roll_backup_REMADE-Sheet_5: -97785065
+      roll_backup_REMADE-Sheet_6: -1143958523
+      roll_backup_REMADE-Sheet_7: -546048348
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
