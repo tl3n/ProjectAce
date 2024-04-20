@@ -78,6 +78,7 @@ public class DungeonGenerationMatrix : MonoBehaviour
     private List<(int, int)> generatedEndCells = new List<(int, int)>();
 
     public int bossRoomX, bossRoomY; // to see which room became boss (WILL BE REMOVED)
+    public int secretRoomX, secretRoomY; // to see which room became secret (WILL BE REMOVED)
 
     /// <summary>
     /// The boos room
@@ -104,6 +105,7 @@ public class DungeonGenerationMatrix : MonoBehaviour
             GenerateNeighbours((startX, startY));
             FindEndCells();
             BossRoom();
+            SecretRoom();
 
             foreach ((int, int) cell in generatedEndCells)
             {
@@ -208,17 +210,17 @@ public class DungeonGenerationMatrix : MonoBehaviour
 
         return neighbourPosition;
     }
-    
+
     /**
-     * \brief Checking if cell with provided position in the layout matrix has only one neighbour
+     * \brief Counting neighbours of the cell with provided position in the layout matrix
      * \param currentPosition Tuple of indexes of the cell in the layout matrix
-     * \return "True" if cell has only one neighbour, "False" otherwise
+     * \return Number of neighbours
      */
-    private bool OnlyOneNeighbour((int, int) currentPosition)
+    private int NumberOfNeighbours((int, int) currentPosition)
     {
         int x = currentPosition.Item1;
         int y = currentPosition.Item2;
-        
+
         int numberOfNeighbours = 0;
         // Check top neighbor
         if (y > 0 && layout[x, y - 1] == 1)
@@ -236,7 +238,17 @@ public class DungeonGenerationMatrix : MonoBehaviour
         if (x > 0 && layout[x - 1, y] == 1)
             ++numberOfNeighbours;
 
-        return numberOfNeighbours == 1;
+        return numberOfNeighbours;
+    }
+    
+    /**
+     * \brief Checking if cell with provided position in the layout matrix has only one neighbour
+     * \param currentPosition Tuple of indexes of the cell in the layout matrix
+     * \return "True" if cell has only one neighbour, "False" otherwise
+     */
+    private bool OnlyOneNeighbour((int, int) currentPosition)
+    {
+        return NumberOfNeighbours(currentPosition) == 1;
     }
 
     /**
@@ -320,5 +332,83 @@ public class DungeonGenerationMatrix : MonoBehaviour
         }
 
         layout[bossRoom.Item1, bossRoom.Item2] = 2;
+    }
+
+    /**
+     * \brief Ñhecking if cell is an end room
+     * \param currentPosition Tuple of indexes of the cell in the layout matrix
+     * \return "True" if it is end room, "False" otherwise
+     */
+    private bool CheckEndCell((int, int) currentPosition)
+    {
+        foreach ((int, int) cell in generatedEndCells)
+            if (currentPosition == cell)
+                return true;
+    
+        return false;
+    }
+
+    /**
+     * \brief Ñhecking if cell has in neighbours an end room
+     * \param currentPosition Tuple of indexes of the cell in the layout matrix
+     * \return "True" if it has, "False" otherwise
+     */
+    private bool EndCellInNeighbours((int, int) currentPosition)
+    {
+        int x = currentPosition.Item1;
+        int y = currentPosition.Item2;
+
+        // Check top neighbor
+        if (CheckEndCell((x, y - 1))) return true;
+
+        // Check right neighbor
+        if (CheckEndCell((x + 1, y))) return true;
+
+        // Check bottom neighbor
+        if (CheckEndCell((x, y + 1))) return true;
+
+        // Check left neighbor
+        if (CheckEndCell((x - 1, y))) return true;
+
+        return false;
+    }
+
+    /**
+     * \brief Finding empty cell for secret room
+     * 
+     * First we try to find empty cell with 3 neighbours, than 2, than 1
+     */
+    private void SecretRoom()
+    {
+        if (!SecretRoomPlace(3))
+            if (!SecretRoomPlace(2))
+                SecretRoomPlace(1);
+    }
+
+    /**
+     * \brief Finding empty cell for secret room with a specific number of neighbors
+     * \param condition Number of neighbours
+     * \return "True" if we find needed cell, "False" otherwise
+     */
+    private bool SecretRoomPlace(int condition)
+    {
+        // first attempt 300, next 600, next 900
+        for (int i = 0; i < (4 - condition) * 300; ++i)
+        {
+            int x = Random.Range(0, 9);
+            int y = Random.Range(0, 9);
+
+            int numberOfNeighbours = NumberOfNeighbours((x, y));
+
+            if (layout[x, y] == 0 && numberOfNeighbours >= condition && !EndCellInNeighbours((x, y)))
+            {
+                secretRoomX = x;
+                secretRoomY = y;
+
+                return true;
+            }
+        }
+
+        return false;
     }
 }
