@@ -31,6 +31,26 @@ public class DungeonGenerationMatrix : MonoBehaviour
         { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
         { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
     };
+
+    /// <summary>
+    /// X-position of start room in layout
+    /// </summary>
+    private int startX = 4;
+
+    /// <summary>
+    /// Y-position of start room in layout
+    /// </summary>
+    private int startY = 4;
+
+    /// <summary>
+    /// Distance between centres of rooms on X-coordinate
+    /// </summary>
+    private int distanceX = 15;
+
+    /// <summary>
+    /// Distance between centres of rooms on Y-coordinate
+    /// </summary>
+    private int distanceY = -9;
     
     /// <summary>
     /// Number of rooms to generate
@@ -56,7 +76,14 @@ public class DungeonGenerationMatrix : MonoBehaviour
     /// List stat stores generated end rooms
     /// </summary>
     private List<(int, int)> generatedEndCells = new List<(int, int)>();
-    
+
+    public int bossRoomX, bossRoomY; // to see which room became boss (WILL BE REMOVED)
+
+    /// <summary>
+    /// The boos room
+    /// </summary>
+    private (int, int) bossRoom;
+
     /// <summary>
     /// The current level of the dungeon
     /// </summary>
@@ -67,15 +94,16 @@ public class DungeonGenerationMatrix : MonoBehaviour
     /// </summary>
     public GameObject roomPrefab;
     
-// Start is called before the first frame update
+    // Start is called before the first frame update
     void Start()
     {
         numberOfRoomsToGenerate = Random.Range(0, 2) + 5 + level * 2;
         
         while (true)
         {
-            GenerateNeighbours((4, 4));
+            GenerateNeighbours((startX, startY));
             FindEndCells();
+            BossRoom();
 
             foreach ((int, int) cell in generatedEndCells)
             {
@@ -91,9 +119,7 @@ public class DungeonGenerationMatrix : MonoBehaviour
                 GenerateRooms();
                 break;
             }
-        }
-
-        
+        }        
     }
 
     /**
@@ -226,9 +252,9 @@ public class DungeonGenerationMatrix : MonoBehaviour
             }
         }
 
-        layout[4, 4] = 1;
+        layout[startX, startY] = 1;
         generatedCells.Clear();
-        generatedCells.Add((4, 4));
+        generatedCells.Add((startX, startY));
         
         generatedEndCells.Clear();
     }
@@ -240,13 +266,17 @@ public class DungeonGenerationMatrix : MonoBehaviour
     {
         foreach ((int, int) cell in generatedCells)
         {
-            int x = (cell.Item1 - 4) * 15;
-            int y = ((cell.Item2) - 4) * -9;
-            Vector2 position = new Vector2(x, y);
-            
-            GameObject room = Instantiate(roomPrefab, GameObject.FindGameObjectWithTag("Grid").transform,
-                true);
-            room.transform.position = position;
+            // boss room == general room ???????
+            if (layout[cell.Item1, cell.Item2] == 1 || layout[cell.Item1, cell.Item2] == 2)
+            {
+                int x = (cell.Item1 - startX) * distanceX;
+                int y = (cell.Item2 - startY) * distanceY;
+                Vector2 position = new Vector2(x, y);
+
+                GameObject room = Instantiate(roomPrefab, GameObject.FindGameObjectWithTag("Grid").transform,
+                    true);
+                room.transform.position = position;
+            }
         }
     }
 
@@ -257,10 +287,38 @@ public class DungeonGenerationMatrix : MonoBehaviour
     {
         foreach ((int, int) cell in generatedCells)
         {
-            if (OnlyOneNeighbour(cell) && cell != (4, 4))
+            if (OnlyOneNeighbour(cell) && cell != (startX, startY))
             {
                 generatedEndCells.Add(cell);
             }
         }
+    }
+
+    /**
+     * \brief Finding the farthest end cell and turning it into a boss room 
+     * 
+     * It is not always farthest because can be situation when way to some room is the longest, 
+     * but by coordinates it is not. Åhis algorithm should be enough for the boss room 
+     * to be far from the starting room.
+     */
+    private void BossRoom()
+    {
+        int maxDistance = 0;
+
+        for (int i = 0; i < generatedEndCells.Count; ++i)
+        {
+            int distance = (generatedEndCells[i].Item1 - startX) * (generatedEndCells[i].Item1 - startX) 
+                           + (generatedEndCells[i].Item2 - startY) * (generatedEndCells[i].Item2 - startY);
+
+            if (maxDistance < distance)
+            {
+                maxDistance = distance;
+                bossRoomX = generatedEndCells[i].Item1; // MUST BE REMOVED
+                bossRoomY = generatedEndCells[i].Item2; // MUST BE REMOVED
+                bossRoom = generatedEndCells[i];
+            }
+        }
+
+        layout[bossRoom.Item1, bossRoom.Item2] = 2;
     }
 }
