@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Diagnostics;
@@ -11,42 +12,39 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-    private bool canDodgeroll = true;
-    private bool isDodgerolling;
-    private Vector2 moveDirection = Vector2.zero;
-    private Vector2 lastMoveDirection = Vector2.zero;
-    [SerializeField] private Rigidbody2D playerRigidbody;
-    [SerializeField] private PlayerAnimator playerAnimator;
+    private bool canDodgeroll = true; //to check if we can dodgeroll. we can't dodgeroll when we are in process of dodgerolling or when there is a cooldown
+    private bool isDodgerolling; //check if we are dodgerolling now
+    private Vector2 lastMoveDirection = Vector2.zero; //used to store last movement direction to dodgeroll properly
+    [SerializeField] private Rigidbody2D playerRigidbody; //player physical body (without visuals)
+    [SerializeField] private PlayerAnimator playerAnimator; //object of visuals. needed to get a direction which sprite is facing
     [SerializeField] private float dodgerollPower = 16f;
     [SerializeField] private float dodgerollTime = 0.2f;
     [SerializeField] private float dodgerollCooldown = 2f; //cooldown after which player is able to dash again
 
     [SerializeField] private float movementSpeed = 7f;
+    private bool animatorFlipX; //where we store direction which sprite is facing
+    private Vector2 dodgeDirection = new Vector2(0, 0).normalized;
+    private Vector2 inputVector; //direction of input
+    private Vector2 movement; //upscaled input vector
 
-    public enum MovementState {idle, running, dodgerolling } //very questionable public, probably should refactor to private
-    MovementState movementState = MovementState.idle;
-
-    [SerializeField] private GameInput gameInput;
-
-    float dirX = 0f;
-    float dirY = 0f;
+   
 
 
     // Start is called before the first frame update
     private void Start()
     {
 
-        gameInput.OnDodgerollAction += GameInput_OnDodgerollAction;
+        GameInput.Instance.OnDodgerollAction += GameInput_OnDodgerollAction;
         //Rigid body initialization of the player sprite
         //for the movement realization convenience
         playerRigidbody = GetComponent<Rigidbody2D>();
         
     }
 
-    private void GameInput_OnDodgerollAction(object sender, System.EventArgs e)
+    private void GameInput_OnDodgerollAction(object sender, System.EventArgs e) //when event in GameInput happens we call this logic
     {
         if(canDodgeroll) {
-            StartCoroutine(Dodgeroll());
+            StartCoroutine(Dodgeroll()); //dodgerolling is called in coroutine
         }
         
     }
@@ -54,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (isDodgerolling)
+        if (isDodgerolling) //if we are dodgerolling - we can't do anything else. hence we break update function.
         {
             return;
         }
@@ -64,72 +62,62 @@ public class PlayerMovement : MonoBehaviour
        
     }
 
-    private void HandleMovement()
+    private void HandleMovement() //most basic movement function
     {
-        Vector2 inputVector = gameInput.GetMovementVectorNormalized();
+        inputVector = GameInput.Instance.GetMovementVectorNormalized(); //we get a vector from GameInput because
+                                                                        //it is formed based on buttons player is pressing (so based on input)
+                                                                        //and we separate input from movement logic itself
 
-        Vector2 movement = inputVector * movementSpeed;
-
+         movement = inputVector * movementSpeed;
         if (movement != Vector2.zero)
         {
-            lastMoveDirection = movement.normalized; // Save the last movement direction
-            if (inputVector.x <0f)
-            {
-                playerAnimator.sprite.flipX = true;
-                movementState = MovementState.running;
+            lastMoveDirection = movement.normalized;
+        }
+           
 
-            }
-            else
-            {
-                playerAnimator.sprite.flipX = false;
-                movementState = MovementState.running;
-            }
-            
-        }
-        else
-        {
-            movementState = MovementState.idle;
-        }
 
 
         playerRigidbody.velocity = movement;
     }
 
+  
 
 
  
     private IEnumerator Dodgeroll()
     {
-        movementState = MovementState.dodgerolling;
+
         canDodgeroll = false;
         isDodgerolling = true;
-        float originalGravity = playerRigidbody.gravityScale;
-        playerRigidbody.gravityScale = 0f;
+        animatorFlipX = playerAnimator.GetAnimatorFlipX();
+        
 
-        Vector2 dodgeDirection = new Vector2(dirX, dirY).normalized;
+        dodgeDirection = Vector2.zero;
 
-        // If player is not moving, check player's last running direction
-        if (dodgeDirection == Vector2.zero && lastMoveDirection != Vector2.zero)
+        // If player is moving, we dodgeroll in that direction
+        if (movement != Vector2.zero)
         {
-            dodgeDirection = lastMoveDirection;
+            dodgeDirection = inputVector.normalized;
         }
-        else
-            dodgeDirection = new Vector2(playerAnimator.sprite.flipX ? -1 : 1, 0);
+        else { //if not moving, dodgeroll in direction which we are facing
+            dodgeDirection = new Vector2(animatorFlipX ? -1 : 1, 0).normalized;
+        }
 
         playerRigidbody.velocity = dodgeDirection * dodgerollPower;
 
-        yield return new WaitForSeconds(dodgerollTime);
-        playerRigidbody.gravityScale = originalGravity;
+        yield return new WaitForSeconds(dodgerollTime); //waiting until we finish dodgerolling
         isDodgerolling = false;
-        yield return new WaitForSeconds(dodgerollCooldown);
+        yield return new WaitForSeconds(dodgerollCooldown); //cooldown for dodgeroll
         canDodgeroll = true;
-        movementState = MovementState.idle;
+        
+
     }
 
 
-    public MovementState returnMovementState()
+
+    public bool GetDodgerollStatus() //used in Animator to change moving state and therefore, animation
     {
-        return movementState;
+        return isDodgerolling;
     }
 
 }
