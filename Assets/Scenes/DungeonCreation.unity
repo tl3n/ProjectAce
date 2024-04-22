@@ -185,7 +185,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 47.049007
+  orthographic size: 46.168262
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -520,10 +520,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfRoomsToGenerate: 0
-  MinNumberOfEndRoomsToGenerate: 3
+  minNumberOfEndRoomsToGenerate: 3
   bossRoomX: 0
   bossRoomY: 0
-  level: 3
+  secretRoomX: 0
+  secretRoomY: 0
+  level: 1
   roomPrefab: {fileID: 1825769324793054950, guid: 1e19b7f86e9a4e644828bd44edd130e5, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
