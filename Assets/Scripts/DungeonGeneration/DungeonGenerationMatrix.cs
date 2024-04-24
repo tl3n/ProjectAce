@@ -226,34 +226,40 @@ public class DungeonGenerationMatrix : MonoBehaviour
     }
 
     /**
+     * \brief загальний опис методу
+     * \param paramName опис параметру
+     * \return шо повертає
+     */
+    
+    /**
      * \brief Counting neighbours of the cell with provided position in the layout matrix
      * \param currentPosition Tuple of indexes of the cell in the layout matrix
      * \return Number of neighbours
      */
-    private int CountNeighbours((int, int) currentPosition)
+    private List<Side> FindSidesWithNeighbours((int, int) cell)
     {
-        int x = currentPosition.Item1;
-        int y = currentPosition.Item2;
+        List<Side> sides = new List<Side>();
         
-        Debug.Log(x + y);
-        int numberOfNeighbours = 0;
+        int x = cell.Item1;
+        int y = cell.Item2;
+        
         // Check top neighbor
         if (y > 0 && layout[x, y - 1] == 1)
-            ++numberOfNeighbours;
+            sides.Add(Side.Top);
 
         // Check right neighbor
         if (x < 8 && layout[x + 1, y] == 1)
-            ++numberOfNeighbours;
+            sides.Add(Side.Right);
 
         // Check bottom neighbor
         if (y < 8 && layout[x, y + 1] == 1)
-            ++numberOfNeighbours;
+            sides.Add(Side.Bottom);
 
         // Check left neighbor
         if (x > 0 && layout[x - 1, y] == 1)
-            ++numberOfNeighbours;
+            sides.Add(Side.Left);
 
-        return numberOfNeighbours;
+        return sides;
     }
     
     /**
@@ -263,7 +269,7 @@ public class DungeonGenerationMatrix : MonoBehaviour
      */
     private bool HasOnlyOneNeighbour((int, int) currentPosition)
     {
-        return CountNeighbours(currentPosition) == 1;
+        return FindSidesWithNeighbours(currentPosition).Count == 1;
     }
 
     /**
@@ -287,6 +293,17 @@ public class DungeonGenerationMatrix : MonoBehaviour
         }
     }
 
+    // generating doors for the current room
+    private void GenerateDoors((int, int) cell)
+    {
+        // 1) find neighbours to choose sides where doors should be generated
+        foreach (var side in FindSidesWithNeighbours(cell))
+        {
+            
+        }
+        // 2) for each side generate door
+    }
+    
     /**
      * \brief Finding end cells and adding them to the generatedEndCells list
      */
