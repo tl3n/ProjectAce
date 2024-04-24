@@ -97,15 +97,15 @@ namespace DungeonGeneration
             {
                 Reset();
                 FillLayout((StartRoomX, StartRoomY));
-                
-                Debug.Log(generatedEndRooms.Count);
+                FindEndRooms();
+                //Debug.Log(generatedEndRooms.Count);
                 if (generatedRooms.Count != numberOfRoomsToGenerate ||
                     generatedEndRooms.Count < minNumberOfEndRoomsToGenerate)
                 {
                     continue;
                 }
+                 
                 
-                FindEndRooms(); 
                 //FindBossRoom();
                 //FindTreasureRoom();
                     foreach ((int, int) position in generatedRooms)
