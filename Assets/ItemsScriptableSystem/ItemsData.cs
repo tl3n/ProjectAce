@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.Progress;
 
-[CreateAssetMenu(fileName = "Create New Item" , menuName = "Item Default")]
+[CreateAssetMenu(menuName = "Item Default")]
 public abstract class ItemsData : ScriptableObject
 {
     [SerializeField] private string itemName = "Default Item Name";
@@ -21,22 +21,3 @@ public abstract class ItemsData : ScriptableObject
 
     public abstract void Use();
 }
-
-[CreateAssetMenu(menuName = "Artefact Item")]
-public class Artefact : ItemsData
-{
-    public override void Use()
-    {
-        // Artefacts logic
-    }
-}
-
-[CreateAssetMenu(menuName = "Healing item Item")]
-public class HealingItem : ItemsData
-{
-    public override void Use()
-    {
-        // Healing items logic
-    }
-}
-
