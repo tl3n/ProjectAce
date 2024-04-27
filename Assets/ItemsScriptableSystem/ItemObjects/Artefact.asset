@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1854df18837c646b1c580484375d79, type: 3}
-  m_Name: New Artefact
+  m_Name: Artefact
   m_EditorClassIdentifier: 
-  itemName: Artefact1
+  itemName: Artefact
   itemDescription: Default description
   icon: {fileID: -215079123, guid: 420d9ea41a2574a4e84ddd6359eda77d, type: 3}
   prefab: {fileID: 3272608702564704801, guid: f75ae35fdcef2944c85c53799541645a, type: 3}

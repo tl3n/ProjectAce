@@ -7,6 +7,6 @@ public class HealingItem : ItemsData
 {
     public override void Use()
     {
-        // Healing items logic
+        Debug.Log("Hi");
     }
 }

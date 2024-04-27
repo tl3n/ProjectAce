@@ -7,7 +7,7 @@ public class Artefact : ItemsData
 {
     public override void Use()
     {
-        // Artefacts logic
+        Debug.Log("Hello");
     }
 }
 

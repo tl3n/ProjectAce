@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PickUpArtefact : MonoBehaviour
 {
-    public GameObject PickUpText;
+    //public GameObject PickUpText;
 
     // Start is called before the first frame update
     void Start()
     {
-        PickUpText.SetActive(false);
+        //PickUpText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -17,16 +17,19 @@ public class PickUpArtefact : MonoBehaviour
     {
         if(OtherItem.gameObject.tag == "Player")
         {
-            PickUpText.SetActive(true);
+           // PickUpText.SetActive(true);
+            Debug.Log("Trigger true");
+
             if (Input.GetKey(KeyCode.E))
             {
-                PickUpText.SetActive(false);
+                //PickUpText.SetActive(false);
             }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        PickUpText.SetActive(false);
+        //PickUpText.SetActive(false);
+        Debug.Log("Trigger false");
     }
 }
