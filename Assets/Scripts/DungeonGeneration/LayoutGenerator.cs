@@ -78,11 +78,12 @@ namespace DungeonGeneration
         /// List that stores generated end rooms
         /// </summary>
         private List<(int, int)> generatedEndRooms = new List<(int, int)>();
-        
-        /// <summary>
-        /// The boos room
-        /// </summary>
-        private (int, int) bossRoomPosition;
+
+        public int bossRoomX;
+        public int bossRoomY;
+
+        public int treasureRoomX;
+        public int treasureRoomY;
         
         /**
          * \brief Generating dungeon layout based on matrix 
@@ -98,66 +99,53 @@ namespace DungeonGeneration
                 Reset();
                 FillLayout((StartRoomX, StartRoomY));
                 FindEndRooms();
-                //Debug.Log(generatedEndRooms.Count);
+               
                 if (generatedRooms.Count != numberOfRoomsToGenerate ||
                     generatedEndRooms.Count < minNumberOfEndRoomsToGenerate)
                 {
                     continue;
                 }
-                 
                 
-                //FindBossRoom();
-                //FindTreasureRoom();
-                    foreach ((int, int) position in generatedRooms)
-                    { 
-                        int x = (position.Item1 - StartRoomX) * SceneRoomDistanceX;
-                        int y = (position.Item2 - StartRoomY) * SceneRoomDistanceY;
+                FindBossRoom();
+                FindTreasureRoom();
+                
+                foreach ((int, int) position in generatedRooms)
+                { 
+                    int x = (position.Item1 - StartRoomX) * SceneRoomDistanceX;
+                    int y = (position.Item2 - StartRoomY) * SceneRoomDistanceY;
 
-                        RoomType type = RoomType.Start;
-                        int value = layout[position.Item1, position.Item2];
-                        switch (value)
-                        {
-                            case 1:
-                                type = RoomType.Start;
-                                break;
-                            case 2:
-                                type = RoomType.EnemyEasy;
-                                break;
-                            case 3:
-                                type = RoomType.EnemyMedium;
-                                break;
-                            case 4:
-                                type = RoomType.EnemyHard;
-                                break;
-                            case 5:
-                                type = RoomType.Treasure;
-                                break;
-                            case 6:
-                                type = RoomType.Boss;
-                                break;
-                        }
-
-                        List<Side> neighboringSides = FindNeighboringSides(position);
-                        
-                        Room room = new Room(x, y, type, neighboringSides);
-                        roomsList.Add(room);
-                    }
-                    
-                    //debugging layout
-                    /*string matrix = "";
-                    for (int i = 0; i < 9; ++i)
+                    RoomType type = RoomType.Start;
+                    int value = layout[position.Item1, position.Item2];
+                    switch (value)
                     {
-                        for (int j = 0; j < 9; ++j)
-                        {
-                            matrix += layout[i, j] + " ";
-                        }
-
-                        matrix += "\n";
+                        case 1:
+                            type = RoomType.Start;
+                            break;
+                        case 2:
+                            type = RoomType.EnemyEasy;
+                            break;
+                        case 3:
+                            type = RoomType.EnemyMedium;
+                            break;
+                        case 4:
+                            type = RoomType.EnemyHard;
+                            break;
+                        case 5:
+                            type = RoomType.Treasure;
+                            break;
+                        case 6:
+                            type = RoomType.Boss;
+                            break;
                     }
-                    Debug.Log(matrix);
-                    */
-                    return roomsList;
+
+                    List<Side> neighboringSides = FindNeighboringSides(position);
+                        
+                    Room room = new Room(x, y, type, neighboringSides);
+                    roomsList.Add(room);
                 }
+                
+                return roomsList;
+            }
         }
         
         /**
@@ -352,6 +340,8 @@ namespace DungeonGeneration
                 
                 if (layout[position.Item1, position.Item2] != 6)
                 {
+                    treasureRoomX = position.Item1;
+                    treasureRoomY = position.Item2;
                     layout[position.Item1, position.Item2] = 5;
                     break;
                 }
@@ -375,11 +365,12 @@ namespace DungeonGeneration
                 if (maxDistance < distance)
                 {
                     maxDistance = distance;
-                    bossRoomPosition = position;
+                    bossRoomX = position.Item1;
+                    bossRoomY = position.Item2;
                 }
             }
             
-            layout[bossRoomPosition.Item1, bossRoomPosition.Item2] = 6;
+            layout[bossRoomX, bossRoomY] = 6;
         }
         
     }

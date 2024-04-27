@@ -20,12 +20,6 @@ namespace DungeonGeneration
         private void Start()
         {
             List<Room> roomsList = layoutGenerator.Generate(level);
-
-            /*foreach (var room in roomsList)
-            {
-                Debug.Log("X: " + room.X + " Y: " + room.Y);
-            }*/
-            
             roomGenerator.Generate(roomsList);
         }
     }
