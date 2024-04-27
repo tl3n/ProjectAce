@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Healing item 1
   itemDescription: Default description 1
   icon: {fileID: -779540010, guid: 33e3477c7a28a7e4992e997e16c4325c, type: 3}
-  prefab: {fileID: 2380913457098926920, guid: c4e837d3367befb4e8afa331084d5dcd, type: 3}
+  prefab: {fileID: 513345516379852335, guid: 884b0523d79fce846b45bb79f45c95a7, type: 3}

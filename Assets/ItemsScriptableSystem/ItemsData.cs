@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.Progress;
 
-[CreateAssetMenu(menuName = "Item Default")]
+//[CreateAssetMenu(menuName = "Item Default")]
 public abstract class ItemsData : ScriptableObject
 {
     [SerializeField] private string itemName = "Default Item Name";
