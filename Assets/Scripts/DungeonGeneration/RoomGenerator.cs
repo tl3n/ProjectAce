@@ -65,26 +65,38 @@ namespace DungeonGeneration
 
         private void ActivateDoors(GameObject room, List<Side> neighboringSides)
         {
+            // TODO: Vasia cho ty tvorish, why initialization was inside of foreach?????
+            Transform topDoor = room.transform.Find("TopDoor");
+            Transform topBlock = room.transform.Find("TopBlock");
+
+            Transform rightDoor = room.transform.Find("RightDoor");
+            Transform rightBlock = room.transform.Find("RightBlock");
+
+            Transform bottomDoor = room.transform.Find("BottomDoor");
+            Transform bottomBlock = room.transform.Find("BottomBlock");
+
+            Transform leftDoor = room.transform.Find("LeftDoor");
+            Transform leftBlock = room.transform.Find("LeftBlock");
+
             foreach (var side in neighboringSides)
             {
-                Transform topDoor = room.transform.Find("TopDoor");
-                Transform rightDoor = room.transform.Find("RightDoor");
-                Transform bottomDoor = room.transform.Find("BottomDoor");
-                Transform leftDoor = room.transform.Find("LeftDoor");
-                
                 switch (side)
                 {
                     case Side.Top:
                         topDoor.gameObject.SetActive(true);
+                        topBlock.gameObject.SetActive(false);
                         break;
                     case Side.Right:
                         rightDoor.gameObject.SetActive(true);
+                        rightBlock.gameObject.SetActive(false);
                         break;
                     case Side.Bottom:
                         bottomDoor.gameObject.SetActive(true);
+                        bottomBlock.gameObject.SetActive(false);
                         break;
                     case Side.Left:
                         leftDoor.gameObject.SetActive(true);
+                        leftBlock.gameObject.SetActive(false);
                         break;
                 }
             }
