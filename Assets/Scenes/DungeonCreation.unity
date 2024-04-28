@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1362166588}
-  transitionSpeed: 0.8
+  transitionSpeed: 0.2
   minPosition: {x: -0.5, y: -0.5, z: -10}
   maxPosition: {x: -0.5, y: -0.5, z: -10}
 --- !u!1 &206631785
@@ -698,6 +698,14 @@ PrefabInstance:
     - target: {fileID: 1825769324793054950, guid: 1e19b7f86e9a4e644828bd44edd130e5, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2633175345639007920, guid: 1e19b7f86e9a4e644828bd44edd130e5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4729620193226816245, guid: 1e19b7f86e9a4e644828bd44edd130e5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8416433294127968759, guid: 1e19b7f86e9a4e644828bd44edd130e5, type: 3}
       propertyPath: m_ColliderPaths.Array.size
