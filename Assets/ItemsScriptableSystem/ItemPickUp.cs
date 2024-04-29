@@ -7,7 +7,7 @@ public class ItemPickUp : MonoBehaviour
     //item data representation (base class ItemData for Artefact and Healing)
     public ItemsData Item;
     //text instruction game object for instructions for the player
-    public GameObject PickUpText;
+    [SerializeField] public GameObject PickUpText;
     //check for instruction done
     private bool isKeyPressed = false;
 
