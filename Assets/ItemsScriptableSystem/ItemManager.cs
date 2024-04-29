@@ -10,11 +10,13 @@ public class ItemManager : MonoBehaviour
     public GameObject InventoryVisuals;
     public bool menuActivated;
 
-    private List<ItemSlot> Inventory;
+   // private List<ItemSlot> Inventory;
+    //choose between array and list
+    public ItemSlot[] Slot; 
 
     void Awake()
     {
-        Inventory = new List<ItemSlot>();
+        //Inventory = new List<ItemSlot>();
         InventoryVisuals.SetActive(false);
     }
 
@@ -22,27 +24,38 @@ public class ItemManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q) && menuActivated)
         {
+            Time.timeScale = 1;
             InventoryVisuals.SetActive(false);
             menuActivated = false;
         }
         else if (Input.GetKeyDown(KeyCode.Q) && !menuActivated)
         {
+            Time.timeScale = 0;
             InventoryVisuals.SetActive(true);
             menuActivated = true;
         }
     }
 
-    private void AddToInventory(ItemsData Item)
+    public void AddToInventory(ItemsData Item)
     {
         //addition logic
+        //Debug.Log(" >>> OBTAINED:" + Item.Name + " " + Item.Description + " " + Item.Price);
         
-        
-        Inventory.Add(setArtifactSlot());
+        for (int i = 0; i < Slot.Length; i++) 
+        {
+            if (Slot[i].full == false)
+            {
+                Slot[i].AddItem(Item);
+                return;
+            }
+        }
+
+        /*Inventory.Add(setArtifactSlot());*/
     }
     private void RemoveFromInventory(ItemsData Item)
     {
         //removal logic
-        Inventory.Remove(setArtifactSlot());
+        //Inventory.Remove(setArtifactSlot());
     }
 
     private ItemSlot setArtifactSlot()

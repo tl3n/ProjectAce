@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ItemPickUp : MonoBehaviour
@@ -10,11 +11,14 @@ public class ItemPickUp : MonoBehaviour
     [SerializeField] public GameObject PickUpText;
     //check for instruction done
     private bool isKeyPressed = false;
+    //inventory component
+    private ItemManager ItemManager;
 
     //set text instructions invisible
     void Start()
     {
         PickUpText.SetActive(false);
+        ItemManager = GameObject.Find("ArtefactDisplay").GetComponent<ItemManager>();
     }
 
     //check for E key pressed -- for destruction in OnTriggerStay
@@ -49,6 +53,7 @@ public class ItemPickUp : MonoBehaviour
             if (Item.prefab != null)
             {
                 //destroy the prefab instance from the scene
+                ItemManager.AddToInventory(Item);
                 OnDestroy();
                 Debug.Log("Item destroyed");
             }
@@ -70,7 +75,7 @@ public class ItemPickUp : MonoBehaviour
     private void OnDestroy()
     {
         //turn of text instruction + destroy prefab
-        PickUpText.SetActive(false);
+        PickUpText.SetActive(false); 
         Destroy(gameObject);
     }
 }

@@ -8,6 +8,7 @@ public abstract class ItemsData : ScriptableObject
 {
     [SerializeField] private string itemName = "Default Item Name";
     [SerializeField] private string itemDescription = "Default description";
+    [SerializeField] private int quantity = 1;
     private int itemPrice;
     public Sprite icon;
     public GameObject prefab;
@@ -16,6 +17,8 @@ public abstract class ItemsData : ScriptableObject
     public string Name => itemName;
 
     public string Description => itemDescription;
+
+    public int ItemQuantity => quantity;
 
     public int Price => itemPrice;
 
