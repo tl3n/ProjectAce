@@ -53,7 +53,13 @@ namespace DungeonGeneration
             { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
             { 0, 0, 0, 0, 0, 0, 0, 0, 0 },
         };
-        
+
+        public int[,] Layout
+        {
+            get { return layout; }
+            set { layout = value; }
+        }
+
         /// <summary>
         /// The current level of the dungeon
         /// </summary>
@@ -68,7 +74,13 @@ namespace DungeonGeneration
         /// List that stores tuple of indexes of generated rooms in the layout matrix
         /// </summary>
         private List<(int, int)> generatedRooms = new List<(int, int)>();
-        
+
+        public List<(int, int)> GeneratedRooms
+        {
+            get { return generatedRooms; }
+            set { generatedRooms = value; }
+        }
+
         /// <summary>
         /// Number of end rooms to generate
         /// </summary>
