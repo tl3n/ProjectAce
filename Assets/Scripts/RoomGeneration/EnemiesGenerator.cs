@@ -47,7 +47,7 @@ namespace RoomGeneration
 
             Enemy enemy;
 
-            enemy = enemyACreator.Create(grid.GetChild(i), grid.GetChild(i).position, difX, difY);
+            enemy = enemyACreator.GetEnemy(grid.GetChild(i), grid.GetChild(i).position, difX, difY);
 
             Debug.Log(enemy);
 
@@ -56,7 +56,35 @@ namespace RoomGeneration
             enemies.Add(enemy);
 
 
-            enemyBCreator.Create(grid.GetChild(i), grid.GetChild(i).position, difX, difY);
+            enemyBCreator.GetEnemy(grid.GetChild(i), grid.GetChild(i).position, difX, difY);
+        }
+
+        private void Update()
+        {
+            foreach (Enemy enemy in enemies)
+            {
+                EnemyA enemyA = enemy as EnemyA;
+
+                //GameObject enemyObject = enemyA.enemyObject;
+
+                //Debug.Log(enemyObject);
+
+                float startX = enemyA.transform.parent.position.x - 2;
+                float startY = enemyA.transform.parent.position.y - 2;
+
+                // обчислює нову позицію ворога на колі
+                float x = startX + Mathf.Cos(enemyA.angle) * 1; // радіус кола - 1
+                float y = startY + Mathf.Sin(enemyA.angle) * 1; // радіус кола - 1
+
+                // оновлює позицію префаба ворога
+                enemyA.transform.position = new Vector2(x, y);
+
+                // оновлює кутову позицію ворога на колі
+                enemyA.angle += Time.deltaTime; // змінюється з часом, щоб ворог рухався
+
+                //EnemyA enemyA = enemy as EnemyA;
+                //enemyA.enemyObject.SetActive(false);
+            }
         }
     }
 }

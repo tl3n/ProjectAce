@@ -5,5 +5,5 @@ using UnityEngine;
 public interface Enemy
 {
     public string EnemyName { get; set; }
-    public bool SetActive(bool state);
+    public void Initialize();
 }
