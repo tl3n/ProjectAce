@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class ItemPickUp : MonoBehaviour
@@ -24,44 +23,29 @@ public class ItemPickUp : MonoBehaviour
     //check for E key pressed -- for destruction in OnTriggerStay
     void Update()
     {
-       isKeyPressed = Input.GetKeyDown(KeyCode.E);
+        isKeyPressed = Input.GetKeyDown(KeyCode.E);
     }
 
     //when enter -- show player the instructions for picking up
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Debug.Log("Enter");
         if (collision.CompareTag("Player"))
         {
             PickUpText.SetActive(true);
             Debug.Log(Item.name + " trigger box entered");
-           
         }
     }
 
     //recreate visually picking up (destruction)
     private void OnTriggerStay2D(Collider2D collision)
     {
-        //Debug.Log("Stay");
-
         //check for instruction done
         if (isKeyPressed)
         {
             Debug.Log(" 'E' pressed success");
-
-            //if item prefab exist
-            if (Item.prefab != null)
-            {
-                //destroy the prefab instance from the scene
-                ItemManager.AddToInventory(Item);
-                OnDestroy();
-                Debug.Log("Item destroyed");
-            }
-            //report error -- unable to remove not existing objects
-            else
-            {
-                Debug.Log("Error: Item has been already destroyed");
-            }
+            ItemManager.AddToInventory(Item);
+            Destroy(gameObject);
+            Debug.Log("Item destroyed");
         }
     }
 
@@ -70,12 +54,5 @@ public class ItemPickUp : MonoBehaviour
     {
         PickUpText.SetActive(false);
         Debug.Log(Item.name + " trigger box left");
-    }
-
-    private void OnDestroy()
-    {
-        //turn of text instruction + destroy prefab
-        PickUpText.SetActive(false); 
-        Destroy(gameObject);
     }
 }

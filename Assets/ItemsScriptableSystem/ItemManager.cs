@@ -22,20 +22,27 @@ public class ItemManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && menuActivated)
+        if (menuActivated && !Input.GetKeyDown(KeyCode.Q))
         {
-            Time.timeScale = 1;
-            InventoryVisuals.SetActive(false);
-            menuActivated = false;
+            return;
         }
-        else if (Input.GetKeyDown(KeyCode.Q) && !menuActivated)
+
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            Time.timeScale = 0;
-            InventoryVisuals.SetActive(true);
-            menuActivated = true;
+            if (menuActivated)
+            {
+                Time.timeScale = 1;
+                InventoryVisuals.SetActive(false);
+                menuActivated = false;
+            }
+            else
+            {
+                Time.timeScale = 0;
+                InventoryVisuals.SetActive(true);
+                menuActivated = true;
+            }
         }
     }
-
     public void AddToInventory(ItemsData Item)
     {
         //addition logic

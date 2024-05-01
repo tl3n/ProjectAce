@@ -4,10 +4,14 @@ using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 using static UnityEditor.Progress;
 
-public class ItemSlot : MonoBehaviour
+public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+
+    public TMP_Text HoverPanel;
+
     //  ITEM DATA
 
     /*[SerializeField]*/ private string SlotName = "Default Item Slot";
@@ -46,7 +50,7 @@ public class ItemSlot : MonoBehaviour
     }
 
     //  ITEM SLOT
-    
+
     [SerializeField] private TMP_Text QuantityText;
     [SerializeField] private Image SlotImage;
 
@@ -62,5 +66,19 @@ public class ItemSlot : MonoBehaviour
         QuantityText.enabled = true;
 
         SlotImage.sprite = Item.icon;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        // HoverPanel.SetActive(true);
+        HoverPanel.text = this.slotDescription;
+        HoverPanel.gameObject.SetActive(true); 
+        Debug.Log(this.slotDescription);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        // HoverPanel.SetActive(false);
+        HoverPanel.gameObject.SetActive(false);
     }
 }

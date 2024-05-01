@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    private void FixedUpdate()
     {
         if (isDodgerolling) //if we are dodgerolling - we can't do anything else. hence we break update function.
         {
