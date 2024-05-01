@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ItemPickUp : MonoBehaviour
@@ -10,6 +11,7 @@ public class ItemPickUp : MonoBehaviour
     [SerializeField] public GameObject PickUpText;
     //check for instruction done
     private bool isKeyPressed = false;
+    private bool isTriggerStayActivated = false;
     //inventory component
     private ItemManager ItemManager;
 
@@ -23,7 +25,16 @@ public class ItemPickUp : MonoBehaviour
     //check for E key pressed -- for destruction in OnTriggerStay
     void Update()
     {
-        isKeyPressed = Input.GetKeyDown(KeyCode.E);
+        //isKeyPressed = Input.GetKeyDown(KeyCode.E);
+
+        if (isTriggerStayActivated)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                ItemManager.AddToInventory(Item);
+                Destroy(gameObject);
+            }
+        }
     }
 
     //when enter -- show player the instructions for picking up
@@ -39,14 +50,16 @@ public class ItemPickUp : MonoBehaviour
     //recreate visually picking up (destruction)
     private void OnTriggerStay2D(Collider2D collision)
     {
+        isTriggerStayActivated = true;
         //check for instruction done
-        if (isKeyPressed)
+       /* if (isKeyPressed)
         {
+
             Debug.Log(" 'E' pressed success");
             ItemManager.AddToInventory(Item);
             Destroy(gameObject);
             Debug.Log("Item destroyed");
-        }
+        } */
     }
 
     //switch off destruction

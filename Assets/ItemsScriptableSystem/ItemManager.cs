@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
-    public ItemsData Item;
+    private ItemsData Item;
     
     //ui panel for the menu
     public GameObject InventoryVisuals;
@@ -40,6 +40,14 @@ public class ItemManager : MonoBehaviour
                 Time.timeScale = 0;
                 InventoryVisuals.SetActive(true);
                 menuActivated = true;
+            }
+        }
+
+        if (!menuActivated)
+        {
+            for (int i = 0; i < Slot.Length; i++)
+            {
+                Slot[i].HoverPanel.gameObject.SetActive(false);
             }
         }
     }

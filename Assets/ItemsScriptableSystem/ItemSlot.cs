@@ -14,7 +14,8 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     //  ITEM DATA
 
-    /*[SerializeField]*/ private string SlotName = "Default Item Slot";
+    /*[SerializeField]*/
+    private string SlotName = "Default Item Slot";
     public string slotName
     {
         get { return SlotName; }
@@ -73,7 +74,7 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         // HoverPanel.SetActive(true);
         HoverPanel.text = this.slotDescription;
         HoverPanel.gameObject.SetActive(true); 
-        Debug.Log(this.slotDescription);
+       // Debug.Log(this.slotDescription);
     }
 
     public void OnPointerExit(PointerEventData eventData)
