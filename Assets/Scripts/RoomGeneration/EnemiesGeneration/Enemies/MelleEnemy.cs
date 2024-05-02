@@ -1,21 +1,17 @@
-using Codice.Client.Common;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class EnemyA : MonoBehaviour, Enemy
+public class MelleEnemy : MonoBehaviour, Enemy
 {
     // TODO: will be changed
-    [SerializeField] private string enemyName = "EnemyA";
-
-    public float angle = 0;
+    [SerializeField] private string enemyName = "MelleEnemy";
 
     public string EnemyName
     {
-        get => enemyName; 
+        get => enemyName;
         set => enemyName = value;
     }
+
+    public float angle = 0;
 
     /// <summary>
     /// hz cho napisat'

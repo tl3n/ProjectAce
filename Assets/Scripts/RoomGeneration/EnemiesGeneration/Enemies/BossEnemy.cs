@@ -1,16 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class EnemyB : MonoBehaviour, Enemy
+public class BossEnemy : MonoBehaviour, Enemy
 {
-    [SerializeField] private string enemyName = "EnemyB";
-    
+    [SerializeField] private string enemyName = "BossEnemy";
 
     public string EnemyName
     {
-        get => enemyName; 
+        get => enemyName;
         set => enemyName = value;
     }
 
@@ -26,6 +22,7 @@ public class EnemyB : MonoBehaviour, Enemy
     {
         // any unique logic to this enemy
         gameObject.name = enemyName;
+        //gameObject.tag = enemyTag;
         particleSystem = GetComponentInChildren<ParticleSystem>();
         particleSystem?.Stop();
         particleSystem?.Play();

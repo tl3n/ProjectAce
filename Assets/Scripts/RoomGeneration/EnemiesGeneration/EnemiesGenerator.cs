@@ -1,25 +1,30 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using DungeonGeneration;
-using UnityEngine.UIElements;
-using static PlasticGui.LaunchDiffParameters;
 
 namespace RoomGeneration
 {
     public class EnemiesGenerator : MonoBehaviour
     {
         /// <summary>
-        /// Fabric for enemyA
+        /// Fabric for melle enemy
         /// </summary>
-        [SerializeField] private EnemyACreator enemyACreator;
+        [SerializeField] private MelleEnemyCreator melleEnemyCreator;
 
         /// <summary>
-        /// Fabric for enemyB
+        /// Fabric for ranger enemy
         /// </summary>
-        [SerializeField] private EnemyBCreator enemyBCreator;
+        [SerializeField] private RangerEnemyCreator rangerEnemyCreator;
+
+        /// <summary>
+        /// Fabric for summoner enemy
+        /// </summary>
+        [SerializeField] private SummonerEnemyCreator summonerEnemyCreator;
+
+        /// <summary>
+        /// Fabric for boss enemy
+        /// </summary>
+        [SerializeField] private BossEnemyCreator bossEnemyCreator;
 
         /// <summary>
         /// Grid of the generated rooms
@@ -64,7 +69,7 @@ namespace RoomGeneration
 
             Enemy enemy;
 
-            enemy = enemyACreator.GetEnemy(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
+            enemy = melleEnemyCreator.GetEnemy(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
 
             Debug.Log(enemy);
 
@@ -73,7 +78,7 @@ namespace RoomGeneration
             enemies.Add(enemy);
 
 
-            enemyBCreator.GetEnemy(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
+            bossEnemyCreator.GetEnemy(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
         }
 
         private void Update()
@@ -81,7 +86,7 @@ namespace RoomGeneration
             // TODO: just testing, must be deleted
             foreach (Enemy enemy in enemies)
             {
-                EnemyA enemyA = enemy as EnemyA;
+                MelleEnemy enemyA = enemy as MelleEnemy;
 
                 //GameObject enemyObject = enemyA.enemyObject;
 
@@ -100,7 +105,7 @@ namespace RoomGeneration
                 // оновлює кутову позицію ворога на колі
                 enemyA.angle += Time.deltaTime; // змінюється з часом, щоб ворог рухався
 
-                //EnemyA enemyA = enemy as EnemyA;
+                //MelleEnemy enemyA = enemy as MelleEnemy;
                 //enemyA.enemyObject.SetActive(false);
             }
         }

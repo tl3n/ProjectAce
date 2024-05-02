@@ -581,8 +581,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1755281007}
   - component: {fileID: 1755281006}
-  - component: {fileID: 1755281008}
   - component: {fileID: 1755281009}
+  - component: {fileID: 1755281011}
+  - component: {fileID: 1755281010}
+  - component: {fileID: 1755281008}
   m_Layer: 0
   m_Name: EnemiesGenerator
   m_TagString: Untagged
@@ -602,10 +604,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8acbd09171992bb4a839c770d6387d58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyACreator: {fileID: 1755281008}
-  enemyBCreator: {fileID: 1755281009}
-  enemyPrefab: {fileID: 4802908362421405244, guid: eb89a2d2df9f2374896a8cd771dc09db, type: 3}
-  grid: {fileID: 206631787}
+  melleEnemyCreator: {fileID: 1755281009}
+  rangerEnemyCreator: {fileID: 1755281011}
+  summonerEnemyCreator: {fileID: 1755281010}
+  bossEnemyCreator: {fileID: 1755281008}
+  roomsGrid: {fileID: 206631787}
 --- !u!4 &1755281007
 Transform:
   m_ObjectHideFlags: 0
@@ -630,10 +633,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1755281005}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b85206fb3de640c41824df2a07858426, type: 3}
+  m_Script: {fileID: 11500000, guid: 7cc1ea99482594f4f81eda3cd0fba9b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 7671081901171711625, guid: 7b9e0a8fff22fa34cad08e1cd084d081, type: 3}
+  enemyPrefab: {fileID: 3259691087095469935, guid: a2e8cb5a334b81b45852f749308c3de6, type: 3}
 --- !u!114 &1755281009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -643,16 +646,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 1755281005}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cc1ea99482594f4f81eda3cd0fba9b3, type: 3}
+  m_Script: {fileID: 11500000, guid: b85206fb3de640c41824df2a07858426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 3259691087095469935, guid: a2e8cb5a334b81b45852f749308c3de6, type: 3}
+  enemyPrefab: {fileID: 7671081901171711625, guid: 7b9e0a8fff22fa34cad08e1cd084d081, type: 3}
+--- !u!114 &1755281010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755281005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed73d97be3ec02e49b381a1b46ee2761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 0}
+--- !u!114 &1755281011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755281005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05c9a37bf48879d4a9c251c2b899a0d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 25627167}
   - {fileID: 1362166588}
-  - {fileID: 1422039462}
   - {fileID: 206631787}
+  - {fileID: 1422039462}
   - {fileID: 1755281007}

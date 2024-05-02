@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -4017463106021880279}
   m_Layer: 0
   m_Name: Enemy B
-  m_TagString: Untagged
+  m_TagString: EnemyB
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: EnemyB
-  enemyPrefab: {fileID: 0}
 --- !u!61 &6333671585455870000
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -92,7 +91,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 1
+  m_EdgeRadius: 0
 --- !u!212 &-4017463106021880279
 SpriteRenderer:
   m_ObjectHideFlags: 0

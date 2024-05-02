@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3686526734681597435}
   m_Layer: 0
   m_Name: Enemy A
-  m_TagString: Untagged
+  m_TagString: EnemyA
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: EnemyA
-  enemyPrefab: {fileID: 4802908362421405244, guid: eb89a2d2df9f2374896a8cd771dc09db, type: 3}
+  angle: 0
 --- !u!212 &15249399700247693
 SpriteRenderer:
   m_ObjectHideFlags: 0
