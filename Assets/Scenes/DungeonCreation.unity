@@ -502,6 +502,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1422039462}
   - component: {fileID: 1422039463}
+  - component: {fileID: 1422039465}
+  - component: {fileID: 1422039464}
   m_Layer: 0
   m_Name: DungeonGenerator
   m_TagString: Untagged
@@ -536,33 +538,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d6509bfffdd5314a8bd5bff2e64cec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layoutGenerator: {fileID: 1507339005}
-  roomGenerator: {fileID: 1699522872}
+  layoutGenerator: {fileID: 1422039465}
+  roomGenerator: {fileID: 1422039464}
   enemiesGenerator: {fileID: 1755281006}
---- !u!1 &1507339004
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1507339006}
-  - component: {fileID: 1507339005}
-  m_Layer: 0
-  m_Name: LayoutGenerator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1507339005
+--- !u!114 &1422039464
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1507339004}
+  m_GameObject: {fileID: 1422039460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36ede8002fc30b2458cce3a81d6426c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomPrefab: {fileID: 1825769324793054950, guid: 1e19b7f86e9a4e644828bd44edd130e5, type: 3}
+--- !u!114 &1422039465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422039460}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3af83a966a202d4798db8faac4009b2, type: 3}
@@ -573,66 +571,6 @@ MonoBehaviour:
   bossRoomY: 0
   treasureRoomX: 0
   treasureRoomY: 0
---- !u!4 &1507339006
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1507339004}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1699522871
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1699522873}
-  - component: {fileID: 1699522872}
-  m_Layer: 0
-  m_Name: RoomGenerator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1699522872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1699522871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36ede8002fc30b2458cce3a81d6426c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roomPrefab: {fileID: 1825769324793054950, guid: 1e19b7f86e9a4e644828bd44edd130e5, type: 3}
---- !u!4 &1699522873
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1699522871}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1755281005
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,7 +654,5 @@ SceneRoots:
   - {fileID: 25627167}
   - {fileID: 1362166588}
   - {fileID: 1422039462}
-  - {fileID: 1507339006}
-  - {fileID: 1699522873}
   - {fileID: 206631787}
   - {fileID: 1755281007}
