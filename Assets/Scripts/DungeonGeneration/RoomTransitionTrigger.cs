@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class RoomTransitionTrigger : MonoBehaviour
 {
+    /// <summary>
+    /// Difference of new camera position
+    /// </summary>
     public Vector3 newCameraPosition;
+
+    /// <summary>
+    /// Difgerence of new player position
+    /// </summary>
     public Vector3 newPlayerPosition;
 
     private CameraController cameraController;
@@ -14,6 +21,10 @@ public class RoomTransitionTrigger : MonoBehaviour
         cameraController = Camera.main.GetComponent<CameraController>();
     }
 
+    /// <summary>
+    /// Moves camera if player is going to next room 
+    /// </summary>
+    /// <param name="other">Object that collides with trigger</param>
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))

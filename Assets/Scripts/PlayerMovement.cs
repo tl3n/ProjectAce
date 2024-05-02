@@ -6,24 +6,29 @@ using Input = UnityEngine.Input;
 
 public class Collisions : MonoBehaviour
 {
+    /// <summary>
+    /// Rigidbody of the player
+    /// </summary>
     private Rigidbody2D PlayerRigidbody;
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Rigid body initialization of the player sprite for the movement realization convenience
+    /// </summary>
     private void Start()
     {
-        //Rigid body initialization of the player sprite
-        //for the movement realization convenience
         PlayerRigidbody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Response to keystrokes
+    /// </summary>
     private void Update()
     {
-        //left and right joysticklike movement
+        // left and right joysticklike movement
         float dirX = Input.GetAxis("Horizontal");
         PlayerRigidbody.velocity = new Vector2(dirX * 7f, PlayerRigidbody.velocity.y);
 
-        //up and down joysticklike movement
+        // up and down joysticklike movement
         float dirY = Input.GetAxis("Vertical");
         PlayerRigidbody.velocity = new Vector2(PlayerRigidbody.velocity.x, dirY * 7f);
     }

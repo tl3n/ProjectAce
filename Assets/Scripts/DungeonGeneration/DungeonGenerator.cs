@@ -19,6 +19,9 @@ namespace DungeonGeneration
         /// </summary>
         private int level = 1;
         
+        /// <summary>
+        /// Start all generations
+        /// </summary>
         private void Start()
         {
             List<Room> roomsList = layoutGenerator.Generate(level);

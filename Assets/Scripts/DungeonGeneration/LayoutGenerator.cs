@@ -1,4 +1,6 @@
+using log4net.Core;
 using System;
+using System.Buffers.Text;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditorInternal;
@@ -63,7 +65,7 @@ namespace DungeonGeneration
         /// <summary>
         /// The current level of the dungeon
         /// </summary>
-        private int level = 1;
+        private int dungeonLevel = 1;
         
         /// <summary>
         /// Number of rooms to generate
@@ -97,13 +99,15 @@ namespace DungeonGeneration
         public int treasureRoomX;
         public int treasureRoomY;
         
-        /**
-         * \brief Generating dungeon layout based on matrix 
-         */
+        /// <summary>
+        /// Generating dungeon layout based on matrix
+        /// </summary>
+        /// <param name="dungeonLevel">Level of the dungeon</param>
+        /// <returns>List of the generated rooms</returns>
         public List<Room> Generate(int dungeonLevel)
         {
-            level = dungeonLevel;
-            numberOfRoomsToGenerate = Random.Range(0, 2) + 5 + level * 2;
+            this.dungeonLevel = dungeonLevel;
+            numberOfRoomsToGenerate = Random.Range(0, 2) + 5 + this.dungeonLevel * 2;
 
             List<Room> roomsList = new List<Room>();
             while (true)
@@ -159,10 +163,10 @@ namespace DungeonGeneration
                 return roomsList;
             }
         }
-        
-        /**
-         * \brief Setting all values to the default
-         */
+
+        /// <summary>
+        /// Setting all values to the default
+        /// </summary>
         private void Reset()
         {
             for (int i = 0; i < 9; ++i)
@@ -180,6 +184,10 @@ namespace DungeonGeneration
             generatedRooms.Add((StartRoomX, StartRoomY));
         }
 
+        /// <summary>
+        /// Choosing neighbours of the selected room to spawn
+        /// </summary>
+        /// <param name="position">Position of the selected room</param>
         private void FillLayout((int, int) position)
         {
             List<Side> sidesWithNeighbour = new List<Side>();
@@ -229,13 +237,13 @@ namespace DungeonGeneration
                 FillLayout(neighbourPosition);
             }
         }
-        
-        /**
-         * \brief Calculating neighbour position for the cell in the layout matrix based on side you provide
-         * \param position Indexes in the layout matrix of the cell you want to find neighbour position for
-         * \param side Side of the neighbour which position you want to calculate
-         * \return Tuple of the indexes of the neighbour cell
-         */
+
+        /// <summary>
+        /// Calculating neighbour position for the cell in the layout matrix based on side you provide
+        /// </summary>
+        /// <param name="position">Indexes in the layout matrix of the cell you want to find neighbour position for</param>
+        /// <param name="side">Side of the neighbour which position you want to calculate</param>
+        /// <returns>Tuple of the indexes of the neighbour cell</returns>
         private (int, int) FindNeighbourPosition((int, int) position, Side side)
         {
             int x = position.Item1;
@@ -263,12 +271,12 @@ namespace DungeonGeneration
 
             return neighbourPosition;
         }
-        
-        /**
-         * \brief Counting neighbours of the cell with provided position in the layout matrix
-         * \param currentPosition Tuple of indexes of the cell in the layout matrix
-         * \return Number of neighbours
-         */
+
+        /// <summary>
+        /// Counting neighbours of the cell with provided position in the layout matrix
+        /// </summary>
+        /// <param name="cell">Tuple of indexes of the cell in the layout matrix</param>
+        /// <returns>Number of neighbours</returns>
         private List<Side> FindNeighboringSides((int, int) cell)
         {
             List<Side> sides = new List<Side>();
@@ -294,20 +302,20 @@ namespace DungeonGeneration
 
             return sides;
         }
-        
-        /**
-         * \brief Checking if cell with provided position in the layout matrix has only one neighbour
-         * \param currentPosition Tuple of indexes of the cell in the layout matrix
-         * \return "True" if cell has only one neighbour, "False" otherwise
-         */
+
+        /// <summary>
+        /// Checking if cell with provided position in the layout matrix has only one neighbour
+        /// </summary>
+        /// <param name="currentPosition">Tuple of indexes of the cell in the layout matrix</param>
+        /// <returns>"True" if cell has only one neighbour, "False" otherwise</returns>
         private bool HasOnlyOneNeighbour((int, int) currentPosition)
         {
             return FindNeighboringSides(currentPosition).Count == 1;
         }
-        
-        /**
-         * \brief Finding end cells and adding them to the generatedEndCells list
-         */
+
+        /// <summary>
+        /// Finding end cells and adding them to the generatedEndCells list
+        /// </summary>
         private void FindEndRooms()
         {
             foreach ((int, int) cell in generatedRooms)
@@ -319,11 +327,15 @@ namespace DungeonGeneration
             }
         }
 
+        /// <summary>
+        /// Choosing difficulty of the room
+        /// </summary>
+        /// <returns>Room difficulty</returns>
         private int FindRoomDifficulty()
         {
             int difficulty = 2;
 
-            switch (level)
+            switch (dungeonLevel) // Level of the rooms depends on level of the dungeon
             {
                 case 1:
                     difficulty = Random.Range(2, 4); // Selecting easy and medium
@@ -338,10 +350,10 @@ namespace DungeonGeneration
             
             return difficulty;
         }
-        
-        /**
-         * \brief Selects random EndRoom from the list, that is not already in use, and marks it as the TreasureRoom  
-         */
+
+        /// <summary>
+        /// Selects random EndRoom from the list, that is not already in use, and marks it as the TreasureRoom 
+        /// </summary>
         private void FindTreasureRoom()
         {
             while (true)
@@ -359,10 +371,10 @@ namespace DungeonGeneration
                 }
             }
         }
-        
-        /**
-         * \brief Finds farthest EndRoom from the starting position and then marks it as the BossRoom
-         */
+
+        /// <summary>
+        /// Finds farthest EndRoom from the starting position and then marks it as the BossRoom
+        /// </summary>
         private void FindBossRoom()
         {
             int maxDistance = 0;

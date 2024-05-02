@@ -11,6 +11,9 @@ namespace DungeonGeneration
         Left
     }
 
+    /// <summary>
+    /// Type of the room
+    /// </summary>
     public enum RoomType
     {
         Start = 1,

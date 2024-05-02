@@ -11,16 +11,30 @@ namespace RoomGeneration
 {
     public class EnemiesGenerator : MonoBehaviour
     {
+        /// <summary>
+        /// Fabric for enemyA
+        /// </summary>
         [SerializeField] private EnemyACreator enemyACreator;
+
+        /// <summary>
+        /// Fabric for enemyB
+        /// </summary>
         [SerializeField] private EnemyBCreator enemyBCreator;
 
-        public GameObject enemyPrefab;
-        public Transform grid;
+        /// <summary>
+        /// Grid of the generated rooms
+        /// </summary>
+        public Transform roomsGrid;
 
+        /// <summary>
+        /// List of the generated enemies
+        /// </summary>
         private List<Enemy> enemies = new List<Enemy>();
 
-        private int difX = 0, difY = 0;
-
+        /// <summary>
+        /// Generation of enemies for each room from grid 
+        /// </summary>
+        /// <param name="roomsList">List of rooms of the generated dungeon</param>
         public void Generate(List<Room> roomsList)
         {
             // for each room
@@ -33,21 +47,24 @@ namespace RoomGeneration
             //CreateEnemies(roomsList[roomsList.Count - 1].Type, roomsList.Count);
         }
 
-        private void CreateEnemies(RoomType roomType, int i) 
+        /// <summary>
+        /// Generation of enemies for selected room
+        /// </summary>
+        /// <param name="roomType">Type of the room</param>
+        /// <param name="roomNum">Number of the room in grid</param>
+        private void CreateEnemies(RoomType roomType, int roomNum) 
         {
+            // TODO: just testing, must be edited
+            int difX = 0, difY = 0;
+
             if (roomType == RoomType.Start)
                 difX = difY = 2;
             else
                 difX = difY = 0;
 
-            //Vector2 position = new Vector2(grid.GetChild(i).position.x + difX, grid.GetChild(i).position.y + difY);
-            //GameObject newObject = Instantiate(enemyPrefab, position, Quaternion.identity, grid.GetChild(i));
-
-            //Debug.Log(grid.GetChild(i));
-
             Enemy enemy;
 
-            enemy = enemyACreator.GetEnemy(grid.GetChild(i), grid.GetChild(i).position, difX, difY);
+            enemy = enemyACreator.GetEnemy(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
 
             Debug.Log(enemy);
 
@@ -56,11 +73,12 @@ namespace RoomGeneration
             enemies.Add(enemy);
 
 
-            enemyBCreator.GetEnemy(grid.GetChild(i), grid.GetChild(i).position, difX, difY);
+            enemyBCreator.GetEnemy(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
         }
 
         private void Update()
         {
+            // TODO: just testing, must be deleted
             foreach (Enemy enemy in enemies)
             {
                 EnemyA enemyA = enemy as EnemyA;

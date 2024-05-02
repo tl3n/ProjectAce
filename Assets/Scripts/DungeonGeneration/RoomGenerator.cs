@@ -21,13 +21,15 @@ namespace DungeonGeneration
         /// Prefab for a room
         /// </summary>
         public GameObject roomPrefab;
-        
-        /**
-         * \brief Instantiating room prefabs based on the matrix layout
-         */
+
+        /// <summary>
+        /// Instantiating room prefabs based on the matrix layout
+        /// </summary>
+        /// <param name="roomsList">List of the generated rooms</param>
         public void Generate(List<Room> roomsList)
         {
             // TODO: refactor this shit to the factory pattern or something idk
+            // TODO: idi nahui
             foreach (var room in roomsList)
             {
                 RoomType type = room.Type;
@@ -63,9 +65,16 @@ namespace DungeonGeneration
             }
         }
 
+        /// <summary>
+        /// Activation of doors
+        /// </summary>
+        /// If there is neighbour on the side activate door and deactivate block
+        /// <param name="room">Selected room</param>
+        /// <param name="neighboringSides">List of the room's neighbours</param>
         private void ActivateDoors(GameObject room, List<Side> neighboringSides)
         {
             // TODO: Vasia cho ty tvorish, why initialization was inside of foreach?????
+            // TODO: deleting instead of activation
             Transform topDoor = room.transform.Find("TopDoor");
             Transform topBlock = room.transform.Find("TopBlock");
 
