@@ -12,7 +12,7 @@ public class ItemManager : MonoBehaviour
 
    // private List<ItemSlot> Inventory;
     //choose between array and list
-    public ItemSlot[] Slot; 
+    public ItemSlot[] Slot;
 
     void Awake()
     {
@@ -51,7 +51,7 @@ public class ItemManager : MonoBehaviour
             }
         }
     }
-    public void AddToInventory(ItemsData Item)
+    public bool AddToInventory(ItemsData Item)
     {
         //addition logic
         //Debug.Log(" >>> OBTAINED:" + Item.Name + " " + Item.Description + " " + Item.Price);
@@ -61,11 +61,10 @@ public class ItemManager : MonoBehaviour
             if (Slot[i].full == false)
             {
                 Slot[i].AddItem(Item);
-                return;
+                return true;
             }
         }
-
-        /*Inventory.Add(setArtifactSlot());*/
+        return false;
     }
     private void RemoveFromInventory(ItemsData Item)
     {

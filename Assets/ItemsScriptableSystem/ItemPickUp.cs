@@ -29,10 +29,13 @@ public class ItemPickUp : MonoBehaviour
 
         if (isTriggerStayActivated)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && ItemManager.AddToInventory(Item) == true)
             {
-                ItemManager.AddToInventory(Item);
                 Destroy(gameObject);
+            }
+            else if (Input.GetKeyDown(KeyCode.E) && ItemManager.AddToInventory(Item) == false)
+            {
+                Debug.Log("Invertory full!");
             }
         }
     }
@@ -51,15 +54,6 @@ public class ItemPickUp : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         isTriggerStayActivated = true;
-        //check for instruction done
-       /* if (isKeyPressed)
-        {
-
-            Debug.Log(" 'E' pressed success");
-            ItemManager.AddToInventory(Item);
-            Destroy(gameObject);
-            Debug.Log("Item destroyed");
-        } */
     }
 
     //switch off destruction
