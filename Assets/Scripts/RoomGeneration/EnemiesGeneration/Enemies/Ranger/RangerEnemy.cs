@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class RangerEnemy : MonoBehaviour, Enemy
+public abstract class RangerEnemy : MonoBehaviour, IEnemy
 {
     [SerializeField] protected string enemyName;
 

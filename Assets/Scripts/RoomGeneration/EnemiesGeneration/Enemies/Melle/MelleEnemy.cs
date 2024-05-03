@@ -1,7 +1,6 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public abstract class MelleEnemy : MonoBehaviour, Enemy
+public abstract class MelleEnemy : MonoBehaviour, IEnemy
 {
     [SerializeField] protected string enemyName;
 

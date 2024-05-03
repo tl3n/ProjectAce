@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace RoomGeneration
 {
-    public class SyringeCreator : EnemiesCreator
+    public class SyringeCreator : RangerEnemiesCreator
     {
         /// <summary>
         /// Prefab of the syringe
@@ -17,7 +17,7 @@ namespace RoomGeneration
         /// <param name="xPos">X-coordinate of the enemy</param>
         /// <param name="yPos">X-coordinate of the enemy</param>
         /// <returns>New syringe</returns>
-        public override Enemy GetEnemy(Transform room, Vector2 scenePosition, int xPos, int yPos)
+        public override RangerEnemy GetEnemy(Transform room, Vector2 scenePosition, int xPos, int yPos)
         {
             Vector2 position = new Vector2(scenePosition.x + xPos, scenePosition.y + yPos);
 

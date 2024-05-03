@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class BossEnemy : MonoBehaviour, Enemy
+public abstract class BossEnemy : MonoBehaviour, IEnemy
 {
     [SerializeField] protected string enemyName;
 

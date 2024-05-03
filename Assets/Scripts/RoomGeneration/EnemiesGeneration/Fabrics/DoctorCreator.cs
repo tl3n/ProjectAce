@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace RoomGeneration
 {
-    public class DoctorCreator : EnemiesCreator
+    public class DoctorCreator : MelleEnemiesCreator
     {
         /// <summary>
         /// Prefab of the enemyA
@@ -17,7 +17,7 @@ namespace RoomGeneration
         /// <param name="xPos">X-coordinate of the enemy</param>
         /// <param name="yPos">X-coordinate of the enemy</param>
         /// <returns>New enemyA</returns>
-        public override Enemy GetEnemy(Transform room, Vector2 scenePosition, int xPos, int yPos)
+        public override MelleEnemy GetEnemy(Transform room, Vector2 scenePosition, int xPos, int yPos)
         {
             Vector2 position = new Vector2(scenePosition.x + xPos - 2, scenePosition.y + yPos - 2); // TODO: delete -2 !!!!!
 
