@@ -10,7 +10,6 @@ public class ItemPickUp : MonoBehaviour
     //text instruction game object for instructions for the player
     [SerializeField] public GameObject PickUpText;
     //check for instruction done
-    private bool isKeyPressed = false;
     private bool isTriggerStayActivated = false;
     //inventory component
     private ItemManager ItemManager;

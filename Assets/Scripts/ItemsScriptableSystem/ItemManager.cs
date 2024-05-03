@@ -66,10 +66,21 @@ public class ItemManager : MonoBehaviour
         }
         return false;
     }
-    private void RemoveFromInventory(ItemsData Item)
+    public ItemSlot itemSlot;
+
+    public void RemoveItemFromSlot(ItemsData Item)
     {
-        //removal logic
-        //Inventory.Remove(setArtifactSlot());
+        for (int i = 0; i < Slot.Length; i++)
+        {
+            if (Slot[i].name == Item.Name && Slot[i].full != false)
+            {
+                Slot[i].RemoveItem();
+            }
+            else
+            {
+                Debug.LogWarning("ItemSlot reference is empty");
+            }
+        }
     }
 
     private ItemSlot setArtifactSlot()

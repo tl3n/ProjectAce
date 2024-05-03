@@ -69,6 +69,20 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         SlotImage.sprite = Item.icon;
     }
 
+    public void RemoveItem()
+    {
+        this.SlotName = "Default Item Slot";
+        this.SlotDescription = "None";
+        this.SlotItemSprite = null;
+        this.Quantity = 1;
+        this.isFull = false;
+
+        QuantityText.text = "";
+        QuantityText.enabled = false;
+
+        SlotImage.sprite = null;
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         // HoverPanel.SetActive(true);
