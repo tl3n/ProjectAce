@@ -604,9 +604,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8acbd09171992bb4a839c770d6387d58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  melleEnemyCreator: {fileID: 1755281009}
-  rangerEnemyCreator: {fileID: 1755281011}
-  summonerEnemyCreator: {fileID: 1755281010}
+  doctorCreator: {fileID: 1755281009}
+  syringeCreator: {fileID: 1755281011}
+  pharmacistCreator: {fileID: 0}
   bossEnemyCreator: {fileID: 1755281008}
   roomsGrid: {fileID: 206631787}
 --- !u!4 &1755281007
@@ -675,7 +675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c9a37bf48879d4a9c251c2b899a0d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 0}
+  enemyPrefab: {fileID: 1987782611519107015, guid: b75d36688ae2c594b94a5a3571f6dc5a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

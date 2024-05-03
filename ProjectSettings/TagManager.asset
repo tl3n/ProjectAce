@@ -7,8 +7,10 @@ TagManager:
   - RoomBorders
   - SpawnPoint
   - Grid
-  - EnemyA
-  - EnemyB
+  - MelleEnemy
+  - RangerEnemy
+  - SummonerEnemy
+  - BossEnemy
   layers:
   - Default
   - TransparentFX

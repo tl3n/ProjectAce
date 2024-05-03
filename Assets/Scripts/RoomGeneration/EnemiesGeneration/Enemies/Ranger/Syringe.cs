@@ -1,19 +1,11 @@
 using UnityEngine;
 
-public class RangerEnemy : MonoBehaviour
+public class Syringe : RangerEnemy
 {
-    [SerializeField] private string enemyName = "RangerEnemy";
-
-    public string EnemyName
+    public Syringe()
     {
-        get => enemyName;
-        set => enemyName = value;
+        enemyName = "Syringe";
     }
-
-    /// <summary>
-    /// hz cho napisat'
-    /// </summary>
-    private ParticleSystem particleSystem;
 
     /// <summary>
     /// Initialization of the enemy
@@ -22,7 +14,6 @@ public class RangerEnemy : MonoBehaviour
     {
         // any unique logic to this enemy
         gameObject.name = enemyName;
-        //gameObject.tag = enemyTag;
         particleSystem = GetComponentInChildren<ParticleSystem>();
         particleSystem?.Stop();
         particleSystem?.Play();

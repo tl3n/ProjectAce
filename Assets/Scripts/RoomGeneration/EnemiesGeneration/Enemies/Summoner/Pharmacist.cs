@@ -1,17 +1,14 @@
 using UnityEngine;
 
-public class MelleEnemy : MonoBehaviour, Enemy
+public class Pharmacist : SummonerEnemy
 {
-    // TODO: will be changed
-    [SerializeField] private string enemyName = "MelleEnemy";
+    [SerializeField] private string enemyName = "Pharmacist";
 
     public string EnemyName
     {
         get => enemyName;
         set => enemyName = value;
     }
-
-    public float angle = 0;
 
     /// <summary>
     /// hz cho napisat'

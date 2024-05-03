@@ -9,22 +9,22 @@ namespace RoomGeneration
         /// <summary>
         /// Fabric for melle enemy
         /// </summary>
-        [SerializeField] private MelleEnemyCreator melleEnemyCreator;
+        [SerializeField] private DoctorCreator doctorCreator;
 
         /// <summary>
         /// Fabric for ranger enemy
         /// </summary>
-        [SerializeField] private RangerEnemyCreator rangerEnemyCreator;
+        [SerializeField] private SyringeCreator syringeCreator;
 
         /// <summary>
         /// Fabric for summoner enemy
         /// </summary>
-        [SerializeField] private SummonerEnemyCreator summonerEnemyCreator;
+        [SerializeField] private PharmacistCreator pharmacistCreator;
 
         /// <summary>
         /// Fabric for boss enemy
         /// </summary>
-        [SerializeField] private BossEnemyCreator bossEnemyCreator;
+        [SerializeField] private HeadDoctorCreator headDoctorCreator;
 
         /// <summary>
         /// Grid of the generated rooms
@@ -69,7 +69,7 @@ namespace RoomGeneration
 
             Enemy enemy;
 
-            enemy = melleEnemyCreator.GetEnemy(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
+            enemy = doctorCreator.GetEnemy(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
 
             Debug.Log(enemy);
 
@@ -78,7 +78,7 @@ namespace RoomGeneration
             enemies.Add(enemy);
 
 
-            bossEnemyCreator.GetEnemy(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
+            syringeCreator.GetEnemy(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
         }
 
         private void Update()
@@ -86,7 +86,7 @@ namespace RoomGeneration
             // TODO: just testing, must be deleted
             foreach (Enemy enemy in enemies)
             {
-                MelleEnemy enemyA = enemy as MelleEnemy;
+                Doctor enemyA = enemy as Doctor;
 
                 //GameObject enemyObject = enemyA.enemyObject;
 
@@ -105,7 +105,7 @@ namespace RoomGeneration
                 // оновлює кутову позицію ворога на колі
                 enemyA.angle += Time.deltaTime; // змінюється з часом, щоб ворог рухався
 
-                //MelleEnemy enemyA = enemy as MelleEnemy;
+                //Doctor enemyA = enemy as Doctor;
                 //enemyA.enemyObject.SetActive(false);
             }
         }

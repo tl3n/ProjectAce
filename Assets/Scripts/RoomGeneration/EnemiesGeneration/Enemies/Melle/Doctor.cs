@@ -1,19 +1,13 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class BossEnemy : MonoBehaviour, Enemy
+public class Doctor : MelleEnemy
 {
-    [SerializeField] private string enemyName = "BossEnemy";
-
-    public string EnemyName
+    public Doctor()
     {
-        get => enemyName;
-        set => enemyName = value;
+        enemyName = "Doctor";
+        angle = 0;
     }
-
-    /// <summary>
-    /// hz cho napisat'
-    /// </summary>
-    private ParticleSystem particleSystem;
 
     /// <summary>
     /// Initialization of the enemy
@@ -22,7 +16,6 @@ public class BossEnemy : MonoBehaviour, Enemy
     {
         // any unique logic to this enemy
         gameObject.name = enemyName;
-        //gameObject.tag = enemyTag;
         particleSystem = GetComponentInChildren<ParticleSystem>();
         particleSystem?.Stop();
         particleSystem?.Play();

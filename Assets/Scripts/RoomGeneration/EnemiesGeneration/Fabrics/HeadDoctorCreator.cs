@@ -2,12 +2,12 @@ using UnityEngine;
 
 namespace RoomGeneration
 {
-    public class SummonerEnemyCreator : EnemiesCreator
+    public class HeadDoctorCreator : EnemiesCreator
     {
         /// <summary>
         /// Prefab of the enemyB
         /// </summary>
-        [SerializeField] private SummonerEnemy enemyPrefab;
+        [SerializeField] private HeadDoctor enemyPrefab;
 
         /// <summary>
         /// Creates a new enemyB
@@ -23,7 +23,7 @@ namespace RoomGeneration
 
             // create a Prefab instance and get the product component
             GameObject instance = Instantiate(enemyPrefab.gameObject, position, Quaternion.identity, room);
-            BossEnemy newEnemy = instance.GetComponent<BossEnemy>();
+            HeadDoctor newEnemy = instance.GetComponent<HeadDoctor>();
             // each enemy contains its own logic
             newEnemy.Initialize();
             return newEnemy;

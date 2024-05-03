@@ -1,19 +1,11 @@
 using UnityEngine;
 
-public class SummonerEnemy : MonoBehaviour
+public class HeadDoctor : BossEnemy
 {
-    [SerializeField] private string enemyName = "SummonerEnemy";
-
-    public string EnemyName
+    public HeadDoctor()
     {
-        get => enemyName;
-        set => enemyName = value;
+        enemyName = "HeadDoctor";
     }
-
-    /// <summary>
-    /// hz cho napisat'
-    /// </summary>
-    private ParticleSystem particleSystem;
 
     /// <summary>
     /// Initialization of the enemy
