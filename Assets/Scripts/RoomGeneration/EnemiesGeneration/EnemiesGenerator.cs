@@ -4,33 +4,8 @@ using DungeonGeneration;
 
 namespace RoomGeneration
 {
-    public class EnemiesGenerator : MonoBehaviour
+    public class EnemiesGenerator : EnemiesFactory
     {
-        /// <summary>
-        /// Fabric for melle enemy
-        /// </summary>
-        [SerializeField] private DoctorCreator doctorCreator;
-
-        /// <summary>
-        /// Fabric for ranger enemy
-        /// </summary>
-        [SerializeField] private SyringeCreator syringeCreator;
-
-        /// <summary>
-        /// Fabric for summoner enemy
-        /// </summary>
-        [SerializeField] private PharmacistCreator pharmacistCreator;
-
-        /// <summary>
-        /// Fabric for boss enemy
-        /// </summary>
-        [SerializeField] private HeadDoctorCreator headDoctorCreator;
-
-        /// <summary>
-        /// Grid of the generated rooms
-        /// </summary>
-        public Transform roomsGrid;
-
         /// <summary>
         /// List of the generated enemies
         /// </summary>
@@ -69,7 +44,7 @@ namespace RoomGeneration
 
             IEnemy enemy;
 
-            enemy = doctorCreator.GetEnemy(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
+            enemy = melleEnemiesCreator.GetEnemy(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
 
             Debug.Log(enemy);
 
@@ -78,7 +53,7 @@ namespace RoomGeneration
             enemies.Add(enemy);
 
 
-            syringeCreator.GetEnemy(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
+            rangerEnemiesCreator.GetEnemy(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
         }
 
         private void Update()

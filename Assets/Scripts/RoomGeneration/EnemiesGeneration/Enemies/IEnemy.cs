@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public interface IEnemy
 {
     public string EnemyName { get; set; }
