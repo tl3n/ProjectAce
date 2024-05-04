@@ -13,6 +13,7 @@ namespace DungeonGeneration
         [SerializeField] private LayoutGenerator layoutGenerator;
         [SerializeField] private RoomGenerator roomGenerator;
         [SerializeField] private Level1EnemiesGenerator enemiesGenerator;
+        [SerializeField] private Level1WeaponsGenerator weaponsGenerator;
 
         /// <summary>
         /// The current level of the dungeon
@@ -27,6 +28,7 @@ namespace DungeonGeneration
             List<Room> roomsList = layoutGenerator.Generate(level);
             roomGenerator.Generate(roomsList);
             enemiesGenerator.Generate(roomsList);
+            weaponsGenerator.Generate(roomsList);
         }
     }
 }
