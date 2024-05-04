@@ -8,9 +8,9 @@ public class Syringe : RangerEnemy
     }
 
     /// <summary>
-    /// Initialization of the enemy
+    /// Initialization of the syringe
     /// </summary>
-    public void Initialize()
+    public override void Initialize()
     {
         // any unique logic to this enemy
         gameObject.name = enemyName;

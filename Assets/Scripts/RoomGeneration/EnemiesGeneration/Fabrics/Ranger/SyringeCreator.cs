@@ -21,7 +21,7 @@ namespace RoomGeneration
         {
             Vector2 position = new Vector2(scenePosition.x + xPos, scenePosition.y + yPos);
 
-            // create a Prefab instance and get the product component
+            // create a Prefab instance and get the syringe component
             GameObject instance = Instantiate(enemyPrefab.gameObject, position, Quaternion.identity, room);
             Syringe newEnemy = instance.GetComponent<Syringe>();
             // each enemy contains its own logic

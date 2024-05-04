@@ -1,24 +1,8 @@
 using UnityEngine;
 
-public abstract class MelleEnemy : MonoBehaviour, IEnemy
+public abstract class MelleEnemy : Enemy
 {
-    [SerializeField] protected string enemyName;
-
-    public string EnemyName
-    {
-        get => enemyName;
-        set => enemyName = value;
-    }
+    // Logic of melle enemy
 
     public float angle;
-
-    /// <summary>
-    /// hz cho napisat'
-    /// </summary>
-    protected ParticleSystem particleSystem;
-
-    /// <summary>
-    /// Initialization of the enemy
-    /// </summary>
-    public void Initialize() { }
 }

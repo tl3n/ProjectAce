@@ -10,9 +10,9 @@ public class Doctor : MelleEnemy
     }
 
     /// <summary>
-    /// Initialization of the enemy
+    /// Initialization of the doctor
     /// </summary>
-    public void Initialize()
+    public override void Initialize()
     {
         // any unique logic to this enemy
         gameObject.name = enemyName;

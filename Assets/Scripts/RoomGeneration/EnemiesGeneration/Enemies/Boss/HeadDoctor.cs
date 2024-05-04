@@ -8,9 +8,9 @@ public class HeadDoctor : BossEnemy
     }
 
     /// <summary>
-    /// Initialization of the enemy
+    /// Initialization of the head doctor
     /// </summary>
-    public void Initialize()
+    public override void Initialize()
     {
         // any unique logic to this enemy
         gameObject.name = enemyName;

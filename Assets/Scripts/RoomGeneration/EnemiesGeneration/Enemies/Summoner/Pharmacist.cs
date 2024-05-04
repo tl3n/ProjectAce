@@ -2,23 +2,15 @@ using UnityEngine;
 
 public class Pharmacist : SummonerEnemy
 {
-    [SerializeField] private string enemyName = "Pharmacist";
-
-    public string EnemyName
+    public Pharmacist()
     {
-        get => enemyName;
-        set => enemyName = value;
+        enemyName = "Pharmacist";
     }
 
     /// <summary>
-    /// hz cho napisat'
+    /// Initialization of the pharmacist
     /// </summary>
-    private ParticleSystem particleSystem;
-
-    /// <summary>
-    /// Initialization of the enemy
-    /// </summary>
-    public void Initialize()
+    public override void Initialize()
     {
         // any unique logic to this enemy
         gameObject.name = enemyName;

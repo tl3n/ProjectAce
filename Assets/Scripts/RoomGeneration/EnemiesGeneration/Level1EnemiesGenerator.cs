@@ -29,7 +29,7 @@ namespace RoomGeneration
         /// <summary>
         /// List of the generated enemies
         /// </summary>
-        private List<IEnemy> enemies = new List<IEnemy>();
+        private List<Enemy> enemies = new List<Enemy>();
 
         /// <summary>
         /// Generation of enemies for each room from grid 
@@ -64,7 +64,7 @@ namespace RoomGeneration
             else
                 difX = difY = 0;
 
-            IEnemy enemy;
+            Enemy enemy;
 
             enemy = melleEnemiesCreator.GetEnemy(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
 
@@ -81,7 +81,7 @@ namespace RoomGeneration
         private void Update()
         {
             // TODO: just testing, must be deleted
-            foreach (IEnemy enemy in enemies)
+            foreach (Enemy enemy in enemies)
             {
                 Doctor enemyA = enemy as Doctor;
 

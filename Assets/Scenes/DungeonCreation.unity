@@ -541,6 +541,7 @@ MonoBehaviour:
   layoutGenerator: {fileID: 1422039465}
   roomGenerator: {fileID: 1422039464}
   enemiesGenerator: {fileID: 1755281006}
+  weaponsGenerator: {fileID: 1793463599}
 --- !u!114 &1422039464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -676,6 +677,96 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1987782611519107015, guid: b75d36688ae2c594b94a5a3571f6dc5a, type: 3}
+--- !u!1 &1793463595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1793463600}
+  - component: {fileID: 1793463599}
+  - component: {fileID: 1793463598}
+  - component: {fileID: 1793463597}
+  - component: {fileID: 1793463596}
+  m_Layer: 0
+  m_Name: WeaponsGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1793463596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793463595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcc8e52deed103a439a1f0fe15b2b57f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponPrefab: {fileID: 0}
+--- !u!114 &1793463597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793463595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72630aebbfcd62e4b887efcbe0518185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponPrefab: {fileID: 0}
+--- !u!114 &1793463598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793463595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3876db2bc3e6187409bd30ca905d1abf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponPrefab: {fileID: 3410236382335610855, guid: 87bb354d5e4063044b7469ef65322f04, type: 3}
+--- !u!114 &1793463599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793463595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 876597c8f7774f64b9beca9b60017068, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomsGrid: {fileID: 206631787}
+  melleWeaponsCreator: {fileID: 1793463598}
+  rangerWeaponsCreator: {fileID: 1793463597}
+  boomerangWeaponsCreator: {fileID: 1793463596}
+--- !u!4 &1793463600
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793463595}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.1932898, y: -0.9778551, z: -0.11506272}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -685,3 +776,4 @@ SceneRoots:
   - {fileID: 206631787}
   - {fileID: 1422039462}
   - {fileID: 1755281007}
+  - {fileID: 1793463600}
