@@ -604,11 +604,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8acbd09171992bb4a839c770d6387d58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doctorCreator: {fileID: 1755281009}
-  syringeCreator: {fileID: 1755281011}
-  pharmacistCreator: {fileID: 0}
-  bossEnemyCreator: {fileID: 1755281008}
   roomsGrid: {fileID: 206631787}
+  melleEnemiesCreator: {fileID: 1755281009}
+  rangerEnemiesCreator: {fileID: 1755281011}
+  summonerEnemiesCreator: {fileID: 1755281010}
+  bossEnemiesCreator: {fileID: 1755281008}
 --- !u!4 &1755281007
 Transform:
   m_ObjectHideFlags: 0

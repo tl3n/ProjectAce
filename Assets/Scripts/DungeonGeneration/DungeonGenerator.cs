@@ -12,7 +12,7 @@ namespace DungeonGeneration
     {
         [SerializeField] private LayoutGenerator layoutGenerator;
         [SerializeField] private RoomGenerator roomGenerator;
-        [SerializeField] private EnemiesGenerator enemiesGenerator;
+        [SerializeField] private Level1EnemiesGenerator enemiesGenerator;
 
         /// <summary>
         /// The current level of the dungeon

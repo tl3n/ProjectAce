@@ -7,26 +7,6 @@ namespace RoomGeneration
     public abstract class EnemiesFactory : MonoBehaviour
     {
         /// <summary>
-        /// Fabric for melle enemy
-        /// </summary>
-        [SerializeField] protected MelleEnemiesCreator melleEnemiesCreator;
-
-        /// <summary>
-        /// Fabric for ranger enemy
-        /// </summary>
-        [SerializeField] protected RangerEnemiesCreator rangerEnemiesCreator;
-
-        /// <summary>
-        /// Fabric for summoner enemy
-        /// </summary>
-        [SerializeField] protected SummonerEnemiesCreator summonerEnemiesCreator;
-
-        /// <summary>
-        /// Fabric for boss enemy
-        /// </summary>
-        [SerializeField] protected BossEnemiesCreator bossEnemiesCreator;
-
-        /// <summary>
         /// Grid of the generated rooms
         /// </summary>
         [SerializeField] protected Transform roomsGrid;

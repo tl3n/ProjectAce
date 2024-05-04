@@ -4,8 +4,28 @@ using DungeonGeneration;
 
 namespace RoomGeneration
 {
-    public class EnemiesGenerator : EnemiesFactory
+    public class Level1EnemiesGenerator : EnemiesFactory
     {
+        /// <summary>
+        /// Fabric for melle enemy
+        /// </summary>
+        [SerializeField] protected MelleEnemiesCreator melleEnemiesCreator;
+
+        /// <summary>
+        /// Fabric for ranger enemy
+        /// </summary>
+        [SerializeField] protected RangerEnemiesCreator rangerEnemiesCreator;
+
+        /// <summary>
+        /// Fabric for summoner enemy
+        /// </summary>
+        [SerializeField] protected SummonerEnemiesCreator summonerEnemiesCreator;
+
+        /// <summary>
+        /// Fabric for boss enemy
+        /// </summary>
+        [SerializeField] protected BossEnemiesCreator bossEnemiesCreator;
+
         /// <summary>
         /// List of the generated enemies
         /// </summary>
@@ -34,6 +54,8 @@ namespace RoomGeneration
         /// <param name="roomNum">Number of the room in grid</param>
         private void CreateEnemies(RoomType roomType, int roomNum) 
         {
+            // TODO: write here logic of generation
+
             // TODO: just testing, must be edited
             int difX = 0, difY = 0;
 
