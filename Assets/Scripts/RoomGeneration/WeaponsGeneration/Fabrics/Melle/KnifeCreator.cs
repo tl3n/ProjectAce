@@ -12,7 +12,7 @@ namespace RoomGeneration
         /// <summary>
         /// Creates a new knife
         /// </summary>
-        /// <param name="room">Room in which enemy will be generated</param>
+        /// <param name="room">GridRoom in which enemy will be generated</param>
         /// <param name="scenePosition">Position of room</param>
         /// <param name="xPos">X-coordinate of the weapon</param>
         /// <param name="yPos">X-coordinate of the weapon</param>

@@ -41,9 +41,9 @@ namespace RoomGeneration
             for(int i = 0; i < roomsList.Count; ++i)
             {
                 //Debug.Log(i);
-                CreateEnemies(roomsList[i].Type, i);
+                CreateEnemies(roomsList[i].Type, i, roomsList[i]);
+                roomsList[i].SetActive(false);
             }
-
             //CreateEnemies(roomsList[roomsList.Count - 1].Type, roomsList.Count);
         }
 
@@ -52,7 +52,7 @@ namespace RoomGeneration
         /// </summary>
         /// <param name="roomType">Type of the room</param>
         /// <param name="roomNum">Number of the room in grid</param>
-        private void CreateEnemies(RoomType roomType, int roomNum) 
+        private void CreateEnemies(RoomType roomType, int roomNum, Room room) 
         {
             // TODO: write here logic of generation
 
@@ -68,14 +68,23 @@ namespace RoomGeneration
 
             enemy = melleEnemiesCreator.GetEnemy(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
 
-            Debug.Log(enemy);
+            Debug.Log(enemy.Operation());
+            Debug.Log(enemy.IsComposite());
+
+            room.Add(enemy);
 
             //if (enemy != null) enemies.Add(enemy);
 
             enemies.Add(enemy);
 
 
-            rangerEnemiesCreator.GetEnemy(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
+            enemy = rangerEnemiesCreator.GetEnemy(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
+            Debug.Log(enemy.Operation());
+            Debug.Log(enemy.IsComposite());
+
+            room.Add(enemy);
+            Debug.Log(room.Operation());
+            Debug.Log(room.IsComposite());
         }
 
         private void Update()

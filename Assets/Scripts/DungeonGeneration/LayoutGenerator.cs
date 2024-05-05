@@ -330,7 +330,7 @@ namespace DungeonGeneration
         /// <summary>
         /// Choosing difficulty of the room
         /// </summary>
-        /// <returns>Room difficulty</returns>
+        /// <returns>GridRoom difficulty</returns>
         private int FindRoomDifficulty()
         {
             int difficulty = 2;

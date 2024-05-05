@@ -1,11 +1,12 @@
+using System;
 using UnityEngine;
 
-public abstract class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour, GridComponent
 {
     /// <summary>
     /// Name of the enemy
     /// </summary>
-    [SerializeField] protected string enemyName;
+    [SerializeField] protected string enemyName = "Enemy";
 
     public string EnemyName { get; set; }
 
@@ -18,4 +19,51 @@ public abstract class Enemy : MonoBehaviour
     /// Initialization of the enemy
     /// </summary>
     public abstract void Initialize();
+
+    /// <summary>
+    /// Enemy is leaf, so return exception
+    /// </summary>
+    /// <param name="component">Grid component</param>
+    /// <exception cref="NotImplementedException">Method is not implemented</exception>
+    public void Add(GridComponent component)
+    {
+        throw new NotImplementedException();
+    }
+
+    /// <summary>
+    /// Enemy is leaf, so return exception
+    /// </summary>
+    /// <param name="component">Grid component</param>
+    /// <exception cref="NotImplementedException">Method is not implemented</exception>
+    public void Remove(GridComponent component)
+    {
+        throw new NotImplementedException();
+    }
+
+    /// <summary>
+    /// Returns name of the enemy
+    /// </summary>
+    /// <returns>enemyName</returns>
+    public string Operation()
+    {
+        return enemyName;
+    }
+
+    /// <summary>
+    /// Check if enemy is composite
+    /// </summary>
+    /// <returns>False</returns>
+    public bool IsComposite()
+    {
+        return false;
+    }
+
+    /// <summary>
+    /// Change state of the enemy
+    /// </summary>
+    /// <param name="state">State to which it will be changed</param>
+    public void SetActive(bool state)
+    {
+        gameObject.SetActive(state);
+    }
 }
