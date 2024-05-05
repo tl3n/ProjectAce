@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DungeonGeneration
 {
-    public class Room : GridComponent
+    public class Room : IGridComponent
     {
         /// <summary>
         /// X-coordinate of the room's center
@@ -29,7 +29,7 @@ namespace DungeonGeneration
         /// <summary>
         /// List of the components in the room
         /// </summary>
-        protected List<GridComponent> _children = new List<GridComponent>();
+        protected List<IGridComponent> _children = new List<IGridComponent>();
 
         /// <summary>
         /// Initialization of the room
@@ -50,7 +50,7 @@ namespace DungeonGeneration
         /// Add component into the list 
         /// </summary>
         /// <param name="component">Grid component</param>
-        public void Add(GridComponent component)
+        public void Add(IGridComponent component)
         {
             this._children.Add(component);
         }
@@ -59,7 +59,7 @@ namespace DungeonGeneration
         /// Remove component from the list 
         /// </summary>
         /// <param name="component">Grid component</param>
-        public void Remove(GridComponent component)
+        public void Remove(IGridComponent component)
         {
             this._children.Remove(component);
         }
@@ -68,14 +68,14 @@ namespace DungeonGeneration
         /// Returns name of the grid components
         /// </summary>
         /// <returns>List of the components</returns>
-        public string Operation()
+        public string GetName()
         {
             int i = 0;
             string result = "Branch(";
 
-            foreach (GridComponent component in this._children)
+            foreach (IGridComponent component in this._children)
             {
-                result += component.Operation();
+                result += component.GetName();
                 if (i != this._children.Count - 1)
                 {
                     result += "+";
@@ -101,9 +101,15 @@ namespace DungeonGeneration
         /// <param name="state">State to which it will be changed</param>
         public void SetActive(bool state)
         {
-            foreach (GridComponent component in this._children)
+            foreach (IGridComponent component in this._children)
             {
-                component.SetActive(state);
+                Enemy enemy = component as Enemy;
+                EnemyStateMachine stateMachine = new EnemyStateMachine(enemy);
+
+                if (state) stateMachine.TransitionTo(stateMachine.activeState);
+                else stateMachine.TransitionTo(stateMachine.passiveState);
+
+                //component.SetActive(state);
             }
         }
     }

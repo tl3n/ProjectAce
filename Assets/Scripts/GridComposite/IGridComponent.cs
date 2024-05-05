@@ -3,25 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface GridComponent
+public interface IGridComponent
 {
     /// <summary>
     /// Returns name of the grid components
     /// </summary>
     /// <returns>Name of the leaf or list of the components</returns>
-    public string Operation();
+    public string GetName();
 
     /// <summary>
     /// Add component into the list if current is not leaf
     /// </summary>
     /// <param name="component">Grid component</param>
-    public void Add(GridComponent component);
+    public void Add(IGridComponent component);
 
     /// <summary>
     /// Remove component from the list if current is not leaf
     /// </summary>
     /// <param name="component">Grid component</param>
-    public void Remove(GridComponent component);
+    public void Remove(IGridComponent component);
 
     /// <summary>
     /// Check if component is composite

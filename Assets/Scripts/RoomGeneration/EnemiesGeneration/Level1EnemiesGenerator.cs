@@ -40,11 +40,10 @@ namespace RoomGeneration
             // for each room
             for(int i = 0; i < roomsList.Count; ++i)
             {
-                //Debug.Log(i);
                 CreateEnemies(roomsList[i].Type, i, roomsList[i]);
-                roomsList[i].SetActive(false);
+                roomsList[i].SetActive(true);
+                //roomsList[i].SetActive(false);
             }
-            //CreateEnemies(roomsList[roomsList.Count - 1].Type, roomsList.Count);
         }
 
         /// <summary>
@@ -64,26 +63,29 @@ namespace RoomGeneration
             else
                 difX = difY = 0;
 
-            Enemy enemy;
+            Enemy enemy1, enemy2;
 
-            enemy = melleEnemiesCreator.GetEnemy(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
+            enemy1 = melleEnemiesCreator.GetEnemy(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
+            EnemyStateMachine stateMachine1 = new EnemyStateMachine(enemy1);
+            stateMachine1.Initialize(stateMachine1.passiveState);
+            Debug.Log(enemy1.GetName());
+            Debug.Log(enemy1.IsComposite());
 
-            Debug.Log(enemy.Operation());
-            Debug.Log(enemy.IsComposite());
-
-            room.Add(enemy);
+            room.Add(enemy1);
 
             //if (enemy != null) enemies.Add(enemy);
 
-            enemies.Add(enemy);
+            enemies.Add(enemy1);
 
 
-            enemy = rangerEnemiesCreator.GetEnemy(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
-            Debug.Log(enemy.Operation());
-            Debug.Log(enemy.IsComposite());
+            enemy2 = rangerEnemiesCreator.GetEnemy(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
+            EnemyStateMachine stateMachine2 = new EnemyStateMachine(enemy2);
+            stateMachine2.Initialize(stateMachine2.passiveState);
+            Debug.Log(enemy2.GetName());
+            Debug.Log(enemy2.IsComposite());
 
-            room.Add(enemy);
-            Debug.Log(room.Operation());
+            room.Add(enemy2);
+            Debug.Log(room.GetName());
             Debug.Log(room.IsComposite());
         }
 
@@ -92,27 +94,8 @@ namespace RoomGeneration
             // TODO: just testing, must be deleted
             foreach (Enemy enemy in enemies)
             {
-                Doctor enemyA = enemy as Doctor;
-
-                //GameObject enemyObject = enemyA.enemyObject;
-
-                //Debug.Log(enemyObject);
-
-                float startX = enemyA.transform.parent.position.x - 2;
-                float startY = enemyA.transform.parent.position.y - 2;
-
-                // обчислює нову позицію ворога на колі
-                float x = startX + Mathf.Cos(enemyA.angle) * 1; // радіус кола - 1
-                float y = startY + Mathf.Sin(enemyA.angle) * 1; // радіус кола - 1
-
-                // оновлює позицію префаба ворога
-                enemyA.transform.position = new Vector2(x, y);
-
-                // оновлює кутову позицію ворога на колі
-                enemyA.angle += Time.deltaTime; // змінюється з часом, щоб ворог рухався
-
-                //Doctor enemyA = enemy as Doctor;
-                //enemyA.enemyObject.SetActive(false);
+                EnemyStateMachine stateMachine = new EnemyStateMachine(enemy);
+                stateMachine.Update();
             }
         }
     }

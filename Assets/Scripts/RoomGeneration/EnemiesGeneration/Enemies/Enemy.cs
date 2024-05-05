@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public abstract class Enemy : MonoBehaviour, GridComponent
+public abstract class Enemy : MonoBehaviour, IGridComponent
 {
     /// <summary>
     /// Name of the enemy
@@ -25,7 +25,7 @@ public abstract class Enemy : MonoBehaviour, GridComponent
     /// </summary>
     /// <param name="component">Grid component</param>
     /// <exception cref="NotImplementedException">Method is not implemented</exception>
-    public void Add(GridComponent component)
+    public void Add(IGridComponent component)
     {
         throw new NotImplementedException();
     }
@@ -35,7 +35,7 @@ public abstract class Enemy : MonoBehaviour, GridComponent
     /// </summary>
     /// <param name="component">Grid component</param>
     /// <exception cref="NotImplementedException">Method is not implemented</exception>
-    public void Remove(GridComponent component)
+    public void Remove(IGridComponent component)
     {
         throw new NotImplementedException();
     }
@@ -44,7 +44,7 @@ public abstract class Enemy : MonoBehaviour, GridComponent
     /// Returns name of the enemy
     /// </summary>
     /// <returns>enemyName</returns>
-    public string Operation()
+    public string GetName()
     {
         return enemyName;
     }
