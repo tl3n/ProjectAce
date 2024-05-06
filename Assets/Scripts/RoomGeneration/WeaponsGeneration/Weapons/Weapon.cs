@@ -5,7 +5,7 @@ public abstract class Weapon : MonoBehaviour
     /// <summary>
     /// Name of the weapon
     /// </summary>
-    [SerializeField] protected string weaponName;
+    [SerializeField] protected string weaponName = "Weapon";
 
     public string WeaponName { get; set; }
 

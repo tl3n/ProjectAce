@@ -105,9 +105,10 @@ namespace DungeonGeneration
             {
                 Enemy enemy = component as Enemy;
                 EnemyStateMachine stateMachine = new EnemyStateMachine(enemy);
+                stateMachine.Initialize(stateMachine.passiveState);
 
                 if (state) stateMachine.TransitionTo(stateMachine.activeState);
-                else stateMachine.TransitionTo(stateMachine.passiveState);
+                //else stateMachine.TransitionTo(stateMachine.passiveState);
 
                 //component.SetActive(state);
             }

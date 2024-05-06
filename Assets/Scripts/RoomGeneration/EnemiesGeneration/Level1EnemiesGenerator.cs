@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DungeonGeneration;
+using UnityEditorInternal;
 
 namespace RoomGeneration
 {
@@ -41,8 +42,8 @@ namespace RoomGeneration
             for(int i = 0; i < roomsList.Count; ++i)
             {
                 CreateEnemies(roomsList[i].Type, i, roomsList[i]);
-                roomsList[i].SetActive(true);
-                //roomsList[i].SetActive(false);
+                //roomsList[i].SetActive(true);
+                roomsList[i].SetActive(false);
             }
         }
 
@@ -95,6 +96,7 @@ namespace RoomGeneration
             foreach (Enemy enemy in enemies)
             {
                 EnemyStateMachine stateMachine = new EnemyStateMachine(enemy);
+                stateMachine.Initialize(stateMachine.activeState);
                 stateMachine.Update();
             }
         }
