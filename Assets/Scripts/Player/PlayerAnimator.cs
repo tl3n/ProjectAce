@@ -30,7 +30,6 @@ public class PlayerAnimator : MonoBehaviour
 
     }
 
-
     private void HandleMovementAnim()
     {
         inputVector = GameInput.Instance.GetMovementVectorNormalized(); //to which direction we are animating
@@ -43,16 +42,16 @@ public class PlayerAnimator : MonoBehaviour
 
             if (lastMoveDir.x < 0f) //moving left
             {
-                sprite.flipX = true; //flip the sprite to face leftward
-                animatorFlipX = sprite.flipX;
+                /*sprite.flipX = true; //flip the sprite to face leftward
+                animatorFlipX = sprite.flipX;*/
                 movementState = MovementState.running; //change state
 
 
             }
             else if(lastMoveDir.x > 0f) //moving right
             {
-                sprite.flipX = false;//flip the sprite to face rightward
-                animatorFlipX = sprite.flipX;
+                /*sprite.flipX = false;//flip the sprite to face rightward
+                animatorFlipX = sprite.flipX;*/
                 movementState = MovementState.running; //change state
 
             }

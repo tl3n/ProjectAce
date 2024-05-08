@@ -4,6 +4,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Diagnostics;
+using UnityEngine.U2D;
 using UnityEngine.Windows;
 using Input = UnityEngine.Input;
 
@@ -21,19 +22,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dodgerollTime = 0.2f;
     [SerializeField] private float dodgerollCooldown = 2f; //cooldown after which player is able to dash again
 
+    [SerializeField] private float attackingMovementSpeed = 3f; // Adjust as needed
     [SerializeField] private float movementSpeed = 7f;
     private bool animatorFlipX; //where we store direction which sprite is facing
+    public bool facingRight = true;
     private Vector2 dodgeDirection = new Vector2(0, 0).normalized;
     private Vector2 inputVector; //direction of input
     private Vector2 movement; //upscaled input vector
 
-   
+
 
 
     // Start is called before the first frame update
     private void Start()
     {
-
         GameInput.Instance.OnDodgerollAction += GameInput_OnDodgerollAction;
         //Rigid body initialization of the player sprite
         //for the movement realization convenience
@@ -57,9 +59,18 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
+        ProperFlip();
         HandleMovement();
+        
+    }
 
-       
+    private void ProperFlip()
+    {
+        if((movement.x < 0 && facingRight) || (movement.x > 0 && !facingRight))
+        {
+            facingRight = !facingRight;
+            transform.Rotate(new Vector3(0, 180, 0));
+        }
     }
 
     private void HandleMovement() //most basic movement function
