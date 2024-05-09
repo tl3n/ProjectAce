@@ -5,11 +5,14 @@ using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private int currentHealth, maxHealth;
-
-    public UnityEvent<GameObject> OnHitWithReference, OnDeathWithReference;
+    [SerializeField] public int currentHealth, maxHealth;
 
     [SerializeField] private bool isDead = false;
+
+    private void Start()
+    {
+        currentHealth = maxHealth;
+    }
 
     public void InitializeHealth(int health)
     {
@@ -18,22 +21,14 @@ public class Health : MonoBehaviour
         isDead = false;
     }
 
-    public void GetHit(int amount, GameObject sender)
+    public void GetHit(int amount)
     {
         if (isDead)
             return;
-        if (sender.layer == gameObject.layer)
-            return;
-
         currentHealth -= amount;
-
-        if (currentHealth > 0)
-            OnHitWithReference?.Invoke(sender);
-        else
+        if (currentHealth < amount)
         {
-            OnHitWithReference?.Invoke(sender);
             isDead = true;
-            Destroy(gameObject);
         }
     }
 }
