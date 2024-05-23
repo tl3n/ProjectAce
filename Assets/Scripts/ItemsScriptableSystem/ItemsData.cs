@@ -12,6 +12,13 @@ public abstract class ItemsData : ScriptableObject
     private int itemPrice;
     public Sprite icon;
     public GameObject prefab;
+    //interface for the effects
+    EffectsInterface effects;
+
+    public void Apply(Stats playerStats)
+    {
+        effects.ApplyEffect(playerStats);
+    }
 
     //setters
     public string Name => itemName;
