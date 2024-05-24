@@ -6,7 +6,7 @@ public class HealingEffect : EffectsInterface
 {
     private float healPoints;
 
-    public void IncreaseHeal(float boost)
+    public HealingEffect(float boost)
     {
         this.healPoints = boost;
     }

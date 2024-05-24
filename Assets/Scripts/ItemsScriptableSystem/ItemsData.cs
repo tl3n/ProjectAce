@@ -4,7 +4,7 @@ using UnityEngine;
 using static UnityEditor.Progress;
 
 //[CreateAssetMenu(menuName = "Item Default")]
-public abstract class ItemsData : ScriptableObject
+public class ItemsData : ScriptableObject
 {
     [SerializeField] private string itemName = "Default Item Name";
     [SerializeField] private string itemDescription = "Default description";
@@ -12,8 +12,8 @@ public abstract class ItemsData : ScriptableObject
     private int itemPrice;
     public Sprite icon;
     public GameObject prefab;
-    //interface for the effects
-    EffectsInterface effects;
+    //interface for the effects -- strategy pattern
+    public EffectsInterface effects;
 
     public void Apply(Stats playerStats)
     {
@@ -21,13 +21,29 @@ public abstract class ItemsData : ScriptableObject
     }
 
     //setters
-    public string Name => itemName;
+    public string Name
+    {
+        get { return itemName; }
+        set { itemName = value; }
+    }
 
-    public string Description => itemDescription;
+    public string Description
+    {
+        get { return itemDescription; }
+        set { itemDescription = value; }
+    }
 
-    public int ItemQuantity => quantity;
+    public int ItemQuantity
+    {
+        get { return quantity; }
+        set { quantity = value; }
+    }
 
-    public int Price => itemPrice;
+    public int Price
+    {
+        get { return itemPrice; }
+        set { itemPrice = value; }
+    }
 
-    public abstract void Use();
+    //public abstract void Use();
 }

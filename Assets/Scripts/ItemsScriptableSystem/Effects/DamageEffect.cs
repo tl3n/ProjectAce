@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamaeEffect : EffectsInterface
+public class DamageEffect : EffectsInterface
 {
     private float damagePoints;
 
-    public void IncreaseDamage(float boost)
+    public DamageEffect(float boost)
     {
         this.damagePoints = boost;
     }

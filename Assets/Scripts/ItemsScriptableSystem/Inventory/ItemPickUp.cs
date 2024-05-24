@@ -19,6 +19,12 @@ public class ItemPickUp : MonoBehaviour
     {
         PickUpText.SetActive(false);
         ItemManager = GameObject.Find("ArtefactDisplay").GetComponent<ItemManager>();
+
+        //activate the artefact factory
+        /*ArtefactFactory factory = new BlackCatCreator();
+        ItemsData BlackCat = factory.CreateArtifact();
+        ItemManager.AddToInventory(BlackCat);*/
+
     }
 
     //check for E key pressed -- for destruction in OnTriggerStay

@@ -8,7 +8,7 @@ public class SpeedEffect : EffectsInterface
 {
     private float speedPoints;
 
-    public void IncreaseSpeed(float boost)
+    public SpeedEffect(float boost)
     {
         this.speedPoints = boost;
     }
