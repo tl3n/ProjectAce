@@ -34,24 +34,21 @@ public class PlayerAnimator : MonoBehaviour
     {
         inputVector = GameInput.Instance.GetMovementVectorNormalized(); //to which direction we are animating
 
-
-
+        
         if (inputVector != Vector2.zero) //if we are moving in ANY direction
         {
             lastMoveDir = inputVector; //save last move direction
 
             if (lastMoveDir.x < 0f) //moving left
             {
-                /*sprite.flipX = true; //flip the sprite to face leftward
-                animatorFlipX = sprite.flipX;*/
+                animatorFlipX = !sprite.flipX;
                 movementState = MovementState.running; //change state
 
 
             }
             else if(lastMoveDir.x > 0f) //moving right
             {
-                /*sprite.flipX = false;//flip the sprite to face rightward
-                animatorFlipX = sprite.flipX;*/
+                animatorFlipX = sprite.flipX;
                 movementState = MovementState.running; //change state
 
             }

@@ -11,8 +11,6 @@ using Input = UnityEngine.Input;
 public class PlayerMovement : MonoBehaviour
 {
 
-
-
     private bool canDodgeroll = true; //to check if we can dodgeroll. we can't dodgeroll when we are in process of dodgerolling or when there is a cooldown
     private bool isDodgerolling; //check if we are dodgerolling now
     private Vector2 lastMoveDirection = Vector2.zero; //used to store last movement direction to dodgeroll properly

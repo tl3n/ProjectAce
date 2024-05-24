@@ -48,19 +48,11 @@ public class PlayerCombat : MonoBehaviour
         isPunching = true;
         movement.movementSpeed = punchingMovementSpeed;
        
-
         // Check the scale of the player
         float playerScaleX = transform.localScale.x;
 
-        // If the player is facing left, flip the punch point position
-        Vector3 flippedPunchPointPosition = punchPoint.transform.position;
-        if (playerScaleX < 0)
-        {
-            flippedPunchPointPosition.x *= -1f;
-        }
-
         // Perform the punch with the flipped punch point position
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(flippedPunchPointPosition, punchRange, enemyLayers);
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(punchPoint.transform.position, punchRange, enemyLayers);
 
         foreach (Collider2D enemy in hitEnemies)
         {
