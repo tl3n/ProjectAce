@@ -5,12 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - RoomBorders
-  - SpawnPoint
-  - Grid
-  - MelleEnemy
-  - RangerEnemy
-  - SummonerEnemy
-  - BossEnemy
   layers:
   - Default
   - TransparentFX
