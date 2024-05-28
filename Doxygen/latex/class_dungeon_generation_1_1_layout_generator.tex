@@ -1,0 +1,239 @@
+\doxysection{Dungeon\+Generation.\+Layout\+Generator Class Reference}
+\hypertarget{class_dungeon_generation_1_1_layout_generator}{}\label{class_dungeon_generation_1_1_layout_generator}\index{DungeonGeneration.LayoutGenerator@{DungeonGeneration.LayoutGenerator}}
+Inheritance diagram for Dungeon\+Generation.\+Layout\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_dungeon_generation_1_1_layout_generator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{class_dungeon_generation_1_1_room}{Room}} $>$ \mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_adbdf1738b39efe0bdea522dd5cf6974f}{Generate}} (\mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}} \mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a5dcc41ae43f849c6b8078c929b66b750}{dungeon\+Level}})
+\begin{DoxyCompactList}\small\item\em Generating dungeon layout based on matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_aaeb3095a56365d9704cd545be3f75d92}\label{class_dungeon_generation_1_1_layout_generator_aaeb3095a56365d9704cd545be3f75d92} 
+\mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}} {\bfseries boss\+RoomX}
+\item 
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_a3edc2c22eacfe706f901f253de4eb041}\label{class_dungeon_generation_1_1_layout_generator_a3edc2c22eacfe706f901f253de4eb041} 
+\mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}} {\bfseries boss\+RoomY}
+\item 
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_aa3d7dbfa1ff442d4be254be96c6a488b}\label{class_dungeon_generation_1_1_layout_generator_aa3d7dbfa1ff442d4be254be96c6a488b} 
+\mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}} {\bfseries treasure\+RoomX}
+\item 
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_a8df4bbecfb9f6591f662162be4965007}\label{class_dungeon_generation_1_1_layout_generator_a8df4bbecfb9f6591f662162be4965007} 
+\mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}} {\bfseries treasure\+RoomY}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_a4276d314aaef8dfefbd0a599a0872346}\label{class_dungeon_generation_1_1_layout_generator_a4276d314aaef8dfefbd0a599a0872346} 
+\mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}}\mbox{[},\mbox{]} {\bfseries Layout}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_a8ed3c628bba6354f0fce41ab922596dd}\label{class_dungeon_generation_1_1_layout_generator_a8ed3c628bba6354f0fce41ab922596dd} 
+List$<$(\mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}}, \mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}})$>$ {\bfseries Generated\+Rooms}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_a027bd27ebf09bb69d6ac49b9bb5dd216}\label{class_dungeon_generation_1_1_layout_generator_a027bd27ebf09bb69d6ac49b9bb5dd216} 
+void {\bfseries Reset} ()
+\begin{DoxyCompactList}\small\item\em Setting all values to the default. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_af1333cc025787411258309d5f7b0b44f}{Fill\+Layout}} ((\mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}}, \mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}}) position)
+\begin{DoxyCompactList}\small\item\em Choosing neighbours of the selected room to spawn. \end{DoxyCompactList}\item 
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_aed16b5860a48941f8128f96e0cc924a8}\label{class_dungeon_generation_1_1_layout_generator_aed16b5860a48941f8128f96e0cc924a8} 
+\mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}} {\bfseries Find\+Neighbour\+Position} ((\mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}}, \mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}}) position, \mbox{\hyperlink{namespace_dungeon_generation_a0f2611525a85556b538d18c3f87149fc}{Side}} side)
+\item 
+List$<$ \mbox{\hyperlink{namespace_dungeon_generation_a0f2611525a85556b538d18c3f87149fc}{Side}} $>$ \mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a66678fc628bb267db06f9e6db5d96cd3}{Find\+Neighboring\+Sides}} ((\mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}}, \mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}}) cell)
+\begin{DoxyCompactList}\small\item\em Counting neighbours of the cell with provided position in the layout matrix. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a9562acf8097c2ec43d8b7e58fe083ff8}{Has\+Only\+One\+Neighbour}} ((\mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}}, \mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}}) current\+Position)
+\begin{DoxyCompactList}\small\item\em Checking if cell with provided position in the layout matrix has only one neighbour. \end{DoxyCompactList}\item 
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_a44339053025fb2560b31389e95762356}\label{class_dungeon_generation_1_1_layout_generator_a44339053025fb2560b31389e95762356} 
+void {\bfseries Find\+End\+Rooms} ()
+\begin{DoxyCompactList}\small\item\em Finding end cells and adding them to the generated\+End\+Cells list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}} \mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a2410e261c81a5a3941555657e874a948}{Find\+Room\+Difficulty}} ()
+\begin{DoxyCompactList}\small\item\em Choosing difficulty of the room. \end{DoxyCompactList}\item 
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_a1e24d9a837feeb372acdb6c48ce16886}\label{class_dungeon_generation_1_1_layout_generator_a1e24d9a837feeb372acdb6c48ce16886} 
+void {\bfseries Find\+Treasure\+Room} ()
+\begin{DoxyCompactList}\small\item\em Selects random End\+Room from the list, that is not already in use, and marks it as the Treasure\+Room. \end{DoxyCompactList}\item 
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_a44a1e443cbf00933a8ecd51749083508}\label{class_dungeon_generation_1_1_layout_generator_a44a1e443cbf00933a8ecd51749083508} 
+void {\bfseries Find\+Boss\+Room} ()
+\begin{DoxyCompactList}\small\item\em Finds farthest End\+Room from the starting position and then marks it as the Boss\+Room. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}}\mbox{[},\mbox{]} \mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_af05d03a8e56a73af28dd494c2bab7b3b}{layout}}
+\begin{DoxyCompactList}\small\item\em Matrix that represents layout of the rooms. \end{DoxyCompactList}\item 
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_a5dcc41ae43f849c6b8078c929b66b750}\label{class_dungeon_generation_1_1_layout_generator_a5dcc41ae43f849c6b8078c929b66b750} 
+\mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}} {\bfseries dungeon\+Level} = 1
+\begin{DoxyCompactList}\small\item\em The current level of the dungeon. \end{DoxyCompactList}\item 
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_aab27c8c6abdf9567f47b2dd582c102f7}\label{class_dungeon_generation_1_1_layout_generator_aab27c8c6abdf9567f47b2dd582c102f7} 
+\mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}} {\bfseries number\+Of\+Rooms\+To\+Generate} = 0
+\begin{DoxyCompactList}\small\item\em Number of rooms to generate. \end{DoxyCompactList}\item 
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_abd3051aab99968711185281334798e60}\label{class_dungeon_generation_1_1_layout_generator_abd3051aab99968711185281334798e60} 
+List$<$(\mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}}, \mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}})$>$ {\bfseries generated\+Rooms} = new List$<$(\mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}}, \mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}})$>$()
+\begin{DoxyCompactList}\small\item\em List that stores tuple of indexes of generated rooms in the layout matrix. \end{DoxyCompactList}\item 
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_ac045eaff3d4e33c887f82b89969e1f19}\label{class_dungeon_generation_1_1_layout_generator_ac045eaff3d4e33c887f82b89969e1f19} 
+\mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}} {\bfseries min\+Number\+Of\+End\+Rooms\+To\+Generate} = 3
+\begin{DoxyCompactList}\small\item\em Number of end rooms to generate. \end{DoxyCompactList}\item 
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_a72fda83aa37e3f8f2c52d671b8a9e45d}\label{class_dungeon_generation_1_1_layout_generator_a72fda83aa37e3f8f2c52d671b8a9e45d} 
+List$<$(\mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}}, \mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}})$>$ {\bfseries generated\+End\+Rooms} = new List$<$(\mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}}, \mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}})$>$()
+\begin{DoxyCompactList}\small\item\em List that stores generated end rooms. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}}
+\begin{DoxyCompactList}\small\item\em Calculating neighbour position for the cell in the layout matrix based on side you provide. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_a094df84c3ef0069730fb22e677c8abfa}\label{class_dungeon_generation_1_1_layout_generator_a094df84c3ef0069730fb22e677c8abfa} 
+const \mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}} {\bfseries Start\+RoomX} = 4
+\begin{DoxyCompactList}\small\item\em X-\/position of start room in layout. \end{DoxyCompactList}\item 
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_a87cca387f5a01147b95094e2030a0124}\label{class_dungeon_generation_1_1_layout_generator_a87cca387f5a01147b95094e2030a0124} 
+const \mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}} {\bfseries Start\+RoomY} = 4
+\begin{DoxyCompactList}\small\item\em Y-\/position of start room in layout. \end{DoxyCompactList}\item 
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_aff22c4b471302b4e0c4c9b8d5972fa42}\label{class_dungeon_generation_1_1_layout_generator_aff22c4b471302b4e0c4c9b8d5972fa42} 
+const \mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}} {\bfseries Scene\+Room\+DistanceX} = 15
+\begin{DoxyCompactList}\small\item\em Distance between centres of rooms on X-\/coordinate. \end{DoxyCompactList}\item 
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_aa14fd9f87f2b8eee2b2091d3b96dbf4c}\label{class_dungeon_generation_1_1_layout_generator_aa14fd9f87f2b8eee2b2091d3b96dbf4c} 
+const \mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}} {\bfseries Scene\+Room\+DistanceY} = -\/9
+\begin{DoxyCompactList}\small\item\em Distance between centres of rooms on Y-\/coordinate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_af1333cc025787411258309d5f7b0b44f}\label{class_dungeon_generation_1_1_layout_generator_af1333cc025787411258309d5f7b0b44f} 
+\index{DungeonGeneration.LayoutGenerator@{DungeonGeneration.LayoutGenerator}!FillLayout@{FillLayout}}
+\index{FillLayout@{FillLayout}!DungeonGeneration.LayoutGenerator@{DungeonGeneration.LayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{FillLayout()}{FillLayout()}}
+{\footnotesize\ttfamily void Dungeon\+Generation.\+Layout\+Generator.\+Fill\+Layout (\begin{DoxyParamCaption}\item[{(\mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}}, \mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}})}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Choosing neighbours of the selected room to spawn. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position of the selected room\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_a66678fc628bb267db06f9e6db5d96cd3}\label{class_dungeon_generation_1_1_layout_generator_a66678fc628bb267db06f9e6db5d96cd3} 
+\index{DungeonGeneration.LayoutGenerator@{DungeonGeneration.LayoutGenerator}!FindNeighboringSides@{FindNeighboringSides}}
+\index{FindNeighboringSides@{FindNeighboringSides}!DungeonGeneration.LayoutGenerator@{DungeonGeneration.LayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{FindNeighboringSides()}{FindNeighboringSides()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{namespace_dungeon_generation_a0f2611525a85556b538d18c3f87149fc}{Side}} $>$ Dungeon\+Generation.\+Layout\+Generator.\+Find\+Neighboring\+Sides (\begin{DoxyParamCaption}\item[{(\mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}}, \mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}})}]{cell }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Counting neighbours of the cell with provided position in the layout matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cell} & Tuple of indexes of the cell in the layout matrix\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of neighbours
+\end{DoxyReturn}
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_a2410e261c81a5a3941555657e874a948}\label{class_dungeon_generation_1_1_layout_generator_a2410e261c81a5a3941555657e874a948} 
+\index{DungeonGeneration.LayoutGenerator@{DungeonGeneration.LayoutGenerator}!FindRoomDifficulty@{FindRoomDifficulty}}
+\index{FindRoomDifficulty@{FindRoomDifficulty}!DungeonGeneration.LayoutGenerator@{DungeonGeneration.LayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{FindRoomDifficulty()}{FindRoomDifficulty()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}} Dungeon\+Generation.\+Layout\+Generator.\+Find\+Room\+Difficulty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Choosing difficulty of the room. 
+
+\begin{DoxyReturn}{Returns}
+Grid\+Room difficulty
+\end{DoxyReturn}
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_adbdf1738b39efe0bdea522dd5cf6974f}\label{class_dungeon_generation_1_1_layout_generator_adbdf1738b39efe0bdea522dd5cf6974f} 
+\index{DungeonGeneration.LayoutGenerator@{DungeonGeneration.LayoutGenerator}!Generate@{Generate}}
+\index{Generate@{Generate}!DungeonGeneration.LayoutGenerator@{DungeonGeneration.LayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{Generate()}{Generate()}}
+{\footnotesize\ttfamily List$<$ \mbox{\hyperlink{class_dungeon_generation_1_1_room}{Room}} $>$ Dungeon\+Generation.\+Layout\+Generator.\+Generate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}}}]{dungeon\+Level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generating dungeon layout based on matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dungeon\+Level} & Level of the dungeon\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List of the generated rooms
+\end{DoxyReturn}
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_a9562acf8097c2ec43d8b7e58fe083ff8}\label{class_dungeon_generation_1_1_layout_generator_a9562acf8097c2ec43d8b7e58fe083ff8} 
+\index{DungeonGeneration.LayoutGenerator@{DungeonGeneration.LayoutGenerator}!HasOnlyOneNeighbour@{HasOnlyOneNeighbour}}
+\index{HasOnlyOneNeighbour@{HasOnlyOneNeighbour}!DungeonGeneration.LayoutGenerator@{DungeonGeneration.LayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{HasOnlyOneNeighbour()}{HasOnlyOneNeighbour()}}
+{\footnotesize\ttfamily bool Dungeon\+Generation.\+Layout\+Generator.\+Has\+Only\+One\+Neighbour (\begin{DoxyParamCaption}\item[{(\mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}}, \mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}})}]{current\+Position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Checking if cell with provided position in the layout matrix has only one neighbour. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Position} & Tuple of indexes of the cell in the layout matrix\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+"{}\+True"{} if cell has only one neighbour, "{}\+False"{} otherwise
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}\label{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6} 
+\index{DungeonGeneration.LayoutGenerator@{DungeonGeneration.LayoutGenerator}!int@{int}}
+\index{int@{int}!DungeonGeneration.LayoutGenerator@{DungeonGeneration.LayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{int}{int}}
+{\footnotesize\ttfamily Dungeon\+Generation.\+Layout\+Generator.\+int\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calculating neighbour position for the cell in the layout matrix based on side you provide. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Indexes in the layout matrix of the cell you want to find neighbour position for\\
+\hline
+{\em side} & Side of the neighbour which position you want to calculate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Tuple of the indexes of the neighbour cell
+\end{DoxyReturn}
+\Hypertarget{class_dungeon_generation_1_1_layout_generator_af05d03a8e56a73af28dd494c2bab7b3b}\label{class_dungeon_generation_1_1_layout_generator_af05d03a8e56a73af28dd494c2bab7b3b} 
+\index{DungeonGeneration.LayoutGenerator@{DungeonGeneration.LayoutGenerator}!layout@{layout}}
+\index{layout@{layout}!DungeonGeneration.LayoutGenerator@{DungeonGeneration.LayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{layout}{layout}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_dungeon_generation_1_1_layout_generator_a4c2c570669fcdb9555e801ce73dee8a6}{int}} \mbox{[},\mbox{]} Dungeon\+Generation.\+Layout\+Generator.\+layout\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{int}[9,\ 9]}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\ 0,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0,\ 0\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Matrix that represents layout of the rooms. 
+
+1 -\/ Start 2 -\/ Enemy\+Easy 3 -\/ Enemy\+Medium 4 -\/ Enemy\+Hard 5 -\/ Treasure 6 -\/ Boss 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Uni materials/2 course/\+OOP/\+Project\+Ace/\+Assets/\+Scripts/\+Dungeon\+Generation/Layout\+Generator.\+cs\end{DoxyCompactItemize}

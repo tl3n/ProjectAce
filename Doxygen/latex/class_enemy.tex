@@ -1,0 +1,148 @@
+\doxysection{Enemy Class Reference}
+\hypertarget{class_enemy}{}\label{class_enemy}\index{Enemy@{Enemy}}
+Inheritance diagram for Enemy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_enemy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_enemy_ae6c399e2cd4a73e62a5026b0f178cb65}\label{class_enemy_ae6c399e2cd4a73e62a5026b0f178cb65} 
+void {\bfseries Initialize} ()
+\begin{DoxyCompactList}\small\item\em Initialization of the enemy. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_af8777498b8247f6db05e149dcdf103c1}{Add}} (\mbox{\hyperlink{interface_i_grid_component}{IGrid\+Component}} component)
+\begin{DoxyCompactList}\small\item\em \doxylink{class_enemy}{Enemy} is leaf, so return exception. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_aea3de842b73dc7fae05d2954d343ef62}{Remove}} (\mbox{\hyperlink{interface_i_grid_component}{IGrid\+Component}} component)
+\begin{DoxyCompactList}\small\item\em \doxylink{class_enemy}{Enemy} is leaf, so return exception. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_enemy_aa18ca6fbf30138db0114c5da351b137e}{Get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Returns name of the enemy. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_enemy_aed79df9dcc54f23c8dbfbdace552e617}{Is\+Composite}} ()
+\begin{DoxyCompactList}\small\item\em Check if enemy is composite. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_a925f13e19d050ef401cfd23a89272302}{Set\+Active}} (bool state)
+\begin{DoxyCompactList}\small\item\em Change state of the enemy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_enemy_a6bd83341b78ca7b5af1dcbd997c29693}\label{class_enemy_a6bd83341b78ca7b5af1dcbd997c29693} 
+string {\bfseries enemy\+Name} = "{}Enemy"{}
+\begin{DoxyCompactList}\small\item\em Name of the enemy. \end{DoxyCompactList}\item 
+\Hypertarget{class_enemy_a5c550f257977cc3d82a1ff8c9a8b300d}\label{class_enemy_a5c550f257977cc3d82a1ff8c9a8b300d} 
+Particle\+System {\bfseries particle\+System}
+\begin{DoxyCompactList}\small\item\em Each enemy has its own particle system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_enemy_a1150fb9616f1f29d5135e00d35cc2f1e}\label{class_enemy_a1150fb9616f1f29d5135e00d35cc2f1e} 
+string {\bfseries Enemy\+Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_enemy_af8777498b8247f6db05e149dcdf103c1}\label{class_enemy_af8777498b8247f6db05e149dcdf103c1} 
+\index{Enemy@{Enemy}!Add@{Add}}
+\index{Add@{Add}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily void Enemy.\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_i_grid_component}{IGrid\+Component}}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxylink{class_enemy}{Enemy} is leaf, so return exception. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & Grid component\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Not\+Implemented\+Exception} & Method is not implemented\\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interface_i_grid_component_a52427825499876387955ae883e15c8d4}{IGrid\+Component}}.
+
+\Hypertarget{class_enemy_aa18ca6fbf30138db0114c5da351b137e}\label{class_enemy_aa18ca6fbf30138db0114c5da351b137e} 
+\index{Enemy@{Enemy}!GetName@{GetName}}
+\index{GetName@{GetName}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily string Enemy.\+Get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns name of the enemy. 
+
+\begin{DoxyReturn}{Returns}
+enemy\+Name
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_i_grid_component_a21f0c00accee33efc951647e9b74e708}{IGrid\+Component}}.
+
+\Hypertarget{class_enemy_aed79df9dcc54f23c8dbfbdace552e617}\label{class_enemy_aed79df9dcc54f23c8dbfbdace552e617} 
+\index{Enemy@{Enemy}!IsComposite@{IsComposite}}
+\index{IsComposite@{IsComposite}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{IsComposite()}{IsComposite()}}
+{\footnotesize\ttfamily bool Enemy.\+Is\+Composite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if enemy is composite. 
+
+\begin{DoxyReturn}{Returns}
+False
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_i_grid_component_a42131fd9f1c8be452f3de6a960e46647}{IGrid\+Component}}.
+
+\Hypertarget{class_enemy_aea3de842b73dc7fae05d2954d343ef62}\label{class_enemy_aea3de842b73dc7fae05d2954d343ef62} 
+\index{Enemy@{Enemy}!Remove@{Remove}}
+\index{Remove@{Remove}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{Remove()}{Remove()}}
+{\footnotesize\ttfamily void Enemy.\+Remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_i_grid_component}{IGrid\+Component}}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxylink{class_enemy}{Enemy} is leaf, so return exception. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & Grid component\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Not\+Implemented\+Exception} & Method is not implemented\\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interface_i_grid_component_abafb08e05c5cbf0aa3f243944fefeb3b}{IGrid\+Component}}.
+
+\Hypertarget{class_enemy_a925f13e19d050ef401cfd23a89272302}\label{class_enemy_a925f13e19d050ef401cfd23a89272302} 
+\index{Enemy@{Enemy}!SetActive@{SetActive}}
+\index{SetActive@{SetActive}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{SetActive()}{SetActive()}}
+{\footnotesize\ttfamily void Enemy.\+Set\+Active (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Change state of the enemy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & State to which it will be changed\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_i_grid_component_a9f8caba6c267d958e8706aaaf1715e19}{IGrid\+Component}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Uni materials/2 course/\+OOP/\+Project\+Ace/\+Assets/\+Scripts/\+Room\+Generation/\+Enemies\+Generation/\+Enemies/Enemy.\+cs\end{DoxyCompactItemize}

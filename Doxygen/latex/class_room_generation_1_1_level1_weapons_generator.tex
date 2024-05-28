@@ -1,0 +1,92 @@
+\doxysection{Room\+Generation.\+Level1\+Weapons\+Generator Class Reference}
+\hypertarget{class_room_generation_1_1_level1_weapons_generator}{}\label{class_room_generation_1_1_level1_weapons_generator}\index{RoomGeneration.Level1WeaponsGenerator@{RoomGeneration.Level1WeaponsGenerator}}
+Inheritance diagram for Room\+Generation.\+Level1\+Weapons\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_room_generation_1_1_level1_weapons_generator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_room_generation_1_1_level1_weapons_generator_ad1a61c056ebf4b86583a615d5e0bb3e4}{Generate}} (List$<$ \mbox{\hyperlink{class_dungeon_generation_1_1_room}{Room}} $>$ rooms\+List)
+\begin{DoxyCompactList}\small\item\em Generation of weapons for each room from grid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_room_generation_1_1_weapons_factory}{Room\+Generation.\+Weapons\+Factory}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_room_generation_1_1_weapons_factory_afa0b8a003fcc67053fd09cf4b0241890}{Generate}} (List$<$ \mbox{\hyperlink{class_dungeon_generation_1_1_room}{Room}} $>$ rooms\+List)
+\begin{DoxyCompactList}\small\item\em Generation of weapons for each room from grid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_room_generation_1_1_level1_weapons_generator_a917ec9115f09386acbb0a5486213258f}\label{class_room_generation_1_1_level1_weapons_generator_a917ec9115f09386acbb0a5486213258f} 
+\mbox{\hyperlink{class_room_generation_1_1_melle_weapons_creator}{Melle\+Weapons\+Creator}} {\bfseries melle\+Weapons\+Creator}
+\begin{DoxyCompactList}\small\item\em Fabric for melle weapon. \end{DoxyCompactList}\item 
+\Hypertarget{class_room_generation_1_1_level1_weapons_generator_ae06661e4e5c1d93447f96d0a41ff3ddd}\label{class_room_generation_1_1_level1_weapons_generator_ae06661e4e5c1d93447f96d0a41ff3ddd} 
+\mbox{\hyperlink{class_room_generation_1_1_ranger_weapons_creator}{Ranger\+Weapons\+Creator}} {\bfseries ranger\+Weapons\+Creator}
+\begin{DoxyCompactList}\small\item\em Fabric for ranger weapon. \end{DoxyCompactList}\item 
+\Hypertarget{class_room_generation_1_1_level1_weapons_generator_a97a5023d309c89a40532497490af81e5}\label{class_room_generation_1_1_level1_weapons_generator_a97a5023d309c89a40532497490af81e5} 
+\mbox{\hyperlink{class_room_generation_1_1_boomerang_weapons_creator}{Boomerang\+Weapons\+Creator}} {\bfseries boomerang\+Weapons\+Creator}
+\begin{DoxyCompactList}\small\item\em Fabric for boomerang weapon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_room_generation_1_1_weapons_factory}{Room\+Generation.\+Weapons\+Factory}}}
+\begin{DoxyCompactItemize}
+\item 
+Transform {\bfseries rooms\+Grid}
+\begin{DoxyCompactList}\small\item\em Grid of the generated rooms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_room_generation_1_1_level1_weapons_generator_afb47a91aac628e00faa4b64c01b5cb5a}{Create\+Weapons}} (\mbox{\hyperlink{namespace_dungeon_generation_ae6a0c850882235ee77153149e048fea8}{Room\+Type}} room\+Type, int room\+Num)
+\begin{DoxyCompactList}\small\item\em Generation of weapons for selected room. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_room_generation_1_1_level1_weapons_generator_a4d04bd03cc5730e468aafec3f5a01cc4}\label{class_room_generation_1_1_level1_weapons_generator_a4d04bd03cc5730e468aafec3f5a01cc4} 
+List$<$ \mbox{\hyperlink{class_weapon}{Weapon}} $>$ {\bfseries weapons} = new List$<$\mbox{\hyperlink{class_weapon}{Weapon}}$>$()
+\begin{DoxyCompactList}\small\item\em List of the generated weapons. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_room_generation_1_1_weapons_factory}{Room\+Generation.\+Weapons\+Factory}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_room_generation_1_1_weapons_factory_a9e812c2db8f0c2c7236284a04de7c5fe}{Create\+Weapons}} (\mbox{\hyperlink{namespace_dungeon_generation_ae6a0c850882235ee77153149e048fea8}{Room\+Type}} room\+Type, int room\+Num)
+\begin{DoxyCompactList}\small\item\em Generation of weapons for selected room. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_room_generation_1_1_level1_weapons_generator_afb47a91aac628e00faa4b64c01b5cb5a}\label{class_room_generation_1_1_level1_weapons_generator_afb47a91aac628e00faa4b64c01b5cb5a} 
+\index{RoomGeneration.Level1WeaponsGenerator@{RoomGeneration.Level1WeaponsGenerator}!CreateWeapons@{CreateWeapons}}
+\index{CreateWeapons@{CreateWeapons}!RoomGeneration.Level1WeaponsGenerator@{RoomGeneration.Level1WeaponsGenerator}}
+\doxysubsubsection{\texorpdfstring{CreateWeapons()}{CreateWeapons()}}
+{\footnotesize\ttfamily void Room\+Generation.\+Level1\+Weapons\+Generator.\+Create\+Weapons (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_dungeon_generation_ae6a0c850882235ee77153149e048fea8}{Room\+Type}}}]{room\+Type,  }\item[{int}]{room\+Num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Generation of weapons for selected room. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room\+Type} & Type of the room\\
+\hline
+{\em room\+Num} & Number of the room in grid\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_room_generation_1_1_level1_weapons_generator_ad1a61c056ebf4b86583a615d5e0bb3e4}\label{class_room_generation_1_1_level1_weapons_generator_ad1a61c056ebf4b86583a615d5e0bb3e4} 
+\index{RoomGeneration.Level1WeaponsGenerator@{RoomGeneration.Level1WeaponsGenerator}!Generate@{Generate}}
+\index{Generate@{Generate}!RoomGeneration.Level1WeaponsGenerator@{RoomGeneration.Level1WeaponsGenerator}}
+\doxysubsubsection{\texorpdfstring{Generate()}{Generate()}}
+{\footnotesize\ttfamily void Room\+Generation.\+Level1\+Weapons\+Generator.\+Generate (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_dungeon_generation_1_1_room}{Room}} $>$}]{rooms\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generation of weapons for each room from grid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rooms\+List} & List of rooms of the generated dungeon\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Uni materials/2 course/\+OOP/\+Project\+Ace/\+Assets/\+Scripts/\+Room\+Generation/\+Weapons\+Generation/Level1\+Weapons\+Generator.\+cs\end{DoxyCompactItemize}
