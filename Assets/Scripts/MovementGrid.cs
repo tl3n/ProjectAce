@@ -15,7 +15,7 @@ public class MovementGrid<TGridObject>
 
     private TGridObject[,] gridArray;
     private TextMesh[,] debugTextArray;
-   public MovementGrid(int width, int height, float cellSize, Vector2 originPosition, Func<TGridObject> createGridObject)
+   public MovementGrid(int width, int height, float cellSize, Vector2 originPosition, Func<MovementGrid<TGridObject>, int, int, TGridObject>  createGridObject)
     {
         this.width = width;
         this.height = height;
@@ -28,7 +28,7 @@ public class MovementGrid<TGridObject>
         {
             for (int y = 0; y < gridArray.GetLength(1); y++)
             {
-                gridArray[x, y] = createGridObject();
+                gridArray[x, y] = createGridObject(this, x, y);
             }
         }
 
