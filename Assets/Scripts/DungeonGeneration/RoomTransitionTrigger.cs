@@ -27,12 +27,12 @@ public class RoomTransitionTrigger : MonoBehaviour
     /// <param name="other">Object that collides with trigger</param>
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.transform.parent.gameObject.CompareTag("Player"))
         {
             cameraController.minPosition += newCameraPosition;
             cameraController.maxPosition += newCameraPosition;
 
-            other.transform.position += newPlayerPosition;
+            other.transform.parent.gameObject.transform.position += newPlayerPosition;
         }
     }
 }

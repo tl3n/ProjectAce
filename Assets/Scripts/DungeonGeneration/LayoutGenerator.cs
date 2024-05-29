@@ -1,4 +1,3 @@
-using log4net.Core;
 using System;
 using System.Buffers.Text;
 using System.Collections;

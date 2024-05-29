@@ -27,7 +27,6 @@ public class PlayerAnimator : MonoBehaviour
     private void Update()
     {
         HandleMovementAnim();
-
     }
 
     private void HandleMovementAnim()

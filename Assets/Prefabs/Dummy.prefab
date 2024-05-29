@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 2410217241022888811}
   - component: {fileID: 7472704339958766604}
   - component: {fileID: 8752937933512014155}
+  - component: {fileID: 4516082232753860587}
   m_Layer: 0
   m_Name: Shadow
   m_TagString: Untagged
@@ -195,6 +196,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4516082232753860587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864640299885174596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c0f5ce543f7e2849883f273a2731d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layer: 0
 --- !u!1 &1407149752889495568
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,6 +360,7 @@ GameObject:
   - component: {fileID: 7741773690013122436}
   - component: {fileID: 903395279759106684}
   - component: {fileID: 2028339005916912075}
+  - component: {fileID: 3126221581696561964}
   m_Layer: 6
   m_Name: Dummy
   m_TagString: Enemy
@@ -509,6 +524,19 @@ MonoBehaviour:
   currentHealth: 2
   maxHealth: 2
   isDead: 0
+--- !u!114 &3126221581696561964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4059052583473546393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c0f5ce543f7e2849883f273a2731d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layer: 5
 --- !u!1 &6354293852723614034
 GameObject:
   m_ObjectHideFlags: 0
