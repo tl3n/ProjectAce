@@ -5,8 +5,8 @@ using UnityEngine;
 public class PathNode
 {
     private MovementGrid<PathNode> grid;
-    private int x;
-    private int y;
+    public int x;
+    public int y;
 
     public int gCost;
     public int hCost;
@@ -21,6 +21,11 @@ public class PathNode
         this.y = y;
     }
 
+    public void CalculateFCost()
+    {
+        fCost = hCost + gCost;
+    }
+    
     public override string ToString()
     {
         return x + "," + y;
