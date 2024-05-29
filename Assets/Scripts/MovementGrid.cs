@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using CodeMonkey.Utils;
 
-public class MovementGrid
+public class MovementGrid<TGridObject>
 {
 
     private int width;
@@ -12,22 +13,31 @@ public class MovementGrid
     public const int sortingOrderDefault = 5000;
     private Vector2 originPosition;
 
-    private int[,] gridArray;
+    private TGridObject[,] gridArray;
     private TextMesh[,] debugTextArray;
-   public MovementGrid(int width, int height, float cellSize, Vector2 originPosition)
+   public MovementGrid(int width, int height, float cellSize, Vector2 originPosition, Func<TGridObject> createGridObject)
     {
         this.width = width;
         this.height = height;
         this.cellSize = cellSize; 
         this.originPosition = originPosition;
 
-        gridArray = new int[width, height];
+        gridArray = new TGridObject[width, height];
         debugTextArray = new TextMesh[width, height];
+        for (int x = 0; x < gridArray.GetLength(0); x++)
+        {
+            for (int y = 0; y < gridArray.GetLength(1); y++)
+            {
+                gridArray[x, y] = createGridObject();
+            }
+        }
+
+
         for (int x = 0; x < gridArray.GetLength(0); x++)
         {
             for(int y = 0; y < gridArray.GetLength(1); y++)
             {
-                debugTextArray[x,y] =  CreateWorldText(gridArray[x, y].ToString(), null, GetWorldPosition(x, y) + new Vector2(cellSize, cellSize) * .5f, 20, Color.white, TextAnchor.MiddleCenter);
+                debugTextArray[x,y] =  CreateWorldText(gridArray[x, y]?.ToString(), null, GetWorldPosition(x, y) + new Vector2(cellSize, cellSize) * .5f, 20, Color.white, TextAnchor.MiddleCenter);
                 Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x, y + 1), Color.white, 100f);
                 Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x + 1, y), Color.white, 100f);
             }
@@ -37,7 +47,7 @@ public class MovementGrid
         }
         Debug.DrawLine(GetWorldPosition(0, height), GetWorldPosition(width, height), Color.white, 100f);
         Debug.DrawLine(GetWorldPosition(width, 0), GetWorldPosition(width, height), Color.white, 100f);
-        SetValue(2, 1, 56);
+        
     }
 
     private Vector2 GetWorldPosition(int x, int y)
@@ -51,7 +61,7 @@ public class MovementGrid
         y = Mathf.FloorToInt((worldPosition - originPosition).y / cellSize);
     }
 
-    public void SetValue(int x, int y, int value)
+    public void SetGridObject(int x, int y, TGridObject value)
     {
         if(x>= 0 && y>=0 && x< width && y < height)
         {
@@ -61,14 +71,14 @@ public class MovementGrid
         
     }
 
-    public void SetValue(Vector2 worldPosition, int value)
+    public void SetGridObject(Vector2 worldPosition, TGridObject value)
     {
         int x, y;
         GetXY(worldPosition, out x, out y);
-        SetValue(x, y, value);
+        SetGridObject(x, y, value);
     }
 
-    public int GetValue(int x, int y)
+    public TGridObject GetGridObject(int x, int y)
     {
         if (x>=0 && y>= 0 && x< width && y< height)
         {
@@ -76,15 +86,15 @@ public class MovementGrid
         }
         else
         {
-            return 0;
+            return default(TGridObject);
         }
     }
 
-    public int GetValue(Vector2 worldPosition)
+    public TGridObject GetGridObject(Vector2 worldPosition)
     {
         int x, y;
         GetXY(worldPosition, out x, out y);
-        return GetValue(x, y);
+        return GetGridObject(x, y);
     }
 
 
@@ -111,3 +121,5 @@ public class MovementGrid
         return textMesh;
     }
 }
+
+
