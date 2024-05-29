@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 60593cb87bce6774e9602037c72a9670
+guid: f3ad187120a4f6549b281784d7c4b59b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle_backup-Sheet_0
+      name: CARDS_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 50
-        height: 55
+        x: 11
+        y: 46
+        width: 9
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d70c7a4f57b1334f902617f23d90536
-      internalID: 1370971981
+      spriteID: 95ca49a23edf12241b2d68bc0d905bf9
+      internalID: 984655043
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_backup-Sheet_1
+      name: CARDS_1
       rect:
         serializedVersion: 2
-        x: 50
-        y: 0
-        width: 50
-        height: 55
+        x: 22
+        y: 46
+        width: 9
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c402b77812d6d82498afc621961cf0e1
-      internalID: -1703849481
+      spriteID: b9719836a7d5bed4db16644cddc08c5d
+      internalID: -453816335
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_backup-Sheet_2
+      name: CARDS_2
       rect:
         serializedVersion: 2
-        x: 100
-        y: 0
-        width: 50
-        height: 55
+        x: 34
+        y: 46
+        width: 9
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee2a60ca9246f9f43a33782c8e5a8c19
-      internalID: -288608431
+      spriteID: 6c040cd843fa5604a978f41fefdf0b57
+      internalID: 280774326
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_backup-Sheet_3
+      name: CARDS_3
       rect:
         serializedVersion: 2
-        x: 150
-        y: 0
-        width: 50
-        height: 55
+        x: 45
+        y: 46
+        width: 9
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b60ce008d11eb0748b058106f0ef256f
-      internalID: 1481557659
+      spriteID: 54c810b274d3a2342ad1aec1d334e5e3
+      internalID: 1897064449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_backup-Sheet_4
+      name: CARDS_4
       rect:
         serializedVersion: 2
-        x: 200
-        y: 0
-        width: 50
-        height: 55
+        x: 11
+        y: 15
+        width: 9
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38164f4c302f8f24f92db8c2e6939bc5
-      internalID: 1967563355
+      spriteID: 48dee84201ae6874fae015d9e3fa1873
+      internalID: -2103798015
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_backup-Sheet_5
+      name: CARDS_5
       rect:
         serializedVersion: 2
-        x: 250
-        y: 0
-        width: 50
-        height: 55
+        x: 22
+        y: 15
+        width: 9
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3001701002f79a548a75c6dfdd508388
-      internalID: -1892046686
+      spriteID: 0a2b473ab08a2ac41828d507320d9ec2
+      internalID: -122378891
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_backup-Sheet_6
+      name: CARDS_6
       rect:
         serializedVersion: 2
-        x: 300
-        y: 0
-        width: 50
-        height: 55
+        x: 34
+        y: 15
+        width: 9
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,8 +250,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5fe6f9d114e758469f95c4ce3aa6b7c
-      internalID: 722512720
+      spriteID: 3c20e9db57aa20647b5b5f4aa2289b9c
+      internalID: 1710273043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CARDS_7
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 15
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be78c972ede1f354e957906bba0bb35d
+      internalID: -1770952020
       vertices: []
       indices: 
       edges: []
@@ -267,13 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      idle_backup-Sheet_0: 1370971981
-      idle_backup-Sheet_1: -1703849481
-      idle_backup-Sheet_2: -288608431
-      idle_backup-Sheet_3: 1481557659
-      idle_backup-Sheet_4: 1967563355
-      idle_backup-Sheet_5: -1892046686
-      idle_backup-Sheet_6: 722512720
+      CARDS_0: 984655043
+      CARDS_1: -453816335
+      CARDS_2: 280774326
+      CARDS_3: 1897064449
+      CARDS_4: -2103798015
+      CARDS_5: -122378891
+      CARDS_6: 1710273043
+      CARDS_7: -1770952020
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

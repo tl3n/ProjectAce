@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - RoomBorders
+  - Enemy
   - SpawnPoint
   - Grid
   - MelleEnemy
@@ -18,7 +19,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 

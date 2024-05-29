@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 60593cb87bce6774e9602037c72a9670
+guid: d8e72629016d1604fb764e324295c0d9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle_backup-Sheet_0
+      name: punch_backup-Recovered-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 50
-        height: 55
+        width: 80
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d70c7a4f57b1334f902617f23d90536
-      internalID: 1370971981
+      spriteID: fe9db5f39b7fb5a44958d8dc033c6f0b
+      internalID: -1859010754
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_backup-Sheet_1
+      name: punch_backup-Recovered-Sheet_1
       rect:
         serializedVersion: 2
-        x: 50
+        x: 80
         y: 0
-        width: 50
-        height: 55
+        width: 80
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c402b77812d6d82498afc621961cf0e1
-      internalID: -1703849481
+      spriteID: 7ecde10b5d4e3e34cbbad206da87e557
+      internalID: 1994425103
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_backup-Sheet_2
+      name: punch_backup-Recovered-Sheet_2
       rect:
         serializedVersion: 2
-        x: 100
+        x: 160
         y: 0
-        width: 50
-        height: 55
+        width: 80
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee2a60ca9246f9f43a33782c8e5a8c19
-      internalID: -288608431
+      spriteID: 7a5a330765776d74699da204dd255f3b
+      internalID: -1312629746
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_backup-Sheet_3
+      name: punch_backup-Recovered-Sheet_3
       rect:
         serializedVersion: 2
-        x: 150
+        x: 240
         y: 0
-        width: 50
-        height: 55
+        width: 80
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b60ce008d11eb0748b058106f0ef256f
-      internalID: 1481557659
+      spriteID: 3fe359d8635e4d8479bfde98735ae3f4
+      internalID: -906119163
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_backup-Sheet_4
+      name: punch_backup-Recovered-Sheet_4
       rect:
         serializedVersion: 2
-        x: 200
+        x: 320
         y: 0
-        width: 50
-        height: 55
+        width: 80
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38164f4c302f8f24f92db8c2e6939bc5
-      internalID: 1967563355
+      spriteID: f4c9df7d03065124aacb7f1aec87cf64
+      internalID: -1792456361
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_backup-Sheet_5
+      name: punch_backup-Recovered-Sheet_5
       rect:
         serializedVersion: 2
-        x: 250
+        x: 400
         y: 0
-        width: 50
-        height: 55
+        width: 80
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3001701002f79a548a75c6dfdd508388
-      internalID: -1892046686
+      spriteID: 4774fab2b21bbaa4c865db77cf3d5894
+      internalID: -2145647553
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_backup-Sheet_6
+      name: punch_backup-Recovered-Sheet_6
       rect:
         serializedVersion: 2
-        x: 300
+        x: 480
         y: 0
-        width: 50
-        height: 55
+        width: 80
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,8 +250,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5fe6f9d114e758469f95c4ce3aa6b7c
-      internalID: 722512720
+      spriteID: c94b979097293ba4781e2eeca19a6c99
+      internalID: -1650915708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punch_backup-Recovered-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 431837a7fbc53a24e8d94e03ffc1fff3
+      internalID: -957927326
       vertices: []
       indices: 
       edges: []
@@ -267,13 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      idle_backup-Sheet_0: 1370971981
-      idle_backup-Sheet_1: -1703849481
-      idle_backup-Sheet_2: -288608431
-      idle_backup-Sheet_3: 1481557659
-      idle_backup-Sheet_4: 1967563355
-      idle_backup-Sheet_5: -1892046686
-      idle_backup-Sheet_6: 722512720
+      punch_backup-Recovered-Sheet_0: -1859010754
+      punch_backup-Recovered-Sheet_1: 1994425103
+      punch_backup-Recovered-Sheet_2: -1312629746
+      punch_backup-Recovered-Sheet_3: -906119163
+      punch_backup-Recovered-Sheet_4: -1792456361
+      punch_backup-Recovered-Sheet_5: -2145647553
+      punch_backup-Recovered-Sheet_6: -1650915708
+      punch_backup-Recovered-Sheet_7: -957927326
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
