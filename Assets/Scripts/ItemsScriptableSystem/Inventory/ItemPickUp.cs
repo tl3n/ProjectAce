@@ -13,34 +13,31 @@ public class ItemPickUp : MonoBehaviour
     private bool isTriggerStayActivated = false;
     //inventory component
     private ItemManager ItemManager;
+    //placeholder for Player Stats
+    private Stats PlayerStats;
 
     //set text instructions invisible
     void Start()
     {
         PickUpText.SetActive(false);
         ItemManager = GameObject.Find("ArtefactDisplay").GetComponent<ItemManager>();
-
-        //activate the artefact factory
-        /*ArtefactFactory factory = new BlackCatCreator();
-        ItemsData BlackCat = factory.CreateArtifact();
-        ItemManager.AddToInventory(BlackCat);*/
-
     }
 
     //check for E key pressed -- for destruction in OnTriggerStay
     void Update()
     {
         //isKeyPressed = Input.GetKeyDown(KeyCode.E);
-
-        if (isTriggerStayActivated)
+        
+        if (isTriggerStayActivated && PlayerStats != null)
         {
             if (Input.GetKeyDown(KeyCode.E) && ItemManager.AddToInventory(Item) == true)
             {
-                Destroy(gameObject);
+                 Item.Apply(PlayerStats);
+;                Destroy(gameObject);
             }
             else if (Input.GetKeyDown(KeyCode.E) && ItemManager.AddToInventory(Item) == false)
             {
-                Debug.Log("Invertory full!");
+                Debug.Log("Inventory full!");
             }
         }
     }
@@ -51,6 +48,7 @@ public class ItemPickUp : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             PickUpText.SetActive(true);
+            PlayerStats = collision.GetComponent<Stats>();
             Debug.Log(Item.name + " trigger box entered");
         }
     }
@@ -65,6 +63,7 @@ public class ItemPickUp : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         PickUpText.SetActive(false);
+        isTriggerStayActivated = false;
         Debug.Log(Item.name + " trigger box left");
     }
 }

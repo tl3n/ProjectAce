@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
 
-//[CreateAssetMenu(menuName = "Item Default")]
+[CreateAssetMenu(menuName = "Item Default")]
 public class ItemsData : ScriptableObject
 {
     [SerializeField] private string itemName = "Default Item Name";
@@ -12,15 +11,22 @@ public class ItemsData : ScriptableObject
     private int itemPrice;
     public Sprite icon;
     public GameObject prefab;
-    //interface for the effects -- strategy pattern
+    // interface for the effects -- strategy pattern
     public EffectsInterface effects;
 
     public void Apply(Stats playerStats)
     {
-        effects.ApplyEffect(playerStats);
+        if (effects != null)
+        {
+            effects.ApplyEffect(playerStats);
+        }
+        else
+        {
+            Debug.LogError("Effects is not assigned in " + itemName);
+        }
     }
 
-    //setters
+    // setters
     public string Name
     {
         get { return itemName; }
@@ -44,6 +50,4 @@ public class ItemsData : ScriptableObject
         get { return itemPrice; }
         set { itemPrice = value; }
     }
-
-    //public abstract void Use();
 }

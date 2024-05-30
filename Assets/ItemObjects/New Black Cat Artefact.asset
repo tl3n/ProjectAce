@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc2d1a7cfdbd664dafbf229862c1f78, type: 3}
+  m_Name: New Black Cat Artefact
+  m_EditorClassIdentifier: 
+  itemName: Black Cat
+  itemDescription: Heals immediately and gives speed boost
+  quantity: 1
+  icon: {fileID: -1431356675, guid: 8c5119fd91c94fd418b61cbfc7924c5b, type: 3}
+  prefab: {fileID: 4271780705713119558, guid: 5bca66363562c5c4b9f110d44d0b0876, type: 3}
