@@ -102,6 +102,7 @@ MonoBehaviour:
   rb: {fileID: 2551981752511508252}
   force: 20
   damage: 1
+  playerShadow: {fileID: 1536623093229720369, guid: 8f8d2e53cd163b84e9ee32533deadfe6, type: 3}
 --- !u!50 &2551981752511508252
 Rigidbody2D:
   serializedVersion: 4

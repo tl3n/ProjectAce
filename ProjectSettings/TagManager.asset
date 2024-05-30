@@ -13,6 +13,7 @@ TagManager:
   - SummonerEnemy
   - BossEnemy
   - Wall
+  - Door
   layers:
   - Default
   - TransparentFX
