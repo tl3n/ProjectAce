@@ -21,6 +21,7 @@ public class PathNode
         this.y = y;
     }
 
+   
     public void CalculateFCost()
     {
         fCost = hCost + gCost;
