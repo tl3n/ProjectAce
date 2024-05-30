@@ -8,6 +8,11 @@ public abstract class Enemy : MonoBehaviour, IGridComponent
     /// </summary>
     [SerializeField] protected string enemyName = "Enemy";
 
+    /// <summary>
+    /// Layer of the enemy
+    /// </summary>
+    [SerializeField] protected float layer;
+
     public string EnemyName { get; set; }
 
     /// <summary>
@@ -19,6 +24,12 @@ public abstract class Enemy : MonoBehaviour, IGridComponent
     /// Initialization of the enemy
     /// </summary>
     public abstract void Initialize();
+
+    void Update()
+    {
+        var sprite = GetComponent<SpriteRenderer>();
+        sprite.sortingOrder = Mathf.RoundToInt(transform.localPosition.y * -10f + layer);
+    }
 
     /// <summary>
     /// Enemy is leaf, so return exception

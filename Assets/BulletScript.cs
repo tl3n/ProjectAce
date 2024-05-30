@@ -7,14 +7,14 @@ public class BulletScript : MonoBehaviour
     private Vector3 mousePos;
     private Camera mainCam;
     public Rigidbody2D rb;
-    PlayerCombat playerCombat;
+    //PlayerCombat playerCombat;
     public float force;
     public int damage = 1;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerCombat = GetComponent<PlayerCombat>();
+        //playerCombat = GetComponent<PlayerCombat>();
 
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rb = GetComponent<Rigidbody2D>();  
@@ -33,7 +33,7 @@ public class BulletScript : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if ((collision.gameObject.CompareTag("Enemy")) || (collision.gameObject.CompareTag("Wall")))
         {
             Debug.Log("GET HIT " + collision.gameObject.name);
             // Perform taking damage from the bullet

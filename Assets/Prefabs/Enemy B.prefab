@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: EnemyB
+  layer: 5
 --- !u!61 &6333671585455870000
 BoxCollider2D:
   m_ObjectHideFlags: 0

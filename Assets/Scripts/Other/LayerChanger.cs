@@ -11,6 +11,13 @@ public class LayerChanger : MonoBehaviour
     void Update()
     {
         var sprite = GetComponent<SpriteRenderer>();
-        sprite.sortingOrder = Mathf.RoundToInt(transform.position.y * -10f + layer);
+        if (transform.parent != null)
+        {
+            sprite.sortingOrder = Mathf.RoundToInt(transform.parent.localPosition.y * -10f + layer);
+        }
+        else
+        {
+            sprite.sortingOrder = Mathf.RoundToInt(transform.localPosition.y * -10f + layer);
+        }
     }
 }

@@ -12,6 +12,7 @@ TagManager:
   - RangerEnemy
   - SummonerEnemy
   - BossEnemy
+  - Wall
   layers:
   - Default
   - TransparentFX

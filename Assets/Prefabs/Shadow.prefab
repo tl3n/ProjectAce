@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6512449402352470771}
   - component: {fileID: 1173179695994107541}
   - component: {fileID: 7034761210530876377}
-  - component: {fileID: -8068732628839747300}
+  - component: {fileID: 191963969885071236}
   m_Layer: 0
   m_Name: Shadow
   m_TagString: Untagged
@@ -121,7 +121,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-8068732628839747300
+--- !u!114 &191963969885071236
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
