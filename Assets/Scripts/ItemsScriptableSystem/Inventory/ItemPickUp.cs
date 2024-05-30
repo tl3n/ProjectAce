@@ -21,6 +21,9 @@ public class ItemPickUp : MonoBehaviour
     {
         PickUpText.SetActive(false);
         ItemManager = GameObject.Find("ArtefactDisplay").GetComponent<ItemManager>();
+
+        /*ArtefactFactory factory = ScriptableObject.CreateInstance<BlackCatCreator>();
+        Item = factory.CreateArtifact();*/
     }
 
     //check for E key pressed -- for destruction in OnTriggerStay
@@ -32,8 +35,16 @@ public class ItemPickUp : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E) && ItemManager.AddToInventory(Item) == true)
             {
-                 Item.Apply(PlayerStats);
-;                Destroy(gameObject);
+                Debug.Log("Item added to inventory. Applying effect and destroying the item.");
+                if (Item.effects == null)
+                {
+                    Debug.LogError($"Effects is not assigned in {Item.Name}");
+                }
+                else
+                {
+                    Item.Apply(PlayerStats);
+                }
+                Destroy(gameObject);
             }
             else if (Input.GetKeyDown(KeyCode.E) && ItemManager.AddToInventory(Item) == false)
             {
@@ -49,6 +60,10 @@ public class ItemPickUp : MonoBehaviour
         {
             PickUpText.SetActive(true);
             PlayerStats = collision.GetComponent<Stats>();
+            if (PlayerStats == null)
+            {
+                Debug.LogError("PlayerStats component not found on the player. Ensure the component is attached.");
+            }
             Debug.Log(Item.name + " trigger box entered");
         }
     }

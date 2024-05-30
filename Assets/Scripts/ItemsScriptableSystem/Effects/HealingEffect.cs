@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealingEffect : EffectsInterface
+public class HealingEffect : ScriptableObject, EffectsInterface
 {
-    private float healPoints;
+    public float healPoints;
 
     public HealingEffect(float boost)
     {

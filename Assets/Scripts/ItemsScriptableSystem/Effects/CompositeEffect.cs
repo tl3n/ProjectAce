@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CompositeEffect : EffectsInterface
+public class CompositeEffect : ScriptableObject, EffectsInterface
 {
     private List<EffectsInterface> effects;
 
-    public CompositeEffect(List<EffectsInterface> multipleEffects)
+    public void Initialize(List<EffectsInterface> multipleEffects)
     {
         this.effects = multipleEffects;
     }

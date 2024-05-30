@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class SpeedEffect : EffectsInterface
+public class SpeedEffect : ScriptableObject, EffectsInterface
 {
-    private float speedPoints;
+    public float speedPoints;
 
     public SpeedEffect(float boost)
     {

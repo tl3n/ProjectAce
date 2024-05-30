@@ -15,10 +15,16 @@ public class BlackCatArtefact : ItemsData
 
     private void Initialize()
     {
-        //creating artefact with factory method
-        ArtefactFactory factory = new BlackCatCreator();
+        ArtefactFactory factory = ScriptableObject.CreateInstance<BlackCatCreator>();
         var artifact = factory.CreateArtifact();
-    }
 
-    
+        //copy data from factory-created artifact to this instance
+        this.Name = artifact.Name;
+        this.Description = artifact.Description;
+        this.ItemQuantity = artifact.ItemQuantity;
+        this.effects = artifact.effects;
+        this.icon = artifact.icon;
+        this.prefab = artifact.prefab;
+
+    }
 }

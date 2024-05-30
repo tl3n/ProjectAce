@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Item Default")]
@@ -11,7 +9,6 @@ public class ItemsData : ScriptableObject
     private int itemPrice;
     public Sprite icon;
     public GameObject prefab;
-    // interface for the effects -- strategy pattern
     public EffectsInterface effects;
 
     public void Apply(Stats playerStats)
@@ -22,8 +19,15 @@ public class ItemsData : ScriptableObject
         }
         else
         {
-            Debug.LogError("Effects is not assigned in " + itemName);
+            Debug.LogError($"Effects is not assigned in {itemName}");
         }
+    }
+
+    public void Initialize(string name, string description, EffectsInterface effect)
+    {
+        this.itemName = name;
+        this.itemDescription = description;
+        this.effects = effect;
     }
 
     // setters
