@@ -33,7 +33,7 @@ public class FillStatusBar : MonoBehaviour
             fillImage.color = Color.red;
         } else if(fillValue > slider.maxValue / 3)
         {
-            fillImage.color = Color.white;
+            fillImage.color = Color.red; //TODO: It was white
         }
 
         slider.value = fillValue;

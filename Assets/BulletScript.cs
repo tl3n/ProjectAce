@@ -22,8 +22,6 @@ public class BulletScript : MonoBehaviour
         rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
         float rot = Mathf.Atan2(rotation.y, rotation.x)*Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot + 90);
-        // TODO: Need to edit
-        Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), playerShadow.GetComponent<CapsuleCollider2D>(), true);
     }
 
     private void Update()
