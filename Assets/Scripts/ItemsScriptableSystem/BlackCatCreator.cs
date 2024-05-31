@@ -24,7 +24,9 @@ public class BlackCatCreator : ArtefactFactory
         BlackCat.Description = "Heals immediately and gives speed boost";
         BlackCat.effects = compositeEffect;
 
-        //BlackCat.icon = Resources.Load<Sprite>("Path/To/Your/Sprite");
+        BlackCat.icon = Resources.Load<Sprite>("ItemPalette/BlackCat");
+        BlackCat.prefab = Resources.Load<GameObject>("Prefabs/BlackCat");
+
         return BlackCat;
     }
 }

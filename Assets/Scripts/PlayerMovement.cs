@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dodgerollTime = 0.2f;
     [SerializeField] private float dodgerollCooldown = 2f; //cooldown after which player is able to dash again
 
-    [SerializeField] private float movementSpeed = 7f;
+    [SerializeField] private Stats playerStats;
     private bool animatorFlipX; //where we store direction which sprite is facing
     private Vector2 dodgeDirection = new Vector2(0, 0).normalized;
     private Vector2 inputVector; //direction of input
@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
                                                                         //it is formed based on buttons player is pressing (so based on input)
                                                                         //and we separate input from movement logic itself
 
-         movement = inputVector * movementSpeed;
+         movement = inputVector * playerStats.speed;
         if (movement != Vector2.zero)
         {
             lastMoveDirection = movement.normalized;

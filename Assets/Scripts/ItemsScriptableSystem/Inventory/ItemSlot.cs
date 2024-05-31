@@ -67,6 +67,7 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         QuantityText.enabled = true;
 
         SlotImage.sprite = Item.icon;
+        SlotImage.enabled = true;
     }
 
     public void RemoveItem()
@@ -81,11 +82,12 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         QuantityText.enabled = false;
 
         SlotImage.sprite = null;
+        SlotImage.enabled = false;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        // HoverPanel.SetActive(true);
+        // HoverPanel.SetActive(true);û
         HoverPanel.text = this.slotDescription;
         HoverPanel.gameObject.SetActive(true); 
        // Debug.Log(this.slotDescription);

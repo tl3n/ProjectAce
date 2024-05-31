@@ -6,9 +6,9 @@ using UnityEngine;
 public class ItemPickUp : MonoBehaviour
 {
     //item data representation (base class ItemData for Artefact and Healing)
-    public ItemsData Item;
+    [SerializeField] private ItemsData Item;
     //text instruction game object for instructions for the player
-    [SerializeField] public GameObject PickUpText;
+    [SerializeField] private GameObject PickUpText;
     //check for instruction done
     private bool isTriggerStayActivated = false;
     //inventory component
@@ -19,11 +19,36 @@ public class ItemPickUp : MonoBehaviour
     //set text instructions invisible
     void Start()
     {
-        PickUpText.SetActive(false);
-        ItemManager = GameObject.Find("ArtefactDisplay").GetComponent<ItemManager>();
+        //loading pick up key hint
+        if (PickUpText == null)
+        {
+            PickUpText = Resources.Load<GameObject>("TextUI/Instructions");
+        }
 
-        /*ArtefactFactory factory = ScriptableObject.CreateInstance<BlackCatCreator>();
-        Item = factory.CreateArtifact();*/
+        if (PickUpText != null)
+        {
+            PickUpText.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("PickUpText not found or not assigned.");
+        }
+
+        //setting interface
+        GameObject artefactDisplay = GameObject.Find("ArtefactDisplay");
+        if (artefactDisplay != null)
+        {
+            ItemManager = artefactDisplay.GetComponent<ItemManager>();
+        }
+        else
+        {
+            Debug.LogError("ArtefactDisplay not found in the scene.");
+        }
+
+        if (ItemManager == null)
+        {
+            Debug.LogError("ItemManager component not found on ArtefactDisplay.");
+        }
     }
 
     //check for E key pressed -- for destruction in OnTriggerStay
@@ -58,7 +83,10 @@ public class ItemPickUp : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            PickUpText.SetActive(true);
+            if (PickUpText != null)
+            {
+                PickUpText.SetActive(true);
+            }
             PlayerStats = collision.GetComponent<Stats>();
             if (PlayerStats == null)
             {
@@ -71,14 +99,23 @@ public class ItemPickUp : MonoBehaviour
     //recreate visually picking up (destruction)
     private void OnTriggerStay2D(Collider2D collision)
     {
-        isTriggerStayActivated = true;
+        if (collision.CompareTag("Player"))
+        {
+            isTriggerStayActivated = true;
+        }
     }
 
     //switch off destruction
     private void OnTriggerExit2D(Collider2D collision)
     {
-        PickUpText.SetActive(false);
-        isTriggerStayActivated = false;
-        Debug.Log(Item.name + " trigger box left");
+        if (collision.CompareTag("Player"))
+        {
+            if (PickUpText != null)
+            {
+                PickUpText.SetActive(false);
+            }
+            isTriggerStayActivated = false;
+            Debug.Log(Item.name + " trigger box left");
+        }
     }
 }

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bc2d1a7cfdbd664dafbf229862c1f78, type: 3}
   m_Name: New Black Cat Artefact
   m_EditorClassIdentifier: 
-  itemName: Black Cat
-  itemDescription: Heals immediately and gives speed boost
+  itemName: Default Item Name
+  itemDescription: Default description
   quantity: 1
-  icon: {fileID: -1431356675, guid: 8c5119fd91c94fd418b61cbfc7924c5b, type: 3}
-  prefab: {fileID: 4271780705713119558, guid: 5bca66363562c5c4b9f110d44d0b0876, type: 3}
+  icon: {fileID: 0}
+  prefab: {fileID: 0}

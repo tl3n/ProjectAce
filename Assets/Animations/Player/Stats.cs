@@ -19,7 +19,7 @@ public class Stats : MonoBehaviour
         }
     }
 
-    private float _speed = 1;
+    private float _speed = 7f;
     public float speed
     {
         get { return _speed; }

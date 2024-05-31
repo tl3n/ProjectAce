@@ -1,22 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
-    private ItemsData Item;
-    
-    //ui panel for the menu
     public GameObject InventoryVisuals;
     public bool menuActivated;
 
-   // private List<ItemSlot> Inventory;
-    //choose between array and list
     public ItemSlot[] Slot;
 
     void Awake()
     {
-        //Inventory = new List<ItemSlot>();
         InventoryVisuals.SetActive(false);
     }
 
@@ -51,14 +43,12 @@ public class ItemManager : MonoBehaviour
             }
         }
     }
+
     public bool AddToInventory(ItemsData Item)
     {
-        //addition logic
-        //Debug.Log(" >>> OBTAINED:" + Item.Name + " " + Item.Description + " " + Item.Price);
-        
-        for (int i = 0; i < Slot.Length; i++) 
+        for (int i = 0; i < Slot.Length; i++)
         {
-            if (Slot[i].full == false)
+            if (!Slot[i].full)
             {
                 Slot[i].AddItem(Item);
                 return true;
@@ -66,29 +56,15 @@ public class ItemManager : MonoBehaviour
         }
         return false;
     }
-    public ItemSlot itemSlot;
 
     public void RemoveItemFromSlot(ItemsData Item)
     {
         for (int i = 0; i < Slot.Length; i++)
         {
-            if (Slot[i].name == Item.Name && Slot[i].full != false)
+            if (Slot[i].slotName == Item.Name && Slot[i].full)
             {
                 Slot[i].RemoveItem();
             }
-            else
-            {
-                Debug.LogWarning("ItemSlot reference is empty");
-            }
         }
-    }
-
-    private ItemSlot setArtifactSlot()
-    {
-        ItemSlot slot = new ItemSlot();
-        slot.slotName = Item.Name;
-        slot.slotDescription = Item.Description;
-        slot.slotItemSprite = Item.icon;
-        return slot;
     }
 }
