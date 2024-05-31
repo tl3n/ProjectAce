@@ -4,13 +4,34 @@ using UnityEngine;
 
 public abstract class RangerWeapon : Weapon
 {
+    /// <summary>
+    /// Position of the mouse
+    /// </summary>
     private Vector3 mousePos;
-    private Camera mainCam;
-    [SerializeField] protected Rigidbody2D rigidBody;
-    [SerializeField] protected float force;
-    [SerializeField] protected int damage;    
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Main camera
+    /// </summary>
+    private Camera mainCam;
+
+    /// <summary>
+    /// Rigidbody of the bullet
+    /// </summary>
+    protected Rigidbody2D rigidBody;
+
+    /// <summary>
+    /// Force to calculate velocity of bullet
+    /// </summary>
+    [SerializeField] protected float force;
+
+    /// <summary>
+    /// Damage of the bullet
+    /// </summary>
+    [SerializeField] protected int damage;
+
+    /// <summary>
+    /// Start is called before the first frame update
+    /// </summary>
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
@@ -23,6 +44,10 @@ public abstract class RangerWeapon : Weapon
         transform.rotation = Quaternion.Euler(0, 0, rot + 90);
     }
 
+    /// <summary>
+    /// Check object with which bullet has been collided
+    /// </summary>
+    /// <param name="collision">Collision of bullet with other object</param>
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if ((collision.gameObject.CompareTag("Enemy")) || (collision.gameObject.CompareTag("Wall")) || (collision.gameObject.CompareTag("Door")))

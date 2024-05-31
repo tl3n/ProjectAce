@@ -23,7 +23,14 @@ public abstract class Enemy : MonoBehaviour, IGridComponent
     /// <summary>
     /// Initialization of the enemy
     /// </summary>
-    public abstract void Initialize();
+    public virtual void Initialize()
+    {
+        // any unique logic to this weapon
+        gameObject.name = enemyName;
+        particleSystem = GetComponentInChildren<ParticleSystem>();
+        particleSystem?.Stop();
+        particleSystem?.Play();
+    }
 
     void Update()
     {
