@@ -17,5 +17,12 @@ public abstract class Weapon : MonoBehaviour
     /// <summary>
     /// Initialization of the weapon
     /// </summary>
-    public abstract void Initialize();
+    public virtual void Initialize()
+    {
+        // any unique logic to this weapon
+        gameObject.name = weaponName;
+        particleSystem = GetComponentInChildren<ParticleSystem>();
+        particleSystem?.Stop();
+        particleSystem?.Play();
+    }
 }

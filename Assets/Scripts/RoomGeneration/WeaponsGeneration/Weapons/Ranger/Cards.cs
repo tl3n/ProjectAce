@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Spray : RangerWeapon
+public class Cards : RangerWeapon
 {
-    public Spray()
+    public Cards()
     {
-        weaponName = "Spray";
+        weaponName = "Cards";
+        force = 20;
+        damage = 1;
     }
 
     /// <summary>
-    /// Initialization of the spray
+    /// Initialization of the cards
     /// </summary>
     // public override void Initialize()
     // {
@@ -21,4 +23,6 @@ public class Spray : RangerWeapon
     //     particleSystem?.Stop();
     //     particleSystem?.Play();
     // }
+
+    
 }

@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6038369111672942992}
   - component: {fileID: 156445208497729963}
-  - component: {fileID: 7437822490473592521}
   - component: {fileID: 2551981752511508252}
   - component: {fileID: -4568599034723781361}
+  - component: {fileID: 8808803721359714623}
   m_Layer: 8
-  m_Name: bullet
+  m_Name: Cards
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,22 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7437822490473592521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5482487568189145336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c0f1c6846a83474ebebd77b4b232527, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 2551981752511508252}
-  force: 20
-  damage: 1
-  playerShadow: {fileID: 1536623093229720369, guid: 8f8d2e53cd163b84e9ee32533deadfe6, type: 3}
 --- !u!50 &2551981752511508252
 Rigidbody2D:
   serializedVersion: 4
@@ -175,3 +159,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.28125, y: 0.4375}
   m_EdgeRadius: 0
+--- !u!114 &8808803721359714623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5482487568189145336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc7bf27af9ad702459e2902b3b2443a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: Cards
+  rb: {fileID: 2551981752511508252}
+  force: 20
+  damage: 1

@@ -331,7 +331,7 @@ GameObject:
   m_Component:
   - component: {fileID: 414479073}
   - component: {fileID: 414479074}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -466,7 +466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 643012520}
   - component: {fileID: 643012521}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RotatePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -752,7 +752,7 @@ GameObject:
   - component: {fileID: 1786104212}
   - component: {fileID: 1786104213}
   - component: {fileID: 1786104214}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -979,7 +979,7 @@ GameObject:
   - component: {fileID: 1831061394}
   - component: {fileID: 1831061390}
   - component: {fileID: 1831061391}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1156,7 +1156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2011890955}
   - component: {fileID: 2011890956}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
