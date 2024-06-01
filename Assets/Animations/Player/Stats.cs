@@ -30,16 +30,28 @@ public class Stats : MonoBehaviour
         }
     }
 
-    private float _damage;
-    public float damage
+    private float _defaultDamage;
+    public float defaultDamage
     {
-        get { return _damage;  }
+        get { return _defaultDamage;  }
         set
         {
-            _damage = value;
+            _defaultDamage = value;
             OnStatsChanged?.Invoke();
         }
     }
+
+    private float _upgradedDamage;
+    public float upgradedDamage
+    {
+        get { return _upgradedDamage; }
+        set
+        {
+            _upgradedDamage = value;
+            OnStatsChanged?.Invoke();
+        }
+    }
+
     private float _luck;
     public float luck
     {
@@ -49,5 +61,14 @@ public class Stats : MonoBehaviour
             _luck = value;
             OnStatsChanged?.Invoke();
         }
+    }
+
+    private void Start()
+    {
+        _upgradedDamage = _defaultDamage;
+    }
+    public void AddDamageModifier(float multiplier)
+    {
+        _upgradedDamage = _defaultDamage * multiplier;
     }
 }

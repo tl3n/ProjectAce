@@ -13,6 +13,6 @@ public class DamageEffect : EffectsInterface
 
     public void ApplyEffect(Stats playerStats)
     {
-        playerStats.damage += damagePoints;
+        playerStats.defaultDamage += damagePoints;
     }
 }
