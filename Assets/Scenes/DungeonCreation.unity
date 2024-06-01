@@ -468,7 +468,7 @@ GameObject:
   - component: {fileID: 643012521}
   m_Layer: 7
   m_Name: RotatePoint
-  m_TagString: Untagged
+  m_TagString: PlayerRP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1248,7 +1248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 864640299885174596, guid: ddf84111636c1bd4d8b5e603afb603a4, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 903395279759106684, guid: ddf84111636c1bd4d8b5e603afb603a4, type: 3}
       propertyPath: m_BodyType
@@ -1269,6 +1269,10 @@ PrefabInstance:
     - target: {fileID: 2953993723509996492, guid: ddf84111636c1bd4d8b5e603afb603a4, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953993723509996492, guid: ddf84111636c1bd4d8b5e603afb603a4, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 3126221581696561964, guid: ddf84111636c1bd4d8b5e603afb603a4, type: 3}
       propertyPath: layer
@@ -1370,6 +1374,10 @@ PrefabInstance:
     - target: {fileID: 1536623093229720369, guid: 8f8d2e53cd163b84e9ee32533deadfe6, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536623093229720369, guid: 8f8d2e53cd163b84e9ee32533deadfe6, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6512449402352470771, guid: 8f8d2e53cd163b84e9ee32533deadfe6, type: 3}
       propertyPath: m_LocalPosition.x

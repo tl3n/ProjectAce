@@ -16,6 +16,11 @@ public class Shooting : MonoBehaviour
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+
+        Debug.Log(bullet is RangerWeapon);
+        Debug.Log(bullet is BoomerangWeapon);
+
+        Debug.Log(bullet is Crutches);
     }
 
     // Update is called once per frame
@@ -31,11 +36,20 @@ public class Shooting : MonoBehaviour
 
         if(!canFire)
         {
-            timer += Time.deltaTime;
-            if(timer>timeBetweenFiring)
+            if (bullet is RangerWeapon)
+            {
+                timer += Time.deltaTime;
+                if (timer > timeBetweenFiring)
+                {
+                    canFire = true;
+                    timer = 0;
+                }
+            }
+
+            // Check if there are any instances of the bullet in the scene
+            if ((bullet is BoomerangWeapon) && (GameObject.FindObjectOfType(bullet.GetType()) == null))
             {
                 canFire = true;
-                timer = 0;
             }
         }
 

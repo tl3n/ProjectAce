@@ -8,17 +8,8 @@ public class Crutches : BoomerangWeapon
     public Crutches()
     {
         weaponName = "Crutches";
-    }
-
-    /// <summary>
-    /// Initialization of the crutches
-    /// </summary>
-    public override void Initialize()
-    {
-        // any unique logic to this weapon
-        gameObject.name = weaponName;
-        particleSystem = GetComponentInChildren<ParticleSystem>();
-        particleSystem?.Stop();
-        particleSystem?.Play();
+        force = 20;
+        damage = 1;
+        maxDistance = 5f;
     }
 }

@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 156445208497729963}
   - component: {fileID: 2551981752511508252}
   - component: {fileID: -4568599034723781361}
-  - component: {fileID: 8808803721359714623}
+  - component: {fileID: -5679420235675452123}
   m_Layer: 8
   m_Name: Cards
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,7 +159,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.28125, y: 0.4375}
   m_EdgeRadius: 0
---- !u!114 &8808803721359714623
+--- !u!114 &-5679420235675452123
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,10 +168,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5482487568189145336}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc7bf27af9ad702459e2902b3b2443a6, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e8c73faee618dd41a4eadb284ea5c74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: Cards
-  rb: {fileID: 2551981752511508252}
+  weaponName: Crutches
   force: 20
   damage: 1
+  player: {fileID: 0}
+  maxDistance: 5
