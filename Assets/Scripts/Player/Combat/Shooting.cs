@@ -36,7 +36,7 @@ public class Shooting : MonoBehaviour
 
         if(!canFire)
         {
-            if (bullet is RangerWeapon)
+            if (bullet.CompareTag("RangerWeapon"))
             {
                 timer += Time.deltaTime;
                 if (timer > timeBetweenFiring)
@@ -47,7 +47,7 @@ public class Shooting : MonoBehaviour
             }
 
             // Check if there are any instances of the bullet in the scene
-            if ((bullet is BoomerangWeapon) && (GameObject.FindObjectOfType(bullet.GetType()) == null))
+            if (bullet.CompareTag("BoomerangWeapon") && (Object.FindObjectOfType<BoomerangWeapon>() == null))
             {
                 canFire = true;
             }

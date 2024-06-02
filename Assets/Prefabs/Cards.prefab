@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5679420235675452123}
   m_Layer: 8
   m_Name: Cards
-  m_TagString: Bullet
+  m_TagString: BoomerangWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,4 +175,4 @@ MonoBehaviour:
   force: 20
   damage: 1
   player: {fileID: 0}
-  maxDistance: 5
+  maxDistance: 500

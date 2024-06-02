@@ -34,6 +34,8 @@ public abstract class RangerWeapon : Weapon
     /// </summary>
     void Start()
     {
+        gameObject.tag = "RangerWeapon";
+
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rigidBody = GetComponent<Rigidbody2D>();  
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);

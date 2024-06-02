@@ -49,6 +49,8 @@ public abstract class BoomerangWeapon : Weapon
 
     void Start()
     {
+        gameObject.tag = "BoomerangWeapon";
+
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rigidBody = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("PlayerRP"); // Find the player GameObject
@@ -99,7 +101,7 @@ public abstract class BoomerangWeapon : Weapon
                 healthComponent.GetHit(damage);
             }
 
-            shouldReturn = true;
+           shouldReturn = true;
         }
     }
 }

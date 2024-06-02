@@ -16,6 +16,8 @@ TagManager:
   - Door
   - PlayerRP
   - Bullet
+  - BoomerangWeapon
+  - RangerWeapon
   layers:
   - Default
   - TransparentFX
