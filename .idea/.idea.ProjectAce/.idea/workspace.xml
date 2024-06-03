@@ -6,8 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="3cecc785-34ca-45b7-86e0-8fb58e581889" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectAce/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectAce/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PathNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PathNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/hospitalTrialRoom.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/hospitalTrialRoom.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GridTesting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GridTesting.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovementGrid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MovementGrid.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MovementGrid.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MovementGrid.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pathfinding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,10 +22,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MovementGrid.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PathNode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pathfinding.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../game-programming-patterns-demo/Assets/6 Factory/Scripts/ExampleUsage/ClickToCreate.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../game-programming-patterns-demo/Assets/6 Factory/Scripts/ExampleUsage/ConcreteFactoryA.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -50,15 +53,15 @@
   },
   &quot;keyToStringList&quot;: {
     &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\vasyl\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\vasyl\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\vasyl\\AppData\\Local\\Symbols\\src&quot;
+      &quot;C:\\Users\\stone\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\stone\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\stone\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.23f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="D:\unity\2022.3.23f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath E:\repos\ProjectAce -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="E:\repos\ProjectAce" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -66,7 +69,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.23f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="D:\unity\2022.3.23f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath E:\repos\ProjectAce -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="E:\repos\ProjectAce" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -83,10 +86,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="15296">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="15296" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -116,6 +119,11 @@
       <workItem from="1714214332076" duration="4131000" />
       <workItem from="1716980747740" duration="6298000" />
       <workItem from="1717068948688" duration="5784000" />
+      <workItem from="1717159338138" duration="7901000" />
+      <workItem from="1717233918673" duration="1148000" />
+      <workItem from="1717252105216" duration="2535000" />
+      <workItem from="1717333257175" duration="3728000" />
+      <workItem from="1717370789485" duration="4158000" />
     </task>
     <servers />
   </component>
@@ -123,6 +131,11 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityProjectDiscoverer">
+    <option name="hasUnityReference" value="true" />
+    <option name="unityProject" value="true" />
+    <option name="unityProjectFolder" value="true" />
+  </component>
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

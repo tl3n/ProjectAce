@@ -14,10 +14,10 @@ public class Pathfinding
     private List<PathNode> closedList;
     public Pathfinding(int width, int height)
     {
-        grid = new MovementGrid<PathNode>(width, height, cellSize, new Vector2(-45, -16), (MovementGrid<PathNode> g, int x, int y) => new PathNode(g, x, y));
+        grid = new MovementGrid<PathNode>(width, height, cellSize, new Vector2(0, 0), (MovementGrid<PathNode> g, int x, int y) => new PathNode(g, x, y));
     }
 
-    private List<PathNode> FindPath(int startX, int startY, int endX, int endY)
+    public List<PathNode> FindPath(int startX, int startY, int endX, int endY)
     {
         PathNode startNode = grid.GetGridObject(startX, startY);
         PathNode endNode = grid.GetGridObject(endX, endY);
@@ -153,6 +153,11 @@ public class Pathfinding
         }
 
         return lowestFCostNode;
+    }
+
+    public MovementGrid<PathNode> GetGrid()
+    {
+        return grid;
     }
     
 }

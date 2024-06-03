@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using CodeMonkey.Utils;
 
-public class MovementGrid<TGridObject>
+public class MovementGrid<TGridObject> 
 {
 
     private int width;
@@ -12,9 +12,14 @@ public class MovementGrid<TGridObject>
     private float cellSize;
     public const int sortingOrderDefault = 5000;
     private Vector2 originPosition;
+    
 
     private TGridObject[,] gridArray;
     private TextMesh[,] debugTextArray;
+    
+    
+   
+
    public MovementGrid(int width, int height, float cellSize, Vector2 originPosition, Func<MovementGrid<TGridObject>, int, int, TGridObject>  createGridObject)
     {
         this.width = width;
@@ -64,7 +69,7 @@ public class MovementGrid<TGridObject>
         return new Vector2 (x, y) * cellSize + originPosition;
     }
 
-    private void GetXY(Vector2 worldPosition, out int x, out int y)
+    public void GetXY(Vector2 worldPosition, out int x, out int y)
     {
         x = Mathf.FloorToInt((worldPosition-originPosition).x / cellSize);
         y = Mathf.FloorToInt((worldPosition - originPosition).y / cellSize);
@@ -129,6 +134,10 @@ public class MovementGrid<TGridObject>
         textMesh.GetComponent<MeshRenderer>().sortingOrder = sortingOrder;
         return textMesh;
     }
+    
+    
 }
+
+
 
 
