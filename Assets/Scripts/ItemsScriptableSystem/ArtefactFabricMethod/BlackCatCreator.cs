@@ -20,6 +20,7 @@ public class BlackCatCreator : ArtefactFactory
         //add icon and quantity
         ItemsData BlackCat = ScriptableObject.CreateInstance<ItemsData>();
         BlackCat.Name = "Black Cat";
+        BlackCat.Id = 1;
         BlackCat.ItemQuantity = 1;
         BlackCat.Description = "Heals immediately and gives speed boost";
         BlackCat.effects = compositeEffect;

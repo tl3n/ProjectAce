@@ -18,6 +18,7 @@ public class MushroomCreator : ArtefactFactory
         ItemsData Mushroom = ScriptableObject.CreateInstance<ItemsData>();
         Mushroom.Name = "Mushroom";
         Mushroom.ItemQuantity = 1;
+        Mushroom.Id = 2;
         Mushroom.Description = "Gives RandomBoost for the damage";
         Mushroom.effects = damageBoost;
         Mushroom.icon = Resources.Load<Sprite>("ItemPalette/Mushroom");

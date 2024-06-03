@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99df18505ab6a9a40b6c015ef4026885, type: 3}
   m_Name: Mushroom Artefact
   m_EditorClassIdentifier: 
-  itemName: Mushroom
-  itemDescription: Gives RandomBoost for the damage
+  itemName: Default Item Name
+  itemDescription: Default description
   quantity: 1
-  icon: {fileID: 21300000, guid: 05b819d21b6c1f34291f5b33e6079d12, type: 3}
-  prefab: {fileID: 1410785665589987923, guid: f6f87db9f3e75c442b86337a12ee036f, type: 3}
+  icon: {fileID: 0}
+  prefab: {fileID: 0}

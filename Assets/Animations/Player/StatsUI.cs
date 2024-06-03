@@ -8,6 +8,7 @@ public class StatsUI : MonoBehaviour
     public Stats playerStats;
     public TextMeshProUGUI healthStatusText;
     public TextMeshProUGUI speedStatusText;
+    public TextMeshProUGUI damageStatusText;
 
     void Start()
     {
@@ -35,6 +36,10 @@ public class StatsUI : MonoBehaviour
         if(speedStatusText != null)
         {
             speedStatusText.text = "SPEED: " + playerStats.speed;
+        }
+        if (damageStatusText != null)
+        {
+            damageStatusText.text = "DAMAGE: " + playerStats.upgradedDamage;
         }
     }
 }

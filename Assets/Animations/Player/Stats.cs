@@ -30,7 +30,7 @@ public class Stats : MonoBehaviour
         }
     }
 
-    private float _defaultDamage;
+    private float _defaultDamage = 10;
     public float defaultDamage
     {
         get { return _defaultDamage;  }

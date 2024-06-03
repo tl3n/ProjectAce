@@ -49,13 +49,14 @@ public class ItemPickUp : MonoBehaviour
         {
             Debug.LogError("ItemManager component not found on ArtefactDisplay.");
         }
+        //PlayerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<Stats>();
     }
 
     //check for E key pressed -- for destruction in OnTriggerStay
     void Update()
     {
         //isKeyPressed = Input.GetKeyDown(KeyCode.E);
-        
+
         if (isTriggerStayActivated && PlayerStats != null)
         {
             if (Input.GetKeyDown(KeyCode.E) && ItemManager.AddToInventory(Item) == true)

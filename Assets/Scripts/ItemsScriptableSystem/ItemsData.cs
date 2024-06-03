@@ -7,6 +7,7 @@ public class ItemsData : ScriptableObject
     [SerializeField] private string itemDescription = "Default description";
     [SerializeField] private int quantity = 1;
     private int itemPrice;
+    private int itemId;
     public Sprite icon;
     public GameObject prefab;
     public EffectsInterface effects;
@@ -35,6 +36,12 @@ public class ItemsData : ScriptableObject
     {
         get { return itemName; }
         set { itemName = value; }
+    }
+
+    public int Id 
+    {
+        get { return itemId; }
+        set { itemId = value; }
     }
 
     public string Description
