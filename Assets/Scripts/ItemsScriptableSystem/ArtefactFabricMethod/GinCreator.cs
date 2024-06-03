@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GinCreator : ArtefactFactory
 {
-    [SerializeField] private int[] _possibleItemIds;
+    private int[] _possibleItemIds;
     public int[] possibleItemIds
     {
         get { return _possibleItemIds; }
@@ -12,8 +12,8 @@ public class GinCreator : ArtefactFactory
 
     public override ItemsData CreateArtifact()
     {
-        //var effect = ScriptableObject.CreateInstance<RandomItemsEffect>();
-        effect.Initialize(possibleItemIds);
+        var effect = ScriptableObject.CreateInstance<RandomChoiceEffect>();
+        effect.Initialize(_possibleItemIds);
 
         ItemsData Gin = ScriptableObject.CreateInstance<ItemsData>();
         Gin.Name = "Lamp with Gin";
