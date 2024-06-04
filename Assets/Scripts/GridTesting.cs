@@ -19,12 +19,14 @@ public class GridTesting : MonoBehaviour
         {
             Vector2 mouseWorldPosition = GetMouseWorldPosition();
             pathfinding.GetGrid().GetXY(mouseWorldPosition, out int x, out int y);
-            List<PathNode> path = pathfinding.FindPath(0, 0, x, y);
+            List<PathNode> path = pathfinding.FindPath(9, 2, x, y);
             if (path != null)
             {
+                Debug.ClearDeveloperConsole();
                 for (int i = 0; i < path.Count - 1; i++)
                 {
-                    Debug.DrawLine(new Vector2(path[i].x, path[i].y) * 10f + Vector2.one * 5f, new Vector2(path[i+1].x, path[i+1].y) * 10f + Vector2.one * 5f, Color.green);
+                    Debug.Log(path[i].x + ", " + path[i].y);
+                    Debug.DrawLine(new Vector2(path[i].x, path[i].y) * 5f + Vector2.one * 2.5f, new Vector2(path[i+1].x, path[i+1].y) * 5f + Vector2.one * 2.5f, Color.green, 5);
                 }
             }
         }
