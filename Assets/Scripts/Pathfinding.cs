@@ -9,12 +9,12 @@ public class Pathfinding
     private const int MOVE_STRAIGHT_COST = 10;
     private const int MOVE_DIAGONAL_COST = 14;
 
-    private MovementGrid<PathNode> grid;
+    private MovementGrid grid;
     private List<PathNode> openList;
     private List<PathNode> closedList;
     public Pathfinding(int width, int height)
     {
-        grid = new MovementGrid<PathNode>(width, height, cellSize, new Vector2(0, 0), (MovementGrid<PathNode> g, int x, int y) => new PathNode(g, x, y));
+        grid = new MovementGrid(width, height, cellSize, new Vector2(0, 0));
     }
 
     public List<PathNode> FindPath(int startX, int startY, int endX, int endY)
@@ -55,6 +55,11 @@ public class Pathfinding
                 if (closedList.Contains(neighbourNode))
                     continue;
 
+                if (!neighbourNode.isWalkable)
+                {
+                    closedList.Add(neighbourNode);
+                    continue;
+                }
                 int tentativeGCost = currentNode.gCost + CalculateDistanceCost(currentNode, neighbourNode);
                 if (tentativeGCost < neighbourNode.gCost)
                 {
@@ -75,7 +80,7 @@ public class Pathfinding
     }
 
 
-    private PathNode GetNode(int x, int y)
+    public PathNode GetNode(int x, int y)
     {
         return grid.GetGridObject(x, y);
     }
@@ -155,7 +160,7 @@ public class Pathfinding
         return lowestFCostNode;
     }
 
-    public MovementGrid<PathNode> GetGrid()
+    public MovementGrid GetGrid()
     {
         return grid;
     }

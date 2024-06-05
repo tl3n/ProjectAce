@@ -2,9 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using CodeMonkey.Utils;
 
-public class MovementGrid<TGridObject> 
+public class MovementGrid
 {
 
     private int width;
@@ -13,27 +12,29 @@ public class MovementGrid<TGridObject>
     public const int sortingOrderDefault = 5000;
     private Vector2 originPosition;
     
-
-    private TGridObject[,] gridArray;
+    private PathNode[,] gridArray;   
     private TextMesh[,] debugTextArray;
     
-    
-   
-
-   public MovementGrid(int width, int height, float cellSize, Vector2 originPosition, Func<MovementGrid<TGridObject>, int, int, TGridObject>  createGridObject)
+   public MovementGrid(int width, int height, float cellSize, Vector2 originPosition)
     {
         this.width = width;
         this.height = height;
         this.cellSize = cellSize; 
         this.originPosition = originPosition;
-
-        gridArray = new TGridObject[width, height];
+        
+        gridArray = new PathNode[width, height];
         debugTextArray = new TextMesh[width, height];
+        
+        LayerMask unwalkableMask = LayerMask.NameToLayer("Unwalkable");
         for (int x = 0; x < gridArray.GetLength(0); x++)
         {
             for (int y = 0; y < gridArray.GetLength(1); y++)
             {
-                gridArray[x, y] = createGridObject(this, x, y);
+                Vector2 worldPoint = new Vector2(x * cellSize + 2.5f, y * cellSize + 2.5f);
+                Vector2 box = new Vector2(cellSize - .1f, cellSize - .1f);
+                bool isWalkable = !(Physics2D.OverlapBox(worldPoint, box, 0, 1 << unwalkableMask)); 
+                
+                gridArray[x, y] = createGridObject(this, x, y, isWalkable);
             }
         }
 
@@ -55,6 +56,11 @@ public class MovementGrid<TGridObject>
         
     }
 
+    PathNode createGridObject(MovementGrid grid, int x, int y, bool isWalkable)
+    {
+        return new PathNode(grid, x, y, isWalkable);
+    }
+   
     public int GetWidth()
     {
         return width;
@@ -75,7 +81,7 @@ public class MovementGrid<TGridObject>
         y = Mathf.FloorToInt((worldPosition - originPosition).y / cellSize);
     }
 
-    public void SetGridObject(int x, int y, TGridObject value)
+    public void SetGridObject(int x, int y, PathNode value)
     {
         if(x>= 0 && y>=0 && x< width && y < height)
         {
@@ -85,14 +91,14 @@ public class MovementGrid<TGridObject>
         
     }
 
-    public void SetGridObject(Vector2 worldPosition, TGridObject value)
+    public void SetGridObject(Vector2 worldPosition, PathNode value)
     {
         int x, y;
         GetXY(worldPosition, out x, out y);
         SetGridObject(x, y, value);
     }
 
-    public TGridObject GetGridObject(int x, int y)
+    public PathNode GetGridObject(int x, int y)
     {
         if (x>=0 && y>= 0 && x< width && y< height)
         {
@@ -100,11 +106,11 @@ public class MovementGrid<TGridObject>
         }
         else
         {
-            return default(TGridObject);
+            return default(PathNode);
         }
     }
 
-    public TGridObject GetGridObject(Vector2 worldPosition)
+    public PathNode GetGridObject(Vector2 worldPosition)
     {
         int x, y;
         GetXY(worldPosition, out x, out y);

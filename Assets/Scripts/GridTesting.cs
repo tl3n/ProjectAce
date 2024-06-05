@@ -1,13 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class GridTesting : MonoBehaviour
 {
     private Pathfinding pathfinding;
-    
-    public LayerMask unwalkableMask;
     private void Start()
     {
         pathfinding = new Pathfinding(18, 5);
@@ -25,10 +24,18 @@ public class GridTesting : MonoBehaviour
                 Debug.ClearDeveloperConsole();
                 for (int i = 0; i < path.Count - 1; i++)
                 {
-                    Debug.Log(path[i].x + ", " + path[i].y);
                     Debug.DrawLine(new Vector2(path[i].x, path[i].y) * 5f + Vector2.one * 2.5f, new Vector2(path[i+1].x, path[i+1].y) * 5f + Vector2.one * 2.5f, Color.green, 5);
                 }
             }
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            Vector3 mouseWorldPosition = GetMouseWorldPosition();
+            pathfinding.GetGrid().GetXY(mouseWorldPosition, out int x, out int y);
+            
+            PathNode node = pathfinding.GetNode(x, y);
+            pathfinding.GetNode(x, y).SetIsWalkable(!pathfinding.GetNode(x, y).isWalkable);
         }
     }
 
