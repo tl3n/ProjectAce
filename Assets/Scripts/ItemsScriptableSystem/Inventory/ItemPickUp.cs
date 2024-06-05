@@ -8,7 +8,9 @@ public class ItemPickUp : MonoBehaviour
     //item data representation (base class ItemData for Artefact and Healing)
     [SerializeField] private ItemsData Item;
     //text instruction game object for instructions for the player
-    [SerializeField] private GameObject PickUpText;
+    [SerializeField] private GameObject PickUpTextPrefab;
+    //Instance of the text hint
+    private GameObject PickUpTextInstance;
     //check for instruction done
     private bool isTriggerStayActivated = false;
     //inventory component
@@ -19,20 +21,9 @@ public class ItemPickUp : MonoBehaviour
     //set text instructions invisible
     void Start()
     {
-        //loading pick up key hint
-        if (PickUpText == null)
-        {
-            PickUpText = Resources.Load<GameObject>("TextUI/Instructions");
-        }
-
-        if (PickUpText != null)
-        {
-            PickUpText.SetActive(false);
-        }
-        else
-        {
-            Debug.LogError("PickUpText not found or not assigned.");
-        }
+        //represents the PickUpTextPrefab and set it inactive initially
+        PickUpTextInstance = Instantiate(PickUpTextPrefab);
+        PickUpTextInstance.SetActive(false);
 
         //setting interface
         GameObject artefactDisplay = GameObject.Find("ArtefactDisplay");
@@ -84,9 +75,9 @@ public class ItemPickUp : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if (PickUpText != null)
+            if (PickUpTextInstance != null)
             {
-                PickUpText.SetActive(true);
+                PickUpTextInstance.SetActive(true);
             }
             PlayerStats = collision.GetComponent<Stats>();
             if (PlayerStats == null)
@@ -111,9 +102,9 @@ public class ItemPickUp : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if (PickUpText != null)
+            if (PickUpTextInstance != null)
             {
-                PickUpText.SetActive(false);
+                PickUpTextInstance.SetActive(false);
             }
             isTriggerStayActivated = false;
             Debug.Log(Item.name + " trigger box left");
