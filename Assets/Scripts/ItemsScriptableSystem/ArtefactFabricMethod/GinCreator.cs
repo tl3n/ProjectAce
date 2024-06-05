@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GinCreator : ArtefactFactory
 {
-    private int[] _possibleItemIds;
+    private int[] _possibleItemIds = { 2, 3 };
     public int[] possibleItemIds
     {
         get { return _possibleItemIds; }
@@ -17,14 +17,13 @@ public class GinCreator : ArtefactFactory
 
         ItemsData Gin = ScriptableObject.CreateInstance<ItemsData>();
         Gin.Name = "Lamp with Gin";
-        Gin.Id = 3;
+        Gin.Id = 1;
         Gin.ItemQuantity = 1;
         Gin.Description = "Gives one Item to choose among 3 random items";
         Gin.effects = effect;
         Gin.icon = Resources.Load<Sprite>("ItemPalette/Gin");
         Gin.prefab = Resources.Load<GameObject>("Prefabs/Gin");
 
-        Debug.Log("Gin artifact created with RandomItemsEffect.");
         return Gin;
     }
 }
