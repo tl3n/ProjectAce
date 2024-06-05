@@ -6,10 +6,15 @@ using UnityEngine;
 
 public class GridTesting : MonoBehaviour
 {
+    [SerializeField] private EnemyMovement enemyPathfinding;
+
+    private MovementGrid grid;
     private Pathfinding pathfinding;
+    
     private void Start()
     {
-        pathfinding = new Pathfinding(18, 5);
+        pathfinding = new Pathfinding();
+        grid = pathfinding.GetGrid();
     }
 
     private void Update()

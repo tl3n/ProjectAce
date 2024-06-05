@@ -15,11 +15,11 @@ public class MovementGrid
     private PathNode[,] gridArray;   
     private TextMesh[,] debugTextArray;
     
-   public MovementGrid(int width, int height, float cellSize, Vector2 originPosition)
+   public MovementGrid(Vector2 originPosition)
     {
-        this.width = width;
-        this.height = height;
-        this.cellSize = cellSize; 
+        this.width = 18;
+        this.height = 5;
+        this.cellSize = 5f; 
         this.originPosition = originPosition;
         
         gridArray = new PathNode[width, height];
@@ -59,15 +59,6 @@ public class MovementGrid
     PathNode createGridObject(MovementGrid grid, int x, int y, bool isWalkable)
     {
         return new PathNode(grid, x, y, isWalkable);
-    }
-   
-    public int GetWidth()
-    {
-        return width;
-    }
-    public int GetHeight()
-    {
-        return height;
     }
 
     private Vector2 GetWorldPosition(int x, int y)
@@ -141,7 +132,19 @@ public class MovementGrid
         return textMesh;
     }
     
-    
+    public int GetWidth()
+    {
+        return width;
+    }
+    public int GetHeight()
+    {
+        return height;
+    }
+
+    public float GetCellSize()
+    {
+        return cellSize;
+    }
 }
 
 

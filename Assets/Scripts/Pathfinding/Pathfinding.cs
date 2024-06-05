@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
+using UnityEditor.Tilemaps;
 using UnityEngine;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 public class Pathfinding
 {
@@ -8,15 +12,42 @@ public class Pathfinding
 
     private const int MOVE_STRAIGHT_COST = 10;
     private const int MOVE_DIAGONAL_COST = 14;
-
+    
+    public static Pathfinding Instance { get; private set; }
+    
     private MovementGrid grid;
     private List<PathNode> openList;
     private List<PathNode> closedList;
-    public Pathfinding(int width, int height)
+    
+    public Pathfinding()
     {
-        grid = new MovementGrid(width, height, cellSize, new Vector2(0, 0));
+        Instance = this;
+
+        Vector2 originPosition = new Vector2(0, 0);
+        this.grid = new MovementGrid(originPosition);
     }
 
+    public List<Vector3> FindPath(Vector3 startWorldPosition, Vector3 endWorldPosition)
+    {
+        grid.GetXY(startWorldPosition, out int startX, out int startY);
+        grid.GetXY(endWorldPosition, out int endX, out int endY);
+
+        List<PathNode> path = FindPath(startX, startY, endX, endY);
+        if (path == null)
+        {
+            return null;
+        }
+        else
+        {
+            List<Vector3> vectorPath = new List<Vector3>();
+            foreach (PathNode pathNode in path)
+            {
+                vectorPath.Add(new Vector3(pathNode.x, pathNode.y) * grid.GetCellSize() + Vector3.one * grid.GetCellSize() * .5f);
+            }
+            return vectorPath;
+        }
+    }
+    
     public List<PathNode> FindPath(int startX, int startY, int endX, int endY)
     {
         PathNode startNode = grid.GetGridObject(startX, startY);
