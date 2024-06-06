@@ -4,24 +4,33 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    [SerializeField] private Transform shadowTransform;
+    [SerializeField] private Transform playerShadowTransform;
+    
     private const float speed = 20f;
     private int currentPathIndex;
     private List<Vector3> pathVectorList;
-    [SerializeField] private Transform shadowTransform;
-    [SerializeField] private Transform playerShadowTransform;
 
-    private void Start()
+    private EnemyMovementStrategy movementStrategy;
+
+    public void SetMovementStrategy(EnemyMovementStrategy movementStrategy)
     {
+        this.movementStrategy = movementStrategy;
     }
     
     private void Update()
     {
-        SetTargetPosition(playerShadowTransform.position);
-        HandleMovement();
+        if (movementStrategy != null)
+        {
+            Vector3 playerShadowPosition = playerShadowTransform.position;
+            movementStrategy.UpdatePlayerShadowPosition(playerShadowPosition);
+            movementStrategy.Move(this);
+        }
     }
 
-    private void HandleMovement()
+    public void HandleMovement()
     {
+        
         if (pathVectorList != null)
         {
             Vector3 targetPosition = pathVectorList[currentPathIndex];
