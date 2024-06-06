@@ -10,7 +10,7 @@ public class GinCreator : ArtefactFactory
         set { _possibleItemIds = value; }
     }
 
-    public override ItemsData CreateArtifact()
+    public override ItemsData CreateArtefact()
     {
         var effect = ScriptableObject.CreateInstance<RandomChoiceEffect>();
         effect.Initialize(_possibleItemIds);

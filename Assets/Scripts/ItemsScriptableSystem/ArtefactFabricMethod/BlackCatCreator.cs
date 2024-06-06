@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Black Cat")]
 public class BlackCatCreator : ArtefactFactory
 {
-    public override ItemsData CreateArtifact()
+    public override ItemsData CreateArtefact()
     {
 
         var healingBoost = ScriptableObject.CreateInstance<HealingEffect>();

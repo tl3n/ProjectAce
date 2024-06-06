@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class ArtefactFactory : ScriptableObject
 {
-    public abstract ItemsData CreateArtifact();
+    public abstract ItemsData CreateArtefact();
 }

@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Mushroom")]
-
-public class MushroomArtefact : ItemsData
+[CreateAssetMenu(menuName = "ArtefactSO/Gin")]
+public class GinArtefact : ItemsData
 {
     private void OnEnable()
     {
@@ -13,11 +12,11 @@ public class MushroomArtefact : ItemsData
 
     private void Initialize()
     {
-        ArtefactFactory factory = ScriptableObject.CreateInstance<MushroomCreator>();
-        var artifact = factory.CreateArtifact();
+        ArtefactFactory factory = ScriptableObject.CreateInstance<GinCreator>();
+        var artifact = factory.CreateArtefact();
 
         //copy data from factory-created artifact to this instance
-        this.Name = artifact.Name;
+       this.Name = artifact.Name;
         this.Description = artifact.Description;
         this.ItemQuantity = artifact.ItemQuantity;
         this.effects = artifact.effects;

@@ -52,7 +52,7 @@ public class Stats : MonoBehaviour
         }
     }
 
-    private float _luck;
+    private float _luck = 0;
     public float luck
     {
         get { return _luck; }

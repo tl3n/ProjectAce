@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageEffect : EffectsInterface
+public class DamageEffect : ScriptableObject, EffectsInterface
 {
-    private float damagePoints;
+    public float damagePoints;
 
     public DamageEffect(float boost)
     {

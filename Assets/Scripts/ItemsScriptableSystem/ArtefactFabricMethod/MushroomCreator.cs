@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MushroomCreator : ArtefactFactory
 {
-    public override ItemsData CreateArtifact()
+    public override ItemsData CreateArtefact()
     {
         var multipliers = new float[] { 2.0f, 1.0f, 4.0f, 0.5f };
         var damageBoost = ScriptableObject.CreateInstance<RandomDamageEffect>();
