@@ -7,8 +7,8 @@ public class UniversumCreator : ArtefactFactory
     public override ItemsData CreateArtefact()
     {
 
-        var healingBoost = ScriptableObject.CreateInstance<HealingEffect>();
-        healingBoost.healPoints = 30f;
+        var hpBoost = ScriptableObject.CreateInstance<MaxHPAmplifyEffect>();
+        hpBoost.hpAmplifyPoints = 30f;
 
         var speedBoost = ScriptableObject.CreateInstance<SpeedEffect>();
         speedBoost.speedPoints = 2f;
@@ -20,7 +20,7 @@ public class UniversumCreator : ArtefactFactory
         luckBoost.luckPoints = 15f;
 
         var compositeEffect = ScriptableObject.CreateInstance<CompositeEffect>();
-        compositeEffect.Initialize(new List<EffectsInterface> { healingBoost, speedBoost, damageBoost, luckBoost });
+        compositeEffect.Initialize(new List<EffectsInterface> { hpBoost, speedBoost, damageBoost, luckBoost });
 
         //add icon and quantity
         ItemsData Universum = ScriptableObject.CreateInstance<ItemsData>();
