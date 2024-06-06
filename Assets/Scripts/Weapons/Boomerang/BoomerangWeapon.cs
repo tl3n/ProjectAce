@@ -3,21 +3,6 @@ using UnityEngine;
 public abstract class BoomerangWeapon : Weapon
 {
     /// <summary>
-    /// Position of the mouse
-    /// </summary>
-    private Vector3 mousePos;
-
-    /// <summary>
-    /// Main camera
-    /// </summary>
-    private Camera mainCam;
-
-    /// <summary>
-    /// Rigidbody of the bullet
-    /// </summary>
-    protected Rigidbody2D rigidBody;
-
-    /// <summary>
     /// Force to calculate velocity of bullet
     /// </summary>
     [SerializeField] protected float force;
@@ -28,9 +13,24 @@ public abstract class BoomerangWeapon : Weapon
     [SerializeField] protected int damage;
 
     /// <summary>
-    /// The player GameObject
+    /// Maximum distance the boomerang can travel
     /// </summary>
-    //[SerializeField] private GameObject player;
+    [SerializeField] protected float maxDistance;
+
+    /// <summary>
+    /// Rigidbody of the bullet
+    /// </summary>
+    protected Rigidbody2D rigidBody;
+
+    /// <summary>
+    /// Position of the mouse
+    /// </summary>
+    private Vector3 mousePos;
+
+    /// <summary>
+    /// Main camera
+    /// </summary>
+    private Camera mainCam;
 
     /// <summary>
     /// The starting position of the boomerang
@@ -43,21 +43,15 @@ public abstract class BoomerangWeapon : Weapon
     private bool shouldReturn = false;
 
     /// <summary>
-    /// Maximum distance the boomerang can travel
+    /// Start is called before the first frame update
     /// </summary>
-    [SerializeField] protected float maxDistance;
-
     void Start()
     {
         base.Start();
 
         gameObject.tag = "BoomerangWeapon";
-
-
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rigidBody = GetComponent<Rigidbody2D>();
-        //player = GameObject.FindGameObjectWithTag("PlayerRP"); // Find the player GameObject
-
 
         if (isEquipped)
         {
@@ -71,6 +65,9 @@ public abstract class BoomerangWeapon : Weapon
         }
     }
 
+    /// <summary>
+    /// Update is called once per frame
+    /// </summary>
     void Update()
     {
         base.Update();
@@ -85,21 +82,25 @@ public abstract class BoomerangWeapon : Weapon
         if (shouldReturn)
         {
             // Calculate the direction towards the player's current position
-            Vector3 direction = player.transform.position - transform.position;
+            Vector3 direction = rotatePointGameObject.transform.position - transform.position;
             rigidBody.velocity = new Vector2(direction.x, direction.y).normalized * force;
             float rot = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, rot + 90);
 
             // Check if the boomerang has returned to the player's position
-            if (Vector3.Distance(transform.position, player.transform.position) < 0.1f)
+            if (Vector3.Distance(transform.position, rotatePointGameObject.transform.position) < 0.1f)
             {
-                Shooting rotatePoint = player.GetComponent<Shooting>();
+                Shooting rotatePoint = rotatePointGameObject.GetComponent<Shooting>();
                 rotatePoint.canFire = true;
                 Destroy(gameObject);
             }
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="collision"></param>
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if ((collision.gameObject.CompareTag("Enemy")) || (collision.gameObject.CompareTag("Wall")) || (collision.gameObject.CompareTag("Door")))

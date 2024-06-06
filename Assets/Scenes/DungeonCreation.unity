@@ -1304,7 +1304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7741773690013122436, guid: ddf84111636c1bd4d8b5e603afb603a4, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7741773690013122436, guid: ddf84111636c1bd4d8b5e603afb603a4, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits

@@ -1,32 +1,72 @@
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public abstract class Weapon : MonoBehaviour
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [SerializeField] protected string weaponName = "Weapon";
+    
     public string WeaponName { get; set; }
 
-    protected ParticleSystem particleSystem;
-
-    //public float distance;
-
+    /// <summary>
+    /// 
+    /// </summary>
     [SerializeField] protected float interactionDistance = 2f;
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    [SerializeField] protected GameObject rotatePointGameObject;
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    protected ParticleSystem particleSystem;
+    
+    /// <summary>
+    /// 
+    /// </summary>
     protected Text interactionText;
 
-    public bool isEquipped = false;
-    [SerializeField] protected GameObject player;
-
+    /// <summary>
+    /// 
+    /// </summary>
+    [SerializeField] protected bool isEquipped;
+    
+    /// <summary>
+    /// 
+    /// </summary>
     private bool pickUpAllowed;
 
+    
+    /// <summary>
+    /// Start is called before the first frame update
+    /// </summary>
     protected void Start()
     {
-        //isEquipped = false;
-        FindPlayer();
+        FindRotatePoint();
         if (!isEquipped) CreateInteractionText();
-        
+    }
+    
+    /// <summary>
+    /// Update is called once per frame
+    /// </summary>
+    protected void Update()
+    {
+        if (pickUpAllowed && Input.GetKeyDown(KeyCode.E))
+        {
+            PickUp();
+            Debug.Log(gameObject.name + " was picked up");
+        }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public virtual void Initialize()
     {
         gameObject.name = weaponName;
@@ -35,6 +75,9 @@ public abstract class Weapon : MonoBehaviour
         particleSystem?.Play(); 
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     private void CreateInteractionText()
     {
         // Create a new Canvas
@@ -66,43 +109,9 @@ public abstract class Weapon : MonoBehaviour
         textRect.sizeDelta = new Vector2(200, 50);
     }
 
-    private void FindPlayer()
-    {
-        player = GameObject.FindGameObjectWithTag("PlayerRP");
-        if (player == null)
-        {
-            Debug.LogError("Player GameObject with tag 'PlayerRP' not found.");
-        }
-    }
-
-    // Update is called once per frame
-    protected void Update()
-    {
-        if (pickUpAllowed && Input.GetKeyDown(KeyCode.E))
-        {
-            PickUp();
-            Debug.Log(gameObject.name + " was picked up");
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            if (interactionText != null) interactionText.gameObject.SetActive(true);
-            pickUpAllowed = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            if (interactionText != null) interactionText.gameObject.SetActive(false);
-            pickUpAllowed = false;
-        }
-    }
-
+    /// <summary>
+    /// 
+    /// </summary>
     private void DestroyInteractionText()
     {
         if (interactionText != null)
@@ -115,19 +124,55 @@ public abstract class Weapon : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    private void FindRotatePoint()
+    {
+        rotatePointGameObject = GameObject.FindGameObjectWithTag("PlayerRP");
+        if (rotatePointGameObject == null)
+        {
+            Debug.LogError("Player GameObject with tag 'PlayerRP' not found.");
+        }
+    }
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="collision"></param>
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            if (interactionText != null) interactionText.gameObject.SetActive(true);
+            pickUpAllowed = true;
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="collision"></param>
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            if (interactionText != null) interactionText.gameObject.SetActive(false);
+            pickUpAllowed = false;
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
     private void PickUp()
     {
         DestroyInteractionText();
-        Shooting rotatePoint = player.GetComponent<Shooting>();
-        //rotatePoint.bullet = gameObject.GetComponent<Weapon>();
-
-   
-
-        Weapon weapon = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/" + gameObject.name + "Equipped.prefab").GetComponent<Weapon>();
-        //weapon.isEquipped = true;
-        rotatePoint.bullet = weapon;
-
-        //isEquipped = true;
+        
+        Shooting rotatePointShooting = rotatePointGameObject.GetComponent<Shooting>();
+        Weapon weapon = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/WeaponsEquipped/" + gameObject.name + "Equipped.prefab").GetComponent<Weapon>();
+        rotatePointShooting.bullet = weapon;
+        
         Destroy(gameObject);
     }
 }

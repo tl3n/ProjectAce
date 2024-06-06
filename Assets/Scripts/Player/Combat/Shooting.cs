@@ -4,22 +4,54 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
+    /// <summary>
+    /// 
+    /// </summary>
     private Camera mainCam;
+    
+    /// <summary>
+    /// 
+    /// </summary>
     private Vector3 mousePos;
+    
+    /// <summary>
+    /// 
+    /// </summary>
     public Weapon bullet;
+    
+    /// <summary>
+    /// 
+    /// </summary>
     public Transform bulletTransform;
+    
+    /// <summary>
+    /// 
+    /// </summary>
     public bool canFire;
+    
+    /// <summary>
+    /// 
+    /// </summary>
     private float timer;
+    
+    /// <summary>
+    /// 
+    /// </summary>
     public float timeBetweenFiring;
 
-    // Start is called before the first frame update
+    
+    /// <summary>
+    /// Start is called before the first frame update
+    /// </summary>
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         //SetBullet(bullet);
     }
-
-    // Update is called once per frame
+    
+    /// <summary>
+    /// Update is called once per frame
+    /// </summary>
     void Update()
     {
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
@@ -43,12 +75,6 @@ public class Shooting : MonoBehaviour
                         timer = 0;
                     }
                 }
-
-                // Check if there are any instances of the bullet in the scene
-                //if ((bullet.CompareTag("BoomerangWeapon")) && (Object.FindObjectOfType<BoomerangWeapon>() == null))
-                //{
-                //    canFire = true;
-                //}
             }
 
             if (Input.GetMouseButtonDown(1) && canFire)
