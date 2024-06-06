@@ -13,6 +13,10 @@ public class HealingEffect : ScriptableObject, EffectsInterface
 
     public void ApplyEffect(Stats playerStats)
     {
-        playerStats.health += healPoints;
+        playerStats.currentHealth += healPoints;
+        if (playerStats.currentHealth > playerStats.maxHealth)
+        {
+            playerStats.currentHealth = playerStats.maxHealth;
+        }
     }
 }

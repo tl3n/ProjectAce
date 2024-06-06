@@ -8,13 +8,24 @@ public class Stats : MonoBehaviour
 {
     public event Action OnStatsChanged;
 
-    private float _health = 100;
-    public float health
+    private float _currentHealth = 100;
+    public float currentHealth
     {
-        get { return _health; }
+        get { return _currentHealth; }
         set
         {
-            _health = value;
+            _currentHealth = value;
+            OnStatsChanged?.Invoke();
+        }
+    }
+    
+    private float _maxHealth = 100;
+    public float maxHealth
+    {
+        get { return _maxHealth; }
+        set
+        {
+            _maxHealth = value;
             OnStatsChanged?.Invoke();
         }
     }

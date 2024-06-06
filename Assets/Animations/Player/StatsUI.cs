@@ -31,7 +31,7 @@ public class StatsUI : MonoBehaviour
     {
         if(healthStatusText != null)
         {
-            healthStatusText.text = "HEALTH: " + playerStats.health;
+            healthStatusText.text = "HEALTH: " + playerStats.currentHealth + "/" + playerStats.maxHealth;
         }
         if(speedStatusText != null)
         {
