@@ -67,7 +67,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.03, y: -0.05}
-  m_Size: {x: 1.18, y: 0.41}
+  m_Size: {x: 1, y: 0.41}
   m_Direction: 1
 --- !u!212 &7034761210530876377
 SpriteRenderer:

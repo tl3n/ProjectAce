@@ -6,7 +6,7 @@ public class Shooting : MonoBehaviour
 {
     private Camera mainCam;
     private Vector3 mousePos;
-    public GameObject bullet;
+    public Weapon bullet;
     public Transform bulletTransform;
     public bool canFire;
     private float timer;
@@ -16,11 +16,7 @@ public class Shooting : MonoBehaviour
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-
-        Debug.Log(bullet is RangerWeapon);
-        Debug.Log(bullet is BoomerangWeapon);
-
-        Debug.Log(bullet is Crutches);
+        //SetBullet(bullet);
     }
 
     // Update is called once per frame
@@ -34,29 +30,32 @@ public class Shooting : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0, 0, rotZ);
 
-        if(!canFire)
-        {
-            if (bullet.CompareTag("RangerWeapon"))
+        if (bullet != null)
+        {  
+            if (!canFire)
             {
-                timer += Time.deltaTime;
-                if (timer > timeBetweenFiring)
+                if (bullet.CompareTag("RangerWeapon"))
                 {
-                    canFire = true;
-                    timer = 0;
+                    timer += Time.deltaTime;
+                    if (timer > timeBetweenFiring)
+                    {
+                        canFire = true;
+                        timer = 0;
+                    }
                 }
+
+                // Check if there are any instances of the bullet in the scene
+                //if ((bullet.CompareTag("BoomerangWeapon")) && (Object.FindObjectOfType<BoomerangWeapon>() == null))
+                //{
+                //    canFire = true;
+                //}
             }
 
-            // Check if there are any instances of the bullet in the scene
-            if (bullet.CompareTag("BoomerangWeapon") && (Object.FindObjectOfType<BoomerangWeapon>() == null))
+            if (Input.GetMouseButtonDown(1) && canFire)
             {
-                canFire = true;
+                canFire = false;
+                Instantiate(bullet, bulletTransform.position, Quaternion.identity);
             }
-        }
-
-        if(Input.GetMouseButtonDown(1) && canFire)
-        {
-            canFire = false;
-            Instantiate(bullet, bulletTransform.position, Quaternion.identity);
         }
     }
 }

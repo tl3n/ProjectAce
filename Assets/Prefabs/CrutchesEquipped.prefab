@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 156445208497729963}
   - component: {fileID: 2551981752511508252}
   - component: {fileID: -4568599034723781361}
-  - component: {fileID: 6884840739144461693}
+  - component: {fileID: -5460799226392038826}
+  - component: {fileID: 8654540363930822028}
   m_Layer: 8
-  m_Name: Cards
+  m_Name: CrutchesEquipped
   m_TagString: BoomerangWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,7 +160,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.28125, y: 0.4375}
   m_EdgeRadius: 0
---- !u!114 &6884840739144461693
+--- !u!114 &-5460799226392038826
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,12 +169,48 @@ MonoBehaviour:
   m_GameObject: {fileID: 5482487568189145336}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc7bf27af9ad702459e2902b3b2443a6, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e8c73faee618dd41a4eadb284ea5c74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: Cards
-  visibilityDistance: 5
-  interactionText: {fileID: 0}
-  playerCheck: 1
+  weaponName: Crutches
+  interactionDistance: 2
+  isEquipped: 1
+  player: {fileID: 0}
   force: 20
   damage: 1
+  maxDistance: 5
+--- !u!58 &8654540363930822028
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5482487568189145336}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.7

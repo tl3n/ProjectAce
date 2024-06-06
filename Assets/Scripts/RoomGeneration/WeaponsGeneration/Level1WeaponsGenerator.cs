@@ -26,6 +26,8 @@ namespace RoomGeneration
         /// </summary>
         private List<Weapon> weapons = new List<Weapon>();
 
+        //private WeaponStateMachine stateMachine;
+
         /// <summary>
         /// Generation of weapons for each room from grid 
         /// </summary>
@@ -37,6 +39,9 @@ namespace RoomGeneration
             {
                 CreateWeapons(roomsList[i].Type, i);
             }
+
+            //stateMachine = new WeaponStateMachine(weapons[0]);
+            //stateMachine.Initialize(stateMachine.onGroundState);
         }
 
         /// <summary>
@@ -52,8 +57,21 @@ namespace RoomGeneration
             int difX = 3, difY = 0;
 
             Weapon weapon;
-            weapon = melleWeaponsCreator.GetWeapon(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
+            weapon = boomerangWeaponsCreator.GetWeapon(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
             weapons.Add(weapon);
+        }
+
+        private void Update()
+        {
+            // TODO: just testing, must be deleted
+            //foreach (Weapon weapon in weapons)
+            //{
+            //    stateMachine = new WeaponStateMachine(weapon);
+            //    stateMachine.Initialize(stateMachine.onGroundState);
+            //    stateMachine.Update();
+            //}
+
+            //Debug.Log("PENIS");
         }
     }
 }

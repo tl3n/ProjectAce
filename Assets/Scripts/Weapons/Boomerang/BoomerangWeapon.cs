@@ -30,7 +30,7 @@ public abstract class BoomerangWeapon : Weapon
     /// <summary>
     /// The player GameObject
     /// </summary>
-    [SerializeField] private GameObject player;
+    //[SerializeField] private GameObject player;
 
     /// <summary>
     /// The starting position of the boomerang
@@ -49,25 +49,34 @@ public abstract class BoomerangWeapon : Weapon
 
     void Start()
     {
+        base.Start();
+
         gameObject.tag = "BoomerangWeapon";
+
 
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rigidBody = GetComponent<Rigidbody2D>();
-        player = GameObject.FindGameObjectWithTag("PlayerRP"); // Find the player GameObject
-        startingPosition = transform.position; // Store the starting position
+        //player = GameObject.FindGameObjectWithTag("PlayerRP"); // Find the player GameObject
 
-        mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 direction = mousePos - transform.position;
-        Vector3 rotation = transform.position - mousePos;
-        rigidBody.velocity = new Vector2(direction.x, direction.y).normalized * force;
-        float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, rot + 90);
+
+        if (isEquipped)
+        {
+            startingPosition = transform.position; // Store the starting position
+            mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 direction = mousePos - transform.position;
+            Vector3 rotation = transform.position - mousePos;
+            rigidBody.velocity = new Vector2(direction.x, direction.y).normalized * force;
+            float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, rot + 90);
+        }
     }
 
     void Update()
     {
+        base.Update();
+
         // Check if the boomerang has traveled beyond the maximum distance
-        if (Vector3.Distance(transform.position, startingPosition) > maxDistance)
+        if ((Vector3.Distance(transform.position, startingPosition) > maxDistance) && (isEquipped))
         {
             shouldReturn = true;
         }
@@ -84,6 +93,8 @@ public abstract class BoomerangWeapon : Weapon
             // Check if the boomerang has returned to the player's position
             if (Vector3.Distance(transform.position, player.transform.position) < 0.1f)
             {
+                Shooting rotatePoint = player.GetComponent<Shooting>();
+                rotatePoint.canFire = true;
                 Destroy(gameObject);
             }
         }

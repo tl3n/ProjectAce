@@ -331,7 +331,7 @@ GameObject:
   m_Component:
   - component: {fileID: 414479073}
   - component: {fileID: 414479074}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -466,7 +466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 643012520}
   - component: {fileID: 643012521}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: RotatePoint
   m_TagString: PlayerRP
   m_Icon: {fileID: 0}
@@ -501,7 +501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1670383899d784bbce2401b868d9c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 5482487568189145336, guid: af9fac6485bd1004e941906e926d7770, type: 3}
+  bullet: {fileID: 0}
   bulletTransform: {fileID: 2011890955}
   canFire: 1
   timeBetweenFiring: 0.5
@@ -752,7 +752,7 @@ GameObject:
   - component: {fileID: 1786104212}
   - component: {fileID: 1786104213}
   - component: {fileID: 1786104214}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: PlayerVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -906,7 +906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcc8e52deed103a439a1f0fe15b2b57f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 0}
+  weaponPrefab: {fileID: -5460799226392038826, guid: a3d0d99d8efe00b478a7041cbe097ed4, type: 3}
 --- !u!114 &1793463597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -979,7 +979,7 @@ GameObject:
   - component: {fileID: 1831061394}
   - component: {fileID: 1831061390}
   - component: {fileID: 1831061391}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1011,7 +1011,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1831061386}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -1033,7 +1033,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0, y: -0.052986145}
@@ -1156,7 +1156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2011890955}
   - component: {fileID: 2011890956}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Fist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1312,11 +1312,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9094759335772631324, guid: ddf84111636c1bd4d8b5e603afb603a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.22
+      value: 1.54
       objectReference: {fileID: 0}
     - target: {fileID: 9094759335772631324, guid: ddf84111636c1bd4d8b5e603afb603a4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.36
       objectReference: {fileID: 0}
     - target: {fileID: 9094759335772631324, guid: ddf84111636c1bd4d8b5e603afb603a4, type: 3}
       propertyPath: m_LocalPosition.z
