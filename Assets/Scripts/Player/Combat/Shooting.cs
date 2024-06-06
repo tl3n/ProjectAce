@@ -5,37 +5,37 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     /// <summary>
-    /// 
+    /// Main camera
     /// </summary>
     private Camera mainCam;
     
     /// <summary>
-    /// 
+    /// Position of the mouse
     /// </summary>
     private Vector3 mousePos;
     
     /// <summary>
-    /// 
+    /// Weapon that will be shooting
     /// </summary>
     public Weapon bullet;
     
     /// <summary>
-    /// 
+    /// Transform of the weapon
     /// </summary>
     public Transform bulletTransform;
     
     /// <summary>
-    /// 
+    /// Opportunity to shoot
     /// </summary>
     public bool canFire;
     
     /// <summary>
-    /// 
+    /// Timer to control shooting
     /// </summary>
     private float timer;
     
     /// <summary>
-    /// 
+    /// Time between firing
     /// </summary>
     public float timeBetweenFiring;
 
@@ -46,7 +46,6 @@ public class Shooting : MonoBehaviour
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        //SetBullet(bullet);
     }
     
     /// <summary>

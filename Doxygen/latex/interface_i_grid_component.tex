@@ -1,0 +1,120 @@
+\doxysection{IGrid\+Component Interface Reference}
+\hypertarget{interface_i_grid_component}{}\label{interface_i_grid_component}\index{IGridComponent@{IGridComponent}}
+Inheritance diagram for IGrid\+Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.333333cm]{interface_i_grid_component}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{interface_i_grid_component_a21f0c00accee33efc951647e9b74e708}{Get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Returns name of the grid components. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_i_grid_component_a52427825499876387955ae883e15c8d4}{Add}} (\mbox{\hyperlink{interface_i_grid_component}{IGrid\+Component}} component)
+\begin{DoxyCompactList}\small\item\em Add component into the list if current is not leaf. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_i_grid_component_abafb08e05c5cbf0aa3f243944fefeb3b}{Remove}} (\mbox{\hyperlink{interface_i_grid_component}{IGrid\+Component}} component)
+\begin{DoxyCompactList}\small\item\em Remove component from the list if current is not leaf. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{interface_i_grid_component_a42131fd9f1c8be452f3de6a960e46647}{Is\+Composite}} ()
+\begin{DoxyCompactList}\small\item\em Check if component is composite. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_i_grid_component_a9f8caba6c267d958e8706aaaf1715e19}{Set\+Active}} (bool state)
+\begin{DoxyCompactList}\small\item\em Change state of the components. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interface_i_grid_component_a52427825499876387955ae883e15c8d4}\label{interface_i_grid_component_a52427825499876387955ae883e15c8d4} 
+\index{IGridComponent@{IGridComponent}!Add@{Add}}
+\index{Add@{Add}!IGridComponent@{IGridComponent}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily void IGrid\+Component.\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_i_grid_component}{IGrid\+Component}}}]{component }\end{DoxyParamCaption})}
+
+
+
+Add component into the list if current is not leaf. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & Grid component\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_dungeon_generation_1_1_room_a5f2680db7570edbbdab8b7d48d3d9145}{Dungeon\+Generation.\+Room}}, and \mbox{\hyperlink{class_enemy_af8777498b8247f6db05e149dcdf103c1}{Enemy}}.
+
+\Hypertarget{interface_i_grid_component_a21f0c00accee33efc951647e9b74e708}\label{interface_i_grid_component_a21f0c00accee33efc951647e9b74e708} 
+\index{IGridComponent@{IGridComponent}!GetName@{GetName}}
+\index{GetName@{GetName}!IGridComponent@{IGridComponent}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily string IGrid\+Component.\+Get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns name of the grid components. 
+
+\begin{DoxyReturn}{Returns}
+Name of the leaf or list of the components
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_dungeon_generation_1_1_room_a7f7d2c4985b6f83dac7cadb8f1e43e86}{Dungeon\+Generation.\+Room}}, and \mbox{\hyperlink{class_enemy_aa18ca6fbf30138db0114c5da351b137e}{Enemy}}.
+
+\Hypertarget{interface_i_grid_component_a42131fd9f1c8be452f3de6a960e46647}\label{interface_i_grid_component_a42131fd9f1c8be452f3de6a960e46647} 
+\index{IGridComponent@{IGridComponent}!IsComposite@{IsComposite}}
+\index{IsComposite@{IsComposite}!IGridComponent@{IGridComponent}}
+\doxysubsubsection{\texorpdfstring{IsComposite()}{IsComposite()}}
+{\footnotesize\ttfamily bool IGrid\+Component.\+Is\+Composite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if component is composite. 
+
+\begin{DoxyReturn}{Returns}
+True if it is otherwise false
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_dungeon_generation_1_1_room_a27ed09afeb8160cbea8140a7b94d72aa}{Dungeon\+Generation.\+Room}}, and \mbox{\hyperlink{class_enemy_aed79df9dcc54f23c8dbfbdace552e617}{Enemy}}.
+
+\Hypertarget{interface_i_grid_component_abafb08e05c5cbf0aa3f243944fefeb3b}\label{interface_i_grid_component_abafb08e05c5cbf0aa3f243944fefeb3b} 
+\index{IGridComponent@{IGridComponent}!Remove@{Remove}}
+\index{Remove@{Remove}!IGridComponent@{IGridComponent}}
+\doxysubsubsection{\texorpdfstring{Remove()}{Remove()}}
+{\footnotesize\ttfamily void IGrid\+Component.\+Remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_i_grid_component}{IGrid\+Component}}}]{component }\end{DoxyParamCaption})}
+
+
+
+Remove component from the list if current is not leaf. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & Grid component\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_dungeon_generation_1_1_room_a281b95342a4a751c44773971c09bbc5b}{Dungeon\+Generation.\+Room}}, and \mbox{\hyperlink{class_enemy_aea3de842b73dc7fae05d2954d343ef62}{Enemy}}.
+
+\Hypertarget{interface_i_grid_component_a9f8caba6c267d958e8706aaaf1715e19}\label{interface_i_grid_component_a9f8caba6c267d958e8706aaaf1715e19} 
+\index{IGridComponent@{IGridComponent}!SetActive@{SetActive}}
+\index{SetActive@{SetActive}!IGridComponent@{IGridComponent}}
+\doxysubsubsection{\texorpdfstring{SetActive()}{SetActive()}}
+{\footnotesize\ttfamily void IGrid\+Component.\+Set\+Active (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})}
+
+
+
+Change state of the components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & State to which it will be changed\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_dungeon_generation_1_1_room_adf14c1fe9951cf89417a42b01c8b2476}{Dungeon\+Generation.\+Room}}, and \mbox{\hyperlink{class_enemy_a925f13e19d050ef401cfd23a89272302}{Enemy}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Uni materials/2 course/\+OOP/\+Project\+Ace/\+Assets/\+Scripts/\+Grid\+Composite/IGrid\+Component.\+cs\end{DoxyCompactItemize}

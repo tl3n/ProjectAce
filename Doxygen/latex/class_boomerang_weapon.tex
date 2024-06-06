@@ -1,0 +1,106 @@
+\doxysection{Boomerang\+Weapon Class Reference}
+\hypertarget{class_boomerang_weapon}{}\label{class_boomerang_weapon}\index{BoomerangWeapon@{BoomerangWeapon}}
+Inheritance diagram for Boomerang\+Weapon\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_boomerang_weapon}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_boomerang_weapon_a0a954213922b4ceef38abda76298c8dc}{On\+Collision\+Enter2D}} (Collision2D collision)
+\begin{DoxyCompactList}\small\item\em Fixes collision with other objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_weapon}{Weapon}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_weapon_ad127865ed2e4042a08ce74f2f5faae90}{Initialize}} ()
+\begin{DoxyCompactList}\small\item\em Initialization of weapon (adding own particle system) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_boomerang_weapon_a981102f77642e4f9a1fca160c01ea140}\label{class_boomerang_weapon_a981102f77642e4f9a1fca160c01ea140} 
+float {\bfseries force}
+\begin{DoxyCompactList}\small\item\em Force to calculate velocity of bullet. \end{DoxyCompactList}\item 
+\Hypertarget{class_boomerang_weapon_af3ca0e5c14dc0b7948fbe418bd0d47ea}\label{class_boomerang_weapon_af3ca0e5c14dc0b7948fbe418bd0d47ea} 
+int {\bfseries damage}
+\begin{DoxyCompactList}\small\item\em Damage of the bullet. \end{DoxyCompactList}\item 
+\Hypertarget{class_boomerang_weapon_ac56ca038cffed99b735ff609e6818b03}\label{class_boomerang_weapon_ac56ca038cffed99b735ff609e6818b03} 
+float {\bfseries max\+Distance}
+\begin{DoxyCompactList}\small\item\em Maximum distance the boomerang can travel. \end{DoxyCompactList}\item 
+\Hypertarget{class_boomerang_weapon_ac3d85dd4c3c7d8fe135b9c8082a96ef1}\label{class_boomerang_weapon_ac3d85dd4c3c7d8fe135b9c8082a96ef1} 
+Rigidbody2D {\bfseries rigid\+Body}
+\begin{DoxyCompactList}\small\item\em Rigidbody of the bullet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_weapon}{Weapon}}}
+\begin{DoxyCompactItemize}
+\item 
+string {\bfseries weapon\+Name} = "{}Weapon"{}
+\begin{DoxyCompactList}\small\item\em Name of the weapon. \end{DoxyCompactList}\item 
+Game\+Object {\bfseries rotate\+Point\+Game\+Object}
+\begin{DoxyCompactList}\small\item\em Game\+Object of player\textquotesingle{}s rotate\+Point. \end{DoxyCompactList}\item 
+Particle\+System {\bfseries particle\+System}
+\begin{DoxyCompactList}\small\item\em Particle system of the weapon. \end{DoxyCompactList}\item 
+Text {\bfseries interaction\+Text}
+\begin{DoxyCompactList}\small\item\em Text for the interaction with player. \end{DoxyCompactList}\item 
+bool {\bfseries is\+Equipped}
+\begin{DoxyCompactList}\small\item\em State of the weapon (equipped by player or not) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_boomerang_weapon_ac05cd25dce3534cd7ff2dd1c62250113}\label{class_boomerang_weapon_ac05cd25dce3534cd7ff2dd1c62250113} 
+void {\bfseries Start} ()
+\begin{DoxyCompactList}\small\item\em Start is called before the first frame update. \end{DoxyCompactList}\item 
+\Hypertarget{class_boomerang_weapon_a63ba62bc6eb068bf3b45bf225da4af20}\label{class_boomerang_weapon_a63ba62bc6eb068bf3b45bf225da4af20} 
+void {\bfseries Update} ()
+\begin{DoxyCompactList}\small\item\em Update is called once per frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_boomerang_weapon_a2b1eef5f20367368d5844f5df6e0d0da}\label{class_boomerang_weapon_a2b1eef5f20367368d5844f5df6e0d0da} 
+Vector3 {\bfseries mouse\+Pos}
+\begin{DoxyCompactList}\small\item\em Position of the mouse. \end{DoxyCompactList}\item 
+\Hypertarget{class_boomerang_weapon_afe9ccc1d1a9e6948f0ea5f3a88b28637}\label{class_boomerang_weapon_afe9ccc1d1a9e6948f0ea5f3a88b28637} 
+Camera {\bfseries main\+Cam}
+\begin{DoxyCompactList}\small\item\em Main camera. \end{DoxyCompactList}\item 
+\Hypertarget{class_boomerang_weapon_a09cd28985b9f224849e8aa9497599491}\label{class_boomerang_weapon_a09cd28985b9f224849e8aa9497599491} 
+Vector3 {\bfseries starting\+Position}
+\begin{DoxyCompactList}\small\item\em The starting position of the boomerang. \end{DoxyCompactList}\item 
+\Hypertarget{class_boomerang_weapon_a14bf4b50df18393806c9a51cef04df35}\label{class_boomerang_weapon_a14bf4b50df18393806c9a51cef04df35} 
+bool {\bfseries should\+Return} = false
+\begin{DoxyCompactList}\small\item\em Flag to indicate if the boomerang should return. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_weapon}{Weapon}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Start} ()
+\begin{DoxyCompactList}\small\item\em Start is called before the first frame update. \end{DoxyCompactList}\item 
+void {\bfseries Update} ()
+\begin{DoxyCompactList}\small\item\em Update is called once per frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_weapon}{Weapon}}}
+\begin{DoxyCompactItemize}
+\item 
+string {\bfseries Weapon\+Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_boomerang_weapon_a0a954213922b4ceef38abda76298c8dc}\label{class_boomerang_weapon_a0a954213922b4ceef38abda76298c8dc} 
+\index{BoomerangWeapon@{BoomerangWeapon}!OnCollisionEnter2D@{OnCollisionEnter2D}}
+\index{OnCollisionEnter2D@{OnCollisionEnter2D}!BoomerangWeapon@{BoomerangWeapon}}
+\doxysubsubsection{\texorpdfstring{OnCollisionEnter2D()}{OnCollisionEnter2D()}}
+{\footnotesize\ttfamily void Boomerang\+Weapon.\+On\+Collision\+Enter2D (\begin{DoxyParamCaption}\item[{Collision2D}]{collision }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Fixes collision with other objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em collision} & Collision with object\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Uni materials/2 course/\+OOP/\+Project\+Ace/\+Assets/\+Scripts/\+Weapons/\+Boomerang/Boomerang\+Weapon.\+cs\end{DoxyCompactItemize}

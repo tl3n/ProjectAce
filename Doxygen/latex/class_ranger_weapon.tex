@@ -1,0 +1,94 @@
+\doxysection{Ranger\+Weapon Class Reference}
+\hypertarget{class_ranger_weapon}{}\label{class_ranger_weapon}\index{RangerWeapon@{RangerWeapon}}
+Inheritance diagram for Ranger\+Weapon\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_ranger_weapon}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_ranger_weapon_a5d47dd3c582380ffb108b42290660380}{On\+Collision\+Enter2D}} (Collision2D collision)
+\begin{DoxyCompactList}\small\item\em Check object with which bullet has been collided. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_weapon}{Weapon}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_weapon_ad127865ed2e4042a08ce74f2f5faae90}{Initialize}} ()
+\begin{DoxyCompactList}\small\item\em Initialization of weapon (adding own particle system) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_ranger_weapon_ad01ee3400bc3a207b726bde67d242367}\label{class_ranger_weapon_ad01ee3400bc3a207b726bde67d242367} 
+Rigidbody2D {\bfseries rigid\+Body}
+\begin{DoxyCompactList}\small\item\em Rigidbody of the bullet. \end{DoxyCompactList}\item 
+\Hypertarget{class_ranger_weapon_acb6bf93d809e06d187d902cf98bce3ab}\label{class_ranger_weapon_acb6bf93d809e06d187d902cf98bce3ab} 
+float {\bfseries force}
+\begin{DoxyCompactList}\small\item\em Force to calculate velocity of bullet. \end{DoxyCompactList}\item 
+\Hypertarget{class_ranger_weapon_a558498a3235c6b7c7fe2f2122d1b5285}\label{class_ranger_weapon_a558498a3235c6b7c7fe2f2122d1b5285} 
+int {\bfseries damage}
+\begin{DoxyCompactList}\small\item\em Damage of the bullet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_weapon}{Weapon}}}
+\begin{DoxyCompactItemize}
+\item 
+string {\bfseries weapon\+Name} = "{}Weapon"{}
+\begin{DoxyCompactList}\small\item\em Name of the weapon. \end{DoxyCompactList}\item 
+Game\+Object {\bfseries rotate\+Point\+Game\+Object}
+\begin{DoxyCompactList}\small\item\em Game\+Object of player\textquotesingle{}s rotate\+Point. \end{DoxyCompactList}\item 
+Particle\+System {\bfseries particle\+System}
+\begin{DoxyCompactList}\small\item\em Particle system of the weapon. \end{DoxyCompactList}\item 
+Text {\bfseries interaction\+Text}
+\begin{DoxyCompactList}\small\item\em Text for the interaction with player. \end{DoxyCompactList}\item 
+bool {\bfseries is\+Equipped}
+\begin{DoxyCompactList}\small\item\em State of the weapon (equipped by player or not) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_ranger_weapon_a7cdd212b7f32944c34471cb40e08ae5f}\label{class_ranger_weapon_a7cdd212b7f32944c34471cb40e08ae5f} 
+void {\bfseries Start} ()
+\begin{DoxyCompactList}\small\item\em Start is called before the first frame update. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_ranger_weapon_a0b46fff457e2c9802825d915c5f1e995}\label{class_ranger_weapon_a0b46fff457e2c9802825d915c5f1e995} 
+Vector3 {\bfseries mouse\+Pos}
+\begin{DoxyCompactList}\small\item\em Position of the mouse. \end{DoxyCompactList}\item 
+\Hypertarget{class_ranger_weapon_a933ad28f7cec06c4613e794498171be1}\label{class_ranger_weapon_a933ad28f7cec06c4613e794498171be1} 
+Camera {\bfseries main\+Cam}
+\begin{DoxyCompactList}\small\item\em Main camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_weapon}{Weapon}}}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Start} ()
+\begin{DoxyCompactList}\small\item\em Start is called before the first frame update. \end{DoxyCompactList}\item 
+void {\bfseries Update} ()
+\begin{DoxyCompactList}\small\item\em Update is called once per frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_weapon}{Weapon}}}
+\begin{DoxyCompactItemize}
+\item 
+string {\bfseries Weapon\+Name}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ranger_weapon_a5d47dd3c582380ffb108b42290660380}\label{class_ranger_weapon_a5d47dd3c582380ffb108b42290660380} 
+\index{RangerWeapon@{RangerWeapon}!OnCollisionEnter2D@{OnCollisionEnter2D}}
+\index{OnCollisionEnter2D@{OnCollisionEnter2D}!RangerWeapon@{RangerWeapon}}
+\doxysubsubsection{\texorpdfstring{OnCollisionEnter2D()}{OnCollisionEnter2D()}}
+{\footnotesize\ttfamily void Ranger\+Weapon.\+On\+Collision\+Enter2D (\begin{DoxyParamCaption}\item[{Collision2D}]{collision }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check object with which bullet has been collided. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em collision} & Collision of bullet with other object\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Uni materials/2 course/\+OOP/\+Project\+Ace/\+Assets/\+Scripts/\+Weapons/\+Ranger/Ranger\+Weapon.\+cs\end{DoxyCompactItemize}

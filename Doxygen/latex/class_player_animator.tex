@@ -1,0 +1,64 @@
+\doxysection{Player\+Animator Class Reference}
+\hypertarget{class_player_animator}{}\label{class_player_animator}\index{PlayerAnimator@{PlayerAnimator}}
+Inheritance diagram for Player\+Animator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_player_animator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_player_animator_a1e2012c4a2190b5a8415bea83bf36e26}\label{class_player_animator_a1e2012c4a2190b5a8415bea83bf36e26} 
+bool {\bfseries Get\+Animator\+FlipX} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_player_animator_a8af01215e1758cbf0af6a1a6cb7b581c}\label{class_player_animator_a8af01215e1758cbf0af6a1a6cb7b581c} 
+enum {\bfseries Movement\+State} \{ {\bfseries idle}
+, {\bfseries running}
+, {\bfseries dodgerolling}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_player_animator_a560705eec821bba513dba0900c30ad08}\label{class_player_animator_a560705eec821bba513dba0900c30ad08} 
+void {\bfseries Awake} ()
+\item 
+\Hypertarget{class_player_animator_ac49fae9159235500aef910d159e87862}\label{class_player_animator_ac49fae9159235500aef910d159e87862} 
+void {\bfseries Update} ()
+\item 
+\Hypertarget{class_player_animator_a6bec6fc93cf9419d6ee7037940390e96}\label{class_player_animator_a6bec6fc93cf9419d6ee7037940390e96} 
+void {\bfseries Handle\+Movement\+Anim} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_player_animator_a6a0241b35095fbad0d7f4d79a2f80d83}\label{class_player_animator_a6a0241b35095fbad0d7f4d79a2f80d83} 
+Animator {\bfseries animator}
+\item 
+\Hypertarget{class_player_animator_a0b2559c923dc13cd238864f22381a166}\label{class_player_animator_a0b2559c923dc13cd238864f22381a166} 
+Sprite\+Renderer {\bfseries sprite}
+\item 
+\Hypertarget{class_player_animator_a5564dc69a61b4b62576ca85d6f318485}\label{class_player_animator_a5564dc69a61b4b62576ca85d6f318485} 
+\mbox{\hyperlink{class_player_movement}{Player\+Movement}} {\bfseries player}
+\item 
+\Hypertarget{class_player_animator_ab7661d91dfc0facf1d40eb85c49da563}\label{class_player_animator_ab7661d91dfc0facf1d40eb85c49da563} 
+Vector2 {\bfseries input\+Vector}
+\item 
+\Hypertarget{class_player_animator_a2c828fb490cb9fc73363481946ef067d}\label{class_player_animator_a2c828fb490cb9fc73363481946ef067d} 
+Movement\+State {\bfseries movement\+State} = Movement\+State.\+idle
+\item 
+\Hypertarget{class_player_animator_acd4cd83169fdc411fd675cce4fba21be}\label{class_player_animator_acd4cd83169fdc411fd675cce4fba21be} 
+bool {\bfseries animator\+FlipX}
+\item 
+\Hypertarget{class_player_animator_a8031fc6c4a9ddb1e559a2f6c3c05f809}\label{class_player_animator_a8031fc6c4a9ddb1e559a2f6c3c05f809} 
+Vector2 {\bfseries last\+Move\+Dir}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Uni materials/2 course/\+OOP/\+Project\+Ace/\+Assets/\+Scripts/\+Player/Player\+Animator.\+cs\end{DoxyCompactItemize}

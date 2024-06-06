@@ -98,9 +98,9 @@ public abstract class BoomerangWeapon : Weapon
     }
 
     /// <summary>
-    /// 
+    /// Fixes collision with other objects
     /// </summary>
-    /// <param name="collision"></param>
+    /// <param name="collision">Collision with object</param>
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if ((collision.gameObject.CompareTag("Enemy")) || (collision.gameObject.CompareTag("Wall")) || (collision.gameObject.CompareTag("Door")))

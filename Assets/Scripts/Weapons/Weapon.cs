@@ -6,39 +6,34 @@ using UnityEngine.UI;
 public abstract class Weapon : MonoBehaviour
 {
     /// <summary>
-    /// 
+    /// Name of the weapon
     /// </summary>
     [SerializeField] protected string weaponName = "Weapon";
     
     public string WeaponName { get; set; }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    [SerializeField] protected float interactionDistance = 2f;
     
     /// <summary>
-    /// 
+    /// GameObject of player's rotatePoint
     /// </summary>
     [SerializeField] protected GameObject rotatePointGameObject;
     
     /// <summary>
-    /// 
+    /// Particle system of the weapon
     /// </summary>
     protected ParticleSystem particleSystem;
     
     /// <summary>
-    /// 
+    /// Text for the interaction with player
     /// </summary>
     protected Text interactionText;
 
     /// <summary>
-    /// 
+    /// State of the weapon (equipped by player or not)
     /// </summary>
     [SerializeField] protected bool isEquipped;
     
     /// <summary>
-    /// 
+    /// Opportunity of player to pick up weapon
     /// </summary>
     private bool pickUpAllowed;
 
@@ -65,7 +60,7 @@ public abstract class Weapon : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// Initialization of weapon (adding own particle system)
     /// </summary>
     public virtual void Initialize()
     {
@@ -76,7 +71,7 @@ public abstract class Weapon : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// Creates text for interaction with player
     /// </summary>
     private void CreateInteractionText()
     {
@@ -110,7 +105,7 @@ public abstract class Weapon : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// Destroys text for interaction with player
     /// </summary>
     private void DestroyInteractionText()
     {
@@ -125,7 +120,7 @@ public abstract class Weapon : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// Finds rotatePoint by tag
     /// </summary>
     private void FindRotatePoint()
     {
@@ -137,9 +132,9 @@ public abstract class Weapon : MonoBehaviour
     }
     
     /// <summary>
-    /// 
+    /// Fixes colliding with player's trigger
     /// </summary>
-    /// <param name="collision"></param>
+    /// <param name="collision">Collision with object</param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -150,9 +145,9 @@ public abstract class Weapon : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// Fixes ending of colliding with player's trigger
     /// </summary>
-    /// <param name="collision"></param>
+    /// <param name="collision">Collision with object</param>
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -163,7 +158,7 @@ public abstract class Weapon : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// Pickupping of the weapon by the player
     /// </summary>
     private void PickUp()
     {

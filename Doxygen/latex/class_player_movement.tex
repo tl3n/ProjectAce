@@ -1,0 +1,88 @@
+\doxysection{Player\+Movement Class Reference}
+\hypertarget{class_player_movement}{}\label{class_player_movement}\index{PlayerMovement@{PlayerMovement}}
+Inheritance diagram for Player\+Movement\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_player_movement}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_player_movement_a0aef7099a41f418023dfecdbc82643cc}\label{class_player_movement_a0aef7099a41f418023dfecdbc82643cc} 
+bool {\bfseries Get\+Dodgeroll\+Status} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_player_movement_a3987ea5b177eb163cf5e3392c4f0acc9}\label{class_player_movement_a3987ea5b177eb163cf5e3392c4f0acc9} 
+float {\bfseries movement\+Speed} = 7f
+\item 
+\Hypertarget{class_player_movement_a0b88c58ac96a533651c53931623f5591}\label{class_player_movement_a0b88c58ac96a533651c53931623f5591} 
+bool {\bfseries facing\+Right} = true
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_player_movement_abf3660ca2b1a352b4a9da98437c61aa3}\label{class_player_movement_abf3660ca2b1a352b4a9da98437c61aa3} 
+void {\bfseries Start} ()
+\item 
+\Hypertarget{class_player_movement_a4be1938f7748da3f6046bfd658e4b0fd}\label{class_player_movement_a4be1938f7748da3f6046bfd658e4b0fd} 
+void {\bfseries Game\+Input\+\_\+\+On\+Dodgeroll\+Action} (object sender, System.\+Event\+Args e)
+\item 
+\Hypertarget{class_player_movement_aaf9b77d7177d538be9c1447d08191322}\label{class_player_movement_aaf9b77d7177d538be9c1447d08191322} 
+void {\bfseries Update} ()
+\item 
+\Hypertarget{class_player_movement_ab26fc2e2850557e59233c4e6c7136da1}\label{class_player_movement_ab26fc2e2850557e59233c4e6c7136da1} 
+void {\bfseries Proper\+Flip} ()
+\item 
+\Hypertarget{class_player_movement_adb78bd969af2ed7040980b6a225107d4}\label{class_player_movement_adb78bd969af2ed7040980b6a225107d4} 
+void {\bfseries Handle\+Movement} ()
+\item 
+\Hypertarget{class_player_movement_adab7ea9dcfe01effb8c897d3ea4c6c18}\label{class_player_movement_adab7ea9dcfe01effb8c897d3ea4c6c18} 
+IEnumerator {\bfseries Dodgeroll} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_player_movement_a98f1bb35fb0d3a56b8459fea53a9a86f}\label{class_player_movement_a98f1bb35fb0d3a56b8459fea53a9a86f} 
+bool {\bfseries can\+Dodgeroll} = true
+\item 
+\Hypertarget{class_player_movement_afaed1f668a170459ed6f85d642caa3b0}\label{class_player_movement_afaed1f668a170459ed6f85d642caa3b0} 
+bool {\bfseries is\+Dodgerolling}
+\item 
+\Hypertarget{class_player_movement_a9f57897ffb05323264f57dd075e9467d}\label{class_player_movement_a9f57897ffb05323264f57dd075e9467d} 
+Vector2 {\bfseries last\+Move\+Direction} = Vector2.\+zero
+\item 
+\Hypertarget{class_player_movement_ad5c2906274ef51375056bd0bff29389c}\label{class_player_movement_ad5c2906274ef51375056bd0bff29389c} 
+Rigidbody2D {\bfseries player\+Rigidbody}
+\item 
+\Hypertarget{class_player_movement_a445c4085244c3c70d03c4d756930afcb}\label{class_player_movement_a445c4085244c3c70d03c4d756930afcb} 
+\mbox{\hyperlink{class_player_animator}{Player\+Animator}} {\bfseries player\+Animator}
+\item 
+\Hypertarget{class_player_movement_a9ae713acb3f7bb0042e161d9040e3d84}\label{class_player_movement_a9ae713acb3f7bb0042e161d9040e3d84} 
+float {\bfseries dodgeroll\+Power} = 16f
+\item 
+\Hypertarget{class_player_movement_a7fb94dd556b37e3d496449fa0c66fa17}\label{class_player_movement_a7fb94dd556b37e3d496449fa0c66fa17} 
+float {\bfseries dodgeroll\+Time} = 0.\+2f
+\item 
+\Hypertarget{class_player_movement_a45619faff47ad772118e0555dbafb6e9}\label{class_player_movement_a45619faff47ad772118e0555dbafb6e9} 
+float {\bfseries dodgeroll\+Cooldown} = 2f
+\item 
+\Hypertarget{class_player_movement_acd736ec8f8dd3a2956f5ec80b432b717}\label{class_player_movement_acd736ec8f8dd3a2956f5ec80b432b717} 
+bool {\bfseries animator\+FlipX}
+\item 
+\Hypertarget{class_player_movement_a169cc0c9d2449e357694e50445abd90f}\label{class_player_movement_a169cc0c9d2449e357694e50445abd90f} 
+Vector2 {\bfseries dodge\+Direction} = new Vector2(0, 0).normalized
+\item 
+\Hypertarget{class_player_movement_a1f3b522ac41133a7b8941d4dceb834f3}\label{class_player_movement_a1f3b522ac41133a7b8941d4dceb834f3} 
+Vector2 {\bfseries input\+Vector}
+\item 
+\Hypertarget{class_player_movement_a1e98dcce3dde4517cc6b39c36292819b}\label{class_player_movement_a1e98dcce3dde4517cc6b39c36292819b} 
+Vector2 {\bfseries movement}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Uni materials/2 course/\+OOP/\+Project\+Ace/\+Assets/\+Scripts/\+Player/Player\+Movement.\+cs\end{DoxyCompactItemize}

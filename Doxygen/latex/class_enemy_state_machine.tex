@@ -1,0 +1,85 @@
+\doxysection{Enemy\+State\+Machine Class Reference}
+\hypertarget{class_enemy_state_machine}{}\label{class_enemy_state_machine}\index{EnemyStateMachine@{EnemyStateMachine}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_enemy_state_machine_ab645e3161c208a72be5d81dfabb68765}{Enemy\+State\+Machine}} (\mbox{\hyperlink{class_enemy}{Enemy}} enemy)
+\begin{DoxyCompactList}\small\item\em Initialization of states for enemy. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_state_machine_ae70b09a7bff57c059c0e96ffd77ae924}{Initialize}} (\mbox{\hyperlink{interface_i_enemy_state}{IEnemy\+State}} starting\+State)
+\begin{DoxyCompactList}\small\item\em Initialization of the starting state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_state_machine_a1b63fa761dff56c2fdee86fa1de6bab4}{Transition\+To}} (\mbox{\hyperlink{interface_i_enemy_state}{IEnemy\+State}} next\+State)
+\begin{DoxyCompactList}\small\item\em Transition to another state. \end{DoxyCompactList}\item 
+\Hypertarget{class_enemy_state_machine_a005be4e4a2c5c0296e47792867cd035b}\label{class_enemy_state_machine_a005be4e4a2c5c0296e47792867cd035b} 
+void {\bfseries Update} ()
+\begin{DoxyCompactList}\small\item\em Update of the enemy in current state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_enemy_state_machine_a4c42d4fb5c18e1b9b9aa7764e6d49886}\label{class_enemy_state_machine_a4c42d4fb5c18e1b9b9aa7764e6d49886} 
+\mbox{\hyperlink{class_passive_state}{Passive\+State}} {\bfseries passive\+State}
+\begin{DoxyCompactList}\small\item\em Passive state of the enemy. \end{DoxyCompactList}\item 
+\Hypertarget{class_enemy_state_machine_ae340dcfdbef73d1916e256734b1ca353}\label{class_enemy_state_machine_ae340dcfdbef73d1916e256734b1ca353} 
+\mbox{\hyperlink{class_active_state}{Active\+State}} {\bfseries active\+State}
+\begin{DoxyCompactList}\small\item\em Active state of the enemy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_enemy_state_machine_ad5fbde2cbc88e7f72c2cd2ec393eabba}\label{class_enemy_state_machine_ad5fbde2cbc88e7f72c2cd2ec393eabba} 
+\mbox{\hyperlink{interface_i_enemy_state}{IEnemy\+State}} {\bfseries Current\+State}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Current state of the enemy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_enemy_state_machine_ab645e3161c208a72be5d81dfabb68765}\label{class_enemy_state_machine_ab645e3161c208a72be5d81dfabb68765} 
+\index{EnemyStateMachine@{EnemyStateMachine}!EnemyStateMachine@{EnemyStateMachine}}
+\index{EnemyStateMachine@{EnemyStateMachine}!EnemyStateMachine@{EnemyStateMachine}}
+\doxysubsubsection{\texorpdfstring{EnemyStateMachine()}{EnemyStateMachine()}}
+{\footnotesize\ttfamily Enemy\+State\+Machine.\+Enemy\+State\+Machine (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy}{Enemy}}}]{enemy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialization of states for enemy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enemy} & Current enemy\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_enemy_state_machine_ae70b09a7bff57c059c0e96ffd77ae924}\label{class_enemy_state_machine_ae70b09a7bff57c059c0e96ffd77ae924} 
+\index{EnemyStateMachine@{EnemyStateMachine}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!EnemyStateMachine@{EnemyStateMachine}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily void Enemy\+State\+Machine.\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_i_enemy_state}{IEnemy\+State}}}]{starting\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialization of the starting state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em starting\+State} & State which will be starting\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_enemy_state_machine_a1b63fa761dff56c2fdee86fa1de6bab4}\label{class_enemy_state_machine_a1b63fa761dff56c2fdee86fa1de6bab4} 
+\index{EnemyStateMachine@{EnemyStateMachine}!TransitionTo@{TransitionTo}}
+\index{TransitionTo@{TransitionTo}!EnemyStateMachine@{EnemyStateMachine}}
+\doxysubsubsection{\texorpdfstring{TransitionTo()}{TransitionTo()}}
+{\footnotesize\ttfamily void Enemy\+State\+Machine.\+Transition\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_i_enemy_state}{IEnemy\+State}}}]{next\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Transition to another state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em next\+State} & State to which will be transition\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Uni materials/2 course/\+OOP/\+Project\+Ace/\+Assets/\+Scripts/\+Enemies/Enemy\+State.\+cs\end{DoxyCompactItemize}

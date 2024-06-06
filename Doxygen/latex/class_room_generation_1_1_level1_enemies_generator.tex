@@ -1,0 +1,98 @@
+\doxysection{Room\+Generation.\+Level1\+Enemies\+Generator Class Reference}
+\hypertarget{class_room_generation_1_1_level1_enemies_generator}{}\label{class_room_generation_1_1_level1_enemies_generator}\index{RoomGeneration.Level1EnemiesGenerator@{RoomGeneration.Level1EnemiesGenerator}}
+Inheritance diagram for Room\+Generation.\+Level1\+Enemies\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_room_generation_1_1_level1_enemies_generator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_room_generation_1_1_level1_enemies_generator_a1b61bf4af8d11890dad3f3b807cff6f3}{Generate}} (List$<$ \mbox{\hyperlink{class_dungeon_generation_1_1_room}{Room}} $>$ rooms\+List)
+\begin{DoxyCompactList}\small\item\em Generation of enemies for each room from grid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_room_generation_1_1_enemies_factory}{Room\+Generation.\+Enemies\+Factory}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_room_generation_1_1_enemies_factory_adf206c9c565e996edcce03771f749f41}{Generate}} (List$<$ \mbox{\hyperlink{class_dungeon_generation_1_1_room}{Room}} $>$ rooms\+List)
+\begin{DoxyCompactList}\small\item\em Generation of enemies for each room from grid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_room_generation_1_1_level1_enemies_generator_a55e4149d67d591441040418c29ba9601}\label{class_room_generation_1_1_level1_enemies_generator_a55e4149d67d591441040418c29ba9601} 
+\mbox{\hyperlink{class_room_generation_1_1_melle_enemies_creator}{Melle\+Enemies\+Creator}} {\bfseries melle\+Enemies\+Creator}
+\begin{DoxyCompactList}\small\item\em Fabric for melle enemy. \end{DoxyCompactList}\item 
+\Hypertarget{class_room_generation_1_1_level1_enemies_generator_a1d21f5ecfd5569947e172076c99be750}\label{class_room_generation_1_1_level1_enemies_generator_a1d21f5ecfd5569947e172076c99be750} 
+\mbox{\hyperlink{class_room_generation_1_1_ranger_enemies_creator}{Ranger\+Enemies\+Creator}} {\bfseries ranger\+Enemies\+Creator}
+\begin{DoxyCompactList}\small\item\em Fabric for ranger enemy. \end{DoxyCompactList}\item 
+\Hypertarget{class_room_generation_1_1_level1_enemies_generator_a13b4f143b4af268970e97d040a5e8e74}\label{class_room_generation_1_1_level1_enemies_generator_a13b4f143b4af268970e97d040a5e8e74} 
+\mbox{\hyperlink{class_room_generation_1_1_summoner_enemies_creator}{Summoner\+Enemies\+Creator}} {\bfseries summoner\+Enemies\+Creator}
+\begin{DoxyCompactList}\small\item\em Fabric for summoner enemy. \end{DoxyCompactList}\item 
+\Hypertarget{class_room_generation_1_1_level1_enemies_generator_a7b6dc134b6988e571cb6247cf48e848d}\label{class_room_generation_1_1_level1_enemies_generator_a7b6dc134b6988e571cb6247cf48e848d} 
+\mbox{\hyperlink{class_room_generation_1_1_boss_enemies_creator}{Boss\+Enemies\+Creator}} {\bfseries boss\+Enemies\+Creator}
+\begin{DoxyCompactList}\small\item\em Fabric for boss enemy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_room_generation_1_1_enemies_factory}{Room\+Generation.\+Enemies\+Factory}}}
+\begin{DoxyCompactItemize}
+\item 
+Transform {\bfseries rooms\+Grid}
+\begin{DoxyCompactList}\small\item\em Grid of the generated rooms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_room_generation_1_1_level1_enemies_generator_a8de34401a14fd33474adfabf5581101b}{Create\+Enemies}} (\mbox{\hyperlink{namespace_dungeon_generation_ae6a0c850882235ee77153149e048fea8}{Room\+Type}} room\+Type, int room\+Num, \mbox{\hyperlink{class_dungeon_generation_1_1_room}{Room}} room)
+\begin{DoxyCompactList}\small\item\em Generation of enemies for selected room. \end{DoxyCompactList}\item 
+\Hypertarget{class_room_generation_1_1_level1_enemies_generator_ac58b6c35a1d116525fa8c783ee3eebb4}\label{class_room_generation_1_1_level1_enemies_generator_ac58b6c35a1d116525fa8c783ee3eebb4} 
+void {\bfseries Update} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_room_generation_1_1_level1_enemies_generator_a7997cbc9fce8efc555c57448a3b22996}\label{class_room_generation_1_1_level1_enemies_generator_a7997cbc9fce8efc555c57448a3b22996} 
+List$<$ \mbox{\hyperlink{class_enemy}{Enemy}} $>$ {\bfseries enemies} = new List$<$\mbox{\hyperlink{class_enemy}{Enemy}}$>$()
+\begin{DoxyCompactList}\small\item\em List of the generated enemies. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_room_generation_1_1_enemies_factory}{Room\+Generation.\+Enemies\+Factory}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_room_generation_1_1_enemies_factory_a43bbdf5bb7442124f67eb4f63aca7f30}{Create\+Enemies}} (\mbox{\hyperlink{namespace_dungeon_generation_ae6a0c850882235ee77153149e048fea8}{Room\+Type}} room\+Type, int room\+Num)
+\begin{DoxyCompactList}\small\item\em Generation of enemies for selected room. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_room_generation_1_1_level1_enemies_generator_a8de34401a14fd33474adfabf5581101b}\label{class_room_generation_1_1_level1_enemies_generator_a8de34401a14fd33474adfabf5581101b} 
+\index{RoomGeneration.Level1EnemiesGenerator@{RoomGeneration.Level1EnemiesGenerator}!CreateEnemies@{CreateEnemies}}
+\index{CreateEnemies@{CreateEnemies}!RoomGeneration.Level1EnemiesGenerator@{RoomGeneration.Level1EnemiesGenerator}}
+\doxysubsubsection{\texorpdfstring{CreateEnemies()}{CreateEnemies()}}
+{\footnotesize\ttfamily void Room\+Generation.\+Level1\+Enemies\+Generator.\+Create\+Enemies (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_dungeon_generation_ae6a0c850882235ee77153149e048fea8}{Room\+Type}}}]{room\+Type,  }\item[{int}]{room\+Num,  }\item[{\mbox{\hyperlink{class_dungeon_generation_1_1_room}{Room}}}]{room }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Generation of enemies for selected room. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room\+Type} & Type of the room\\
+\hline
+{\em room\+Num} & Number of the room in grid\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_room_generation_1_1_level1_enemies_generator_a1b61bf4af8d11890dad3f3b807cff6f3}\label{class_room_generation_1_1_level1_enemies_generator_a1b61bf4af8d11890dad3f3b807cff6f3} 
+\index{RoomGeneration.Level1EnemiesGenerator@{RoomGeneration.Level1EnemiesGenerator}!Generate@{Generate}}
+\index{Generate@{Generate}!RoomGeneration.Level1EnemiesGenerator@{RoomGeneration.Level1EnemiesGenerator}}
+\doxysubsubsection{\texorpdfstring{Generate()}{Generate()}}
+{\footnotesize\ttfamily void Room\+Generation.\+Level1\+Enemies\+Generator.\+Generate (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_dungeon_generation_1_1_room}{Room}} $>$}]{rooms\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generation of enemies for each room from grid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rooms\+List} & List of rooms of the generated dungeon\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Uni materials/2 course/\+OOP/\+Project\+Ace/\+Assets/\+Scripts/\+Room\+Generation/\+Enemies\+Generation/Level1\+Enemies\+Generator.\+cs\end{DoxyCompactItemize}
