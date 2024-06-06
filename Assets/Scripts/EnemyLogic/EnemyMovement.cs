@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    private const float speed = 25f;
+    private const float speed = 20f;
     private int currentPathIndex;
     private List<Vector3> pathVectorList;
+    [SerializeField] private Transform shadowTransform;
+    [SerializeField] private Transform playerShadowTransform;
+
+    private void Start()
+    {
+    }
     
     private void Update()
     {
+        SetTargetPosition(playerShadowTransform.position);
         HandleMovement();
-        if (Input.GetMouseButtonDown(0)) {
-            SetTargetPosition(GetMouseWorldPosition());
-        }
     }
 
     private void HandleMovement()
@@ -21,9 +25,9 @@ public class EnemyMovement : MonoBehaviour
         if (pathVectorList != null)
         {
             Vector3 targetPosition = pathVectorList[currentPathIndex];
-            if (Vector3.Distance(transform.position, targetPosition) > 1f)
+            if (Vector3.Distance(shadowTransform.position, targetPosition) > 1f)
             {
-                Vector3 moveDir = (targetPosition - transform.position).normalized;
+                Vector3 moveDir = (targetPosition - shadowTransform.position).normalized;
                 transform.position = transform.position + moveDir * speed * Time.deltaTime;
             }
             else
@@ -40,11 +44,13 @@ public class EnemyMovement : MonoBehaviour
     private void StopMoving()
     {
         pathVectorList = null;
+        //GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+
     }
 
     public Vector3 GetPosition()
     {
-        return transform.position;
+        return shadowTransform.position;
     }
 
     public void SetTargetPosition(Vector3 targetPosition)
