@@ -19,7 +19,7 @@ public class MushroomCreator : ArtefactFactory
         Mushroom.Name = "Mushroom";
         Mushroom.ItemQuantity = 1;
         Mushroom.Id = 2;
-        Mushroom.Description = "Gives RandomBoost for the damage";
+        Mushroom.Description = "We're high on shrooms! Your hits deal random damage.";
         Mushroom.effects = damageBoost;
         Mushroom.icon = Resources.Load<Sprite>("ItemPalette/Mushroom");
         Mushroom.prefab = Resources.Load<GameObject>("Prefabs/Mushroom");

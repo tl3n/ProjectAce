@@ -19,7 +19,7 @@ public class GinCreator : ArtefactFactory
         Gin.Name = "Lamp with Gin";
         Gin.Id = 1;
         Gin.ItemQuantity = 1;
-        Gin.Description = "Gives one Item to choose among 3 random items";
+        Gin.Description = "Three wishes! You can only choose one, though.";
         Gin.effects = effect;
         Gin.icon = Resources.Load<Sprite>("ItemPalette/Gin");
         Gin.prefab = Resources.Load<GameObject>("Prefabs/Gin");

@@ -40,6 +40,17 @@ public class Stats : MonoBehaviour
             OnStatsChanged?.Invoke();
         }
     }
+    
+    private float _dodgeChance = 0f;
+    public float dodgeChance
+    {
+        get { return _dodgeChance; }
+        set
+        {
+            _dodgeChance = value;
+            OnStatsChanged?.Invoke();
+        }
+    }
 
     private float _defaultDamage = 10;
     public float defaultDamage

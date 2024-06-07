@@ -37,9 +37,12 @@ public class RandomChoiceEffect : ScriptableObject, EffectsInterface
             //select some random id
             int selectedId = randomIds[Random.Range(0, randomIds.Length)];
             //checking for the sake of not picking same ids by chance
+            
             if (!usedIds.Contains(selectedId))
             {
+                
                 ItemsData randomItem = PossibleItemManager.Instance.GetItemById(selectedId);
+                
                 if (randomItem != null)
                 {
                     selectedItems.Add(randomItem);

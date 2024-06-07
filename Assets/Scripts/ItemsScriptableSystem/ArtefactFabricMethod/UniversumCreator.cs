@@ -27,7 +27,7 @@ public class UniversumCreator : ArtefactFactory
         Universum.Name = "Universum";
         Universum.Id = 4;
         Universum.ItemQuantity = 1;
-        Universum.Description = "Gives boosts for all stats.";
+        Universum.Description = "Fraction of universe. Gives boosts for all stats.";
         Universum.effects = compositeEffect;
 
         Universum.icon = Resources.Load<Sprite>("ItemPalette/universum test");
