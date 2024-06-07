@@ -27,10 +27,10 @@ TagManager:
   - UI
   - Enemy
   - Player
-  - Bullet
+  - Weapon
   - Door
-  - 
-  - 
+  - PlayerShadow
+  - EnemyShadow
   - 
   - 
   - 
