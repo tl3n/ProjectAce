@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -4568599034723781361}
   - component: {fileID: 6884840739144461693}
   m_Layer: 8
-  m_Name: Cards
+  m_Name: CardsEquipped
   m_TagString: RangerWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,6 +173,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Cards
   rotatePointGameObject: {fileID: 0}
-  isEquipped: 0
+  isEquipped: 1
   force: 20
   damage: 1

@@ -887,6 +887,7 @@ GameObject:
   - component: {fileID: 1793463598}
   - component: {fileID: 1793463597}
   - component: {fileID: 1793463596}
+  - component: {fileID: 1793463601}
   m_Layer: 0
   m_Name: WeaponsGenerator
   m_TagString: Untagged
@@ -947,7 +948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomsGrid: {fileID: 206631787}
   melleWeaponsCreator: {fileID: 1793463598}
-  rangerWeaponsCreator: {fileID: 1793463597}
+  rangerWeaponsCreator: {fileID: 1793463601}
   boomerangWeaponsCreator: {fileID: 1793463596}
 --- !u!4 &1793463600
 Transform:
@@ -964,6 +965,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1793463601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793463595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4541fab1f9e30fb4e98bf65b462cece8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponPrefab: {fileID: 6884840739144461693, guid: af9fac6485bd1004e941906e926d7770, type: 3}
 --- !u!1 &1831061386
 GameObject:
   m_ObjectHideFlags: 0

@@ -103,8 +103,8 @@ public abstract class BoomerangWeapon : Weapon
     /// <param name="collision">Collision with object</param>
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if ((isEquipped) && ((collision.gameObject.CompareTag("Enemy"))
-             || (collision.gameObject.CompareTag("Wall")) || (collision.gameObject.CompareTag("Door"))))
+        if ((isEquipped) && ((collision.gameObject.CompareTag("Enemy")) 
+                             || (collision.gameObject.CompareTag("Wall")) || (collision.gameObject.CompareTag("Door"))))
         {
             Debug.Log("GET HIT " + collision.gameObject.name);
             // Perform taking damage from the bullet

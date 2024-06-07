@@ -34,16 +34,21 @@ public abstract class RangerWeapon : Weapon
     /// </summary>
     void Start()
     {
+        base.Start();
+        
         gameObject.tag = "RangerWeapon";
-
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rigidBody = GetComponent<Rigidbody2D>();  
-        mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 direction = mousePos - transform.position;
-        Vector3 rotation = transform.position - mousePos;
-        rigidBody.velocity = new Vector2(direction.x, direction.y).normalized * force;
-        float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, rot + 90);
+        
+        if (isEquipped)
+        {
+            mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 direction = mousePos - transform.position;
+            Vector3 rotation = transform.position - mousePos;
+            rigidBody.velocity = new Vector2(direction.x, direction.y).normalized * force;
+            float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, rot + 90);
+        }
     }
 
     /// <summary>
@@ -52,7 +57,8 @@ public abstract class RangerWeapon : Weapon
     /// <param name="collision">Collision of bullet with other object</param>
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if ((collision.gameObject.CompareTag("Enemy")) || (collision.gameObject.CompareTag("Wall")) || (collision.gameObject.CompareTag("Door")))
+        if ((isEquipped) && ((collision.gameObject.CompareTag("Enemy")) 
+                             || (collision.gameObject.CompareTag("Wall")) || (collision.gameObject.CompareTag("Door"))))
         {
             Debug.Log("GET HIT " + collision.gameObject.name);
             // Perform taking damage from the bullet
