@@ -9,6 +9,7 @@ public class StatsUI : MonoBehaviour
     public TextMeshProUGUI healthStatusText;
     public TextMeshProUGUI speedStatusText;
     public TextMeshProUGUI damageStatusText;
+    public TextMeshProUGUI dodgeStatusText;
 
     void Start()
     {
@@ -31,7 +32,7 @@ public class StatsUI : MonoBehaviour
     {
         if(healthStatusText != null)
         {
-            healthStatusText.text = "HEALTH: " + playerStats.health;
+            healthStatusText.text = "HEALTH: " + playerStats.currentHealth + "/" + playerStats.maxHealth;
         }
         if(speedStatusText != null)
         {
@@ -39,7 +40,12 @@ public class StatsUI : MonoBehaviour
         }
         if (damageStatusText != null)
         {
-            damageStatusText.text = "DAMAGE: " + playerStats.upgradedDamage;
+            damageStatusText.text = "DAMAGE: " + playerStats.defaultDamage;
+        }
+        
+        if (dodgeStatusText != null)
+        {
+            dodgeStatusText.text = "DODGE CHANCE: " + playerStats.dodgeChance;
         }
     }
 }

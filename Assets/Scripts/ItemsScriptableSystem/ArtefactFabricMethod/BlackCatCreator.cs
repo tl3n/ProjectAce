@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Black Cat")]
 public class BlackCatCreator : ArtefactFactory
 {
-    public override ItemsData CreateArtifact()
+    public override ItemsData CreateArtefact()
     {
 
         var healingBoost = ScriptableObject.CreateInstance<HealingEffect>();
@@ -22,7 +21,7 @@ public class BlackCatCreator : ArtefactFactory
         BlackCat.Name = "Black Cat";
         BlackCat.Id = 3;
         BlackCat.ItemQuantity = 1;
-        BlackCat.Description = "Heals immediately and gives speed boost";
+        BlackCat.Description = "Your dear friend. Heals immediately and gives speed boost.";
         BlackCat.effects = compositeEffect;
 
         BlackCat.icon = Resources.Load<Sprite>("ItemPalette/BlackCat");

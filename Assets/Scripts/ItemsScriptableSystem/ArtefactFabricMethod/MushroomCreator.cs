@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MushroomCreator : ArtefactFactory
 {
-    public override ItemsData CreateArtifact()
+    public override ItemsData CreateArtefact()
     {
         var multipliers = new float[] { 2.0f, 1.0f, 4.0f, 0.5f };
         var damageBoost = ScriptableObject.CreateInstance<RandomDamageEffect>();
@@ -19,7 +19,7 @@ public class MushroomCreator : ArtefactFactory
         Mushroom.Name = "Mushroom";
         Mushroom.ItemQuantity = 1;
         Mushroom.Id = 2;
-        Mushroom.Description = "Gives RandomBoost for the damage";
+        Mushroom.Description = "We're high on shrooms! Your hits deal random damage.";
         Mushroom.effects = damageBoost;
         Mushroom.icon = Resources.Load<Sprite>("ItemPalette/Mushroom");
         Mushroom.prefab = Resources.Load<GameObject>("Prefabs/Mushroom");

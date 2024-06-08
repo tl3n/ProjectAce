@@ -10,7 +10,7 @@ public class GinCreator : ArtefactFactory
         set { _possibleItemIds = value; }
     }
 
-    public override ItemsData CreateArtifact()
+    public override ItemsData CreateArtefact()
     {
         var effect = ScriptableObject.CreateInstance<RandomChoiceEffect>();
         effect.Initialize(_possibleItemIds);
@@ -18,7 +18,7 @@ public class GinCreator : ArtefactFactory
         ItemsData Gin = ScriptableObject.CreateInstance<ItemsData>();
         Gin.Name = "Lamp with Gin";
         Gin.ItemQuantity = 1;
-        Gin.Description = "Gives one Item to choose among 3 random items";
+        Gin.Description = "Three wishes! You can only choose one, though.";
         Gin.effects = effect;
         Gin.icon = Resources.Load<Sprite>("ItemPalette/Gin");
         Gin.prefab = Resources.Load<GameObject>("Prefabs/Gin");

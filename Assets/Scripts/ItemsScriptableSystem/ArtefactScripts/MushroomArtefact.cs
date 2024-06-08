@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Black Cat")]
-public class BlackCatArtefact : ItemsData
+[CreateAssetMenu(menuName = "ArtefactSO/Mushroom")]
+
+public class MushroomArtefact : ItemsData
 {
-    
     private void OnEnable()
     {
         Initialize();
@@ -14,8 +13,8 @@ public class BlackCatArtefact : ItemsData
 
     private void Initialize()
     {
-        ArtefactFactory factory = ScriptableObject.CreateInstance<BlackCatCreator>();
-        var artifact = factory.CreateArtifact();
+        ArtefactFactory factory = ScriptableObject.CreateInstance<MushroomCreator>();
+        var artifact = factory.CreateArtefact();
 
         //copy data from factory-created artifact to this instance
         this.Name = artifact.Name;

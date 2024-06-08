@@ -41,9 +41,11 @@ public class RandomChoiceEffect : ScriptableObject, EffectsInterface
             int selectedId = randomIds[Random.Range(0, randomIds.Length)];
             Debug.Log("Selected Id: " + selectedId);
             //checking for the sake of not picking same ids by chance
+            
             if (!usedIds.Contains(selectedId))
             {         
                 ItemsData randomItem = PossibleItemsManager.GetItemById(selectedId);    
+
                 if (randomItem != null)
                 {
                     Debug.Log(randomItem.Name);
