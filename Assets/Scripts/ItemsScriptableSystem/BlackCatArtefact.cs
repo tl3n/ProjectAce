@@ -19,6 +19,7 @@ public class BlackCatArtefact : ItemsData
 
         //copy data from factory-created artifact to this instance
         this.Name = artifact.Name;
+        this.Id = artifact.Id;
         this.Description = artifact.Description;
         this.ItemQuantity = artifact.ItemQuantity;
         this.effects = artifact.effects;

@@ -1,32 +1,25 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
-public class PossibleItemManager : MonoBehaviour
+public class PossibleItemManager
 {
-    public static PossibleItemManager Instance;
+    //public static PossibleItemManager Instance;
 
     private Dictionary<int, ItemsData> itemsDictionary;
 
-    //SINGLETON
-    private void OnEnable()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            InitializeItemsDictionary();
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+    
+    public PossibleItemManager(){        
+        InitializeItemsDictionary();
     }
 
     private void InitializeItemsDictionary()
     {
+        Debug.Log("Dictionary initialization");
         itemsDictionary = new Dictionary<int, ItemsData>();
 
         //loading scriptable objects from the folder
-        ItemsData[] itemsArray = Resources.LoadAll<ItemsData>("ItemObjects");
+        ItemsData[] itemsArray = Resources.LoadAll<ItemsData>("ItemObjects/");
 
         //checking loaded array
         if (itemsArray == null || itemsArray.Length == 0)
@@ -35,26 +28,31 @@ public class PossibleItemManager : MonoBehaviour
             return;
         }
 
-        foreach (var item in itemsArray)
+        /*foreach (var item in itemsArray)
         {
-            if (item == null)
-            {
-                Debug.LogWarning("Found a null item in the 'ItemObjects' folder.");
-                continue;
-            }
+            Debug.Log($"DICTIONARY: {item.Name}");
+        }*/
 
-            if (!itemsDictionary.ContainsKey(item.Id))
-            {
-                Debug.Log($"Adding item with ID: {item.Id} and Name: {item.Name}");
-                itemsDictionary.Add(item.Id, item);
-            }
-            else
-            {
-                Debug.LogError($"Duplicate item ID found: {item.Id}. Item Name: {item.Name}");
-            }
-        }
+         foreach (var item in itemsArray)
+         {
+             if (item == null)
+             {
+                 Debug.LogWarning("Found a null item in the 'ItemObjects' folder.");
+                 continue;
+             }
 
-        //Debug.Log($"Total items added to the dictionary: {itemsDictionary.Count}");
+             if (!itemsDictionary.ContainsKey(item.Id) && item.Id > 0)
+             {
+                 Debug.Log($"Adding item with ID: {item.Id} and Name: {item.Name}");
+                 itemsDictionary.Add(item.Id, item);
+             }
+             else
+             {
+                 Debug.LogError($"Duplicate item ID found: {item.Id}. Item Name: {item.Name}");
+             }
+         }
+
+        Debug.Log($"Total items added to the dictionary: {itemsDictionary.Count}");
     }
 
     //used in the PossibleItemsManager to get by random id

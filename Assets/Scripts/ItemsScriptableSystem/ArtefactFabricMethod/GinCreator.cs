@@ -17,7 +17,6 @@ public class GinCreator : ArtefactFactory
 
         ItemsData Gin = ScriptableObject.CreateInstance<ItemsData>();
         Gin.Name = "Lamp with Gin";
-        Gin.Id = 1;
         Gin.ItemQuantity = 1;
         Gin.Description = "Gives one Item to choose among 3 random items";
         Gin.effects = effect;

@@ -18,7 +18,6 @@ public class ItemPickUp : MonoBehaviour
     //placeholder for Player Stats
     private Stats PlayerStats;
 
-    //set text instructions invisible
     void Start()
     {
         //represents the PickUpTextPrefab and set it inactive initially
@@ -50,8 +49,15 @@ public class ItemPickUp : MonoBehaviour
 
         if (isTriggerStayActivated && PlayerStats != null)
         {
-            if (Input.GetKeyDown(KeyCode.E) && ItemManager.AddToInventory(Item) == true)
+            if (Input.GetKeyDown(KeyCode.E))
             {
+                //for Gin or other selection artefacts
+                //the selection summoning artefacts do not need to be added to the inventory
+                if(Item.Id > 0)
+                {
+                    ItemManager.AddToInventory(Item);
+                }
+
                 Debug.Log("Item added to inventory. Applying effect and destroying the item.");
                 if (Item.effects == null)
                 {

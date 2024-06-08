@@ -7,7 +7,7 @@ public class ItemsData : ScriptableObject
     [SerializeField] private string itemDescription = "Default description";
     [SerializeField] private int quantity = 1;
     private int itemPrice;
-    private int itemId;
+    [SerializeField] private int itemId = -1;
     public Sprite icon;
     public GameObject prefab;
     public EffectsInterface effects;
