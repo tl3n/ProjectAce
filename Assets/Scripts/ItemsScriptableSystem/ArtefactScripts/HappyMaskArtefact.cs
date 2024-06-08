@@ -17,6 +17,7 @@ public class HappyMaskArtefact : ItemsData
 
         //copy data from factory-created artifact to this instance
         this.Name = artefact.Name;
+        this.Id = artefact.Id;
         this.Description = artefact.Description;
         this.ItemQuantity = artefact.ItemQuantity;
         this.effects = artefact.effects;

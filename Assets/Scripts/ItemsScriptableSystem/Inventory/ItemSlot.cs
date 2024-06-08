@@ -87,7 +87,7 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        // HoverPanel.SetActive(true);û
+        // HoverPanel.SetActive(true);
         HoverPanel.text = this.slotDescription;
         HoverPanel.gameObject.SetActive(true); 
        // Debug.Log(this.slotDescription);

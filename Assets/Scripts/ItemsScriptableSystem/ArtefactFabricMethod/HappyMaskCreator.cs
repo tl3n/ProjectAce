@@ -13,7 +13,7 @@ public class HappyMaskCreator : ArtefactFactory
 
         //add icon and quantity
         ItemsData HappyMask = ScriptableObject.CreateInstance<ItemsData>();
-        HappyMask.Name = "Hapy Theater Mask";
+        HappyMask.Name = "Happy Theater Mask";
         HappyMask.Id = 5;
         HappyMask.ItemQuantity = 1;
         HappyMask.Description = "You're a trickster! Gives dodge chance.";
