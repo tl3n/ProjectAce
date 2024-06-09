@@ -52,6 +52,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1234486279
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Healthbar
+    uniqueID: 1005994609
     locked: 0

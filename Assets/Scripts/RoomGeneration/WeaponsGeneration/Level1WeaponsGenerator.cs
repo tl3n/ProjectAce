@@ -53,7 +53,7 @@ namespace RoomGeneration
             int difX = 3, difY = 0;
 
             Weapon weapon;
-            weapon = rangerWeaponsCreator.GetWeapon(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
+            weapon = boomerangWeaponsCreator.GetWeapon(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
             weapons.Add(weapon);
         }
     }
