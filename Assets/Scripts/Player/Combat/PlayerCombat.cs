@@ -43,9 +43,9 @@ public class PlayerCombat : MonoBehaviour
 
     void Punch()
     {
-        
         animator.SetTrigger("attacking");
         isPunching = true;
+        AudioManager.Instance.PlayPlayerSFX(1);
         movement.movementSpeed = punchingMovementSpeed;
        
         // Check the scale of the player

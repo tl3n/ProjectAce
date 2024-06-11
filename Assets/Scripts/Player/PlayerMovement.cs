@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float dodgerollCooldown = 2f; //cooldown after which player is able to dash again
 
     [SerializeField] public float movementSpeed = 7f;
+    private bool isWalking = false;
     private bool animatorFlipX; //where we store direction which sprite is facing
     public bool facingRight = true;
     private Vector2 dodgeDirection = new Vector2(0, 0).normalized;
@@ -81,8 +82,9 @@ public class PlayerMovement : MonoBehaviour
         if (movement != Vector2.zero)
         {
             lastMoveDirection = movement.normalized;
+
         }
-           
+
 
 
 
