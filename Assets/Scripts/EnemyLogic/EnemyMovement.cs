@@ -4,85 +4,98 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private Transform shadowTransform;
-    [SerializeField] private Transform playerShadowTransform;
+    [SerializeField] private EnemyMovementStrategy movementStrategy;
+
+    private Transform enemyCollider;
+    private Vector3 playerColliderPosition;
     
-    private const float speed = 20f;
+    private const float speed = 20f; // TODO: initialize it using EnemyController?
     private int currentPathIndex;
     private List<Vector3> pathVectorList;
+    
+    private const float avoidanceRadius = .5f;
+    private Vector3 targetPosition;
 
-    private EnemyMovementStrategy movementStrategy;
-
+    private void Start()
+    {
+        enemyCollider = transform.GetChild(1).transform;
+    }
+    private void Update()
+    {
+        if (movementStrategy != null)
+        {
+            movementStrategy.Move(this);
+        }
+    }
+    
     public void SetMovementStrategy(EnemyMovementStrategy movementStrategy)
     {
         this.movementStrategy = movementStrategy;
     }
     
-    private void Update()
-    {
-        if (movementStrategy != null)
-        {
-            Vector3 playerShadowPosition = playerShadowTransform.position;
-            movementStrategy.UpdatePlayerShadowPosition(playerShadowPosition);
-            movementStrategy.Move(this);
-        }
-    }
-
     public void HandleMovement()
     {
+        Vector3 enemyColliderPosition = FindEnemyColliderPosition();
+        Vector3 moveDir = (targetPosition - enemyColliderPosition).normalized;
+        float distance = Vector3.Distance(FindEnemyColliderPosition(), targetPosition);
         
-        if (pathVectorList != null)
+        if (distance > 1.5f)
         {
-            Vector3 targetPosition = pathVectorList[currentPathIndex];
-            if (Vector3.Distance(shadowTransform.position, targetPosition) > 1f)
+            transform.position += moveDir * speed * Time.deltaTime;
+        }
+        else
+        {
+            currentPathIndex++;
+            if (pathVectorList != null && currentPathIndex >= pathVectorList.Count)
             {
-                Vector3 moveDir = (targetPosition - shadowTransform.position).normalized;
-                transform.position = transform.position + moveDir * speed * Time.deltaTime;
-            }
-            else
-            {
-                currentPathIndex++;
-                if (currentPathIndex >= pathVectorList.Count)
-                {
-                    StopMoving();
-                }
+                StopMoving();
             }
         }
     }
 
-    private void StopMoving()
+    private bool HasLineOfSight(Vector3 targetPosition)
     {
-        pathVectorList = null;
-        //GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        Vector3 enemyColliderPosition = FindEnemyColliderPosition();
+        Vector3 direction = (targetPosition - enemyColliderPosition);
+        float distance = direction.magnitude;
+        LayerMask unwalkableMask = LayerMask.NameToLayer("Unwalkable");
 
+        RaycastHit2D hit = Physics2D.Raycast(enemyColliderPosition, direction, distance, 1 << unwalkableMask);
+        Debug.Log(hit.collider == null);
+        return hit.collider == null;
     }
-
-    public Vector3 GetPosition()
-    {
-        return shadowTransform.position;
-    }
-
     public void SetTargetPosition(Vector3 targetPosition)
     {
-        currentPathIndex = 0;
-        pathVectorList = Pathfinding.Instance.FindPath(GetPosition(), targetPosition);
-
-        if (pathVectorList != null && pathVectorList.Count > 1)
+        if (!HasLineOfSight(targetPosition))
         {
-            pathVectorList.RemoveAt(0);
+            currentPathIndex = 0;
+            pathVectorList = Pathfinding.Instance.FindPath(FindEnemyColliderPosition(), targetPosition);
+
+            if (pathVectorList != null && pathVectorList.Count > 1)
+            {
+                pathVectorList.RemoveAt(0);
+            }
+            
+            this.targetPosition = pathVectorList[currentPathIndex];
+        }
+        else
+        {
+            //Debug.Log("has line of sight");
+            this.targetPosition = targetPosition;
+            pathVectorList = null;
         }
     }
     
-    private static Vector2 GetMouseWorldPosition()
+    private void StopMoving()
     {
-        Vector2 vec = GetMouseWorldPositionWithZ(Input.mousePosition, Camera.main);
-        return vec;
+        targetPosition = FindEnemyColliderPosition();
+        pathVectorList = null;
     }
-    
-    private static Vector2 GetMouseWorldPositionWithZ(Vector3 screenPosition, Camera worldCamera)
+
+    public Vector3 FindEnemyColliderPosition()
     {
-        Vector2 worldPosition = worldCamera.ScreenToWorldPoint(screenPosition);
-        return worldPosition;
+        return enemyCollider.position;
     }
+
     
 }

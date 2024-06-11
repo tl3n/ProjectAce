@@ -68,8 +68,9 @@ public class MovementGrid
 
     public void GetXY(Vector2 worldPosition, out int x, out int y)
     {
-        x = Mathf.FloorToInt((worldPosition-originPosition).x / cellSize);
+        x = Mathf.FloorToInt((worldPosition - originPosition).x / cellSize);
         y = Mathf.FloorToInt((worldPosition - originPosition).y / cellSize);
+        //Debug.Log(x + " " + y);
     }
 
     public void SetGridObject(int x, int y, PathNode value)

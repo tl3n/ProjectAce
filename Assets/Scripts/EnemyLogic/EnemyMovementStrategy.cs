@@ -5,17 +5,22 @@ using UnityEngine;
 
 public abstract class EnemyMovementStrategy : MonoBehaviour
 {
-    protected Vector3 playerShadowPosition;
+    //private EnemyMovement enemyMovement;
+    protected Transform playerCollider;
+    //protected Vector3 playerColliderPosition;
 
-    public EnemyMovementStrategy(Vector3 playerShadowPosition)
+    private void Awake()
     {
-        UpdatePlayerShadowPosition(playerShadowPosition);
+        playerCollider = GameObject.FindGameObjectWithTag("Player").transform
+            .GetChild(1).transform;
+        //enemyMovement = transform.GetComponent<EnemyMovement>();
+        //UpdatePlayerColliderPosition();
     }
     
     public abstract void Move(EnemyMovement enemyMovement);
 
-    public void UpdatePlayerShadowPosition(Vector3 playerShadowPosition)
+    /*public void UpdatePlayerColliderPosition()
     {
-        this.playerShadowPosition = playerShadowPosition;
-    }
+        playerColliderPosition = playerCollider.position;
+    }*/
 }

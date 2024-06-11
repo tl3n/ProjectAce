@@ -1803,7 +1803,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 673857107}
-  - component: {fileID: 673857108}
+  - component: {fileID: 673857109}
+  - component: {fileID: 673857110}
+  - component: {fileID: 673857112}
+  - component: {fileID: 673857111}
   m_Layer: 0
   m_Name: TestEnemy
   m_TagString: Untagged
@@ -1828,7 +1831,59 @@ Transform:
   - {fileID: 1386081027}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &673857108
+--- !u!50 &673857109
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673857106}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &673857110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673857106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ad3ccab905c3db4b8ea819d79050a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementStrategy: {fileID: 673857111}
+--- !u!114 &673857111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673857106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b1513ee2fb1d14fb9582d2a97370ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &673857112
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1840,6 +1895,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503c2ee29c7f8b746a4251f86385ccd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shadowTransform: {fileID: 1386081027}
+  playerShadowTransform: {fileID: 1531933914}
 --- !u!1 &935209778
 GameObject:
   m_ObjectHideFlags: 0
@@ -3991,7 +4048,7 @@ GameObject:
   - component: {fileID: 1386081029}
   - component: {fileID: 1386081028}
   m_Layer: 0
-  m_Name: Shadow
+  m_Name: EnemyShadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4006,7 +4063,7 @@ Transform:
   m_GameObject: {fileID: 1386081026}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.7681, z: 0}
+  m_LocalPosition: {x: 0, y: -0.76809996, z: 0}
   m_LocalScale: {x: 1, y: 1.0087, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4097,7 +4154,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.03, y: -0.05}
-  m_Size: {x: 1.18, y: 0.41}
+  m_Size: {x: 0.9, y: 0.5}
   m_Direction: 1
 --- !u!1 &1531933913
 GameObject:
@@ -4111,7 +4168,7 @@ GameObject:
   - component: {fileID: 1531933915}
   - component: {fileID: 1531933916}
   m_Layer: 0
-  m_Name: Shadow
+  m_Name: PlayerShadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4643,7 +4700,7 @@ GameObject:
   - component: {fileID: 1831061391}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
