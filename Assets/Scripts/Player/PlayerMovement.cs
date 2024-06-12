@@ -1,11 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Diagnostics;
-using UnityEngine.U2D;
-using UnityEngine.Windows;
 using Input = UnityEngine.Input;
 
 public class PlayerMovement : MonoBehaviour
