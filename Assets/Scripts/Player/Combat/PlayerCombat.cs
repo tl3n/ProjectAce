@@ -88,10 +88,15 @@ public class PlayerCombat : MonoBehaviour
                 Punch();
                 nextPunchTime = Time.time + 1f / punchRate;
             }
+            
             if (isPunching && Time.time >= nextPunchTime)
             {
                 isPunching = false;
                 movement.movementSpeed = currentMovementSpeed;
+                
+                                
+                // if (punchPoint.GetComponent<CircleCollider2D>() != null) punchPoint.GetComponent<CircleCollider2D>().enabled = false;
+                // else Debug.LogError("There is NOT collider of PunchPoint");
             }
         }
     }
@@ -99,14 +104,19 @@ public class PlayerCombat : MonoBehaviour
     /// <summary>
     /// 
     /// </summary>
-    void Punch()
+    IEnumerator PunchCoroutine()
     {
         if (melleAttack != null)
             if (gameObject.GetComponent<Knockback>().enabled)
             {
                 animator.SetTrigger("attacking");
+            
                 isPunching = true;
                 movement.movementSpeed = punchingMovementSpeed;
+
+                // Activate the collider
+                if (punchPoint.GetComponent<CircleCollider2D>() != null) punchPoint.GetComponent<CircleCollider2D>().enabled = true;
+                else Debug.LogError("There is NOT collider of PunchPoint");
 
                 // Check the scale of the player
                 float playerScaleX = transform.localScale.x;
@@ -127,8 +137,21 @@ public class PlayerCombat : MonoBehaviour
                         healthComponent.GetHit(1);
                     }
                 }
+
+                // Wait for the animation to finish
+                yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length / 4);
+
+                // Deactivate the collider
+                if (punchPoint.GetComponent<CircleCollider2D>() != null) punchPoint.GetComponent<CircleCollider2D>().enabled = false;
+                else Debug.LogError("There is NOT collider of PunchPoint");
             }
     }
+
+    void Punch()
+    {
+        StartCoroutine(PunchCoroutine());
+    }
+
     
     /// <summary>
     /// 
