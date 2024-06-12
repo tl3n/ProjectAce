@@ -39,6 +39,12 @@ public class Shooting : MonoBehaviour
     /// </summary>
     public float timeBetweenFiring;
 
+    public float X;
+    public float Y;
+
+    Vector2 inputVector;
+    
+    Vector2 lastMoveDir = new Vector2(0, 0);
     
     /// <summary>
     /// Start is called before the first frame update
@@ -59,7 +65,54 @@ public class Shooting : MonoBehaviour
 
         float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
 
+        X = rotation.x;
+        Y = rotation.y;
+        
+        inputVector = GameInput.Instance.GetMovementVectorNormalized(); //to which direction we are animating
+        
+        if(inputVector.x != 0f) lastMoveDir = inputVector; //save last move direction
+
+        if (lastMoveDir.x < 0f) //moving left
+        {
+            /*animatorFlipX = !sprite.flipX;
+            movementState = MovementState.running; //change state*/
+                
+            // Обмежуємо поворот в межах правої половини кола (0-180 градусів)
+            /*if (rotZ > 170f)
+            {
+                rotZ = 170f;
+            }
+
+            if (rotZ < 250f)
+            {
+                rotZ = 250f;
+            }*/
+        }
+        else if(lastMoveDir.x > 0f) //moving right
+        {
+            /*animatorFlipX = sprite.flipX;
+            movementState = MovementState.running; //change state*/
+
+            // Обмежуємо поворот в межах правої половини кола (0-180 градусів)
+            /*if (rotZ > 50f)
+            {
+                rotZ = 50f;
+            }
+        
+            if (rotZ < -30f)
+            {
+                rotZ = -30f;
+            }*/
+        }
+        else //moving on y axis only
+        {
+            // movementState = MovementState.running; //change state
+        }
+
+        
+
         transform.rotation = Quaternion.Euler(0, 0, rotZ);
+
 
         if (bullet != null)
         {  

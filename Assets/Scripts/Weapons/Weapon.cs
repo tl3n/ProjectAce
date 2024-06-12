@@ -163,10 +163,20 @@ public abstract class Weapon : MonoBehaviour
     private void PickUp()
     {
         DestroyInteractionText();
-        
-        Shooting rotatePointShooting = rotatePointGameObject.GetComponent<Shooting>();
-        Weapon weapon = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/WeaponsEquipped/" + gameObject.name + "Equipped.prefab").GetComponent<Weapon>();
-        rotatePointShooting.bullet = weapon;
+
+        if ((gameObject.GetComponent<RangerWeapon>() != null) || (gameObject.GetComponent<BoomerangWeapon>() != null))
+        {
+            Shooting rotatePointShooting = rotatePointGameObject.GetComponent<Shooting>();
+            Weapon weapon = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/WeaponsEquipped/" + gameObject.name + "Equipped.prefab").GetComponent<Weapon>();
+            rotatePointShooting.bullet = weapon;
+        }
+        else if (gameObject.GetComponent<MelleWeapon>() != null)
+        {
+            GameObject weapon = Instantiate(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/WeaponsEquipped/" + gameObject.name + "Equipped.prefab"), rotatePointGameObject.transform);
+            weapon.name = "Weapon";
+            weapon.transform.position = rotatePointGameObject.GetComponentInChildren<Transform>(true).Find("Fist").position;
+            rotatePointGameObject.GetComponentInChildren<Transform>(true).Find("Fist").gameObject.SetActive(false);
+        }
         
         Destroy(gameObject);
     }

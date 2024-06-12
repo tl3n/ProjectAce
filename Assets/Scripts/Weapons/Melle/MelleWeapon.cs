@@ -4,5 +4,13 @@ using UnityEngine;
 
 public abstract class MelleWeapon : Weapon
 {
-    // Logic of melle weapon
+    /// <summary>
+    /// Start is called before the first frame update
+    /// </summary>
+    void Start()
+    {
+        base.Start();
+        
+        gameObject.tag = "MelleWeapon";
+    }
 }

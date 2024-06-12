@@ -3,12 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Knockback : MonoBehaviour
+public class Knockback : MonoBehaviour, IMelleAttack
 {
-    [SerializeField] private float thrust;
-    [SerializeField] private float knockTime;
+    /// <summary>
+    /// 
+    /// </summary>
+    [SerializeField] protected float thrust = 5;
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    [SerializeField] protected float knockTime = 0.4f;
+    
+    public void SetActive(bool state)
+    {
+        enabled  = state;
+    }
+    
+    private void Start()
+    {
+        if (gameObject.GetComponentInChildren<Transform>(false).Find("RotatePoint")
+                .GetComponentInChildren<Transform>(false).Find("Fist").gameObject != null)
+        {
+            SetActive(true);
+        }
+        else
+        {
+            SetActive(false);
+        }
+    }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    protected void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
@@ -24,7 +49,7 @@ public class Knockback : MonoBehaviour
         }
     }
 
-    private IEnumerator KnockCoroutine(Rigidbody2D enemy)
+    protected IEnumerator KnockCoroutine(Rigidbody2D enemy)
     {
         if(enemy != null)
         {
