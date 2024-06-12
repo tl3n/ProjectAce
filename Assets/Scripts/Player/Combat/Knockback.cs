@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Knockback : MonoBehaviour, IMelleAttack
 {
@@ -15,24 +13,29 @@ public class Knockback : MonoBehaviour, IMelleAttack
     /// </summary>
     [SerializeField] protected float knockTime = 0.4f;
     
+    /// <summary>
+    /// State to choose melee attack strategy
+    /// </summary>
+    /// <param name="state">Enabled or not</param>
     public void SetActive(bool state)
     {
-        enabled  = state;
+        enabled = state;
     }
     
+    /// <summary>
+    /// Start is called before the first frame update
+    /// </summary>
     private void Start()
     {
         if (gameObject.GetComponentInChildren<Transform>(false).Find("RotatePoint")
-                .GetComponentInChildren<Transform>(false).Find("Fist").gameObject != null)
-        {
-            SetActive(true);
-        }
-        else
-        {
-            SetActive(false);
-        }
+                .GetComponentInChildren<Transform>(false).Find("Fist").gameObject != null) SetActive(true);
+        else SetActive(false);
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="other"></param>
     protected void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Enemy"))
@@ -49,6 +52,11 @@ public class Knockback : MonoBehaviour, IMelleAttack
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="enemy"></param>
+    /// <returns></returns>
     protected IEnumerator KnockCoroutine(Rigidbody2D enemy)
     {
         if(enemy != null)

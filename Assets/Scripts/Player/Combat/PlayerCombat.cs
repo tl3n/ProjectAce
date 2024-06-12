@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
@@ -59,7 +57,7 @@ public class PlayerCombat : MonoBehaviour
 
     
     /// <summary>
-    /// 
+    /// Start is called before the first frame update
     /// </summary>
     private void Start()
     {
@@ -93,10 +91,6 @@ public class PlayerCombat : MonoBehaviour
             {
                 isPunching = false;
                 movement.movementSpeed = currentMovementSpeed;
-                
-                                
-                // if (punchPoint.GetComponent<CircleCollider2D>() != null) punchPoint.GetComponent<CircleCollider2D>().enabled = false;
-                // else Debug.LogError("There is NOT collider of PunchPoint");
             }
         }
     }
@@ -132,10 +126,7 @@ public class PlayerCombat : MonoBehaviour
                     // Perform taking damage from our punch
                     var healthComponent = enemy.GetComponent<Health>();
 
-                    if (healthComponent != null)
-                    {
-                        healthComponent.GetHit(1);
-                    }
+                    if (healthComponent != null) healthComponent.GetHit(1);
                 }
 
                 // Wait for the animation to finish
@@ -158,10 +149,7 @@ public class PlayerCombat : MonoBehaviour
     /// </summary>
     private void OnDrawGizmosSelected()
     {
-        if (punchPoint == null)
-        {
-            return;
-        }
+        if (punchPoint == null) return;
 
         Gizmos.DrawWireSphere(punchPoint.transform.position, punchRange);
     }

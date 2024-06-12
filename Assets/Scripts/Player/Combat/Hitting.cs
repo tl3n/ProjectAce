@@ -1,29 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Hitting : Knockback
 {
     /// <summary>
-    /// 
+    /// Melle weapon of the player
     /// </summary>
     [SerializeField] private MelleWeapon weapon;
     
-    // Start is called before the first frame update
+    /// <summary>
+    /// Start is called before the first frame update
+    /// </summary>
     private void Start()
     {
         if (gameObject.GetComponentInChildren<Transform>(false).Find("RotatePoint")
-                .GetComponentInChildren<Transform>(false).Find("Weapon").gameObject != null)
-        {
-            SetActive(true);
-        }
-        else
-        {
-            SetActive(false);
-        }
+                .GetComponentInChildren<Transform>(false).Find("Weapon").gameObject != null) SetActive(true);
+        else SetActive(false);
     }
-
-    // Update is called once per frame
+    
+    /// <summary>
+    /// Update is called once per frame
+    /// </summary>
     private void Update()
     {
         
