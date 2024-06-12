@@ -1,10 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Singleton<T> : MonoBehaviour where T : Component
 {
+    /// <summary>
+    /// 
+    /// </summary>
     private static T instance;
+    
+    
+    /// <summary>
+    /// 
+    /// </summary>
     public static T Instance
     {
         get
@@ -12,18 +18,24 @@ public class Singleton<T> : MonoBehaviour where T : Component
             if (instance == null)
             {
                 instance = (T)FindObjectOfType(typeof(T));
-                if (instance == null)
-                {
-                    SetupInstance();
-                }
+                if (instance == null) SetupInstance();
             }
+            
             return instance;
         }
     }
+    
+    /// <summary>
+    /// Awake is called when an enabled script instance is being loaded
+    /// </summary>
     public virtual void Awake()
     {
         RemoveDuplicates();
     }
+    
+    /// <summary>
+    /// 
+    /// </summary>
     private static void SetupInstance()
     {
         instance = (T)FindObjectOfType(typeof(T));
@@ -35,6 +47,10 @@ public class Singleton<T> : MonoBehaviour where T : Component
             DontDestroyOnLoad(gameObj);
         }
     }
+    
+    /// <summary>
+    /// 
+    /// </summary>
     private void RemoveDuplicates()
     {
         if (instance == null)
@@ -42,9 +58,6 @@ public class Singleton<T> : MonoBehaviour where T : Component
             instance = this as T;
             DontDestroyOnLoad(gameObject);
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+        else Destroy(gameObject);
     }
 }

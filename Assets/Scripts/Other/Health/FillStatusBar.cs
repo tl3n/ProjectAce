@@ -1,40 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class FillStatusBar : MonoBehaviour
-{
-    public Health healthSript;
-    public Image fillImage;
+{    
+    /// <summary>
+    /// 
+    /// </summary>
     private Slider slider;
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    public Health healthSript;
+    /// <summary>
+    /// 
+    /// </summary>
+    public Image fillImage;
 
-    // Start is called before the first frame update
+
+    /// <summary>
+    /// Awake is called when an enabled script instance is being loaded
+    /// </summary>
     void Awake()
     {
         slider = GetComponent<Slider>();
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Update is called once per frame
+    /// </summary>
     void Update()
     {
-        if(slider.value <= slider.minValue)
-        {
-            fillImage.enabled = false;
-        }
-        if (slider.value > slider.minValue && !fillImage.enabled)
-        {
-            fillImage.enabled = true;
-        }
+        if(slider.value <= slider.minValue) fillImage.enabled = false;
+        if (slider.value > slider.minValue && !fillImage.enabled) fillImage.enabled = true;
+        
         int fillValue = healthSript.currentHealth;
 
-        if(fillValue <= slider.maxValue / 3)
-        {
-            fillImage.color = Color.red;
-        } else if(fillValue > slider.maxValue / 3)
-        {
-            fillImage.color = Color.red; //TODO: It was white
-        }
+        if(fillValue <= slider.maxValue / 3) fillImage.color = Color.red;
+        else if(fillValue > slider.maxValue / 3) fillImage.color = Color.red; //TODO: It was white
 
         slider.value = fillValue;
     }

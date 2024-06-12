@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class AudioManager : Singleton<AudioManager>
@@ -12,14 +11,19 @@ public class AudioManager : Singleton<AudioManager>
     public AudioClip[] playerSfxClips;
     public AudioClip[] enemySfxClips;
     public AudioClip[] uiSfxClips;
-
-    // Ensure to call base.Awake() to remove duplicates
+    
+    /// <summary>
+    /// Ensure to call base.Awake() to remove duplicates
+    /// </summary>
     public override void Awake()
     {
         base.Awake();
         SetupAudioSources();
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     private void SetupAudioSources()
     {
         if (musicSource == null)
@@ -34,8 +38,11 @@ public class AudioManager : Singleton<AudioManager>
             sfxSource.loop = false;
         }
     }
-
-    // Play a music clip by index
+    
+    /// <summary>
+    /// Play a music clip by index
+    /// </summary>
+    /// <param name="index"></param>
     public void PlayMusic(int index)
     {
         if (index >= 0 && index < musicClips.Length)
@@ -43,50 +50,59 @@ public class AudioManager : Singleton<AudioManager>
             musicSource.clip = musicClips[index];
             musicSource.Play();
         }
-        else
-        {
-            Debug.LogWarning("Music index out of range.");
-        }
+        else Debug.LogWarning("Music index out of range.");
     }
-
-    // Play a player sound effect by index
+    
+    /// <summary>
+    /// Play a player sound effect by index
+    /// </summary>
+    /// <param name="index"></param>
     public void PlayPlayerSFX(int index)
     {
         PlaySFX(playerSfxClips, index);
     }
-
-    // Play an enemy sound effect by index
+    
+    /// <summary>
+    /// Play an enemy sound effect by index
+    /// </summary>
+    /// <param name="index"></param>
     public void PlayEnemySFX(int index)
     {
         PlaySFX(enemySfxClips, index);
     }
-
-    // Play a UI sound effect by index
+    
+    /// <summary>
+    /// Play a UI sound effect by index
+    /// </summary>
+    /// <param name="index"></param>
     public void PlayUISFX(int index)
     {
         PlaySFX(uiSfxClips, index);
     }
-
-    // Generic method to play any sound effect
+    
+    /// <summary>
+    /// Generic method to play any sound effect
+    /// </summary>
+    /// <param name="clips"></param>
+    /// <param name="index"></param>
     private void PlaySFX(AudioClip[] clips, int index)
     {
-        if (index >= 0 && index < clips.Length)
-        {
-            sfxSource.PlayOneShot(clips[index]);
-        }
-        else
-        {
-            Debug.LogWarning("SFX index out of range.");
-        }
+        if (index >= 0 && index < clips.Length) sfxSource.PlayOneShot(clips[index]);
+        else Debug.LogWarning("SFX index out of range.");
     }
 
-    // Stop the currently playing music
+    
+    /// <summary>
+    /// Stop the currently playing music
+    /// </summary>
     public void StopMusic()
     {
         musicSource.Stop();
     }
-
-    // Stop the currently playing sound effect
+    
+    /// <summary>
+    /// Stop the currently playing sound effect
+    /// </summary>
     public void StopSFX()
     {
         sfxSource.Stop();
