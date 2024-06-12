@@ -3993,7 +3993,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -8007,6 +8007,10 @@ PrefabInstance:
       propertyPath: m_ExcludeLayers.m_Bits
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7741773690013122436, guid: ddf84111636c1bd4d8b5e603afb603a4, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9094759335772631324, guid: ddf84111636c1bd4d8b5e603afb603a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.22
@@ -8060,9 +8064,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1831061388}
     m_Modifications:
+    - target: {fileID: 1173179695994107541, guid: 8f8d2e53cd163b84e9ee32533deadfe6, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 1536623093229720369, guid: 8f8d2e53cd163b84e9ee32533deadfe6, type: 3}
       propertyPath: m_Name
       value: Shadow
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536623093229720369, guid: 8f8d2e53cd163b84e9ee32533deadfe6, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6512449402352470771, guid: 8f8d2e53cd163b84e9ee32533deadfe6, type: 3}
       propertyPath: m_LocalPosition.x

@@ -37,27 +37,18 @@ public class PlayerAnimator : MonoBehaviour
         if (inputVector != Vector2.zero) //if we are moving in ANY direction
         {
             lastMoveDir = inputVector; //save last move direction
+            movementState = MovementState.running; //change state to running
 
             if (lastMoveDir.x < 0f) //moving left
             {
                 animatorFlipX = !sprite.flipX;
-                movementState = MovementState.running; //change state
-
-
             }
             else if(lastMoveDir.x > 0f) //moving right
             {
                 animatorFlipX = sprite.flipX;
-                movementState = MovementState.running; //change state
-
-            }
-            else //moving on y axis only
-            {
-                movementState = MovementState.running; //change state
             }
            
         }
-
         else //not moving
         {
             movementState = MovementState.idle; 
