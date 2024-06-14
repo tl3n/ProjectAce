@@ -11,12 +11,22 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] protected string weaponName = "Weapon";
     
     public string WeaponName { get; set; }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [SerializeField] protected GameObject player;
     
     /// <summary>
     /// GameObject of player's rotatePoint
     /// </summary>
     [SerializeField] protected GameObject rotatePointGameObject;
-    
+        
+    /// <summary>
+    /// 
+    /// </summary>
+    [SerializeField] public int damage;
+
     /// <summary>
     /// Particle system of the weapon
     /// </summary>
@@ -129,6 +139,12 @@ public abstract class Weapon : MonoBehaviour
         {
             Debug.LogError("Player GameObject with tag 'PlayerRP' not found.");
         }
+        
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (player == null)
+        {
+            Debug.LogError("Player GameObject with tag 'Player' not found.");
+        }
     }
     
     /// <summary>
@@ -137,7 +153,7 @@ public abstract class Weapon : MonoBehaviour
     /// <param name="collision">Collision with object</param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("PlayerShadow"))
         {
             if (interactionText != null) interactionText.gameObject.SetActive(true);
             pickUpAllowed = true;
@@ -150,7 +166,7 @@ public abstract class Weapon : MonoBehaviour
     /// <param name="collision">Collision with object</param>
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("PlayerShadow"))
         {
             if (interactionText != null) interactionText.gameObject.SetActive(false);
             pickUpAllowed = false;
@@ -176,6 +192,9 @@ public abstract class Weapon : MonoBehaviour
             weapon.name = "Weapon";
             weapon.transform.position = rotatePointGameObject.GetComponentInChildren<Transform>(true).Find("Fist").position;
             rotatePointGameObject.GetComponentInChildren<Transform>(true).Find("Fist").gameObject.SetActive(false);
+            
+            if (player.GetComponent<Hitting>() != null) player.GetComponent<Hitting>().weapon = weapon.GetComponent<MelleWeapon>();
+            else Debug.LogError("There is NOT Knockback component in player");
         }
         
         Destroy(gameObject);

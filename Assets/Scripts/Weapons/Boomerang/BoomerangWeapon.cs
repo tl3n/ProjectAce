@@ -8,11 +8,6 @@ public abstract class BoomerangWeapon : Weapon
     [SerializeField] protected float force;
 
     /// <summary>
-    /// Damage of the bullet
-    /// </summary>
-    [SerializeField] protected int damage;
-
-    /// <summary>
     /// Maximum distance the boomerang can travel
     /// </summary>
     [SerializeField] protected float maxDistance;

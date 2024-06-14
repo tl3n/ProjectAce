@@ -1171,9 +1171,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649cdefc194dd124d80bcaf903508b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDead: 0
   currentHealth: 2
   maxHealth: 2
-  isDead: 0
 --- !u!114 &1831061395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1188,6 +1188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 5
   knockTime: 0.4
+  weapon: {fileID: 0}
 --- !u!114 &1831061396
 MonoBehaviour:
   m_ObjectHideFlags: 0

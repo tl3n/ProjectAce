@@ -53,8 +53,6 @@ public class PlayerCombat : MonoBehaviour
     /// </summary>
     float nextPunchTime = 0f;
 
-    [SerializeField] private IMelleAttack melleAttack;
-
     
     /// <summary>
     /// Start is called before the first frame update
@@ -62,16 +60,6 @@ public class PlayerCombat : MonoBehaviour
     private void Start()
     {
         currentMovementSpeed = movement.movementSpeed;
-
-        if (gameObject.GetComponent<Knockback>() != null)
-        {
-            melleAttack = gameObject.GetComponent<Knockback>();
-            //melleAttack.SetActive(false);
-        }
-        else
-        {
-            Debug.LogError("MelleAttack scripts are NOT existed");
-        }
     }
 
     /// <summary>
@@ -100,42 +88,51 @@ public class PlayerCombat : MonoBehaviour
     /// </summary>
     IEnumerator PunchCoroutine()
     {
-        if (melleAttack != null)
-            if (gameObject.GetComponent<Knockback>().enabled)
-            {
-                animator.SetTrigger("attacking");
+        animator.SetTrigger("attacking");
             
-                isPunching = true;
-                movement.movementSpeed = punchingMovementSpeed;
+        isPunching = true;
+        movement.movementSpeed = punchingMovementSpeed;
 
-                // Activate the collider
-                if (punchPoint.GetComponent<CircleCollider2D>() != null) punchPoint.GetComponent<CircleCollider2D>().enabled = true;
-                else Debug.LogError("There is NOT collider of PunchPoint");
+        // Activate the collider
+        if (punchPoint.GetComponent<CircleCollider2D>() != null) punchPoint.GetComponent<CircleCollider2D>().enabled = true;
+        else Debug.LogError("There is NOT collider of PunchPoint");
 
-                // Check the scale of the player
-                float playerScaleX = transform.localScale.x;
+        // Check the scale of the player
+        float playerScaleX = transform.localScale.x;
 
-                // Perform the punch with the flipped punch point position
-                Collider2D[] hitEnemies =
-                    Physics2D.OverlapCircleAll(punchPoint.transform.position, punchRange, enemyLayers);
+        // Perform the punch with the flipped punch point position
+        Collider2D[] hitEnemies =
+            Physics2D.OverlapCircleAll(punchPoint.transform.position, punchRange, enemyLayers);
 
-                foreach (Collider2D enemy in hitEnemies)
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            // Perform taking damage from our punch
+            var healthComponent = enemy.GetComponent<Health>();
+            int damage = 0;
+            
+            
+            if((GetComponent<Hitting>() != null) && (healthComponent != null))
+                if(GetComponent<Hitting>().weapon == null)
                 {
-                    Debug.Log("We hit " + enemy.name);
-
-                    // Perform taking damage from our punch
-                    var healthComponent = enemy.GetComponent<Health>();
-
-                    if (healthComponent != null) healthComponent.GetHit(1);
+                    healthComponent.GetHit(1);
+                    damage = 1;
                 }
+                else
+                {
+                    healthComponent.GetHit(GetComponent<Hitting>().weapon.damage);
+                    damage = GetComponent<Hitting>().weapon.damage;
+                }
+            else Debug.LogError("There is NOT Knockback component");
+            
+            Debug.Log("We hit " + enemy.name + " " + damage);
+        }
 
-                // Wait for the animation to finish
-                yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length / 4);
+        // Wait for the animation to finish
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length / 4);
 
-                // Deactivate the collider
-                if (punchPoint.GetComponent<CircleCollider2D>() != null) punchPoint.GetComponent<CircleCollider2D>().enabled = false;
-                else Debug.LogError("There is NOT collider of PunchPoint");
-            }
+        // Deactivate the collider
+        if (punchPoint.GetComponent<CircleCollider2D>() != null) punchPoint.GetComponent<CircleCollider2D>().enabled = false;
+        else Debug.LogError("There is NOT collider of PunchPoint");
     }
 
     void Punch()

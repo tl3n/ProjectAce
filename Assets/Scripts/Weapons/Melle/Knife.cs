@@ -8,6 +8,7 @@ public class Knife : MelleWeapon
     public Knife()
     {
         weaponName = "Knife";
+        damage = 2;
     }
 
     /// <summary>

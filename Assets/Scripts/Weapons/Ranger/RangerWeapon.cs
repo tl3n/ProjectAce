@@ -25,11 +25,6 @@ public abstract class RangerWeapon : Weapon
     [SerializeField] protected float force;
 
     /// <summary>
-    /// Damage of the bullet
-    /// </summary>
-    [SerializeField] protected int damage;
-
-    /// <summary>
     /// Start is called before the first frame update
     /// </summary>
     void Start()

@@ -48,7 +48,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Knife
+  player: {fileID: 0}
   rotatePointGameObject: {fileID: 0}
+  damage: 2
   isEquipped: 1
 --- !u!61 &23422364594566191
 BoxCollider2D:
