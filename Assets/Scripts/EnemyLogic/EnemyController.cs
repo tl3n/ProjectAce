@@ -5,24 +5,35 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    // health
     public int health;
     public int maxHealth;
+    public float movementSpeed;
     
-    // attack
     public int attackDamage;
     public float attackRange;
     public float attackCooldown;
     public bool lineOfSight;
     
-    // identification
     public string enemyName;
     
-    private EnemyMovement enemyMovement;
-
+    [SerializeField] private EnemyMovementStrategy movementStrategy;
+    private EnemyMovement movement;
+    
+    
     private void Start()
     {
         new Pathfinding();
-        enemyMovement = GetComponent<EnemyMovement>();
+        movement = GetComponent<EnemyMovement>();
     }
+
+    public float GetMovementSpeed()
+    {
+        return movementSpeed;
+    }
+
+    public EnemyMovementStrategy GetMovementStrategy()
+    {
+        return movementStrategy;
+    }
+    
 }

@@ -2,24 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+* \brief A class for handling enemy movement.
+*/
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private EnemyMovementStrategy movementStrategy;
-
-    private Transform enemyCollider;
-    private Vector3 playerColliderPosition;
     
-    private const float speed = 20f; // TODO: initialize it using EnemyController?
-    private int currentPathIndex;
+    private EnemyController enemyController;
+    private EnemyMovementStrategy movementStrategy;
+    
+    /// <summary>The Transform component of the enemy's collider.</summary>
+    private Transform colliderTransform;
+    
+    /// <summary>The target position for the enemy to move towards.</summary>
+    private Vector3 targetPosition;
+    
+    /// <summary>The movement speed of the enemy.</summary>
+    private float movementSpeed;
+    
+    /// <summary>The list of vectors representing the path for the enemy to follow.</summary>
     private List<Vector3> pathVectorList;
     
-    private const float avoidanceRadius = .5f;
-    private Vector3 targetPosition;
-
+    /// <summary>The current index in the path vector list.</summary>
+    private int currentPathIndex;
+    
+    /**
+    * \brief Start is called before the first frame update.
+    *
+    * Initializes the enemy controller, collider transform, movement speed, and movement strategy.
+    */
     private void Start()
     {
-        enemyCollider = transform.GetChild(1).transform;
+        enemyController = GetComponent<EnemyController>();
+        colliderTransform = transform.Find("EnemyShadow");
+        movementSpeed = enemyController.GetMovementSpeed();
+        movementStrategy = enemyController.GetMovementStrategy();
     }
+    /**
+   * \brief Update is called once per frame.
+   *
+   * Calls the Move method of the movement strategy, if it exists.
+   */
     private void Update()
     {
         if (movementStrategy != null)
@@ -28,11 +51,9 @@ public class EnemyMovement : MonoBehaviour
         }
     }
     
-    public void SetMovementStrategy(EnemyMovementStrategy movementStrategy)
-    {
-        this.movementStrategy = movementStrategy;
-    }
-    
+    /**
+    * \brief Handles the enemy's movement towards the target position.
+    */
     public void HandleMovement()
     {
         Vector3 enemyColliderPosition = FindEnemyColliderPosition();
@@ -41,7 +62,7 @@ public class EnemyMovement : MonoBehaviour
         
         if (distance > 1.5f)
         {
-            transform.position += moveDir * speed * Time.deltaTime;
+            transform.position += moveDir * movementSpeed * Time.deltaTime;
         }
         else
         {
@@ -52,18 +73,11 @@ public class EnemyMovement : MonoBehaviour
             }
         }
     }
-
-    private bool HasLineOfSight(Vector3 targetPosition)
-    {
-        Vector3 enemyColliderPosition = FindEnemyColliderPosition();
-        Vector3 direction = (targetPosition - enemyColliderPosition);
-        float distance = direction.magnitude;
-        LayerMask unwalkableMask = LayerMask.NameToLayer("Unwalkable");
-
-        RaycastHit2D hit = Physics2D.Raycast(enemyColliderPosition, direction, distance, 1 << unwalkableMask);
-        Debug.Log(hit.collider == null);
-        return hit.collider == null;
-    }
+    
+    /**
+    * \brief Sets the target position for the enemy to move towards.
+    * \param targetPosition The target position.
+    */
     public void SetTargetPosition(Vector3 targetPosition)
     {
         if (!HasLineOfSight(targetPosition))
@@ -80,21 +94,43 @@ public class EnemyMovement : MonoBehaviour
         }
         else
         {
-            //Debug.Log("has line of sight");
             this.targetPosition = targetPosition;
             pathVectorList = null;
         }
     }
     
+    /**
+     * \brief Stops the enemy's movement.
+     */
     private void StopMoving()
     {
         targetPosition = FindEnemyColliderPosition();
         pathVectorList = null;
     }
-
-    public Vector3 FindEnemyColliderPosition()
+    
+    /**
+    * \brief Checks if the enemy has a line of sight to the target position.
+    * \param targetPosition The target position.
+    * \return True if there is a line of sight, false otherwise.
+    */
+    private bool HasLineOfSight(Vector3 targetPosition)
     {
-        return enemyCollider.position;
+        Vector3 enemyColliderPosition = FindEnemyColliderPosition();
+        Vector3 direction = (targetPosition - enemyColliderPosition);
+        float distance = direction.magnitude;
+        LayerMask unwalkableMask = LayerMask.NameToLayer("Unwalkable");
+
+        RaycastHit2D hit = Physics2D.Raycast(enemyColliderPosition, direction, distance, 1 << unwalkableMask);
+        return hit.collider == null;
+    }
+    
+    /**
+     * \brief Finds the position of the enemy's collider.
+     * \return The position of the enemy's collider.
+     */
+    private Vector3 FindEnemyColliderPosition()
+    {
+        return colliderTransform.position;
     }
 
     
