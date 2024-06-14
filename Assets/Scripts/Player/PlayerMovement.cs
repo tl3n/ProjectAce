@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 lastMoveDirection = Vector2.zero; //used to store last movement direction to dodgeroll properly
     [SerializeField] private Rigidbody2D playerRigidbody; //player physical body (without visuals)
     [SerializeField] private PlayerAnimator playerAnimator; //object of visuals. needed to get a direction which sprite is facing
-    [SerializeField] private float dodgerollPower = 16f;
+    [SerializeField] private float dodgerollPower = 80f;
     [SerializeField] private float dodgerollTime = 0.2f;
     [SerializeField] private float dodgerollCooldown = 2f; //cooldown after which player is able to dash again
 
