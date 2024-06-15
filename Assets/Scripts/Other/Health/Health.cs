@@ -10,20 +10,27 @@ public class Health : MonoBehaviour
     /// <summary>
     /// Current health of the object
     /// </summary>
-    [SerializeField] public int currentHealth; 
-        
+    [SerializeField] public int currentHealth;
+
     /// <summary>
     /// Maximum health of the object
     /// </summary>
     [SerializeField] public int maxHealth;
-    
+
+    private GameObject parentObject;
+    private AudioManager audioManager;
+    private string parentTag;
 
     /// <summary>
     /// Start is called on the frame when a script is enabled
     /// </summary>
     private void Start()
     {
+        audioManager = GetComponent<AudioManager>();
         currentHealth = maxHealth;
+
+        parentObject = transform.parent.gameObject;
+        parentTag = parentObject.tag; // Store the tag of the parent object
     }
 
     /// <summary>
@@ -44,9 +51,21 @@ public class Health : MonoBehaviour
     public void GetHit(int amount)
     {
         if (isDead) return;
-        
+
+        if (parentTag == "Enemy")
+        {
+            audioManager.PlayEnemySFX(0);
+        }
+        else if (parentTag == "Player")
+        {
+            audioManager.PlayPlayerSFX(2);
+        }
+
         currentHealth -= amount;
-        if (currentHealth < amount) isDead = true;
+        if (currentHealth <= 0)
+        {
+            isDead = true;
+        }
     }
 }
 

@@ -6,6 +6,7 @@ public class DodgerollingState : IPlayerState
 {
     public void EnterState(MovementStateMachine player)
     {
+        AudioManager.Instance.PlayPlayerSFX(1);
             player.StartCoroutine(player.DodgerollCoroutine());
     }
 

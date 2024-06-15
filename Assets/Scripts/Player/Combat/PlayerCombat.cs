@@ -53,12 +53,14 @@ public class PlayerCombat : MonoBehaviour
     /// </summary>
     float nextPunchTime = 0f;
 
+    AudioManager audioManager;
     
     /// <summary>
     /// Start is called before the first frame update
     /// </summary>
     private void Start()
     {
+        audioManager = GetComponent<AudioManager>();
         currentMovementSpeed = movement.movementSpeed;
     }
 
@@ -72,6 +74,7 @@ public class PlayerCombat : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 Punch();
+                audioManager.PlayPlayerSFX(0);
                 nextPunchTime = Time.time + 1f / punchRate;
             }
             

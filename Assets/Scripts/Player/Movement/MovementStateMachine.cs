@@ -53,7 +53,7 @@ public class MovementStateMachine: MonoBehaviour
     /// <summary>
     /// Direction of the dodgeroll
     /// </summary>
-    private Vector2 dodgeDirection = new Vector2(0, 0).normalized;
+    public Vector2 dodgeDirection = new Vector2(0, 0).normalized;
 
     /// <summary>
     /// Direction of input
@@ -207,7 +207,6 @@ public class MovementStateMachine: MonoBehaviour
         else
         {
             dodgeDirection = new Vector2(animatorFlipX ? -1 : 1, 0).normalized;
-            Debug.Log("Player's dodgeroll direction is diagonal");
         }
 
         playerRigidbody.velocity = dodgeDirection * dodgerollPower;

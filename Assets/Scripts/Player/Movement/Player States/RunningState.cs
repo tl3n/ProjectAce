@@ -24,6 +24,11 @@ public class RunningState : IPlayerState
 
             player.TransitionToState(player.DodgerollingState);
         }
+        if (player.GetInputVector() ==  Vector2.zero)
+        {
+            player.movement = Vector2.zero;
+            player.TransitionToState(player.IdleState);
+        }
     }
 
     public void ExitState(MovementStateMachine player) { }

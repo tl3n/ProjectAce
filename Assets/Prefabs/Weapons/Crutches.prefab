@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -122378891, guid: f3ad187120a4f6549b281784d7c4b59b, type: 3}
+  m_Sprite: {fileID: -6053489067376740254, guid: eb0a660e4e0d362468bbca8bdebb34ac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -150,8 +150,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.28125, y: 0.4375}
+    pivot: {x: 0.3157895, y: -0.14285713}
+    oldSize: {x: 0.19, y: 0.42}
     newSize: {x: 5.99, y: 7.63}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -173,11 +173,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Crutches
-  interactionDistance: 2
-  isEquipped: 0
   player: {fileID: 0}
-  force: 20
+  rotatePointGameObject: {fileID: 0}
   damage: 1
+  isEquipped: 0
+  force: 20
   maxDistance: 5
 --- !u!58 &8654540363930822028
 CircleCollider2D:
