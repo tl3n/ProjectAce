@@ -30,8 +30,8 @@ public class UniversumCreator : ArtefactFactory
         Universum.Description = "Fraction of universe. Gives boosts for all stats.";
         Universum.effects = compositeEffect;
 
-        Universum.icon = Resources.Load<Sprite>("ItemPalette/universum test");
-        Universum.prefab = Resources.Load<GameObject>("Prefabs/BlackCat");
+        Universum.icon = Resources.Load<Sprite>("ItemPalette/universum");
+        Universum.prefab = Resources.Load<GameObject>("Prefabs/Universum");
 
         return Universum;
     }

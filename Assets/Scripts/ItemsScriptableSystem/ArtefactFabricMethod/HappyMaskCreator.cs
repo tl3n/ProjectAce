@@ -19,7 +19,7 @@ public class HappyMaskCreator : ArtefactFactory
         HappyMask.Description = "You're a trickster! Gives dodge chance.";
         HappyMask.effects = dodgeBoost;
 
-        HappyMask.icon = Resources.Load<Sprite>("ItemPalette/HappyMask");
+        HappyMask.icon = Resources.Load<Sprite>("ItemPalette/mask_artifact");
         HappyMask.prefab = Resources.Load<GameObject>("Prefabs/HappyMask");
 
         return HappyMask;

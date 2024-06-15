@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Universum Artefact
   m_EditorClassIdentifier: 
   itemName: Universum
-  itemDescription: Gives boosts for all stats.
+  itemDescription: Fraction of universe. Gives boosts for all stats.
   quantity: 1
-  icon: {fileID: 21300000, guid: 0e4f503954b36e94ebab15aad617fe8b, type: 3}
-  prefab: {fileID: 8986063926059376681, guid: 2281a2d7712949441942beaeb54d823c, type: 3}
+  itemId: 4
+  icon: {fileID: 21300000, guid: 89658b41ed628d04c9960b7db489bc71, type: 3}
+  prefab: {fileID: 1195798859309224990, guid: d583953c8afc49741b27d5071f64676c, type: 3}
