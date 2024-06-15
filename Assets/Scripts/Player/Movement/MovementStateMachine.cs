@@ -3,7 +3,7 @@ using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using Input = UnityEngine.Input;
 
-public class MovementStateMachine 
+public class MovementStateMachine: MonoBehaviour
 {
     /// <summary>
     /// Player physical body (without visuals)
