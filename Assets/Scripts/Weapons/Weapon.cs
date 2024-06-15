@@ -153,7 +153,7 @@ public abstract class Weapon : MonoBehaviour
     /// <param name="collision">Collision with object</param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("PlayerShadow"))
+        if (collision.CompareTag("Player"))
         {
             if (interactionText != null) interactionText.gameObject.SetActive(true);
             pickUpAllowed = true;
@@ -166,7 +166,7 @@ public abstract class Weapon : MonoBehaviour
     /// <param name="collision">Collision with object</param>
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("PlayerShadow"))
+        if (collision.CompareTag("Player"))
         {
             if (interactionText != null) interactionText.gameObject.SetActive(false);
             pickUpAllowed = false;

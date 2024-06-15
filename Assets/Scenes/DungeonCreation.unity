@@ -983,7 +983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3876db2bc3e6187409bd30ca905d1abf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 3410236382335610855, guid: 87bb354d5e4063044b7469ef65322f04, type: 3}
+  weaponPrefab: {fileID: 3410236382335610855, guid: 079f2de5549eb634d90d627f908162c8, type: 3}
 --- !u!114 &1793463599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1453,7 +1453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1536623093229720369, guid: 8f8d2e53cd163b84e9ee32533deadfe6, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: PlayerShadow
       objectReference: {fileID: 0}
     - target: {fileID: 6512449402352470771, guid: 8f8d2e53cd163b84e9ee32533deadfe6, type: 3}
       propertyPath: m_LocalPosition.x

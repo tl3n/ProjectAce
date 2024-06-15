@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -122378891, guid: f3ad187120a4f6549b281784d7c4b59b, type: 3}
+  m_Sprite: {fileID: -453816335, guid: f3ad187120a4f6549b281784d7c4b59b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -172,8 +172,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponName: Crutches
+  player: {fileID: 0}
   rotatePointGameObject: {fileID: 0}
+  damage: 1
   isEquipped: 1
   force: 20
-  damage: 1
   maxDistance: 5

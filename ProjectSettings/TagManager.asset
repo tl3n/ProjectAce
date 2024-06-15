@@ -19,6 +19,7 @@ TagManager:
   - BoomerangWeapon
   - RangerWeapon
   - MelleWeapon
+  - PlayerShadow
   layers:
   - Default
   - TransparentFX
