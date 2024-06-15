@@ -99,12 +99,14 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>punchRange</b> = 0.5
 <tr class="separator:a1f1e1d5b02fe4fdaa1e78e60dcb84e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91bef2ec43e56593fe8dabef224ad285" id="r_a91bef2ec43e56593fe8dabef224ad285"><td class="memItemLeft" align="right" valign="top"><a id="a91bef2ec43e56593fe8dabef224ad285" name="a91bef2ec43e56593fe8dabef224ad285"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>punchingMovementSpeed</b> = 3f</td></tr>
+<tr class="memdesc:a91bef2ec43e56593fe8dabef224ad285"><td class="mdescLeft">&#160;</td><td class="mdescRight">Movement speed while punching. <br /></td></tr>
 <tr class="separator:a91bef2ec43e56593fe8dabef224ad285"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea4ea4f1dc1fe837bb9155cd197be005" id="r_aea4ea4f1dc1fe837bb9155cd197be005"><td class="memItemLeft" align="right" valign="top"><a id="aea4ea4f1dc1fe837bb9155cd197be005" name="aea4ea4f1dc1fe837bb9155cd197be005"></a>
 LayerMask&#160;</td><td class="memItemRight" valign="bottom"><b>enemyLayers</b></td></tr>
 <tr class="separator:aea4ea4f1dc1fe837bb9155cd197be005"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a805e442cd5dc92924479cf9724ae5f98" id="r_a805e442cd5dc92924479cf9724ae5f98"><td class="memItemLeft" align="right" valign="top"><a id="a805e442cd5dc92924479cf9724ae5f98" name="a805e442cd5dc92924479cf9724ae5f98"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isPunching</b></td></tr>
+<tr class="memdesc:a805e442cd5dc92924479cf9724ae5f98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event to notify punch state change. <br /></td></tr>
 <tr class="separator:a805e442cd5dc92924479cf9724ae5f98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accbe2731ded869b758d7fd584504aa28" id="r_accbe2731ded869b758d7fd584504aa28"><td class="memItemLeft" align="right" valign="top"><a id="accbe2731ded869b758d7fd584504aa28" name="accbe2731ded869b758d7fd584504aa28"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>punchRate</b> = 2f</td></tr>
@@ -114,10 +116,15 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>punchRate</b> = 2f</
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a7f8924942aa52179bf21d20f5f183592" id="r_a7f8924942aa52179bf21d20f5f183592"><td class="memItemLeft" align="right" valign="top"><a id="a7f8924942aa52179bf21d20f5f183592" name="a7f8924942aa52179bf21d20f5f183592"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Start</b> ()</td></tr>
+<tr class="memdesc:a7f8924942aa52179bf21d20f5f183592"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start is called before the first frame update. <br /></td></tr>
 <tr class="separator:a7f8924942aa52179bf21d20f5f183592"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11d306300833ceb5991fc070329176b9" id="r_a11d306300833ceb5991fc070329176b9"><td class="memItemLeft" align="right" valign="top"><a id="a11d306300833ceb5991fc070329176b9" name="a11d306300833ceb5991fc070329176b9"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Update</b> ()</td></tr>
+<tr class="memdesc:a11d306300833ceb5991fc070329176b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update is called once per frame. <br /></td></tr>
 <tr class="separator:a11d306300833ceb5991fc070329176b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b0f08c3ad577c7a54599d9d954a59aa" id="r_a0b0f08c3ad577c7a54599d9d954a59aa"><td class="memItemLeft" align="right" valign="top"><a id="a0b0f08c3ad577c7a54599d9d954a59aa" name="a0b0f08c3ad577c7a54599d9d954a59aa"></a>
+IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><b>PunchCoroutine</b> ()</td></tr>
+<tr class="separator:a0b0f08c3ad577c7a54599d9d954a59aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a072e0c1da592caa714d3e2aa8e78ff0b" id="r_a072e0c1da592caa714d3e2aa8e78ff0b"><td class="memItemLeft" align="right" valign="top"><a id="a072e0c1da592caa714d3e2aa8e78ff0b" name="a072e0c1da592caa714d3e2aa8e78ff0b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Punch</b> ()</td></tr>
 <tr class="separator:a072e0c1da592caa714d3e2aa8e78ff0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,6 +139,7 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a85c618589a83f854911e1f5c297bdd80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab652762f0a6a321190ad97f02262becb" id="r_ab652762f0a6a321190ad97f02262becb"><td class="memItemLeft" align="right" valign="top"><a id="ab652762f0a6a321190ad97f02262becb" name="ab652762f0a6a321190ad97f02262becb"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>currentMovementSpeed</b></td></tr>
+<tr class="memdesc:ab652762f0a6a321190ad97f02262becb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current movement speed. <br /></td></tr>
 <tr class="separator:ab652762f0a6a321190ad97f02262becb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a726ec31b12e8c64bbd1408e2dd47cddd" id="r_a726ec31b12e8c64bbd1408e2dd47cddd"><td class="memItemLeft" align="right" valign="top"><a id="a726ec31b12e8c64bbd1408e2dd47cddd" name="a726ec31b12e8c64bbd1408e2dd47cddd"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>nextPunchTime</b> = 0f</td></tr>

@@ -22,9 +22,6 @@ virtual void \mbox{\hyperlink{class_weapon_ad127865ed2e4042a08ce74f2f5faae90}{In
 \Hypertarget{class_boomerang_weapon_a981102f77642e4f9a1fca160c01ea140}\label{class_boomerang_weapon_a981102f77642e4f9a1fca160c01ea140} 
 float {\bfseries force}
 \begin{DoxyCompactList}\small\item\em Force to calculate velocity of bullet. \end{DoxyCompactList}\item 
-\Hypertarget{class_boomerang_weapon_af3ca0e5c14dc0b7948fbe418bd0d47ea}\label{class_boomerang_weapon_af3ca0e5c14dc0b7948fbe418bd0d47ea} 
-int {\bfseries damage}
-\begin{DoxyCompactList}\small\item\em Damage of the bullet. \end{DoxyCompactList}\item 
 \Hypertarget{class_boomerang_weapon_ac56ca038cffed99b735ff609e6818b03}\label{class_boomerang_weapon_ac56ca038cffed99b735ff609e6818b03} 
 float {\bfseries max\+Distance}
 \begin{DoxyCompactList}\small\item\em Maximum distance the boomerang can travel. \end{DoxyCompactList}\item 
@@ -36,6 +33,8 @@ Rigidbody2D {\bfseries rigid\+Body}
 \item 
 string {\bfseries weapon\+Name} = "{}Weapon"{}
 \begin{DoxyCompactList}\small\item\em Name of the weapon. \end{DoxyCompactList}\item 
+Game\+Object {\bfseries player}
+\item 
 Game\+Object {\bfseries rotate\+Point\+Game\+Object}
 \begin{DoxyCompactList}\small\item\em Game\+Object of player\textquotesingle{}s rotate\+Point. \end{DoxyCompactList}\item 
 Particle\+System {\bfseries particle\+System}
@@ -69,6 +68,11 @@ Vector3 {\bfseries starting\+Position}
 bool {\bfseries should\+Return} = false
 \begin{DoxyCompactList}\small\item\em Flag to indicate if the boomerang should return. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_weapon}{Weapon}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries damage}
+\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_weapon}{Weapon}}}
 \begin{DoxyCompactItemize}
 \item 

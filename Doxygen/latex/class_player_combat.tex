@@ -20,13 +20,13 @@ float {\bfseries punch\+Range} = 0.\+5f
 \item 
 \Hypertarget{class_player_combat_a91bef2ec43e56593fe8dabef224ad285}\label{class_player_combat_a91bef2ec43e56593fe8dabef224ad285} 
 float {\bfseries punching\+Movement\+Speed} = 3f
-\item 
+\begin{DoxyCompactList}\small\item\em Movement speed while punching. \end{DoxyCompactList}\item 
 \Hypertarget{class_player_combat_aea4ea4f1dc1fe837bb9155cd197be005}\label{class_player_combat_aea4ea4f1dc1fe837bb9155cd197be005} 
 Layer\+Mask {\bfseries enemy\+Layers}
 \item 
 \Hypertarget{class_player_combat_a805e442cd5dc92924479cf9724ae5f98}\label{class_player_combat_a805e442cd5dc92924479cf9724ae5f98} 
 bool {\bfseries is\+Punching}
-\item 
+\begin{DoxyCompactList}\small\item\em Event to notify punch state change. \end{DoxyCompactList}\item 
 \Hypertarget{class_player_combat_accbe2731ded869b758d7fd584504aa28}\label{class_player_combat_accbe2731ded869b758d7fd584504aa28} 
 float {\bfseries punch\+Rate} = 2f
 \end{DoxyCompactItemize}
@@ -35,9 +35,12 @@ float {\bfseries punch\+Rate} = 2f
 \item 
 \Hypertarget{class_player_combat_a7f8924942aa52179bf21d20f5f183592}\label{class_player_combat_a7f8924942aa52179bf21d20f5f183592} 
 void {\bfseries Start} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Start is called before the first frame update. \end{DoxyCompactList}\item 
 \Hypertarget{class_player_combat_a11d306300833ceb5991fc070329176b9}\label{class_player_combat_a11d306300833ceb5991fc070329176b9} 
 void {\bfseries Update} ()
+\begin{DoxyCompactList}\small\item\em Update is called once per frame. \end{DoxyCompactList}\item 
+\Hypertarget{class_player_combat_a0b0f08c3ad577c7a54599d9d954a59aa}\label{class_player_combat_a0b0f08c3ad577c7a54599d9d954a59aa} 
+IEnumerator {\bfseries Punch\+Coroutine} ()
 \item 
 \Hypertarget{class_player_combat_a072e0c1da592caa714d3e2aa8e78ff0b}\label{class_player_combat_a072e0c1da592caa714d3e2aa8e78ff0b} 
 void {\bfseries Punch} ()
@@ -53,7 +56,7 @@ void {\bfseries On\+Draw\+Gizmos\+Selected} ()
 \item 
 \Hypertarget{class_player_combat_ab652762f0a6a321190ad97f02262becb}\label{class_player_combat_ab652762f0a6a321190ad97f02262becb} 
 float {\bfseries current\+Movement\+Speed}
-\item 
+\begin{DoxyCompactList}\small\item\em Current movement speed. \end{DoxyCompactList}\item 
 \Hypertarget{class_player_combat_a726ec31b12e8c64bbd1408e2dd47cddd}\label{class_player_combat_a726ec31b12e8c64bbd1408e2dd47cddd} 
 float {\bfseries next\+Punch\+Time} = 0f
 \end{DoxyCompactItemize}

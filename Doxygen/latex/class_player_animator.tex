@@ -9,18 +9,17 @@ Inheritance diagram for Player\+Animator\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_player_animator_a1e2012c4a2190b5a8415bea83bf36e26}\label{class_player_animator_a1e2012c4a2190b5a8415bea83bf36e26} 
-bool {\bfseries Get\+Animator\+FlipX} ()
-\end{DoxyCompactItemize}
+bool \mbox{\hyperlink{class_player_animator_a1e2012c4a2190b5a8415bea83bf36e26}{Get\+Animator\+FlipX}} ()
+\begin{DoxyCompactList}\small\item\em Returning direction of the sprite at given moment -\/ used in dodgeroll logic in \doxylink{class_player_movement}{Player\+Movement}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Types}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_player_animator_a8af01215e1758cbf0af6a1a6cb7b581c}\label{class_player_animator_a8af01215e1758cbf0af6a1a6cb7b581c} 
-enum {\bfseries Movement\+State} \{ {\bfseries idle}
+enum \mbox{\hyperlink{class_player_animator_a8af01215e1758cbf0af6a1a6cb7b581c}{Movement\+State}} \{ {\bfseries idle}
 , {\bfseries running}
 , {\bfseries dodgerolling}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em States of movement to animate the sprite. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -36,27 +35,40 @@ void {\bfseries Handle\+Movement\+Anim} ()
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_player_animator_a6a0241b35095fbad0d7f4d79a2f80d83}\label{class_player_animator_a6a0241b35095fbad0d7f4d79a2f80d83} 
-Animator {\bfseries animator}
-\item 
-\Hypertarget{class_player_animator_a0b2559c923dc13cd238864f22381a166}\label{class_player_animator_a0b2559c923dc13cd238864f22381a166} 
-Sprite\+Renderer {\bfseries sprite}
-\item 
 \Hypertarget{class_player_animator_a5564dc69a61b4b62576ca85d6f318485}\label{class_player_animator_a5564dc69a61b4b62576ca85d6f318485} 
 \mbox{\hyperlink{class_player_movement}{Player\+Movement}} {\bfseries player}
-\item 
-\Hypertarget{class_player_animator_ab7661d91dfc0facf1d40eb85c49da563}\label{class_player_animator_ab7661d91dfc0facf1d40eb85c49da563} 
-Vector2 {\bfseries input\+Vector}
-\item 
+\begin{DoxyCompactList}\small\item\em \doxylink{class_player_movement}{Player\+Movement} component of the player. \end{DoxyCompactList}\item 
+\Hypertarget{class_player_animator_a6a0241b35095fbad0d7f4d79a2f80d83}\label{class_player_animator_a6a0241b35095fbad0d7f4d79a2f80d83} 
+Animator {\bfseries animator}
+\begin{DoxyCompactList}\small\item\em Animator component of the player. \end{DoxyCompactList}\item 
+\Hypertarget{class_player_animator_a0b2559c923dc13cd238864f22381a166}\label{class_player_animator_a0b2559c923dc13cd238864f22381a166} 
+Sprite\+Renderer {\bfseries sprite}
+\begin{DoxyCompactList}\small\item\em Sprite\+Renderer component of the player. \end{DoxyCompactList}\item 
 \Hypertarget{class_player_animator_a2c828fb490cb9fc73363481946ef067d}\label{class_player_animator_a2c828fb490cb9fc73363481946ef067d} 
-Movement\+State {\bfseries movement\+State} = Movement\+State.\+idle
-\item 
+\mbox{\hyperlink{class_player_animator_a8af01215e1758cbf0af6a1a6cb7b581c}{Movement\+State}} {\bfseries movement\+State} = Movement\+State.\+idle
+\begin{DoxyCompactList}\small\item\em Default state. \end{DoxyCompactList}\item 
 \Hypertarget{class_player_animator_acd4cd83169fdc411fd675cce4fba21be}\label{class_player_animator_acd4cd83169fdc411fd675cce4fba21be} 
 bool {\bfseries animator\+FlipX}
-\item 
+\begin{DoxyCompactList}\small\item\em Used to return flipX to \doxylink{class_player_movement}{Player\+Movement} class and is used there. isn\textquotesingle{}t used here in this class. \end{DoxyCompactList}\item 
 \Hypertarget{class_player_animator_a8031fc6c4a9ddb1e559a2f6c3c05f809}\label{class_player_animator_a8031fc6c4a9ddb1e559a2f6c3c05f809} 
 Vector2 {\bfseries last\+Move\+Dir}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Last movement direction, used to avoid animation bugs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_player_animator_a1e2012c4a2190b5a8415bea83bf36e26}\label{class_player_animator_a1e2012c4a2190b5a8415bea83bf36e26} 
+\index{PlayerAnimator@{PlayerAnimator}!GetAnimatorFlipX@{GetAnimatorFlipX}}
+\index{GetAnimatorFlipX@{GetAnimatorFlipX}!PlayerAnimator@{PlayerAnimator}}
+\doxysubsubsection{\texorpdfstring{GetAnimatorFlipX()}{GetAnimatorFlipX()}}
+{\footnotesize\ttfamily bool Player\+Animator.\+Get\+Animator\+FlipX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returning direction of the sprite at given moment -\/ used in dodgeroll logic in \doxylink{class_player_movement}{Player\+Movement}. 
+
+\begin{DoxyReturn}{Returns}
+Direction of the sprite
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

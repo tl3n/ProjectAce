@@ -24,15 +24,14 @@ Rigidbody2D {\bfseries rigid\+Body}
 \begin{DoxyCompactList}\small\item\em Rigidbody of the bullet. \end{DoxyCompactList}\item 
 \Hypertarget{class_ranger_weapon_acb6bf93d809e06d187d902cf98bce3ab}\label{class_ranger_weapon_acb6bf93d809e06d187d902cf98bce3ab} 
 float {\bfseries force}
-\begin{DoxyCompactList}\small\item\em Force to calculate velocity of bullet. \end{DoxyCompactList}\item 
-\Hypertarget{class_ranger_weapon_a558498a3235c6b7c7fe2f2122d1b5285}\label{class_ranger_weapon_a558498a3235c6b7c7fe2f2122d1b5285} 
-int {\bfseries damage}
-\begin{DoxyCompactList}\small\item\em Damage of the bullet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Force to calculate velocity of bullet. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_weapon}{Weapon}}}
 \begin{DoxyCompactItemize}
 \item 
 string {\bfseries weapon\+Name} = "{}Weapon"{}
 \begin{DoxyCompactList}\small\item\em Name of the weapon. \end{DoxyCompactList}\item 
+Game\+Object {\bfseries player}
+\item 
 Game\+Object {\bfseries rotate\+Point\+Game\+Object}
 \begin{DoxyCompactList}\small\item\em Game\+Object of player\textquotesingle{}s rotate\+Point. \end{DoxyCompactList}\item 
 Particle\+System {\bfseries particle\+System}
@@ -57,6 +56,11 @@ Vector3 {\bfseries mouse\+Pos}
 Camera {\bfseries main\+Cam}
 \begin{DoxyCompactList}\small\item\em Main camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_weapon}{Weapon}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries damage}
+\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_weapon}{Weapon}}}
 \begin{DoxyCompactItemize}
 \item 

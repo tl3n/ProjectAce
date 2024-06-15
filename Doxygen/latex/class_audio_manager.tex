@@ -1,0 +1,161 @@
+\doxysection{Audio\+Manager Class Reference}
+\hypertarget{class_audio_manager}{}\label{class_audio_manager}\index{AudioManager@{AudioManager}}
+Inheritance diagram for Audio\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_audio_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_audio_manager_a270fa889c1a0b2450ba55120ccda229e}{Awake}} ()
+\begin{DoxyCompactList}\small\item\em Ensure to call base.\+Awake() to remove duplicates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_audio_manager_a511359923fecfccfefb16d8c104d7ea9}{Play\+Music}} (int index)
+\begin{DoxyCompactList}\small\item\em Play a music clip by index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_audio_manager_ae269fe67241c73df04341bc9c6d5d16f}{Play\+Player\+SFX}} (int index)
+\begin{DoxyCompactList}\small\item\em Play a player sound effect by index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_audio_manager_ae3f5437fa843579bfd20f0323b3acfaa}{Play\+Enemy\+SFX}} (int index)
+\begin{DoxyCompactList}\small\item\em Play an enemy sound effect by index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_audio_manager_a28b9206f9ffaae91219ba6c8cc759b27}{Play\+UISFX}} (int index)
+\begin{DoxyCompactList}\small\item\em Play a UI sound effect by index. \end{DoxyCompactList}\item 
+\Hypertarget{class_audio_manager_aa3da61250948e1881a7c3993cf9e5af3}\label{class_audio_manager_aa3da61250948e1881a7c3993cf9e5af3} 
+void {\bfseries Stop\+Music} ()
+\begin{DoxyCompactList}\small\item\em Stop the currently playing music. \end{DoxyCompactList}\item 
+\Hypertarget{class_audio_manager_a7852758e62bb600889cc0cc76967597b}\label{class_audio_manager_a7852758e62bb600889cc0cc76967597b} 
+void {\bfseries Stop\+SFX} ()
+\begin{DoxyCompactList}\small\item\em Stop the currently playing sound effect. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_audio_manager_a54db9f2d0d9838c238a56cc82b222773}\label{class_audio_manager_a54db9f2d0d9838c238a56cc82b222773} 
+Audio\+Source {\bfseries music\+Source}
+\item 
+\Hypertarget{class_audio_manager_a3c195832d97c18207ec8bae60ea2e38e}\label{class_audio_manager_a3c195832d97c18207ec8bae60ea2e38e} 
+Audio\+Clip\mbox{[}$\,$\mbox{]} {\bfseries music\+Clips}
+\item 
+\Hypertarget{class_audio_manager_af20e9441762e9b8086842802fd93fd69}\label{class_audio_manager_af20e9441762e9b8086842802fd93fd69} 
+Audio\+Source {\bfseries sfx\+Source}
+\item 
+\Hypertarget{class_audio_manager_aaf5b6e6228259405fafccf7092ebcd79}\label{class_audio_manager_aaf5b6e6228259405fafccf7092ebcd79} 
+Audio\+Clip\mbox{[}$\,$\mbox{]} {\bfseries player\+Sfx\+Clips}
+\item 
+\Hypertarget{class_audio_manager_a23fcb4ecc92ab71eb7f349de73d7567c}\label{class_audio_manager_a23fcb4ecc92ab71eb7f349de73d7567c} 
+Audio\+Clip\mbox{[}$\,$\mbox{]} {\bfseries enemy\+Sfx\+Clips}
+\item 
+\Hypertarget{class_audio_manager_a54b3dc69230be8686d40d8449fda2561}\label{class_audio_manager_a54b3dc69230be8686d40d8449fda2561} 
+Audio\+Clip\mbox{[}$\,$\mbox{]} {\bfseries ui\+Sfx\+Clips}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_audio_manager_ad1246faa9a7f6dc63f083e1fb8ffaaec}\label{class_audio_manager_ad1246faa9a7f6dc63f083e1fb8ffaaec} 
+void {\bfseries Setup\+Audio\+Sources} ()
+\item 
+void \mbox{\hyperlink{class_audio_manager_a05059656fe7acddb2b49f105d67392fc}{Play\+SFX}} (Audio\+Clip\mbox{[}$\,$\mbox{]} clips, int index)
+\begin{DoxyCompactList}\small\item\em Generic method to play any sound effect. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_singleton}{Singleton$<$ Audio\+Manager $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+static T {\bfseries Instance}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_audio_manager_a270fa889c1a0b2450ba55120ccda229e}\label{class_audio_manager_a270fa889c1a0b2450ba55120ccda229e} 
+\index{AudioManager@{AudioManager}!Awake@{Awake}}
+\index{Awake@{Awake}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily override void Audio\+Manager.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Ensure to call base.\+Awake() to remove duplicates. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_singleton_a72d236a3a431af6b9cbce52964361b6b}{Singleton$<$ Audio\+Manager $>$}}.
+
+\Hypertarget{class_audio_manager_ae3f5437fa843579bfd20f0323b3acfaa}\label{class_audio_manager_ae3f5437fa843579bfd20f0323b3acfaa} 
+\index{AudioManager@{AudioManager}!PlayEnemySFX@{PlayEnemySFX}}
+\index{PlayEnemySFX@{PlayEnemySFX}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{PlayEnemySFX()}{PlayEnemySFX()}}
+{\footnotesize\ttfamily void Audio\+Manager.\+Play\+Enemy\+SFX (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Play an enemy sound effect by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_audio_manager_a511359923fecfccfefb16d8c104d7ea9}\label{class_audio_manager_a511359923fecfccfefb16d8c104d7ea9} 
+\index{AudioManager@{AudioManager}!PlayMusic@{PlayMusic}}
+\index{PlayMusic@{PlayMusic}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{PlayMusic()}{PlayMusic()}}
+{\footnotesize\ttfamily void Audio\+Manager.\+Play\+Music (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Play a music clip by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_audio_manager_ae269fe67241c73df04341bc9c6d5d16f}\label{class_audio_manager_ae269fe67241c73df04341bc9c6d5d16f} 
+\index{AudioManager@{AudioManager}!PlayPlayerSFX@{PlayPlayerSFX}}
+\index{PlayPlayerSFX@{PlayPlayerSFX}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{PlayPlayerSFX()}{PlayPlayerSFX()}}
+{\footnotesize\ttfamily void Audio\+Manager.\+Play\+Player\+SFX (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Play a player sound effect by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_audio_manager_a05059656fe7acddb2b49f105d67392fc}\label{class_audio_manager_a05059656fe7acddb2b49f105d67392fc} 
+\index{AudioManager@{AudioManager}!PlaySFX@{PlaySFX}}
+\index{PlaySFX@{PlaySFX}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{PlaySFX()}{PlaySFX()}}
+{\footnotesize\ttfamily void Audio\+Manager.\+Play\+SFX (\begin{DoxyParamCaption}\item[{Audio\+Clip\mbox{[}$\,$\mbox{]}}]{clips,  }\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Generic method to play any sound effect. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clips} & \\
+\hline
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_audio_manager_a28b9206f9ffaae91219ba6c8cc759b27}\label{class_audio_manager_a28b9206f9ffaae91219ba6c8cc759b27} 
+\index{AudioManager@{AudioManager}!PlayUISFX@{PlayUISFX}}
+\index{PlayUISFX@{PlayUISFX}!AudioManager@{AudioManager}}
+\doxysubsubsection{\texorpdfstring{PlayUISFX()}{PlayUISFX()}}
+{\footnotesize\ttfamily void Audio\+Manager.\+Play\+UISFX (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Play a UI sound effect by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Uni materials/2 course/\+OOP/\+Project\+Ace/\+Assets/\+Scripts/\+Other/Audio\+Manager.\+cs\end{DoxyCompactItemize}

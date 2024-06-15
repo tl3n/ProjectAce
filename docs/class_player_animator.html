@@ -89,16 +89,17 @@ Inheritance diagram for PlayerAnimator:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1e2012c4a2190b5a8415bea83bf36e26" id="r_a1e2012c4a2190b5a8415bea83bf36e26"><td class="memItemLeft" align="right" valign="top"><a id="a1e2012c4a2190b5a8415bea83bf36e26" name="a1e2012c4a2190b5a8415bea83bf36e26"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>GetAnimatorFlipX</b> ()</td></tr>
+<tr class="memitem:a1e2012c4a2190b5a8415bea83bf36e26" id="r_a1e2012c4a2190b5a8415bea83bf36e26"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e2012c4a2190b5a8415bea83bf36e26">GetAnimatorFlipX</a> ()</td></tr>
+<tr class="memdesc:a1e2012c4a2190b5a8415bea83bf36e26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returning direction of the sprite at given moment - used in dodgeroll logic in <a class="el" href="class_player_movement.html">PlayerMovement</a>.  <br /></td></tr>
 <tr class="separator:a1e2012c4a2190b5a8415bea83bf36e26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
 Private Types</h2></td></tr>
-<tr class="memitem:a8af01215e1758cbf0af6a1a6cb7b581c" id="r_a8af01215e1758cbf0af6a1a6cb7b581c"><td class="memItemLeft" align="right" valign="top"><a id="a8af01215e1758cbf0af6a1a6cb7b581c" name="a8af01215e1758cbf0af6a1a6cb7b581c"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>MovementState</b> { <b>idle</b>
+<tr class="memitem:a8af01215e1758cbf0af6a1a6cb7b581c" id="r_a8af01215e1758cbf0af6a1a6cb7b581c"><td class="memItemLeft" align="right" valign="top"><a id="a8af01215e1758cbf0af6a1a6cb7b581c" name="a8af01215e1758cbf0af6a1a6cb7b581c"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8af01215e1758cbf0af6a1a6cb7b581c">MovementState</a> { <b>idle</b>
 , <b>running</b>
 , <b>dodgerolling</b>
  }</td></tr>
+<tr class="memdesc:a8af01215e1758cbf0af6a1a6cb7b581c"><td class="mdescLeft">&#160;</td><td class="mdescRight">States of movement to animate the sprite. <br /></td></tr>
 <tr class="separator:a8af01215e1758cbf0af6a1a6cb7b581c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
@@ -115,28 +116,60 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>HandleMovementAnim</b
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:a5564dc69a61b4b62576ca85d6f318485" id="r_a5564dc69a61b4b62576ca85d6f318485"><td class="memItemLeft" align="right" valign="top"><a id="a5564dc69a61b4b62576ca85d6f318485" name="a5564dc69a61b4b62576ca85d6f318485"></a>
+<a class="el" href="class_player_movement.html">PlayerMovement</a>&#160;</td><td class="memItemRight" valign="bottom"><b>player</b></td></tr>
+<tr class="memdesc:a5564dc69a61b4b62576ca85d6f318485"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_player_movement.html">PlayerMovement</a> component of the player. <br /></td></tr>
+<tr class="separator:a5564dc69a61b4b62576ca85d6f318485"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a0241b35095fbad0d7f4d79a2f80d83" id="r_a6a0241b35095fbad0d7f4d79a2f80d83"><td class="memItemLeft" align="right" valign="top"><a id="a6a0241b35095fbad0d7f4d79a2f80d83" name="a6a0241b35095fbad0d7f4d79a2f80d83"></a>
 Animator&#160;</td><td class="memItemRight" valign="bottom"><b>animator</b></td></tr>
+<tr class="memdesc:a6a0241b35095fbad0d7f4d79a2f80d83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Animator component of the player. <br /></td></tr>
 <tr class="separator:a6a0241b35095fbad0d7f4d79a2f80d83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b2559c923dc13cd238864f22381a166" id="r_a0b2559c923dc13cd238864f22381a166"><td class="memItemLeft" align="right" valign="top"><a id="a0b2559c923dc13cd238864f22381a166" name="a0b2559c923dc13cd238864f22381a166"></a>
 SpriteRenderer&#160;</td><td class="memItemRight" valign="bottom"><b>sprite</b></td></tr>
+<tr class="memdesc:a0b2559c923dc13cd238864f22381a166"><td class="mdescLeft">&#160;</td><td class="mdescRight">SpriteRenderer component of the player. <br /></td></tr>
 <tr class="separator:a0b2559c923dc13cd238864f22381a166"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5564dc69a61b4b62576ca85d6f318485" id="r_a5564dc69a61b4b62576ca85d6f318485"><td class="memItemLeft" align="right" valign="top"><a id="a5564dc69a61b4b62576ca85d6f318485" name="a5564dc69a61b4b62576ca85d6f318485"></a>
-<a class="el" href="class_player_movement.html">PlayerMovement</a>&#160;</td><td class="memItemRight" valign="bottom"><b>player</b></td></tr>
-<tr class="separator:a5564dc69a61b4b62576ca85d6f318485"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7661d91dfc0facf1d40eb85c49da563" id="r_ab7661d91dfc0facf1d40eb85c49da563"><td class="memItemLeft" align="right" valign="top"><a id="ab7661d91dfc0facf1d40eb85c49da563" name="ab7661d91dfc0facf1d40eb85c49da563"></a>
-Vector2&#160;</td><td class="memItemRight" valign="bottom"><b>inputVector</b></td></tr>
-<tr class="separator:ab7661d91dfc0facf1d40eb85c49da563"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c828fb490cb9fc73363481946ef067d" id="r_a2c828fb490cb9fc73363481946ef067d"><td class="memItemLeft" align="right" valign="top"><a id="a2c828fb490cb9fc73363481946ef067d" name="a2c828fb490cb9fc73363481946ef067d"></a>
-MovementState&#160;</td><td class="memItemRight" valign="bottom"><b>movementState</b> = MovementState.idle</td></tr>
+<a class="el" href="#a8af01215e1758cbf0af6a1a6cb7b581c">MovementState</a>&#160;</td><td class="memItemRight" valign="bottom"><b>movementState</b> = MovementState.idle</td></tr>
+<tr class="memdesc:a2c828fb490cb9fc73363481946ef067d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default state. <br /></td></tr>
 <tr class="separator:a2c828fb490cb9fc73363481946ef067d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd4cd83169fdc411fd675cce4fba21be" id="r_acd4cd83169fdc411fd675cce4fba21be"><td class="memItemLeft" align="right" valign="top"><a id="acd4cd83169fdc411fd675cce4fba21be" name="acd4cd83169fdc411fd675cce4fba21be"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>animatorFlipX</b></td></tr>
+<tr class="memdesc:acd4cd83169fdc411fd675cce4fba21be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to return flipX to <a class="el" href="class_player_movement.html">PlayerMovement</a> class and is used there. isn't used here in this class. <br /></td></tr>
 <tr class="separator:acd4cd83169fdc411fd675cce4fba21be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8031fc6c4a9ddb1e559a2f6c3c05f809" id="r_a8031fc6c4a9ddb1e559a2f6c3c05f809"><td class="memItemLeft" align="right" valign="top"><a id="a8031fc6c4a9ddb1e559a2f6c3c05f809" name="a8031fc6c4a9ddb1e559a2f6c3c05f809"></a>
 Vector2&#160;</td><td class="memItemRight" valign="bottom"><b>lastMoveDir</b></td></tr>
+<tr class="memdesc:a8031fc6c4a9ddb1e559a2f6c3c05f809"><td class="mdescLeft">&#160;</td><td class="mdescRight">Last movement direction, used to avoid animation bugs. <br /></td></tr>
 <tr class="separator:a8031fc6c4a9ddb1e559a2f6c3c05f809"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1e2012c4a2190b5a8415bea83bf36e26" name="a1e2012c4a2190b5a8415bea83bf36e26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e2012c4a2190b5a8415bea83bf36e26">&#9670;&#160;</a></span>GetAnimatorFlipX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PlayerAnimator.GetAnimatorFlipX </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returning direction of the sprite at given moment - used in dodgeroll logic in <a class="el" href="class_player_movement.html">PlayerMovement</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>Direction of the sprite</dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>D:/Uni materials/2 course/OOP/ProjectAce/Assets/Scripts/Player/<b>PlayerAnimator.cs</b></li>
 </ul>

@@ -17,6 +17,11 @@ void \mbox{\hyperlink{class_ranger_weapon_a5d47dd3c582380ffb108b42290660380}{On\
 \item 
 virtual void \mbox{\hyperlink{class_weapon_ad127865ed2e4042a08ce74f2f5faae90}{Initialize}} ()
 \begin{DoxyCompactList}\small\item\em Initialization of weapon (adding own particle system) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_weapon}{Weapon}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries damage}
+\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_weapon}{Weapon}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -30,14 +35,14 @@ void {\bfseries Update} ()
 Rigidbody2D {\bfseries rigid\+Body}
 \begin{DoxyCompactList}\small\item\em Rigidbody of the bullet. \end{DoxyCompactList}\item 
 float {\bfseries force}
-\begin{DoxyCompactList}\small\item\em Force to calculate velocity of bullet. \end{DoxyCompactList}\item 
-int {\bfseries damage}
-\begin{DoxyCompactList}\small\item\em Damage of the bullet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Force to calculate velocity of bullet. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_weapon}{Weapon}}}
 \begin{DoxyCompactItemize}
 \item 
 string {\bfseries weapon\+Name} = "{}Weapon"{}
 \begin{DoxyCompactList}\small\item\em Name of the weapon. \end{DoxyCompactList}\item 
+Game\+Object {\bfseries player}
+\item 
 Game\+Object {\bfseries rotate\+Point\+Game\+Object}
 \begin{DoxyCompactList}\small\item\em Game\+Object of player\textquotesingle{}s rotate\+Point. \end{DoxyCompactList}\item 
 Particle\+System {\bfseries particle\+System}

@@ -6,12 +6,23 @@ Inheritance diagram for Melle\+Weapon\+:\begin{figure}[H]
 \includegraphics[height=4.000000cm]{class_melle_weapon}
 \end{center}
 \end{figure}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_melle_weapon_a9805e37d8b0bb1e31994bc82bc0dc464}\label{class_melle_weapon_a9805e37d8b0bb1e31994bc82bc0dc464} 
+void {\bfseries Start} ()
+\begin{DoxyCompactList}\small\item\em Start is called before the first frame update. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_weapon}{Weapon}}}
 \begin{DoxyCompactItemize}
 \item 
 virtual void \mbox{\hyperlink{class_weapon_ad127865ed2e4042a08ce74f2f5faae90}{Initialize}} ()
 \begin{DoxyCompactList}\small\item\em Initialization of weapon (adding own particle system) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_weapon}{Weapon}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries damage}
+\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_weapon}{Weapon}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -24,6 +35,8 @@ void {\bfseries Update} ()
 \item 
 string {\bfseries weapon\+Name} = "{}Weapon"{}
 \begin{DoxyCompactList}\small\item\em Name of the weapon. \end{DoxyCompactList}\item 
+Game\+Object {\bfseries player}
+\item 
 Game\+Object {\bfseries rotate\+Point\+Game\+Object}
 \begin{DoxyCompactList}\small\item\em Game\+Object of player\textquotesingle{}s rotate\+Point. \end{DoxyCompactList}\item 
 Particle\+System {\bfseries particle\+System}

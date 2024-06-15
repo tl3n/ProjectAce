@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_0',['X',['../class_dungeon_generation_1_1_room.html#ad43387cf32658d8aa5618ab712d63ba1',1,'DungeonGeneration::Room']]]
+  ['type_0',['Type',['../class_dungeon_generation_1_1_room.html#ad020e6c47a39f8a5ed23fce8368851e1',1,'DungeonGeneration::Room']]]
 ];

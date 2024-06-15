@@ -9,33 +9,64 @@ Inheritance diagram for Health\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_health_ae39c7287e1d100a671324323a89a34ce}\label{class_health_ae39c7287e1d100a671324323a89a34ce} 
-void {\bfseries Initialize\+Health} (int health)
-\item 
-\Hypertarget{class_health_a2c1d93cebbdd800b8d925f3e6d8a9195}\label{class_health_a2c1d93cebbdd800b8d925f3e6d8a9195} 
-void {\bfseries Get\+Hit} (int amount)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_health_ae39c7287e1d100a671324323a89a34ce}{Initialize\+Health}} (int health)
+\begin{DoxyCompactList}\small\item\em Initialization of the health. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_health_a2c1d93cebbdd800b8d925f3e6d8a9195}{Get\+Hit}} (int amount)
+\begin{DoxyCompactList}\small\item\em Getting injured after hitting. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_health_a696aaffdd096aa75da899a8601c05b5b}\label{class_health_a696aaffdd096aa75da899a8601c05b5b} 
 int {\bfseries current\+Health}
-\item 
+\begin{DoxyCompactList}\small\item\em Current health of the object. \end{DoxyCompactList}\item 
 \Hypertarget{class_health_a603c3c84ec6421f5e99194220c4b77ae}\label{class_health_a603c3c84ec6421f5e99194220c4b77ae} 
 int {\bfseries max\+Health}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Maximum health of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_health_a31ffeaccdd59ab1f570db4fea02ff6cf}\label{class_health_a31ffeaccdd59ab1f570db4fea02ff6cf} 
 void {\bfseries Start} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Start is called on the frame when a script is enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_health_a92c4adf7611d274d95e6a10d8d8476e6}\label{class_health_a92c4adf7611d274d95e6a10d8d8476e6} 
 bool {\bfseries is\+Dead} = false
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em State of the object with health. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_health_a2c1d93cebbdd800b8d925f3e6d8a9195}\label{class_health_a2c1d93cebbdd800b8d925f3e6d8a9195} 
+\index{Health@{Health}!GetHit@{GetHit}}
+\index{GetHit@{GetHit}!Health@{Health}}
+\doxysubsubsection{\texorpdfstring{GetHit()}{GetHit()}}
+{\footnotesize\ttfamily void Health.\+Get\+Hit (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Getting injured after hitting. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount of the damage\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_health_ae39c7287e1d100a671324323a89a34ce}\label{class_health_ae39c7287e1d100a671324323a89a34ce} 
+\index{Health@{Health}!InitializeHealth@{InitializeHealth}}
+\index{InitializeHealth@{InitializeHealth}!Health@{Health}}
+\doxysubsubsection{\texorpdfstring{InitializeHealth()}{InitializeHealth()}}
+{\footnotesize\ttfamily void Health.\+Initialize\+Health (\begin{DoxyParamCaption}\item[{int}]{health }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialization of the health. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em health} & Max and current health\\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

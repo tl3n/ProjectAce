@@ -77,6 +77,7 @@ $(function() {
 <li>ActivateDoors()&#160;:&#160;<a class="el" href="class_dungeon_generation_1_1_room_generator.html#ac8232159773028af673a18423611024f">DungeonGeneration.RoomGenerator</a></li>
 <li>ActiveState()&#160;:&#160;<a class="el" href="class_active_state.html#a5dcd9337d91920d63ee3d50931435fe3">ActiveState</a></li>
 <li>Add()&#160;:&#160;<a class="el" href="class_dungeon_generation_1_1_room.html#a5f2680db7570edbbdab8b7d48d3d9145">DungeonGeneration.Room</a>, <a class="el" href="class_enemy.html#af8777498b8247f6db05e149dcdf103c1">Enemy</a>, <a class="el" href="interface_i_grid_component.html#a52427825499876387955ae883e15c8d4">IGridComponent</a></li>
+<li>Awake()&#160;:&#160;<a class="el" href="class_audio_manager.html#a270fa889c1a0b2450ba55120ccda229e">AudioManager</a>, <a class="el" href="class_fill_status_bar.html#ac5ff713829687d3018350714355f4447">FillStatusBar</a>, <a class="el" href="class_game_input.html#a3596b816c565c2c13f016a9eeabf47a7">GameInput</a>, <a class="el" href="class_singleton.html#a72d236a3a431af6b9cbce52964361b6b">Singleton&lt; T &gt;</a></li>
 </ul>
 
 
@@ -89,6 +90,8 @@ $(function() {
 
 <h3><a id="index_d" name="index_d"></a>- d -</h3><ul>
 <li>DestroyInteractionText()&#160;:&#160;<a class="el" href="class_weapon.html#a3dc67e3950633cdd192031af7dc60b45">Weapon</a></li>
+<li>Dodgeroll()&#160;:&#160;<a class="el" href="class_player_movement.html#adab7ea9dcfe01effb8c897d3ea4c6c18">PlayerMovement</a></li>
+<li>Dodgeroll_performed()&#160;:&#160;<a class="el" href="class_game_input.html#a2dd9eb00754c14f024c9ede1fe58c911">GameInput</a></li>
 </ul>
 
 
@@ -111,27 +114,39 @@ $(function() {
 
 
 <h3><a id="index_g" name="index_g"></a>- g -</h3><ul>
+<li>GameInput_OnDodgerollAction()&#160;:&#160;<a class="el" href="class_player_movement.html#a4be1938f7748da3f6046bfd658e4b0fd">PlayerMovement</a></li>
 <li>Generate()&#160;:&#160;<a class="el" href="class_dungeon_generation_1_1_layout_generator.html#adbdf1738b39efe0bdea522dd5cf6974f">DungeonGeneration.LayoutGenerator</a>, <a class="el" href="class_dungeon_generation_1_1_room_generator.html#aa1852564079bf3329d70514e8d813bcc">DungeonGeneration.RoomGenerator</a>, <a class="el" href="class_room_generation_1_1_enemies_factory.html#adf206c9c565e996edcce03771f749f41">RoomGeneration.EnemiesFactory</a>, <a class="el" href="class_room_generation_1_1_level1_enemies_generator.html#a1b61bf4af8d11890dad3f3b807cff6f3">RoomGeneration.Level1EnemiesGenerator</a>, <a class="el" href="class_room_generation_1_1_level1_weapons_generator.html#ad1a61c056ebf4b86583a615d5e0bb3e4">RoomGeneration.Level1WeaponsGenerator</a>, <a class="el" href="class_room_generation_1_1_weapons_factory.html#afa0b8a003fcc67053fd09cf4b0241890">RoomGeneration.WeaponsFactory</a></li>
+<li>GetAnimatorFlipX()&#160;:&#160;<a class="el" href="class_player_animator.html#a1e2012c4a2190b5a8415bea83bf36e26">PlayerAnimator</a></li>
+<li>GetDodgerollStatus()&#160;:&#160;<a class="el" href="class_player_movement.html#a0aef7099a41f418023dfecdbc82643cc">PlayerMovement</a></li>
 <li>GetEnemy()&#160;:&#160;<a class="el" href="class_room_generation_1_1_doctor_creator.html#a20fef2af9c6628d5e13671b4321cb733">RoomGeneration.DoctorCreator</a>, <a class="el" href="class_room_generation_1_1_head_doctor_creator.html#a4830b65a23e4903d9be68602e16070a2">RoomGeneration.HeadDoctorCreator</a>, <a class="el" href="class_room_generation_1_1_pharmacist_creator.html#af63af2eca02552f4eaa08822d716ae59">RoomGeneration.PharmacistCreator</a>, <a class="el" href="class_room_generation_1_1_syringe_creator.html#a728fd0e7b7826bbfd648f193e9dc75d9">RoomGeneration.SyringeCreator</a></li>
+<li>GetHit()&#160;:&#160;<a class="el" href="class_health.html#a2c1d93cebbdd800b8d925f3e6d8a9195">Health</a></li>
+<li>GetMovementVectorNormalized()&#160;:&#160;<a class="el" href="class_game_input.html#ac7a40ef75a3ae6727948135d9521e72d">GameInput</a></li>
 <li>GetName()&#160;:&#160;<a class="el" href="class_dungeon_generation_1_1_room.html#a7f7d2c4985b6f83dac7cadb8f1e43e86">DungeonGeneration.Room</a>, <a class="el" href="class_enemy.html#aa18ca6fbf30138db0114c5da351b137e">Enemy</a>, <a class="el" href="interface_i_grid_component.html#a21f0c00accee33efc951647e9b74e708">IGridComponent</a></li>
-<li>GetWeapon()&#160;:&#160;<a class="el" href="class_room_generation_1_1_crutches_creator.html#aa6279e0218a963c9c9f03af9860e300f">RoomGeneration.CrutchesCreator</a>, <a class="el" href="class_room_generation_1_1_knife_creator.html#a8429a11d72b5fe5b3ae80e2531898f89">RoomGeneration.KnifeCreator</a>, <a class="el" href="class_room_generation_1_1_spray_creator.html#a61b3edb980b4c6d153a0fcd4e9c21d13">RoomGeneration.SprayCreator</a></li>
+<li>GetWeapon()&#160;:&#160;<a class="el" href="class_room_generation_1_1_cards_creator.html#a40980c50b11647f86b8548707490cfcb">RoomGeneration.CardsCreator</a>, <a class="el" href="class_room_generation_1_1_crutches_creator.html#aa6279e0218a963c9c9f03af9860e300f">RoomGeneration.CrutchesCreator</a>, <a class="el" href="class_room_generation_1_1_knife_creator.html#a8429a11d72b5fe5b3ae80e2531898f89">RoomGeneration.KnifeCreator</a>, <a class="el" href="class_room_generation_1_1_spray_creator.html#a61b3edb980b4c6d153a0fcd4e9c21d13">RoomGeneration.SprayCreator</a></li>
 </ul>
 
 
 <h3><a id="index_h" name="index_h"></a>- h -</h3><ul>
+<li>HandleMovement()&#160;:&#160;<a class="el" href="class_player_movement.html#adb78bd969af2ed7040980b6a225107d4">PlayerMovement</a></li>
 <li>HasOnlyOneNeighbour()&#160;:&#160;<a class="el" href="class_dungeon_generation_1_1_layout_generator.html#a9562acf8097c2ec43d8b7e58fe083ff8">DungeonGeneration.LayoutGenerator</a></li>
 </ul>
 
 
 <h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
 <li>Initialize()&#160;:&#160;<a class="el" href="class_doctor.html#abeef7775e69064556d44b2017bacc0e6">Doctor</a>, <a class="el" href="class_enemy.html#a09c54cc2b89de476053ebdd21e9d0cdc">Enemy</a>, <a class="el" href="class_enemy_state_machine.html#ae70b09a7bff57c059c0e96ffd77ae924">EnemyStateMachine</a>, <a class="el" href="class_head_doctor.html#a7c0122098200ff0998446de61e3a90ad">HeadDoctor</a>, <a class="el" href="class_knife.html#a1a41f1e89585218bd673e8722f070400">Knife</a>, <a class="el" href="class_pharmacist.html#a6a5ee2d2014f1f39b2249e53bc9a4bf0">Pharmacist</a>, <a class="el" href="class_syringe.html#ab445b2c42723fac9f6d9b02e9706b035">Syringe</a>, <a class="el" href="class_weapon.html#ad127865ed2e4042a08ce74f2f5faae90">Weapon</a></li>
+<li>InitializeHealth()&#160;:&#160;<a class="el" href="class_health.html#ae39c7287e1d100a671324323a89a34ce">Health</a></li>
 <li>IsComposite()&#160;:&#160;<a class="el" href="class_dungeon_generation_1_1_room.html#a27ed09afeb8160cbea8140a7b94d72aa">DungeonGeneration.Room</a>, <a class="el" href="class_enemy.html#aed79df9dcc54f23c8dbfbdace552e617">Enemy</a>, <a class="el" href="interface_i_grid_component.html#a42131fd9f1c8be452f3de6a960e46647">IGridComponent</a></li>
 </ul>
 
 
+<h3><a id="index_k" name="index_k"></a>- k -</h3><ul>
+<li>KnockCoroutine()&#160;:&#160;<a class="el" href="class_hitting.html#ada7db3e9f92e0438ae64f7f15c37b65e">Hitting</a></li>
+</ul>
+
+
 <h3><a id="index_o" name="index_o"></a>- o -</h3><ul>
-<li>OnCollisionEnter2D()&#160;:&#160;<a class="el" href="class_boomerang_weapon.html#a0a954213922b4ceef38abda76298c8dc">BoomerangWeapon</a>, <a class="el" href="class_ranger_weapon.html#a5d47dd3c582380ffb108b42290660380">RangerWeapon</a></li>
-<li>OnTriggerEnter2D()&#160;:&#160;<a class="el" href="class_room_transition_trigger.html#a17244d255125299e88732c86de5e6087">RoomTransitionTrigger</a>, <a class="el" href="class_weapon.html#a43f2dc66474424c90e0531e9bbc92cf4">Weapon</a></li>
+<li>OnCollisionEnter2D()&#160;:&#160;<a class="el" href="class_boomerang_weapon.html#a0a954213922b4ceef38abda76298c8dc">BoomerangWeapon</a>, <a class="el" href="class_bullet_script.html#a3dc805e2d9f6952441bb7e7139351bbc">BulletScript</a>, <a class="el" href="class_ranger_weapon.html#a5d47dd3c582380ffb108b42290660380">RangerWeapon</a></li>
+<li>OnTriggerEnter2D()&#160;:&#160;<a class="el" href="class_hitting.html#af9f9527197ca3878386ad64452719903">Hitting</a>, <a class="el" href="class_room_transition_trigger.html#a17244d255125299e88732c86de5e6087">RoomTransitionTrigger</a>, <a class="el" href="class_weapon.html#a43f2dc66474424c90e0531e9bbc92cf4">Weapon</a></li>
 <li>OnTriggerExit2D()&#160;:&#160;<a class="el" href="class_weapon.html#a62901e82bb85b96247fc7fd98b8ed1d6">Weapon</a></li>
 </ul>
 
@@ -139,6 +154,11 @@ $(function() {
 <h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
 <li>PassiveState()&#160;:&#160;<a class="el" href="class_passive_state.html#ac7fb6f73736d8c3686dd112c2b4fe1d3">PassiveState</a></li>
 <li>PickUp()&#160;:&#160;<a class="el" href="class_weapon.html#a1b67f0c1c3c77cdf90032232faa17804">Weapon</a></li>
+<li>PlayEnemySFX()&#160;:&#160;<a class="el" href="class_audio_manager.html#ae3f5437fa843579bfd20f0323b3acfaa">AudioManager</a></li>
+<li>PlayMusic()&#160;:&#160;<a class="el" href="class_audio_manager.html#a511359923fecfccfefb16d8c104d7ea9">AudioManager</a></li>
+<li>PlayPlayerSFX()&#160;:&#160;<a class="el" href="class_audio_manager.html#ae269fe67241c73df04341bc9c6d5d16f">AudioManager</a></li>
+<li>PlaySFX()&#160;:&#160;<a class="el" href="class_audio_manager.html#a05059656fe7acddb2b49f105d67392fc">AudioManager</a></li>
+<li>PlayUISFX()&#160;:&#160;<a class="el" href="class_audio_manager.html#a28b9206f9ffaae91219ba6c8cc759b27">AudioManager</a></li>
 </ul>
 
 
@@ -151,7 +171,9 @@ $(function() {
 
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
 <li>SetActive()&#160;:&#160;<a class="el" href="class_dungeon_generation_1_1_room.html#adf14c1fe9951cf89417a42b01c8b2476">DungeonGeneration.Room</a>, <a class="el" href="class_enemy.html#a925f13e19d050ef401cfd23a89272302">Enemy</a>, <a class="el" href="interface_i_grid_component.html#a9f8caba6c267d958e8706aaaf1715e19">IGridComponent</a></li>
-<li>Start()&#160;:&#160;<a class="el" href="class_boomerang_weapon.html#ac05cd25dce3534cd7ff2dd1c62250113">BoomerangWeapon</a>, <a class="el" href="class_dungeon_generation_1_1_dungeon_generator.html#a196183891953a3912dc450571b132502">DungeonGeneration.DungeonGenerator</a>, <a class="el" href="class_ranger_weapon.html#a7cdd212b7f32944c34471cb40e08ae5f">RangerWeapon</a>, <a class="el" href="class_shooting.html#a9274cb50e48333d3ee9cd510da49a20a">Shooting</a>, <a class="el" href="class_weapon.html#ae4f517eead254a905b55b9d9cd9b651c">Weapon</a></li>
+<li>Start()&#160;:&#160;<a class="el" href="class_boomerang_weapon.html#ac05cd25dce3534cd7ff2dd1c62250113">BoomerangWeapon</a>, <a class="el" href="class_bullet_script.html#ad98cee4f46753774ca597b39763cb8b3">BulletScript</a>, <a class="el" href="class_dungeon_generation_1_1_dungeon_generator.html#a196183891953a3912dc450571b132502">DungeonGeneration.DungeonGenerator</a>, <a class="el" href="class_health.html#a31ffeaccdd59ab1f570db4fea02ff6cf">Health</a>, <a class="el" href="class_hitting.html#a3964073dcd3073025710c34b7e9b8100">Hitting</a>, <a class="el" href="class_melle_weapon.html#a9805e37d8b0bb1e31994bc82bc0dc464">MelleWeapon</a>, <a class="el" href="class_player_combat.html#a7f8924942aa52179bf21d20f5f183592">PlayerCombat</a>, <a class="el" href="class_player_movement.html#abf3660ca2b1a352b4a9da98437c61aa3">PlayerMovement</a>, <a class="el" href="class_ranger_weapon.html#a7cdd212b7f32944c34471cb40e08ae5f">RangerWeapon</a>, <a class="el" href="class_shooting.html#a9274cb50e48333d3ee9cd510da49a20a">Shooting</a>, <a class="el" href="class_weapon.html#ae4f517eead254a905b55b9d9cd9b651c">Weapon</a></li>
+<li>StopMusic()&#160;:&#160;<a class="el" href="class_audio_manager.html#aa3da61250948e1881a7c3993cf9e5af3">AudioManager</a></li>
+<li>StopSFX()&#160;:&#160;<a class="el" href="class_audio_manager.html#a7852758e62bb600889cc0cc76967597b">AudioManager</a></li>
 </ul>
 
 
@@ -161,7 +183,7 @@ $(function() {
 
 
 <h3><a id="index_u" name="index_u"></a>- u -</h3><ul>
-<li>Update()&#160;:&#160;<a class="el" href="class_active_state.html#a4837c57d57b889c0f802899d098c8b7c">ActiveState</a>, <a class="el" href="class_boomerang_weapon.html#a63ba62bc6eb068bf3b45bf225da4af20">BoomerangWeapon</a>, <a class="el" href="class_enemy_state_machine.html#a005be4e4a2c5c0296e47792867cd035b">EnemyStateMachine</a>, <a class="el" href="interface_i_enemy_state.html#ad32d6405bbea720f175ac2ae35f84fb2">IEnemyState</a>, <a class="el" href="class_passive_state.html#a14d78545d67e445e4cf27ee2520a9a99">PassiveState</a>, <a class="el" href="class_shooting.html#a2080e6a003c0f1c69ef64407dd03851d">Shooting</a>, <a class="el" href="class_weapon.html#a7c7b901870c742eb854eff9312ce6a33">Weapon</a></li>
+<li>Update()&#160;:&#160;<a class="el" href="class_active_state.html#a4837c57d57b889c0f802899d098c8b7c">ActiveState</a>, <a class="el" href="class_boomerang_weapon.html#a63ba62bc6eb068bf3b45bf225da4af20">BoomerangWeapon</a>, <a class="el" href="class_enemy_state_machine.html#a005be4e4a2c5c0296e47792867cd035b">EnemyStateMachine</a>, <a class="el" href="class_fill_status_bar.html#ac325f6127f9cfd3ce2c62b1502fe03a6">FillStatusBar</a>, <a class="el" href="interface_i_enemy_state.html#ad32d6405bbea720f175ac2ae35f84fb2">IEnemyState</a>, <a class="el" href="class_layer_changer.html#a6063017a3a115ddc75763eab33fe4a69">LayerChanger</a>, <a class="el" href="class_passive_state.html#a14d78545d67e445e4cf27ee2520a9a99">PassiveState</a>, <a class="el" href="class_player_combat.html#a11d306300833ceb5991fc070329176b9">PlayerCombat</a>, <a class="el" href="class_player_movement.html#aaf9b77d7177d538be9c1447d08191322">PlayerMovement</a>, <a class="el" href="class_shooting.html#a2080e6a003c0f1c69ef64407dd03851d">Shooting</a>, <a class="el" href="class_weapon.html#a7c7b901870c742eb854eff9312ce6a33">Weapon</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
