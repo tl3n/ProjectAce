@@ -21,7 +21,7 @@ public class PlayerCombat : MonoBehaviour
     /// <summary>
     /// 
     /// </summary>
-    [SerializeField] MovementStateMachine movement;
+    [SerializeField] Player player;
     
     /// <summary>
     /// Movement speed while punching
@@ -53,15 +53,16 @@ public class PlayerCombat : MonoBehaviour
     /// </summary>
     float nextPunchTime = 0f;
 
-    AudioManager audioManager;
+    private AudioManager audioManager;
     
     /// <summary>
     /// Start is called before the first frame update
     /// </summary>
     private void Start()
     {
+        player = GetComponent<Player>();    
         audioManager = GetComponent<AudioManager>();
-        currentMovementSpeed = movement.movementSpeed;
+        currentMovementSpeed = player.movementSpeed;
     }
 
     /// <summary>
@@ -81,7 +82,7 @@ public class PlayerCombat : MonoBehaviour
             if (isPunching && Time.time >= nextPunchTime)
             {
                 isPunching = false;
-                movement.movementSpeed = currentMovementSpeed;
+                player.movementSpeed = currentMovementSpeed;
             }
         }
     }
@@ -94,7 +95,7 @@ public class PlayerCombat : MonoBehaviour
         animator.SetTrigger("attacking");
             
         isPunching = true;
-        movement.movementSpeed = punchingMovementSpeed;
+        player.movementSpeed = punchingMovementSpeed;
 
         // Activate the collider
         if (punchPoint.GetComponent<CircleCollider2D>() != null) punchPoint.GetComponent<CircleCollider2D>().enabled = true;

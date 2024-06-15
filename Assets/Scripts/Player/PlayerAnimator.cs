@@ -8,7 +8,7 @@ public class PlayerAnimator : MonoBehaviour
     /// <summary>
     /// Reference to the MovementStateMachine script to get the current state of the player.
     /// </summary>
-    [SerializeField] private MovementStateMachine player;
+    [SerializeField] Player player;
 
     /// <summary>
     /// Reference to the Animator component for controlling animations.
@@ -68,10 +68,6 @@ public class PlayerAnimator : MonoBehaviour
         {
             lastMoveDir = inputVector;
             movementState = MovementState.running;
-
-            // Flip the sprite based on movement direction
-            if (lastMoveDir.x < 0f) animatorFlipX = !sprite.flipX;
-            else if (lastMoveDir.x > 0f) animatorFlipX = sprite.flipX;
         }
         else
         {

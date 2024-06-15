@@ -1,16 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class DodgerollingState : IPlayerState
 {
-    public void EnterState(MovementStateMachine player)
+    private Player player;
+
+    public DodgerollingState(Player player)
     {
-        AudioManager.Instance.PlayPlayerSFX(1);
-            player.StartCoroutine(player.DodgerollCoroutine());
+        this.player = player;
     }
 
-    public void UpdateState(MovementStateMachine player) { }
+    public void EnterState()
+    {
+        AudioManager.Instance.PlayPlayerSFX(1);
+        player.StartCoroutine(player.DodgerollCoroutine());
+    }
 
-    public void ExitState(MovementStateMachine player) { }
+    public void UpdateState() 
+    {
+        
+    }
+
+    public void ExitState() { }
 }
