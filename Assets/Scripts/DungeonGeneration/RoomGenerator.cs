@@ -17,6 +17,10 @@ namespace DungeonGeneration
         /// </summary>
         private const int SceneRoomDistanceY = -9;
 
+        private const int OriginPositionX = -7;
+
+        private const int OriginPositionY = -4;
+        
         /// <summary>
         /// Prefab for a room
         /// </summary>
@@ -30,8 +34,9 @@ namespace DungeonGeneration
         {
             // TODO: refactor this shit to the factory pattern or something idk
             // TODO: idi nahui
-            foreach (var room in roomsList)
+            for (int i = 0; i < roomsList.Count; ++i)
             {
+                var room = roomsList[i];
                 RoomType type = room.Type;
                 switch (type)
                 {
@@ -62,6 +67,9 @@ namespace DungeonGeneration
                 instance.transform.position = scenePosition;
 
                 ActivateDoors(instance, room.NeighboringSides);
+
+                Vector2 originPosition = GetOriginPosition(scenePosition);
+                CreateMovementGrid(originPosition);
             }
         }
 
@@ -110,6 +118,24 @@ namespace DungeonGeneration
                 }
             }
         }
+
+        Vector2 GetOriginPosition(Vector2 roomScenePosition)
+        {
+            float x = roomScenePosition.x + OriginPositionX;
+            float y = roomScenePosition.y + OriginPositionY;
+            Vector2 originPosition = new Vector2(x, y);
+
+            return originPosition;
+        }
         
-}
+        private void CreateMovementGrid(Vector2 originPosition)
+        {   
+            Transform movementGridTransform = GameObject.FindWithTag("MovementGrid").transform;
+            GameObject roomMovementGrid = new GameObject("MovementGrid");
+            roomMovementGrid.transform.position = originPosition;
+            MovementGrid mg = roomMovementGrid.AddComponent<MovementGrid>();
+            mg.originPosition = originPosition;
+            roomMovementGrid.transform.parent = movementGridTransform;
+        }
+    }
 }

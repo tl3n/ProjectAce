@@ -1,4 +1,6 @@
 using System;
+using System.IO;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour, IGridComponent
@@ -7,19 +9,47 @@ public abstract class Enemy : MonoBehaviour, IGridComponent
     /// Name of the enemy
     /// </summary>
     [SerializeField] protected string enemyName = "Enemy";
-
-    public string EnemyName { get; set; }
-
+    [SerializeField] protected const int maxHealth = 100;
+    [SerializeField] protected float movementSpeed = 20f;
+    [SerializeField] protected int attackDamage;
+    [SerializeField] protected float attackRange;
+    [SerializeField] protected float attackCooldown;
+    
+    protected int health;
+    protected bool lineOfSight;
+    protected Pathfinding pathfinding;
+    protected EnemyMovementStrategy movementStrategy;
+    protected EnemyMovement movement;
+    
     /// <summary>
     /// Each enemy has its own particle system
     /// </summary>
     protected ParticleSystem particleSystem;
-
+    
     /// <summary>
     /// Initialization of the enemy
     /// </summary>
     public abstract void Initialize();
+    
+    protected Pathfinding InitializePathfinding()
+    {
+        this.pathfinding = GetComponent<Pathfinding>();
+        int i = transform.parent.GetSiblingIndex();
+        MovementGrid grid = GameObject.FindWithTag("MovementGrid").transform.GetChild(i).GetComponent<MovementGrid>();
+        pathfinding.grid = grid;
+        return pathfinding;
+    }
+    
+    public float GetMovementSpeed()
+    {
+        return movementSpeed;
+    }
 
+    public EnemyMovementStrategy GetMovementStrategy()
+    {
+        return movementStrategy;
+    }
+    
     /// <summary>
     /// Enemy is leaf, so return exception
     /// </summary>

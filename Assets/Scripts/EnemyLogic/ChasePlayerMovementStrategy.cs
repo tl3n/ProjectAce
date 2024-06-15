@@ -11,9 +11,13 @@ public class ChasePlayerMovementStrategy : EnemyMovementStrategy
     * \brief Moves the enemy towards the player's position.
     * \param enemyMovement The EnemyMovement component that handles the enemy's movement.
     */
-    public override void Move(EnemyMovement enemyMovement)
+    public override void Move()
     {
-        enemyMovement.SetTargetPosition(playerCollider.position);
-        enemyMovement.HandleMovement();
+        if (enemyMovement != null)
+        {
+            //Debug.Log("Player collider position: " + playerCollider.position);
+            enemyMovement.SetTargetPosition(playerCollider.position);
+            enemyMovement.HandleMovement();
+        }
     }
 }

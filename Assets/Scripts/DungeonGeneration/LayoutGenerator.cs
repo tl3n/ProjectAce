@@ -85,7 +85,7 @@ namespace DungeonGeneration
         /// <summary>
         /// Number of end rooms to generate
         /// </summary>
-        [SerializeField] private int minNumberOfEndRoomsToGenerate = 3;
+        [SerializeField] private int minNumberOfEndRoomsToGenerate = 0;
         
         /// <summary>
         /// List that stores generated end rooms
@@ -107,7 +107,7 @@ namespace DungeonGeneration
         {
             this.dungeonLevel = dungeonLevel;
             numberOfRoomsToGenerate = Random.Range(0, 2) + 5 + this.dungeonLevel * 2;
-
+            
             List<Room> roomsList = new List<Room>();
             while (true)
             {

@@ -1,40 +1,77 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class Doctor : MelleEnemy
 {
-    public Doctor()
-    {
-        enemyName = "Doctor";
-        angle = 0;
-    }
-
     /// <summary>
     /// Initialization of the doctor
     /// </summary>
+
     public override void Initialize()
     {
-        // any unique logic to this enemy
-        gameObject.name = enemyName;
-        particleSystem = GetComponentInChildren<ParticleSystem>();
-        particleSystem?.Stop();
-        particleSystem?.Play();
     }
 
+    private void Awake()
+    {
+        // any unique logic to this enemy
+        enemyName = "Doctor";
+        angle = 0;
+        movementSpeed = 2f;
+
+        InitializePathfinding();
+        movement = GetComponent<EnemyMovement>();
+        movementStrategy = GetComponent<ChasePlayerMovementStrategy>();
+        
+        if (movement == null)
+        {
+            Debug.LogError("Failed to add EnemyMovement component to the enemy.");
+            return;
+        }
+        
+        if (movementStrategy == null)
+        {
+            Debug.LogError("Failed to add ChasePlayerMovementStrategy component to the enemy.");
+            return;
+        }
+
+        movement.Initialize(movementSpeed, movementStrategy);
+        movementStrategy.Initialize();
+        gameObject.name = enemyName;
+        //particleSystem = GetComponentInChildren<ParticleSystem>();
+        //particleSystem?.Stop();
+        //particleSystem?.Play();
+    }
+
+    /**
+    * \brief Update is called once per frame.
+    *
+    * Calls the Move method of the movement strategy, if it exists.
+    */
+    private void Update()
+    {
+        if (movementStrategy != null)
+        {
+            Move();
+        }
+    }
+    
     // TODO: Just testing, must be deleted
     public void Move()
     {
-        float startX = this.transform.parent.position.x - 2;
+        /*float startX = this.transform.parent.position.x - 2;
         float startY = this.transform.parent.position.y - 2;
 
-        // обчислює нову позицію ворога на колі
-        float x = startX + Mathf.Cos(this.angle) * 1; // радіус кола - 1
-        float y = startY + Mathf.Sin(this.angle) * 1; // радіус кола - 1
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ
+        float x = startX + Mathf.Cos(this.angle) * 1; // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ - 1
+        float y = startY + Mathf.Sin(this.angle) * 1; // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ - 1
 
-        // оновлює позицію префаба ворога
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         this.transform.position = new Vector2(x, y);
 
-        // оновлює кутову позицію ворога на колі
-        this.angle += Time.deltaTime; // змінюється з часом, щоб ворог рухався
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ
+        this.angle += Time.deltaTime; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ*/
+        
+        movementStrategy.Move();
     }
 }

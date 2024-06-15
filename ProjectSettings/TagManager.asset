@@ -12,6 +12,7 @@ TagManager:
   - RangerEnemy
   - SummonerEnemy
   - BossEnemy
+  - MovementGrid
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,6 @@ TagManager:
   - UI
   - Enemy
   - Unwalkable
-  - 
   - 
   - 
   - 

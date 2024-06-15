@@ -1,59 +1,75 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /**
 * \brief A class representing a grid for pathfinding.
 */
-public class MovementGrid
+public class MovementGrid : MonoBehaviour
 {
     /// <summary>
     /// Width of the movement grid. Matches the room's width.
     /// </summary>
-    private const int width = 18;
+    private const int width = 13; // prev 18
     
     /// <summary>
     /// Height of the movement grid. Matcher the room's height.
     /// </summary>
-    private const int height = 5;
+    private const int height = 7; // prev 5
     
     /// <summary>
     /// Size of the square cell of the movement grid.
     /// </summary>
-    private const float cellSize = 5f;
+    private const float cellSize = 1f;
 
     /// <summary>
     /// The origin position of the grid in world coordinates.
     /// </summary>
-    private Vector2 originPosition;
+    public Vector2 originPosition;
     
     /// <summary>
     /// Array that stores all the cells.
     /// </summary>
-    private PathNode[,] gridArray;   
+    private PathNode[,] gridArray;
     
+    private TextMesh[,] debugTextArray;
+    public const int sortingOrderDefault = 5000;
     /**
      * \brief Constructor for the MovementGrid class.
      * 
      * Creates grid and fills it with PathMode objects.
      * \param originPosition The origin position of the grid in world coordinates.
      */
-   public MovementGrid(Vector2 originPosition)
-    {
-        this.originPosition = originPosition;
+   private void Start()
+   {
+       gridArray = new PathNode[width, height];
         
-        gridArray = new PathNode[width, height];
-        
-        for (int x = 0; x < gridArray.GetLength(0); x++)
-        {
+       for (int x = 0; x < gridArray.GetLength(0); x++)
+       {
             for (int y = 0; y < gridArray.GetLength(1); y++)
             {
                 gridArray[x, y] = new PathNode(this, x, y);
             }
-        }
-        
-    }
+       }
+       debugTextArray = new TextMesh[width, height];
+       for (int x = 0; x < gridArray.GetLength(0); x++)
+       {
+           /*for(int y = 0; y < gridArray.GetLength(1); y++)
+           {
+               debugTextArray[x,y] =  CreateWorldText(gridArray[x, y]?.ToString(), null, GetWorldPosition(x, y) + new Vector2(cellSize, cellSize) * .5f, 5, Color.white, TextAnchor.MiddleCenter);
+               Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x, y + 1), Color.white, 100f);
+               Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x + 1, y), Color.white, 100f);
+               gridArray[x, y] = new PathNode(this, x, y);
+           }*/
+
+
+
+       }
+       //Debug.DrawLine(GetWorldPosition(0, height), GetWorldPosition(width, height), Color.white, 100f);
+       //Debug.DrawLine(GetWorldPosition(width, 0), GetWorldPosition(width, height), Color.white, 100f);
+   }
     
    /**
     * \brief Calculates in-grid position (x, y) based on the given world position.
@@ -63,8 +79,37 @@ public class MovementGrid
     */
     public void GetInGridPosition(Vector2 worldPosition, out int x, out int y)
     {
-        x = Mathf.FloorToInt((worldPosition - originPosition).x / cellSize);
-        y = Mathf.FloorToInt((worldPosition - originPosition).y / cellSize);
+        //Debug.Log("world position: " + worldPosition + " originPosition: " + originPosition);
+        x = Mathf.FloorToInt(Mathf.Abs(worldPosition.x + Mathf.Abs(originPosition.x)) / cellSize);
+        y = Mathf.FloorToInt(Mathf.Abs(worldPosition.y + Mathf.Abs(originPosition.y)) / cellSize);
+        //Debug.Log("x: " +  x + " y: " + y);
+    }
+    
+    public Vector2 GetWorldPosition(int x, int y)   
+    {
+        return new Vector2 (x, y) * cellSize + originPosition;
+    }
+    
+    public static TextMesh CreateWorldText(string text, Transform parent = null, Vector2 localPosition = default(Vector2), int fontSize = 40, Color? color = null, TextAnchor textAnchor = TextAnchor.UpperLeft, TextAlignment textAlignment = TextAlignment.Left, int sortingOrder = sortingOrderDefault)
+    {
+        if (color == null) color = Color.white;
+        return CreateWorldText(parent, text, localPosition, fontSize, (Color)color, textAnchor, textAlignment, sortingOrder);
+    }
+    
+    public static TextMesh CreateWorldText(Transform parent, string text, Vector3 localPosition, int fontSize, Color color, TextAnchor textAnchor, TextAlignment textAlignment, int sortingOrder)
+    {
+        GameObject gameObject = new GameObject("World_Text", typeof(TextMesh));
+        Transform transform = gameObject.transform;
+        transform.SetParent(parent, false);
+        transform.localPosition = localPosition;
+        TextMesh textMesh = gameObject.GetComponent<TextMesh>();
+        textMesh.anchor = textAnchor;
+        textMesh.alignment = textAlignment;
+        textMesh.text = text;
+        textMesh.fontSize = fontSize;
+        textMesh.color = color;
+        textMesh.GetComponent<MeshRenderer>().sortingOrder = sortingOrder;
+        return textMesh;
     }
     
     /**

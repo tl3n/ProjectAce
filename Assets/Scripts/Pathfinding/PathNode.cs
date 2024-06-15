@@ -69,7 +69,7 @@ public class PathNode
     private Vector2 FindWorldPosition()
     {
         Vector2 originPosition = grid.GetOriginPosition();
-        return new Vector2(x * cellSize + 2.5f, y * cellSize + 2.5f) + originPosition;
+        return new Vector2(x * cellSize + cellSize / 2, y * cellSize + cellSize / 2) + originPosition;
     }
     
     /**

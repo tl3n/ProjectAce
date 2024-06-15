@@ -19,13 +19,13 @@ namespace RoomGeneration
         /// <returns>New doctor</returns>
         public override MelleEnemy GetEnemy(Transform room, Vector2 scenePosition, int xPos, int yPos)
         {
-            Vector2 position = new Vector2(scenePosition.x + xPos - 2, scenePosition.y + yPos - 2); // TODO: delete -2 !!!!!
+            Vector2 position = new Vector2(scenePosition.x + xPos, scenePosition.y + yPos); // TODO: delete -2 !!!!!
 
             // create a Prefab instance and get the doctor component
             GameObject instance = Instantiate(enemyPrefab.gameObject, position, Quaternion.identity, room);
             Doctor newEnemy = instance.GetComponent<Doctor>();
             // each enemy contains its own logic
-            newEnemy.Initialize();
+            //newEnemy.Initialize(); TODO
             return newEnemy;
         }
     }

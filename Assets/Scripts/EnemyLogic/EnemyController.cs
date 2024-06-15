@@ -15,6 +15,8 @@ public class EnemyController : MonoBehaviour
     public bool lineOfSight;
     
     public string enemyName;
+
+    public Pathfinding pathfinding;
     
     [SerializeField] private EnemyMovementStrategy movementStrategy;
     private EnemyMovement movement;
@@ -22,7 +24,7 @@ public class EnemyController : MonoBehaviour
     
     private void Start()
     {
-        new Pathfinding();
+        //pathfinding = Find
         movement = GetComponent<EnemyMovement>();
     }
 

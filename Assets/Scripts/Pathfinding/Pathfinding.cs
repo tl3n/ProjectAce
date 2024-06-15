@@ -9,7 +9,7 @@ using Vector3 = UnityEngine.Vector3;
 /**
 * \brief Class for finding paths using the A* algorithm.
 */
-public class Pathfinding
+public class Pathfinding : MonoBehaviour
 {
     /// <summary>The cost for moving straight (horizontally or vertically).</summary>
     private const int MOVE_STRAIGHT_COST = 10;
@@ -17,28 +17,18 @@ public class Pathfinding
     /// <summary>The cost for moving diagonally.</summary>
     private const int MOVE_DIAGONAL_COST = 14;
     
-    /// <summary>The singleton instance of the Pathfinding class.</summary>
-    public static Pathfinding Instance { get; private set; }
-    
     /// <summary>The movement grid used for pathfinding.</summary>
-    private MovementGrid grid;
+    public MovementGrid grid;
     
     /// <summary>The list of nodes to be evaluated.</summary>
     private List<PathNode> openList;
     
     /// <summary>The list of nodes that have been evaluated.</summary>
     private List<PathNode> closedList;
-    
+
     /**
     * \brief Constructs a new Pathfinding instance.
     */
-    public Pathfinding()
-    {
-        Instance = this;
-
-        Vector2 originPosition = new Vector2(0, 0);
-        this.grid = new MovementGrid(originPosition);
-    }
 
     /**
     * \brief Finds the path between two world positions.
@@ -49,8 +39,10 @@ public class Pathfinding
     public List<Vector3> FindPath(Vector3 startWorldPosition, Vector3 endWorldPosition)
     {
         grid.GetInGridPosition(startWorldPosition, out int startX, out int startY);
+        //Debug.Log("Start x: " + startX + " y: " + startY);
         grid.GetInGridPosition(endWorldPosition, out int endX, out int endY);
-        
+        //Debug.Log("End x: " + endX + " y: " + endY);
+                
         List<PathNode> path = FindPath(startX, startY, endX, endY);
         if (path == null)
         {
@@ -61,7 +53,8 @@ public class Pathfinding
             List<Vector3> vectorPath = new List<Vector3>();
             foreach (PathNode pathNode in path)
             {
-                vectorPath.Add(new Vector3(pathNode.GetX(), pathNode.GetY()) * grid.GetCellSize() + Vector3.one * grid.GetCellSize() * .5f);
+                Vector2 worldPos = grid.GetWorldPosition(pathNode.GetX(), pathNode.GetY());
+                vectorPath.Add(worldPos + Vector2.one * (grid.GetCellSize() * 0.5f));
             }
             return vectorPath;
         }
@@ -79,6 +72,17 @@ public class Pathfinding
     {
         PathNode startNode = grid.GetPathNode(startX, startY);
         PathNode endNode = grid.GetPathNode(endX, endY);
+
+        if (startNode == null)
+        {
+            return null;
+        }
+        
+        if (endNode == null)
+        {
+            return null;
+        }
+        
         openList = new List<PathNode> { startNode };
         closedList = new List<PathNode>();
 

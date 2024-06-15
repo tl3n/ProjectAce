@@ -8,14 +8,14 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     
-    private EnemyController enemyController;
-    private EnemyMovementStrategy movementStrategy;
+    private Enemy enemy;
+    [SerializeField] private EnemyMovementStrategy movementStrategy;
     
     /// <summary>The Transform component of the enemy's collider.</summary>
     private Transform colliderTransform;
     
     /// <summary>The target position for the enemy to move towards.</summary>
-    private Vector3 targetPosition;
+    [SerializeField] private Vector3 targetPosition;
     
     /// <summary>The movement speed of the enemy.</summary>
     private float movementSpeed;
@@ -31,24 +31,11 @@ public class EnemyMovement : MonoBehaviour
     *
     * Initializes the enemy controller, collider transform, movement speed, and movement strategy.
     */
-    private void Start()
+    public void Initialize(float movementSpeed, EnemyMovementStrategy movementStrategy)
     {
-        enemyController = GetComponent<EnemyController>();
-        colliderTransform = transform.Find("EnemyShadow");
-        movementSpeed = enemyController.GetMovementSpeed();
-        movementStrategy = enemyController.GetMovementStrategy();
-    }
-    /**
-   * \brief Update is called once per frame.
-   *
-   * Calls the Move method of the movement strategy, if it exists.
-   */
-    private void Update()
-    {
-        if (movementStrategy != null)
-        {
-            movementStrategy.Move(this);
-        }
+        colliderTransform = transform.Find("Shadow");
+        this.movementSpeed = movementSpeed;
+        this.movementStrategy = movementStrategy;
     }
     
     /**
@@ -60,7 +47,7 @@ public class EnemyMovement : MonoBehaviour
         Vector3 moveDir = (targetPosition - enemyColliderPosition).normalized;
         float distance = Vector3.Distance(FindEnemyColliderPosition(), targetPosition);
         
-        if (distance > 1.5f)
+        if (distance > 0.5f)
         {
             transform.position += moveDir * movementSpeed * Time.deltaTime;
         }
@@ -82,15 +69,23 @@ public class EnemyMovement : MonoBehaviour
     {
         if (!HasLineOfSight(targetPosition))
         {
+            Pathfinding pathfinding = GetComponent<Pathfinding>();
             currentPathIndex = 0;
-            pathVectorList = Pathfinding.Instance.FindPath(FindEnemyColliderPosition(), targetPosition);
+            pathVectorList = pathfinding.FindPath(FindEnemyColliderPosition(), targetPosition);
 
             if (pathVectorList != null && pathVectorList.Count > 1)
             {
                 pathVectorList.RemoveAt(0);
             }
-            
-            this.targetPosition = pathVectorList[currentPathIndex];
+
+            if (pathVectorList != null)
+            {
+                this.targetPosition = pathVectorList[currentPathIndex];
+            }
+            else
+            {
+                this.targetPosition = FindEnemyColliderPosition();
+            }
         }
         else
         {

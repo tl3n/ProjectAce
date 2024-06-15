@@ -39,7 +39,7 @@ namespace RoomGeneration
         public void Generate(List<Room> roomsList)
         {
             // for each room
-            for(int i = 0; i < roomsList.Count; ++i)
+            for(int i = 0; i < roomsList.Count; ++i) // change 1 to roomList.Count
             {
                 CreateEnemies(roomsList[i].Type, i, roomsList[i]);
                 //roomsList[i].SetActive(true);
@@ -69,8 +69,8 @@ namespace RoomGeneration
             enemy1 = melleEnemiesCreator.GetEnemy(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
             EnemyStateMachine stateMachine1 = new EnemyStateMachine(enemy1);
             stateMachine1.Initialize(stateMachine1.passiveState);
-            Debug.Log(enemy1.GetName());
-            Debug.Log(enemy1.IsComposite());
+            //Debug.Log(enemy1.GetName());
+            //Debug.Log(enemy1.IsComposite());
 
             room.Add(enemy1);
 
@@ -79,15 +79,15 @@ namespace RoomGeneration
             enemies.Add(enemy1);
 
 
-            enemy2 = rangerEnemiesCreator.GetEnemy(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
+            /*enemy2 = rangerEnemiesCreator.GetEnemy(roomsGrid.GetChild(roomNum), roomsGrid.GetChild(roomNum).position, difX, difY);
             EnemyStateMachine stateMachine2 = new EnemyStateMachine(enemy2);
             stateMachine2.Initialize(stateMachine2.passiveState);
-            Debug.Log(enemy2.GetName());
-            Debug.Log(enemy2.IsComposite());
+            //Debug.Log(enemy2.GetName());
+            //Debug.Log(enemy2.IsComposite());
 
             room.Add(enemy2);
-            Debug.Log(room.GetName());
-            Debug.Log(room.IsComposite());
+            //Debug.Log(room.GetName());
+            //Debug.Log(room.IsComposite());*/
         }
 
         private void Update()

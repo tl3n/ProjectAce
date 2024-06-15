@@ -108,7 +108,6 @@ public class ActiveState : IEnemyState
     {
         // code that runs when we first enter the state
         enemy.SetActive(true);
-        Debug.Log(enemy.EnemyName + "active");
     }
 
     /// <summary>
@@ -117,7 +116,7 @@ public class ActiveState : IEnemyState
     public void Update()
     {
         // Here we add logic to detect if the conditions exist to 
-        // transition to another state …
+        // transition to another state ï¿½
 
         Doctor doctor = enemy as Doctor;
 
@@ -130,7 +129,6 @@ public class ActiveState : IEnemyState
     public void Exit()
     {
         // code that runs when we exit the state
-        Debug.Log("transition to passive state");
     }
 }
 
@@ -157,7 +155,6 @@ public class PassiveState : IEnemyState
     {
         // code that runs when we first enter the state
         enemy.SetActive(false);
-        Debug.Log(enemy.EnemyName + "passive");
     }
 
     /// <summary>
@@ -166,7 +163,7 @@ public class PassiveState : IEnemyState
     public void Update()
     {
         // Here we add logic to detect if the conditions exist to 
-        // transition to another state …
+        // transition to another state ï¿½
     }
 
     /// <summary>
@@ -175,6 +172,5 @@ public class PassiveState : IEnemyState
     public void Exit()
     {
         // code that runs when we exit the state
-        Debug.Log("transition to active state");
     }
 }
