@@ -110,21 +110,14 @@ public class PlayerCombat : MonoBehaviour
             var healthComponent = enemy.GetComponent<Health>();
             int damage = 0;
             
-            
             if((GetComponent<Hitting>() != null) && (healthComponent != null))
-                if(GetComponent<Hitting>().weapon == null)
-                {
-                    healthComponent.GetHit(1);
-                    damage = 1;
-                }
-                else
-                {
-                    healthComponent.GetHit(GetComponent<Hitting>().weapon.damage);
-                    damage = GetComponent<Hitting>().weapon.damage;
-                }
-            else Debug.LogError("There is NOT Knockback component");
+            {
+                damage = (GetComponent<Hitting>().weapon == null) ? 1 : GetComponent<Hitting>().weapon.damage;
+                healthComponent.GetHit(damage);
+            }
+            else Debug.LogError("There is NOT Hitting component");
             
-            Debug.Log("We hit " + enemy.name + " " + damage);
+            Debug.Log("We hit " + enemy.name + " With damage: " + damage);
         }
 
         // Wait for the animation to finish

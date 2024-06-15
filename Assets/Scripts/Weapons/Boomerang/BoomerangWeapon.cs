@@ -68,10 +68,7 @@ public abstract class BoomerangWeapon : Weapon
         base.Update();
 
         // Check if the boomerang has traveled beyond the maximum distance
-        if ((Vector3.Distance(transform.position, startingPosition) > maxDistance) && (isEquipped))
-        {
-            shouldReturn = true;
-        }
+        if ((Vector3.Distance(transform.position, startingPosition) > maxDistance) && (isEquipped)) shouldReturn = true;
 
         // If the boomerang should return
         if (shouldReturn)
@@ -101,15 +98,14 @@ public abstract class BoomerangWeapon : Weapon
         if ((isEquipped) && ((collision.gameObject.CompareTag("Enemy")) 
                              || (collision.gameObject.CompareTag("Wall")) || (collision.gameObject.CompareTag("Door"))))
         {
-            Debug.Log("GET HIT " + collision.gameObject.name);
+            if (collision.gameObject.CompareTag("Enemy")) 
+                Debug.Log("GET HIT " + collision.gameObject.name + " With damage: " + damage);
+            
             // Perform taking damage from the bullet
             var healthComponent = collision.gameObject.GetComponent<Health>();
-            if (healthComponent != null)
-            {
-                healthComponent.GetHit(damage);
-            }
+            if (healthComponent != null) healthComponent.GetHit(damage);
 
-           shouldReturn = true;
+            shouldReturn = true;
         }
     }
 }

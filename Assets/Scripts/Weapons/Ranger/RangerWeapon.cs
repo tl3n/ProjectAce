@@ -55,14 +55,12 @@ public abstract class RangerWeapon : Weapon
         if ((isEquipped) && ((collision.gameObject.CompareTag("Enemy")) 
                              || (collision.gameObject.CompareTag("Wall")) || (collision.gameObject.CompareTag("Door"))))
         {
-            Debug.Log("GET HIT " + collision.gameObject.name);
+            if (collision.gameObject.CompareTag("Enemy")) 
+                Debug.Log("GET HIT " + collision.gameObject.name + " With damage: " + damage);
+            
             // Perform taking damage from the bullet
             var healthComponent = collision.gameObject.GetComponent<Health>();
-
-            if (healthComponent != null)
-            {
-                healthComponent.GetHit(damage);
-            }
+            if (healthComponent != null) healthComponent.GetHit(damage);
 
             // Destroy the bullet
             Destroy(gameObject);

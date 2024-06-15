@@ -10,7 +10,7 @@ public class Crutches : BoomerangWeapon
     {
         weaponName = "Crutches";
         force = 20;
-        damage = 1;
+        damage = 10;
         maxDistance = 5f;
     }
 }

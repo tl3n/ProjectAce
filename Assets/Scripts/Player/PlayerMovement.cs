@@ -118,6 +118,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Camera mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         Transform rotatePointTransform = GetComponentInChildren<Transform>(true).Find("RotatePoint");
+        Transform weaponTransform = rotatePointTransform.Find("Weapon"); // Get the child weapon transform
         
         Vector3 mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
         Vector3 rotation = mousePos - transform.position;
@@ -133,6 +134,19 @@ public class PlayerMovement : MonoBehaviour
             if (rotatePointTransform != null)
             {
                 rotatePointTransform.rotation = Quaternion.Euler(rotatePointTransform.rotation.eulerAngles.x, 0f, rotatePointTransform.rotation.eulerAngles.z);
+
+                /*if (weaponTransform != null)
+                {
+                    // Rotate the child weapon around its X-axis when in the top half of the screen
+                    if (rotZ > 90 || rotZ < -90)
+                    {
+                        weaponTransform.Rotate(new Vector3(180f, 0f, 45f), Space.Self);
+                    }
+                    else
+                    {
+                        weaponTransform.Rotate(new Vector3(-180f, 0f, -45f), Space.Self);
+                    }
+                }*/
             }
         }
     }
