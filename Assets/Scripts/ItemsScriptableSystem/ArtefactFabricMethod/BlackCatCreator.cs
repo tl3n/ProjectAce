@@ -11,7 +11,7 @@ public class BlackCatCreator : ArtefactFactory
         healingBoost.healPoints = 10;
 
         var speedBoost = ScriptableObject.CreateInstance<SpeedEffect>();
-        speedBoost.speedPoints = 1.5f;
+        speedBoost.speedPoints = 2f;
 
         var compositeEffect = ScriptableObject.CreateInstance<CompositeEffect>();
         compositeEffect.Initialize(new List<EffectsInterface> { healingBoost, speedBoost });

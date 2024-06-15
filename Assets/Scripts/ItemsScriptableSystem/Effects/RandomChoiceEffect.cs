@@ -61,7 +61,9 @@ public class RandomChoiceEffect : ScriptableObject, EffectsInterface
 
         //adapt ui -- UIManager
 
-        GameObject SelectionMenu = GameObject.Find("SelectionDisplay");
+        //GameObject SelectionMenu = GameObject.Find("SelectionDisplay");
+        GameObject SelectionMenuPrefab = Resources.Load<GameObject>("InteractiveElements/SelectionDisplay");
+        GameObject SelectionMenu = Instantiate(SelectionMenuPrefab);
         UIManager Selector = SelectionMenu.GetComponent<UIManager>();
 
         foreach (var item in selectedItems)
