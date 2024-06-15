@@ -21,7 +21,7 @@ public class PlayerCombat : MonoBehaviour
     /// <summary>
     /// 
     /// </summary>
-    [SerializeField] PlayerMovement movement;
+    [SerializeField] MovementStateMachine movement;
     
     /// <summary>
     /// Movement speed while punching
