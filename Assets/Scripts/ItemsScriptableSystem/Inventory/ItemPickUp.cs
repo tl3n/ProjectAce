@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
+/// <summary>
+/// Represents an item pickup behavior in the game.
+/// </summary>
 public class ItemPickUp : MonoBehaviour
 {
     //item data representation (base class ItemData for Artefact and Healing)
@@ -42,18 +44,15 @@ public class ItemPickUp : MonoBehaviour
         //PlayerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<Stats>();
     }
 
-    //check for E key pressed -- for destruction in OnTriggerStay
+    //check for E key pressed -- for item pickup in OnTriggerStay
     void Update()
     {
-        //isKeyPressed = Input.GetKeyDown(KeyCode.E);
-
         if (isTriggerStayActivated && PlayerStats != null)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                //for Gin or other selection artefacts
-                //the selection summoning artefacts do not need to be added to the inventory
-                if(Item.Id > 0)
+                // Check if the item is a selectable artefact before adding to inventory
+                if (Item.Id > 0)
                 {
                     ItemManager.AddToInventory(Item);
                 }
@@ -76,7 +75,7 @@ public class ItemPickUp : MonoBehaviour
         }
     }
 
-    //when enter -- show player the instructions for picking up
+    //when player enters trigger area -- show instructions for picking up
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -94,7 +93,7 @@ public class ItemPickUp : MonoBehaviour
         }
     }
 
-    //recreate visually picking up (destruction)
+    //when player stays in trigger area -- enable item pickup
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -103,7 +102,7 @@ public class ItemPickUp : MonoBehaviour
         }
     }
 
-    //switch off destruction
+    //when player exits trigger area -- disable item pickup
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
