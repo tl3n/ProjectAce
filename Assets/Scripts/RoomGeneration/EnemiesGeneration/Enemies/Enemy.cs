@@ -15,11 +15,17 @@ public abstract class Enemy : MonoBehaviour, IGridComponent
     [SerializeField] protected float attackRange;
     [SerializeField] protected float attackCooldown;
     
+    
     protected int health;
     protected bool lineOfSight;
     protected Pathfinding pathfinding;
     protected EnemyMovementStrategy movementStrategy;
     protected EnemyMovement movement;
+    protected Transform playerTransform;
+
+    protected float lastAttackTime;
+    public bool isWalking;
+    public bool isAttacking;
     
     /// <summary>
     /// Each enemy has its own particle system

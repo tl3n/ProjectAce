@@ -5,28 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3cecc785-34ca-45b7-86e0-8fb58e581889" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/RoomGeneration/EnemiesGeneration/Enemies/Melle/DoctorAnimator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/RoomGeneration/EnemiesGeneration/Enemies/Melle/DoctorAnimator.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/EnemySprites/Doctor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/EnemySprites/Doctor/doctor.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/EnemySprites/Doctor/doctor.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/EnemySprites/Doctor/doctor_enemy_hit-Sheet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/EnemySprites/Doctor/doctor_enemy_hit-Sheet.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/EnemySprites/Doctor/doctor_enemy_idle-Sheet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/EnemySprites/Doctor/doctor_enemy_idle-Sheet.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/EnemySprites/Doctor/doctor_enemy_walk-Sheet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/EnemySprites/Doctor/doctor_enemy_walk-Sheet.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/EnemySprites/Doctor/doctor_idle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Textures/EnemySprites/Doctor/doctor_idle.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectAce/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectAce/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Doctor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Doctor.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Doctor.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Doctor.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Hospital/RoomTest.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Hospital/RoomTest.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Shadow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Shadow.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/DungeonCreation.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/DungeonCreation.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DungeonGeneration/LayoutGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DungeonGeneration/LayoutGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DungeonGeneration/RoomGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DungeonGeneration/RoomGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyLogic/ChasePlayerMovementStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyLogic/ChasePlayerMovementStrategy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyLogic/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyLogic/EnemyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/vasia.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/vasia.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyLogic/EnemyMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyLogic/EnemyMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyLogic/EnemyMovementStrategy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyLogic/EnemyMovementStrategy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyState/EnemyState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyState/EnemyState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/MovementGrid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/MovementGrid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/PathNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/PathNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Pathfinding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pathfinding/Pathfinding.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Other/Health/Health.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Other/Health/Health.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/RoomGeneration/EnemiesGeneration/Enemies/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RoomGeneration/EnemiesGeneration/Enemies/Enemy.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/RoomGeneration/EnemiesGeneration/Enemies/Melle/Doctor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RoomGeneration/EnemiesGeneration/Enemies/Melle/Doctor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RoomGeneration/EnemiesGeneration/Enemies/Melle/MelleEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RoomGeneration/EnemiesGeneration/Enemies/Melle/MelleEnemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RoomGeneration/EnemiesGeneration/Fabrics/Melle/DoctorCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RoomGeneration/EnemiesGeneration/Fabrics/Melle/DoctorCreator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RoomGeneration/EnemiesGeneration/Level1EnemiesGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RoomGeneration/EnemiesGeneration/Level1EnemiesGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +150,8 @@
       <workItem from="1718377813422" duration="9139000" />
       <workItem from="1718444690433" duration="4949000" />
       <workItem from="1718455354850" duration="4144000" />
-      <workItem from="1718466232744" duration="16694000" />
+      <workItem from="1718466232744" duration="17577000" />
+      <workItem from="1718492075028" duration="7918000" />
     </task>
     <servers />
   </component>

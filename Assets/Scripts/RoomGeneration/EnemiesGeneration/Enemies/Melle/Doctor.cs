@@ -7,7 +7,8 @@ public class Doctor : MelleEnemy
     /// <summary>
     /// Initialization of the doctor
     /// </summary>
-
+    private DoctorAnimator animator;
+    
     public override void Initialize()
     {
     }
@@ -35,8 +36,13 @@ public class Doctor : MelleEnemy
             return;
         }
 
-        movement.Initialize(movementSpeed, movementStrategy);
+        movement.Initialize(this, movementSpeed, movementStrategy);
         movementStrategy.Initialize();
+        animator = transform.Find("DoctorVisual").GetComponent<DoctorAnimator>();
+        
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+
+        
         gameObject.name = enemyName;
         //particleSystem = GetComponentInChildren<ParticleSystem>();
         //particleSystem?.Stop();
@@ -53,6 +59,18 @@ public class Doctor : MelleEnemy
         if (movementStrategy != null)
         {
             Move();
+        }
+        
+        if (IsPlayerInAttackRange())
+        {
+            // Check if enough time has passed since the last attack
+            if (Time.time - lastAttackTime >= attackCooldown)
+            {
+                Attack();
+                lastAttackTime = Time.time;
+                isAttacking = false;
+
+            }
         }
     }
     
@@ -73,5 +91,19 @@ public class Doctor : MelleEnemy
         this.angle += Time.deltaTime; // ��������� � �����, ��� ����� �������*/
         
         movementStrategy.Move();
+    }
+    
+    private void Attack()
+    {
+        // Play attack animation
+        isAttacking = true;
+        // Deal damage to the player (assuming you have a reference to the player's health component)
+        //playerHealth.TakeDamage(attackDamage);
+    }
+    
+    private bool IsPlayerInAttackRange()
+    {
+        float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
+        return distanceToPlayer <= attackRange;
     }
 }

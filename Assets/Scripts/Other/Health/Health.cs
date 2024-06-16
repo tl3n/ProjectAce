@@ -24,9 +24,9 @@ public class Health : MonoBehaviour
     public void GetHit(int amount)
     {
         if (isDead)
-            return;
+            Object.Destroy(transform.parent);
         currentHealth -= amount;
-        if (currentHealth < amount)
+        if (currentHealth <= 0)
         {
             isDead = true;
         }

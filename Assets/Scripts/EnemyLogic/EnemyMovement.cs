@@ -25,14 +25,15 @@ public class EnemyMovement : MonoBehaviour
     
     /// <summary>The current index in the path vector list.</summary>
     private int currentPathIndex;
-    
+
     /**
     * \brief Start is called before the first frame update.
     *
     * Initializes the enemy controller, collider transform, movement speed, and movement strategy.
     */
-    public void Initialize(float movementSpeed, EnemyMovementStrategy movementStrategy)
+    public void Initialize(Enemy enemy, float movementSpeed, EnemyMovementStrategy movementStrategy)
     {
+        this.enemy = enemy;
         colliderTransform = transform.Find("Shadow");
         this.movementSpeed = movementSpeed;
         this.movementStrategy = movementStrategy;
@@ -43,6 +44,7 @@ public class EnemyMovement : MonoBehaviour
     */
     public void HandleMovement()
     {
+        enemy.isWalking = true;
         Vector3 enemyColliderPosition = FindEnemyColliderPosition();
         Vector3 moveDir = (targetPosition - enemyColliderPosition).normalized;
         float distance = Vector3.Distance(FindEnemyColliderPosition(), targetPosition);
@@ -50,9 +52,11 @@ public class EnemyMovement : MonoBehaviour
         if (distance > 0.5f)
         {
             transform.position += moveDir * movementSpeed * Time.deltaTime;
+            //GetComponent<Rigidbody2D>().velocity = moveDir * movementSpeed;
         }
         else
         {
+            enemy.isWalking = false;
             currentPathIndex++;
             if (pathVectorList != null && currentPathIndex >= pathVectorList.Count)
             {
@@ -99,6 +103,7 @@ public class EnemyMovement : MonoBehaviour
      */
     private void StopMoving()
     {
+        enemy.isWalking = false;
         targetPosition = FindEnemyColliderPosition();
         pathVectorList = null;
     }
@@ -127,6 +132,4 @@ public class EnemyMovement : MonoBehaviour
     {
         return colliderTransform.position;
     }
-
-    
 }
