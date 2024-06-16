@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Windows.Input;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,6 +7,7 @@ using static UnityEditor.Progress;
 
 public class UIManager : MonoBehaviour
 {
+    public static UIManager Instance { get; private set; }
     public GameObject Selector;
     private bool isSelectorActive = false;
     public ItemSlot[] Slot;
@@ -13,6 +15,16 @@ public class UIManager : MonoBehaviour
 
     void Awake()
     {
+        //singleton pattern implementation
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+
         Selector.SetActive(false);
     }
 
@@ -48,7 +60,7 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    public bool SetSlot(ItemsData Item, Stats playerStats)
+    /*public bool SetSlot(ItemsData Item, Stats playerStats)
     {
         for (int i = 0; i < Slot.Length; i++)
         {
@@ -56,6 +68,24 @@ public class UIManager : MonoBehaviour
             {
                 Slot[i].AddItem(Item);
                 slotButton[i].onClick.AddListener(() => HandleSlotClick(Item, playerStats));
+                return true;
+            }
+        }
+        return false;
+    }
+    */
+    public bool SetSlot(ItemsData item, Stats playerStats)
+    {
+        GameObject artefactDisplay = GameObject.Find("ArtefactDisplay");
+        ItemManager itemManager = artefactDisplay.GetComponent<ItemManager>();
+
+        for (int i = 0; i < Slot.Length; i++)
+        {
+            if (!Slot[i].full)
+            {
+                Slot[i].AddItem(item);
+                SelectInterface slotClickCommand = new CommandInterface(item, playerStats, itemManager, this);
+                slotButton[i].onClick.AddListener(() => slotClickCommand.Execute());
                 return true;
             }
         }
