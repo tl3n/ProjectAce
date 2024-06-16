@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
         animatorFlipX = playerAnimator.GetAnimatorFlipX();
         dodgeDirection = Vector2.zero;
 
-        if (movement != Vector2.zero)
+        if (inputVector != Vector2.zero)
             dodgeDirection = GetInputVector().normalized;
         else
         {

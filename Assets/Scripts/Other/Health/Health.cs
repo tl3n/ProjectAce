@@ -16,21 +16,14 @@ public class Health : MonoBehaviour
     /// Maximum health of the object
     /// </summary>
     [SerializeField] public int maxHealth;
-
-    private GameObject parentObject;
-    private AudioManager audioManager;
-    private string parentTag;
+    
 
     /// <summary>
     /// Start is called on the frame when a script is enabled
     /// </summary>
     private void Start()
     {
-        audioManager = GetComponent<AudioManager>();
         currentHealth = maxHealth;
-
-        parentObject = transform.parent.gameObject;
-        parentTag = parentObject.tag; // Store the tag of the parent object
     }
 
     /// <summary>
@@ -52,13 +45,13 @@ public class Health : MonoBehaviour
     {
         if (isDead) return;
 
-        if (parentTag == "Enemy")
+        if (gameObject.CompareTag("Enemy"))
         {
-            audioManager.PlayEnemySFX(0);
+            AudioManager.Instance.PlayEnemySFX(0);
         }
-        else if (parentTag == "Player")
+        else if (gameObject.CompareTag("Player"))
         {
-            audioManager.PlayPlayerSFX(2);
+            AudioManager.Instance.PlayPlayerSFX(2);
         }
 
         currentHealth -= amount;
