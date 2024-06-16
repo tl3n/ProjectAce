@@ -6,6 +6,14 @@ TagManager:
   tags:
   - RoomBorders
   - Instructions
+  - Enemy
+  - SpawnPoint
+  - Grid
+  - MelleEnemy
+  - RangerEnemy
+  - SummonerEnemy
+  - BossEnemy
+  - MovementGrid
   layers:
   - Default
   - TransparentFX
@@ -13,8 +21,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Enemy
+  - Unwalkable
   - 
   - 
   - 

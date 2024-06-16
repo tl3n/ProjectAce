@@ -1,0 +1,167 @@
+\doxysection{Dungeon\+Generation.\+Room Class Reference}
+\hypertarget{class_dungeon_generation_1_1_room}{}\label{class_dungeon_generation_1_1_room}\index{DungeonGeneration.Room@{DungeonGeneration.Room}}
+Inheritance diagram for Dungeon\+Generation.\+Room\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_dungeon_generation_1_1_room}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dungeon_generation_1_1_room_a6a6b3a32cf26b7e9015044871ecc79a3}{Room}} (int x, int y, \mbox{\hyperlink{namespace_dungeon_generation_ae6a0c850882235ee77153149e048fea8}{Room\+Type}} type, List$<$ \mbox{\hyperlink{namespace_dungeon_generation_a0f2611525a85556b538d18c3f87149fc}{Side}} $>$ neighboring\+Sides)
+\begin{DoxyCompactList}\small\item\em Initialization of the room. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dungeon_generation_1_1_room_a5f2680db7570edbbdab8b7d48d3d9145}{Add}} (\mbox{\hyperlink{interface_i_grid_component}{IGrid\+Component}} component)
+\begin{DoxyCompactList}\small\item\em Add component into the list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dungeon_generation_1_1_room_a281b95342a4a751c44773971c09bbc5b}{Remove}} (\mbox{\hyperlink{interface_i_grid_component}{IGrid\+Component}} component)
+\begin{DoxyCompactList}\small\item\em Remove component from the list. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_dungeon_generation_1_1_room_a7f7d2c4985b6f83dac7cadb8f1e43e86}{Get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Returns name of the grid components. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_dungeon_generation_1_1_room_a27ed09afeb8160cbea8140a7b94d72aa}{Is\+Composite}} ()
+\begin{DoxyCompactList}\small\item\em Check if component is composite. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dungeon_generation_1_1_room_adf14c1fe9951cf89417a42b01c8b2476}{Set\+Active}} (bool state)
+\begin{DoxyCompactList}\small\item\em Change state of the components. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_dungeon_generation_1_1_room_a888f64b94be8323b3605221af2bec87e}\label{class_dungeon_generation_1_1_room_a888f64b94be8323b3605221af2bec87e} 
+List$<$ \mbox{\hyperlink{interface_i_grid_component}{IGrid\+Component}} $>$ {\bfseries \+\_\+children} = new List$<$\mbox{\hyperlink{interface_i_grid_component}{IGrid\+Component}}$>$()
+\begin{DoxyCompactList}\small\item\em List of the components in the room. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_dungeon_generation_1_1_room_ad43387cf32658d8aa5618ab712d63ba1}\label{class_dungeon_generation_1_1_room_ad43387cf32658d8aa5618ab712d63ba1} 
+int {\bfseries X}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em X-\/coordinate of the room\textquotesingle{}s center. \end{DoxyCompactList}\item 
+\Hypertarget{class_dungeon_generation_1_1_room_aa41b6cd7f6e19bbf42152ad8ddc0979a}\label{class_dungeon_generation_1_1_room_aa41b6cd7f6e19bbf42152ad8ddc0979a} 
+int {\bfseries Y}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Y-\/coordinate of the room\textquotesingle{}s center. \end{DoxyCompactList}\item 
+\Hypertarget{class_dungeon_generation_1_1_room_ad020e6c47a39f8a5ed23fce8368851e1}\label{class_dungeon_generation_1_1_room_ad020e6c47a39f8a5ed23fce8368851e1} 
+\mbox{\hyperlink{namespace_dungeon_generation_ae6a0c850882235ee77153149e048fea8}{Room\+Type}} {\bfseries Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Type of the room. \end{DoxyCompactList}\item 
+\Hypertarget{class_dungeon_generation_1_1_room_a03f6e73cd901bf086728c4b2ac57e930}\label{class_dungeon_generation_1_1_room_a03f6e73cd901bf086728c4b2ac57e930} 
+List$<$ \mbox{\hyperlink{namespace_dungeon_generation_a0f2611525a85556b538d18c3f87149fc}{Side}} $>$ {\bfseries Neighboring\+Sides}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Sides where room has neighbours. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_dungeon_generation_1_1_room_a6a6b3a32cf26b7e9015044871ecc79a3}\label{class_dungeon_generation_1_1_room_a6a6b3a32cf26b7e9015044871ecc79a3} 
+\index{DungeonGeneration.Room@{DungeonGeneration.Room}!Room@{Room}}
+\index{Room@{Room}!DungeonGeneration.Room@{DungeonGeneration.Room}}
+\doxysubsubsection{\texorpdfstring{Room()}{Room()}}
+{\footnotesize\ttfamily Dungeon\+Generation.\+Room.\+Room (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{\mbox{\hyperlink{namespace_dungeon_generation_ae6a0c850882235ee77153149e048fea8}{Room\+Type}}}]{type,  }\item[{List$<$ \mbox{\hyperlink{namespace_dungeon_generation_a0f2611525a85556b538d18c3f87149fc}{Side}} $>$}]{neighboring\+Sides }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialization of the room. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X-\/coordinate of the room\\
+\hline
+{\em y} & Y-\/coordinate of the room\\
+\hline
+{\em type} & Type of the room\\
+\hline
+{\em neighboring\+Sides} & Sides, where room has neighbours\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_dungeon_generation_1_1_room_a5f2680db7570edbbdab8b7d48d3d9145}\label{class_dungeon_generation_1_1_room_a5f2680db7570edbbdab8b7d48d3d9145} 
+\index{DungeonGeneration.Room@{DungeonGeneration.Room}!Add@{Add}}
+\index{Add@{Add}!DungeonGeneration.Room@{DungeonGeneration.Room}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily void Dungeon\+Generation.\+Room.\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_i_grid_component}{IGrid\+Component}}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add component into the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & Grid component\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_i_grid_component_a52427825499876387955ae883e15c8d4}{IGrid\+Component}}.
+
+\Hypertarget{class_dungeon_generation_1_1_room_a7f7d2c4985b6f83dac7cadb8f1e43e86}\label{class_dungeon_generation_1_1_room_a7f7d2c4985b6f83dac7cadb8f1e43e86} 
+\index{DungeonGeneration.Room@{DungeonGeneration.Room}!GetName@{GetName}}
+\index{GetName@{GetName}!DungeonGeneration.Room@{DungeonGeneration.Room}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily string Dungeon\+Generation.\+Room.\+Get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns name of the grid components. 
+
+\begin{DoxyReturn}{Returns}
+List of the components
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_i_grid_component_a21f0c00accee33efc951647e9b74e708}{IGrid\+Component}}.
+
+\Hypertarget{class_dungeon_generation_1_1_room_a27ed09afeb8160cbea8140a7b94d72aa}\label{class_dungeon_generation_1_1_room_a27ed09afeb8160cbea8140a7b94d72aa} 
+\index{DungeonGeneration.Room@{DungeonGeneration.Room}!IsComposite@{IsComposite}}
+\index{IsComposite@{IsComposite}!DungeonGeneration.Room@{DungeonGeneration.Room}}
+\doxysubsubsection{\texorpdfstring{IsComposite()}{IsComposite()}}
+{\footnotesize\ttfamily bool Dungeon\+Generation.\+Room.\+Is\+Composite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if component is composite. 
+
+\begin{DoxyReturn}{Returns}
+True
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_i_grid_component_a42131fd9f1c8be452f3de6a960e46647}{IGrid\+Component}}.
+
+\Hypertarget{class_dungeon_generation_1_1_room_a281b95342a4a751c44773971c09bbc5b}\label{class_dungeon_generation_1_1_room_a281b95342a4a751c44773971c09bbc5b} 
+\index{DungeonGeneration.Room@{DungeonGeneration.Room}!Remove@{Remove}}
+\index{Remove@{Remove}!DungeonGeneration.Room@{DungeonGeneration.Room}}
+\doxysubsubsection{\texorpdfstring{Remove()}{Remove()}}
+{\footnotesize\ttfamily void Dungeon\+Generation.\+Room.\+Remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_i_grid_component}{IGrid\+Component}}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Remove component from the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & Grid component\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_i_grid_component_abafb08e05c5cbf0aa3f243944fefeb3b}{IGrid\+Component}}.
+
+\Hypertarget{class_dungeon_generation_1_1_room_adf14c1fe9951cf89417a42b01c8b2476}\label{class_dungeon_generation_1_1_room_adf14c1fe9951cf89417a42b01c8b2476} 
+\index{DungeonGeneration.Room@{DungeonGeneration.Room}!SetActive@{SetActive}}
+\index{SetActive@{SetActive}!DungeonGeneration.Room@{DungeonGeneration.Room}}
+\doxysubsubsection{\texorpdfstring{SetActive()}{SetActive()}}
+{\footnotesize\ttfamily void Dungeon\+Generation.\+Room.\+Set\+Active (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Change state of the components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & State to which it will be changed\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_i_grid_component_a9f8caba6c267d958e8706aaaf1715e19}{IGrid\+Component}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Uni materials/2 course/\+OOP/\+Project\+Ace/\+Assets/\+Scripts/\+Dungeon\+Generation/Room.\+cs\end{DoxyCompactItemize}

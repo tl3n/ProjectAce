@@ -1,0 +1,73 @@
+\doxysection{Dungeon\+Generation.\+Room\+Generator Class Reference}
+\hypertarget{class_dungeon_generation_1_1_room_generator}{}\label{class_dungeon_generation_1_1_room_generator}\index{DungeonGeneration.RoomGenerator@{DungeonGeneration.RoomGenerator}}
+Inheritance diagram for Dungeon\+Generation.\+Room\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_dungeon_generation_1_1_room_generator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_dungeon_generation_1_1_room_generator_aa1852564079bf3329d70514e8d813bcc}{Generate}} (List$<$ \mbox{\hyperlink{class_dungeon_generation_1_1_room}{Room}} $>$ rooms\+List)
+\begin{DoxyCompactList}\small\item\em Instantiating room prefabs based on the matrix layout. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_dungeon_generation_1_1_room_generator_a05abf7954e8805101c9dfce768aba84f}\label{class_dungeon_generation_1_1_room_generator_a05abf7954e8805101c9dfce768aba84f} 
+Game\+Object {\bfseries room\+Prefab}
+\begin{DoxyCompactList}\small\item\em Prefab for a room. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_dungeon_generation_1_1_room_generator_ac8232159773028af673a18423611024f}{Activate\+Doors}} (Game\+Object room, List$<$ \mbox{\hyperlink{namespace_dungeon_generation_a0f2611525a85556b538d18c3f87149fc}{Side}} $>$ neighboring\+Sides)
+\begin{DoxyCompactList}\small\item\em Activation of doors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_dungeon_generation_1_1_room_generator_a8766eabd39a20209d39d807ae6937d43}\label{class_dungeon_generation_1_1_room_generator_a8766eabd39a20209d39d807ae6937d43} 
+const int {\bfseries Scene\+Room\+DistanceX} = 15
+\begin{DoxyCompactList}\small\item\em Distance between centres of rooms on X-\/coordinate. \end{DoxyCompactList}\item 
+\Hypertarget{class_dungeon_generation_1_1_room_generator_a2c573c0038628ecc1ec443b5bdebd6df}\label{class_dungeon_generation_1_1_room_generator_a2c573c0038628ecc1ec443b5bdebd6df} 
+const int {\bfseries Scene\+Room\+DistanceY} = -\/9
+\begin{DoxyCompactList}\small\item\em Distance between centres of rooms on Y-\/coordinate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_dungeon_generation_1_1_room_generator_ac8232159773028af673a18423611024f}\label{class_dungeon_generation_1_1_room_generator_ac8232159773028af673a18423611024f} 
+\index{DungeonGeneration.RoomGenerator@{DungeonGeneration.RoomGenerator}!ActivateDoors@{ActivateDoors}}
+\index{ActivateDoors@{ActivateDoors}!DungeonGeneration.RoomGenerator@{DungeonGeneration.RoomGenerator}}
+\doxysubsubsection{\texorpdfstring{ActivateDoors()}{ActivateDoors()}}
+{\footnotesize\ttfamily void Dungeon\+Generation.\+Room\+Generator.\+Activate\+Doors (\begin{DoxyParamCaption}\item[{Game\+Object}]{room,  }\item[{List$<$ \mbox{\hyperlink{namespace_dungeon_generation_a0f2611525a85556b538d18c3f87149fc}{Side}} $>$}]{neighboring\+Sides }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Activation of doors. 
+
+If there is neighbour on the side activate door and deactivate block 
+\begin{DoxyParams}{Parameters}
+{\em room} & Selected room\\
+\hline
+{\em neighboring\+Sides} & List of the room\textquotesingle{}s neighbours\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_dungeon_generation_1_1_room_generator_aa1852564079bf3329d70514e8d813bcc}\label{class_dungeon_generation_1_1_room_generator_aa1852564079bf3329d70514e8d813bcc} 
+\index{DungeonGeneration.RoomGenerator@{DungeonGeneration.RoomGenerator}!Generate@{Generate}}
+\index{Generate@{Generate}!DungeonGeneration.RoomGenerator@{DungeonGeneration.RoomGenerator}}
+\doxysubsubsection{\texorpdfstring{Generate()}{Generate()}}
+{\footnotesize\ttfamily void Dungeon\+Generation.\+Room\+Generator.\+Generate (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_dungeon_generation_1_1_room}{Room}} $>$}]{rooms\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Instantiating room prefabs based on the matrix layout. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rooms\+List} & List of the generated rooms\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Uni materials/2 course/\+OOP/\+Project\+Ace/\+Assets/\+Scripts/\+Dungeon\+Generation/Room\+Generator.\+cs\end{DoxyCompactItemize}
