@@ -1,55 +1,56 @@
 using UnityEngine;
 
+/// <summary>
+/// This class handles player animations based on player movement and state.
+/// </summary>
 public class PlayerAnimator : MonoBehaviour
 {
     /// <summary>
-    /// PlayerMovement component of the player
+    /// Reference to the MovementStateMachine script to get the current state of the player.
     /// </summary>
-    [SerializeField] private PlayerMovement player;
-    
+    [SerializeField] Player player;
+
     /// <summary>
-    /// Animator component of the player
+    /// Reference to the Animator component for controlling animations.
     /// </summary>
     private Animator animator;
-    
-    /// <summary>
-    /// SpriteRenderer component of the player
-    /// </summary>
-    private SpriteRenderer sprite; 
-    
-    /// <summary>
-    /// States of movement to animate the sprite
-    /// </summary>
-    private enum MovementState { idle, running, dodgerolling } 
-    
-    /// <summary>
-    /// Default state
-    /// </summary>
-    private MovementState movementState = MovementState.idle; 
 
     /// <summary>
-    /// Used to return flipX to PlayerMovement class and is used there. isn't used here in this class
+    /// Reference to the SpriteRenderer component for flipping the sprite.
     /// </summary>
-    private bool animatorFlipX; 
+    private SpriteRenderer sprite;
 
     /// <summary>
-    /// Last movement direction, used to avoid animation bugs
+    /// Enum representing different movement states.
     /// </summary>
-    private Vector2 lastMoveDir; 
+    private enum MovementState { idle, running, dodgerolling }
 
-    
     /// <summary>
-    /// 
+    /// Current movement state of the player.
+    /// </summary>
+    private MovementState movementState = MovementState.idle;
+
+    /// <summary>
+    /// Boolean to check if the sprite should be flipped on the X-axis.
+    /// </summary>
+    private bool animatorFlipX;
+
+    /// <summary>
+    /// Vector to store the last movement direction.
+    /// </summary>
+    private Vector2 lastMoveDir;
+
+    /// <summary>
+    /// Initialize references to Animator and SpriteRenderer components.
     /// </summary>
     private void Awake()
     {
         animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
-
     }
 
     /// <summary>
-    /// 
+    /// Update is called once per frame. Handles updating the animation state.
     /// </summary>
     private void Update()
     {
@@ -57,36 +58,37 @@ public class PlayerAnimator : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// Handles updating the animation state based on player movement and state.
     /// </summary>
     private void HandleMovementAnim()
     {
-        Vector2 inputVector;
-        inputVector = GameInput.Instance.GetMovementVectorNormalized(); // To which direction we are animating
-        
-        if (inputVector != Vector2.zero) // If we are moving in ANY direction
+        Vector2 inputVector = player.GetInputVector();
+
+        if (inputVector != Vector2.zero)
         {
-            lastMoveDir = inputVector; // Save last move direction
-            movementState = MovementState.running; // Change state to running
-
-            if (lastMoveDir.x < 0f) animatorFlipX = !sprite.flipX; // Moving left
-            else if(lastMoveDir.x > 0f) animatorFlipX = sprite.flipX; // Moving right
+            lastMoveDir = inputVector;
+            movementState = MovementState.running;
         }
-        else movementState = MovementState.idle; // Not moving
+        else
+        {
+            movementState = MovementState.idle;
+        }
 
-        if (player.GetDodgerollStatus()) movementState = MovementState.dodgerolling; // If dodgeroling = change state to appropriate
+        if (player.IsDodgerolling())
+        {
+            movementState = MovementState.dodgerolling;
+        }
 
-        animator.SetInteger("movementState", (int)movementState); // After all checks - change the state in Input System
+        // Update the animator with the current movement state
+        animator.SetInteger("movementState", (int)movementState);
     }
 
     /// <summary>
-    /// Returning direction of the sprite at given moment - used in dodgeroll logic in PlayerMovement
+    /// Returns whether the sprite should be flipped on the X-axis.
     /// </summary>
-    /// <returns>Direction of the sprite</returns>
-    public bool GetAnimatorFlipX() 
+    /// <returns>True if the sprite should be flipped, false otherwise.</returns>
+    public bool GetAnimatorFlipX()
     {
         return animatorFlipX;
     }
 }
-
-

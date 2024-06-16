@@ -1154,10 +1154,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRigidbody: {fileID: 1831061391}
   playerAnimator: {fileID: 1786104213}
-  dodgerollPower: 16
+  dodgerollPower: 15
   dodgerollTime: 0.2
   dodgerollCooldown: 2
   movementSpeed: 10
+  canDodgeroll: 1
+  movement: {x: 0, y: 0}
   facingRight: 1
 --- !u!114 &1831061394
 MonoBehaviour:

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 19bda510f33fe684a80597247ecc322a
+guid: eb0a660e4e0d362468bbca8bdebb34ac
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: shiv
+  - name: crutch remade
     originalName: 
-    pivot: {x: 0.4166666, y: -0.030769233}
+    pivot: {x: 0.3157895, y: -0.14285713}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 12
-      height: 65
-    spriteID: 4a629dc83b58b444280601ae061b6494
+      width: 19
+      height: 42
+    spriteID: 7eca6cddf724beb44a38ca9016294543
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,24 +144,24 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -150166418
-    name: shiv
+    guid: 1737564493
+    name: crutch remade
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: shiv
+    - name: crutch remade
       frameIndex: 0
       cellRect:
-        x: 23
-        y: 2
-        width: 12
-        height: 65
-      spriteId: 4a629dc83b58b444280601ae061b6494
+        x: 14
+        y: 6
+        width: 19
+        height: 42
+      spriteId: 7eca6cddf724beb44a38ca9016294543
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 56, y: 70}
+  canvasSize: {x: 40, y: 50}
