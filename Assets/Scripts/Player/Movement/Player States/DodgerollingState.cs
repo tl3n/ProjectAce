@@ -1,5 +1,8 @@
 public class DodgerollingState : IPlayerState
 {
+    /// <summary>
+    /// State Machine field to interact with
+    /// </summary>
     private Player player;
 
     public DodgerollingState(Player player)

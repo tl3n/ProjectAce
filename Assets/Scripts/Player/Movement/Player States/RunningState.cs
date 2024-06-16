@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class RunningState : IPlayerState
 {
+    /// <summary>
+    /// State Machine field to interact with
+    /// </summary>
     private Player player;
 
     public RunningState(Player player)

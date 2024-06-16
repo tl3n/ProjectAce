@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class IdleState : IPlayerState
 {
+    /// <summary>
+    /// State Machine field to interact with
+    /// </summary>
     private Player player;
 
     public IdleState(Player player)
